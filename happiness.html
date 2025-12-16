@@ -1,0 +1,3678 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハピネス老人ホーム紹介センター大阪 | 株式会社イデア</title>
+  <meta name="description" content="大阪で老人ホーム・介護施設をお探しなら、ハピネス老人ホーム紹介センター大阪へ。経験豊富なスタッフが無料でご相談からご入居まで丁寧にサポートいたします。">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    /* ========================================
+       Happiness Page Custom Styles
+       Modern, Trendy Design 2025
+       - Glassmorphism
+       - Micro-interactions
+       - Gradient Mesh
+       - Neo-brutalism accents
+       - Smooth animations
+    ======================================== */
+
+    :root {
+      --hp-primary: #67ad30;
+      --hp-primary-dark: #4a9c3e;
+      --hp-primary-light: #e8f5e0;
+      --hp-primary-glow: rgba(103, 173, 48, 0.3);
+      --hp-accent: #e8734a;
+      --hp-accent-light: #fff5f0;
+      --hp-dark: #0f0f0f;
+      --hp-gray: #555;
+      --hp-gray-light: #888;
+      --hp-light: #f5f7f4;
+      --hp-white: #ffffff;
+      --hp-gradient: linear-gradient(135deg, #67ad30 0%, #4a9c3e 50%, #3d8c32 100%);
+      --hp-gradient-accent: linear-gradient(135deg, #e8734a 0%, #d45a35 100%);
+      --hp-gradient-mesh:
+        radial-gradient(at 40% 20%, rgba(103, 173, 48, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, rgba(74, 156, 62, 0.1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, rgba(103, 173, 48, 0.08) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, rgba(232, 115, 74, 0.05) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(103, 173, 48, 0.1) 0px, transparent 50%);
+      --hp-glass: rgba(255, 255, 255, 0.7);
+      --hp-glass-border: rgba(255, 255, 255, 0.3);
+      --hp-shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.08);
+      --hp-shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.12);
+      --hp-shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
+      --hp-radius-sm: 12px;
+      --hp-radius-md: 20px;
+      --hp-radius-lg: 32px;
+      --hp-radius-xl: 48px;
+    }
+
+    /* スムーズスクロール */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.page-happiness {
+      background: var(--hp-white);
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       Hero Section - Blur Hue-Rotate Effect
+    ======================================== */
+    .hp-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #1a3a1a;
+    }
+
+    /* 背景画像 */
+    .hp-hero-picture {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hp-hero-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ブラー＆Hue-Rotateエフェクト - Before */
+    .hp-hero-picture::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25%;
+      height: 25%;
+      background-color: transparent;
+      z-index: 1;
+      animation: hpHeroBlurA 20s ease infinite;
+    }
+
+    @keyframes hpHeroBlurA {
+      0% {
+        width: 25%; height: 25%;
+        left: 0; right: unset; top: 0; bottom: unset;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+      12.49% { left: 0; }
+      12.5% {
+        width: 100%; left: unset;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      25% {
+        width: 25%; height: 25%;
+        backdrop-filter: blur(2vmin) hue-rotate(160deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
+      }
+      37.49% { top: 0; bottom: unset; }
+      37.5% {
+        top: unset; height: 100%;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      50% {
+        width: 25%; height: 25%;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+      62.49% { left: unset; right: 0; }
+      62.5% {
+        right: unset; width: 100%; height: 100%;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      74.9% { top: unset; bottom: 0; }
+      75% {
+        width: 25%; height: 25%;
+        backdrop-filter: blur(2vmin) hue-rotate(160deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
+      }
+      87.49% { top: unset; bottom: 0; }
+      87.5% {
+        height: 100%; top: 0;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      100% {
+        width: 25%; height: 25%;
+        left: 0; right: unset; top: 0; bottom: unset;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+    }
+
+    /* ブラー＆Hue-Rotateエフェクト - After */
+    .hp-hero-picture::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25%;
+      height: 25%;
+      background-color: transparent;
+      z-index: 1;
+      animation: hpHeroBlurB 10s ease infinite;
+    }
+
+    @keyframes hpHeroBlurB {
+      0% {
+        width: 25%; height: 25%;
+        left: 0; right: unset; top: 0; bottom: unset;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+      12.49% { top: 0; }
+      12.5% {
+        height: 100%; top: unset;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      25% {
+        width: 25%; height: 25%;
+        backdrop-filter: blur(2vmin) hue-rotate(160deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
+      }
+      37.49% { left: 0; right: unset; }
+      37.5% {
+        left: unset; width: 100%;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      50% {
+        width: 25%; height: 25%;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+      62.49% { top: unset; bottom: 0; }
+      62.5% {
+        top: 0; height: 100%;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      74.9% { bottom: unset; right: 0; }
+      75% {
+        width: 25%; height: 25%; left: unset;
+        backdrop-filter: blur(2vmin) hue-rotate(160deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
+      }
+      87.49% { left: unset; right: 0; }
+      87.5% {
+        width: 100%; left: 0;
+        backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+      }
+      100% {
+        width: 25%; height: 25%;
+        left: 0; right: unset; top: 0; bottom: unset;
+        backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+      }
+    }
+
+    /* コンテンツボックス - Glassmorphism */
+    .hp-hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(15px) saturate(1.5);
+      -webkit-backdrop-filter: blur(15px) saturate(1.5);
+      border-radius: 20px;
+      color: #fff;
+      animation: hpContentHue 12s linear infinite;
+    }
+
+    @keyframes hpContentHue {
+      from {
+        backdrop-filter: blur(15px) hue-rotate(0deg) saturate(1.5);
+        -webkit-backdrop-filter: blur(15px) hue-rotate(0deg) saturate(1.5);
+      }
+      to {
+        backdrop-filter: blur(15px) hue-rotate(360deg) saturate(1.5);
+        -webkit-backdrop-filter: blur(15px) hue-rotate(360deg) saturate(1.5);
+      }
+    }
+
+    /* 装飾アクセント */
+    .hp-hero-content::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 70px;
+      height: 70px;
+      background-image: linear-gradient(135deg, #67ad30, #4a9c3e, #38ef7d, #11998e);
+      border-radius: 16px;
+      z-index: -1;
+      animation: hpAccentSpin 6s linear infinite;
+    }
+
+    @keyframes hpAccentSpin {
+      from {
+        filter: hue-rotate(0deg) brightness(1.3);
+        transform: rotateZ(0deg);
+        border-radius: 16px;
+      }
+      50% {
+        border-radius: 50%;
+        filter: hue-rotate(180deg) brightness(1.5);
+      }
+      to {
+        filter: hue-rotate(360deg) brightness(1.3);
+        transform: rotateZ(360deg);
+        border-radius: 16px;
+      }
+    }
+
+    .hp-hero-logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 4px 30px rgba(103, 173, 48, 0.4));
+      animation: heroLogoIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes heroLogoIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        filter: drop-shadow(0 0px 0px rgba(103, 173, 48, 0));
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: drop-shadow(0 4px 30px rgba(103, 173, 48, 0.4));
+      }
+    }
+
+    .hp-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    .hp-hero-label::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #7ed957;
+      border-radius: 50%;
+      animation: labelPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes labelPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .hp-hero-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    .hp-hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      font-weight: 500;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+
+    .hp-hero-cta {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+    }
+
+    /* 2025 Button Styles */
+    .hp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.1rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hp-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hp-btn:hover::before {
+      opacity: 1;
+    }
+
+    .hp-btn-primary {
+      background: var(--hp-gradient);
+      color: var(--hp-white);
+      box-shadow:
+        0 4px 20px rgba(103, 173, 48, 0.4),
+        0 0 0 0 rgba(103, 173, 48, 0.4);
+    }
+
+    .hp-btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 8px 35px rgba(103, 173, 48, 0.5),
+        0 0 0 4px rgba(103, 173, 48, 0.1);
+    }
+
+    .hp-btn-primary:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    .hp-btn-outline {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .hp-btn-outline:hover {
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .hp-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .hp-btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    .hp-hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 10;
+    }
+
+    .hp-hero-scroll::after {
+      content: '';
+      width: 2px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% {
+        opacity: 0.5;
+        transform: scaleY(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scaleY(1.2);
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* ========================================
+       Section Common Styles - 2025
+    ======================================== */
+    .hp-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .hp-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .hp-section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .hp-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--hp-primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hp-section-label::before,
+    .hp-section-label::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--hp-primary);
+      opacity: 0.5;
+    }
+
+    .hp-section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      color: var(--hp-dark);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hp-section-subtitle {
+      font-size: 1rem;
+      color: var(--hp-gray);
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       About Section - 2025 Bento Style
+    ======================================== */
+    .hp-about {
+      background: var(--hp-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* グラデーションメッシュ背景 */
+    .hp-about::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hp-gradient-mesh);
+      pointer-events: none;
+    }
+
+    /* 装飾的なフローティング要素 */
+    .hp-about::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(103, 173, 48, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -200px;
+      right: -200px;
+      pointer-events: none;
+    }
+
+    .hp-about-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-about-text {
+      padding-right: 1rem;
+    }
+
+    .hp-about-text h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--hp-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+    }
+
+    .hp-about-text p {
+      color: var(--hp-gray);
+      line-height: 2;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .hp-about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hp-about-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--hp-white);
+      border-radius: var(--hp-radius-sm);
+      box-shadow: var(--hp-shadow-soft);
+      transition: all 0.3s ease;
+    }
+
+    .hp-about-feature:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--hp-shadow-medium);
+    }
+
+    .hp-about-feature-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--hp-primary-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hp-about-feature-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--hp-primary);
+    }
+
+    .hp-about-feature span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--hp-dark);
+    }
+
+    .hp-about-image {
+      position: relative;
+      border-radius: var(--hp-radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&h=1000&fit=crop') center/cover;
+      box-shadow: var(--hp-shadow-strong);
+    }
+
+    .hp-about-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.3) 100%);
+      z-index: 1;
+    }
+
+    .hp-about-image::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 2px solid var(--hp-primary);
+      border-radius: calc(var(--hp-radius-lg) + 4px);
+      opacity: 0.3;
+    }
+
+    /* 画像上の装飾バッジ */
+    .hp-about-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1.25rem;
+      border-radius: var(--hp-radius-md);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hp-about-badge-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--hp-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hp-about-badge-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+    }
+
+    .hp-about-badge-text {
+      font-size: 0.85rem;
+      color: var(--hp-dark);
+      line-height: 1.5;
+    }
+
+    .hp-about-badge-text strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--hp-primary-dark);
+    }
+
+    /* ========================================
+       Stats Section - 2025 Glass Cards
+    ======================================== */
+    .hp-stats-section {
+      background: linear-gradient(180deg, var(--hp-light) 0%, var(--hp-white) 100%);
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .hp-stats-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .hp-stat-card {
+      background: var(--hp-white);
+      border-radius: var(--hp-radius-md);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--hp-shadow-soft);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(103, 173, 48, 0.08);
+    }
+
+    /* グラデーション装飾 */
+    .hp-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--hp-gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* 背景のグロー効果 */
+    .hp-stat-card::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, var(--hp-primary-glow) 0%, transparent 70%);
+      top: -75px;
+      right: -75px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .hp-stat-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--hp-shadow-strong);
+      border-color: rgba(103, 173, 48, 0.2);
+    }
+
+    .hp-stat-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .hp-stat-card:hover::after {
+      opacity: 1;
+    }
+
+    .hp-stat-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--hp-primary-light) 0%, rgba(103, 173, 48, 0.15) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .hp-stat-card:hover .hp-stat-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: var(--hp-gradient);
+    }
+
+    .hp-stat-icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--hp-primary);
+      transition: stroke 0.3s ease;
+    }
+
+    .hp-stat-card:hover .hp-stat-icon svg {
+      stroke: white;
+    }
+
+    .hp-stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--hp-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--hp-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .hp-stat-unit {
+      font-size: 0.75rem;
+      color: var(--hp-gray-light);
+      font-weight: 500;
+    }
+
+    /* ========================================
+       Staff Section - 上に詳細、下に4枚横並び写真
+    ======================================== */
+    .hp-staff {
+      background: linear-gradient(180deg, #f8fafb 0%, #e8f4f8 50%, #f0f7fa 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+    }
+
+    /* 背景装飾 */
+    .hp-staff::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74, 158, 188, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hp-staff::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(74, 158, 188, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hp-staff .hp-section-header {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-staff .hp-section-title {
+      color: var(--hp-dark);
+    }
+
+    /* メインコンテナ */
+    .hp-staff-main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* 上部：詳細表示エリア */
+    .hp-staff-detail-area {
+      margin-bottom: 3rem;
+    }
+
+    .hp-staff-detail {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      background: var(--hp-white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hp-staff-detail.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 大きな写真/動画 */
+    .hp-staff-media {
+      flex: 0 0 auto;
+      width: 280px;
+      aspect-ratio: 3/4;
+      background: #f5f3ef;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .hp-staff-media img,
+    .hp-staff-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hp-staff-media video {
+      display: none;
+    }
+
+    .hp-staff-media.playing video {
+      display: block;
+    }
+
+    .hp-staff-media.playing img {
+      display: none;
+    }
+
+    /* 再生マーク */
+    .hp-staff-play-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border: none;
+    }
+
+    .hp-staff-play-btn:hover {
+      background: var(--hp-primary);
+      transform: scale(1.1);
+    }
+
+    .hp-staff-play-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--hp-primary);
+      margin-left: 3px;
+    }
+
+    .hp-staff-play-btn:hover svg {
+      fill: white;
+    }
+
+    /* 右側の情報パネル */
+    .hp-staff-info-panel {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+
+    .hp-staff-info-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    /* 役職 */
+    .hp-staff-role {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--hp-white);
+      background: var(--hp-primary);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* 名前（大きく） */
+    .hp-staff-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--hp-dark);
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+    }
+
+    /* 情報リスト */
+    .hp-staff-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hp-staff-info-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .hp-staff-info-label {
+      flex: 0 0 90px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hp-primary);
+      letter-spacing: 0.05em;
+      padding-top: 0.25rem;
+      text-transform: uppercase;
+    }
+
+    .hp-staff-info-value {
+      flex: 1;
+      font-size: 0.95rem;
+      color: var(--hp-dark);
+      line-height: 1.8;
+    }
+
+    /* 下部：スタッフカードカルーセル */
+    .hp-staff-carousel-wrapper {
+      position: relative;
+    }
+
+    /* 左右ナビゲーションボタン */
+    .hp-staff-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--hp-white);
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .hp-staff-nav:hover {
+      background: var(--hp-primary);
+      border-color: var(--hp-primary);
+    }
+
+    .hp-staff-nav svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--hp-dark);
+      transition: stroke 0.3s ease;
+    }
+
+    .hp-staff-nav:hover svg {
+      stroke: white;
+    }
+
+    .hp-staff-nav.prev {
+      left: 0;
+    }
+
+    .hp-staff-nav.next {
+      right: 0;
+    }
+
+    /* カルーセル本体 */
+    .hp-staff-carousel {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+      padding: 2rem 0 1rem;
+      min-height: 320px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* カルーセルコンテナ */
+    .hp-staff-carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* スタッフカード */
+    .hp-staff-card {
+      flex: 0 0 180px;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: bottom center;
+      opacity: 0.5;
+      transform: scale(0.85);
+    }
+
+    .hp-staff-card.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 10;
+    }
+
+    .hp-staff-card:hover {
+      opacity: 0.8;
+    }
+
+    .hp-staff-card.active:hover {
+      opacity: 1;
+    }
+
+    /* サムネイル写真 */
+    .hp-staff-thumb {
+      width: 180px;
+      aspect-ratio: 3/4;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #e0e0e0;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hp-staff-card.active .hp-staff-thumb {
+      box-shadow: 0 15px 50px rgba(74, 158, 188, 0.4);
+      outline: 4px solid var(--hp-primary);
+      outline-offset: 4px;
+    }
+
+    .hp-staff-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* カード内の名前 */
+    .hp-staff-card-name {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--hp-dark);
+      transition: all 0.4s ease;
+      opacity: 0.6;
+    }
+
+    .hp-staff-card.active .hp-staff-card-name {
+      font-size: 1.1rem;
+      color: var(--hp-primary);
+      opacity: 1;
+    }
+
+    /* 役職（カード内は非表示） */
+    .hp-staff-card-role,
+    .hp-staff-card-info {
+      display: none;
+    }
+
+    /* インジケーター（ドット） */
+    .hp-staff-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .hp-staff-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hp-staff-dot:hover {
+      background: #999;
+    }
+
+    .hp-staff-dot.active {
+      background: var(--hp-primary);
+      transform: scale(1.2);
+    }
+
+    /* 旧要素非表示 */
+    .hp-staff-list-wrapper,
+    .hp-staff-list,
+    .hp-staff-wrapper,
+    .hp-staff-detail-panel,
+    .hp-staff-close,
+    .hp-staff-media-label,
+    .hp-staff-media-placeholder {
+      display: none;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 900px) {
+      .hp-staff-main {
+        padding: 0 1rem;
+      }
+
+      .hp-staff-detail {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+      }
+
+      .hp-staff-media {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .hp-staff-info-panel {
+        padding-top: 0;
+      }
+
+      .hp-staff-name {
+        font-size: 1.6rem;
+      }
+
+      .hp-staff-info-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .hp-staff-info-label {
+        flex: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hp-staff-carousel-wrapper {
+        padding: 0 30px;
+      }
+
+      .hp-staff-nav {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hp-staff-nav svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /* ========================================
+       CTA Section - 2025 Gradient Cards
+    ======================================== */
+    .hp-cta {
+      background: linear-gradient(180deg, var(--hp-white) 0%, var(--hp-light) 100%);
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .hp-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hp-gradient-mesh);
+      opacity: 0.5;
+    }
+
+    .hp-cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-cta-card {
+      background: var(--hp-white);
+      border-radius: var(--hp-radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(0,0,0,0.05);
+      text-decoration: none;
+      display: block;
+      box-shadow: var(--hp-shadow-soft);
+    }
+
+    .hp-cta-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .hp-cta-card.primary::before {
+      background: linear-gradient(135deg, rgba(103, 173, 48, 0.03) 0%, rgba(103, 173, 48, 0.08) 100%);
+    }
+
+    .hp-cta-card.accent::before {
+      background: linear-gradient(135deg, rgba(232, 115, 74, 0.03) 0%, rgba(232, 115, 74, 0.08) 100%);
+    }
+
+    .hp-cta-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: var(--hp-shadow-strong);
+    }
+
+    .hp-cta-card:hover::before {
+      opacity: 1;
+    }
+
+    .hp-cta-card.primary {
+      border-color: rgba(103, 173, 48, 0.2);
+    }
+
+    .hp-cta-card.primary:hover {
+      border-color: rgba(103, 173, 48, 0.4);
+    }
+
+    .hp-cta-card.accent {
+      border-color: rgba(232, 115, 74, 0.2);
+    }
+
+    .hp-cta-card.accent:hover {
+      border-color: rgba(232, 115, 74, 0.4);
+    }
+
+    .hp-cta-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.25rem;
+      border-radius: var(--hp-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s ease;
+    }
+
+    .hp-cta-card:hover .hp-cta-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .hp-cta-card.primary .hp-cta-icon {
+      background: linear-gradient(135deg, var(--hp-primary-light) 0%, rgba(103, 173, 48, 0.2) 100%);
+      color: var(--hp-primary);
+    }
+
+    .hp-cta-card.accent .hp-cta-icon {
+      background: linear-gradient(135deg, var(--hp-accent-light) 0%, rgba(232, 115, 74, 0.2) 100%);
+      color: var(--hp-accent);
+    }
+
+    .hp-cta-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .hp-cta-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--hp-dark);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hp-cta-text {
+      color: var(--hp-gray);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    .hp-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .hp-cta-card.primary .hp-cta-link {
+      color: var(--hp-primary);
+    }
+
+    .hp-cta-card.accent .hp-cta-link {
+      color: var(--hp-accent);
+    }
+
+    .hp-cta-link svg {
+      transition: transform 0.3s ease;
+    }
+
+    .hp-cta-card:hover .hp-cta-link svg {
+      transform: translateX(5px);
+    }
+
+    /* ========================================
+       Flow Section - 縦型タイムライン
+    ======================================== */
+    .hp-flow {
+      background: var(--hp-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hp-flow::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hp-gradient-mesh);
+      opacity: 0.3;
+    }
+
+    /* 背景アニメーション要素 */
+    .hp-flow::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(103, 173, 48, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 10%;
+      right: -150px;
+      animation: flowFloat1 15s ease-in-out infinite;
+    }
+
+    .hp-flow-bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hp-flow-bg-circle:nth-child(1) {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(74, 158, 188, 0.06) 0%, transparent 70%);
+      bottom: 5%;
+      left: -100px;
+      animation: flowFloat2 18s ease-in-out infinite;
+    }
+
+    .hp-flow-bg-circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(103, 173, 48, 0.05) 0%, transparent 70%);
+      top: 40%;
+      left: 5%;
+      animation: flowFloat3 12s ease-in-out infinite;
+    }
+
+    .hp-flow-bg-circle:nth-child(3) {
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(74, 158, 188, 0.05) 0%, transparent 70%);
+      bottom: 30%;
+      right: 10%;
+      animation: flowFloat1 20s ease-in-out infinite reverse;
+    }
+
+    @keyframes flowFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    @keyframes flowFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, -30px) scale(1.15); }
+    }
+
+    @keyframes flowFloat3 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-30px, 40px) rotate(10deg); }
+    }
+
+    /* 装飾ライン - 非表示 */
+    .hp-flow-decoration {
+      display: none;
+    }
+
+    .hp-flow-timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      z-index: 1;
+      padding: 0 20px;
+    }
+
+    /* 中央の縦線 */
+    .hp-flow-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom,
+        var(--hp-primary) 0%,
+        var(--hp-primary-dark) 100%);
+      transform: translateX(-50%);
+      border-radius: 4px;
+    }
+
+    .hp-flow-item {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .hp-flow-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 左右の配置 */
+    .hp-flow-item:nth-child(odd) .hp-flow-content {
+      margin-right: calc(50% + 50px);
+      text-align: right;
+    }
+
+    .hp-flow-item:nth-child(even) .hp-flow-content {
+      margin-left: calc(50% + 50px);
+      text-align: left;
+    }
+
+    /* 番号バッジ - 中央に配置 */
+    .hp-flow-number {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--hp-gradient);
+      color: var(--hp-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow:
+        0 8px 25px rgba(103, 173, 48, 0.4),
+        0 0 0 5px var(--hp-white),
+        0 0 0 8px rgba(103, 173, 48, 0.2);
+      z-index: 2;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hp-flow-item:hover .hp-flow-number {
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow:
+        0 12px 35px rgba(103, 173, 48, 0.5),
+        0 0 0 5px var(--hp-white),
+        0 0 0 10px rgba(103, 173, 48, 0.3);
+    }
+
+    /* コンテンツカード */
+    .hp-flow-content {
+      background: var(--hp-white);
+      padding: 1.75rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(103, 173, 48, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hp-flow-item:hover .hp-flow-content {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(103, 173, 48, 0.15);
+      border-color: var(--hp-primary);
+    }
+
+    .hp-flow-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--hp-dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hp-flow-text {
+      color: var(--hp-gray);
+      line-height: 1.7;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* フロー画像 */
+    .hp-flow-image {
+      position: absolute;
+      width: 200px;
+      height: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hp-flow-item:nth-child(odd) .hp-flow-image {
+      left: calc(50% + 80px);
+      transform: translateY(-50%) translateX(20px);
+    }
+
+    .hp-flow-item:nth-child(even) .hp-flow-image {
+      right: calc(50% + 80px);
+      transform: translateY(-50%) translateX(-20px);
+    }
+
+    .hp-flow-item.revealed .hp-flow-image {
+      opacity: 1;
+    }
+
+    .hp-flow-item:nth-child(odd).revealed .hp-flow-image {
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .hp-flow-item:nth-child(even).revealed .hp-flow-image {
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .hp-flow-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .hp-flow-item:hover .hp-flow-image img {
+      transform: scale(1.05);
+    }
+
+    .hp-flow-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e8f5e0 0%, #d4edcc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--hp-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* アニメーション用クラス */
+    .hp-flow-item.hp-reveal {
+      opacity: 0;
+    }
+
+    .hp-flow-item:nth-child(odd).hp-reveal {
+      transform: translateX(-30px);
+    }
+
+    .hp-flow-item:nth-child(even).hp-reveal {
+      transform: translateX(30px);
+    }
+
+    .hp-flow-item.hp-reveal.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* 番号のパルスアニメーション */
+    @keyframes flowPulse {
+      0%, 100% {
+        box-shadow:
+          0 8px 25px rgba(103, 173, 48, 0.4),
+          0 0 0 5px var(--hp-white),
+          0 0 0 8px rgba(103, 173, 48, 0.2);
+      }
+      50% {
+        box-shadow:
+          0 8px 25px rgba(103, 173, 48, 0.4),
+          0 0 0 5px var(--hp-white),
+          0 0 0 15px rgba(103, 173, 48, 0.1);
+      }
+    }
+
+    .hp-flow-item.revealed .hp-flow-number {
+      animation: flowPulse 2s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    .hp-flow-item:hover .hp-flow-number {
+      animation: none;
+    }
+
+    /* ========================================
+       FAQ Section - 2025 Glass Accordion
+    ======================================== */
+    .hp-faq {
+      background: linear-gradient(180deg, var(--hp-light) 0%, var(--hp-white) 100%);
+      position: relative;
+    }
+
+    .hp-faq::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hp-gradient-mesh);
+      opacity: 0.4;
+    }
+
+    .hp-faq-list {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-faq-item {
+      background: var(--hp-white);
+      border-radius: var(--hp-radius-md);
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+      box-shadow: var(--hp-shadow-soft);
+      border: 1px solid rgba(103, 173, 48, 0.05);
+      transition: all 0.4s ease;
+    }
+
+    .hp-faq-item:hover {
+      box-shadow: var(--hp-shadow-medium);
+      border-color: rgba(103, 173, 48, 0.1);
+    }
+
+    .hp-faq-item.active {
+      border-color: rgba(103, 173, 48, 0.2);
+      box-shadow: var(--hp-shadow-medium);
+    }
+
+    .hp-faq-question {
+      width: 100%;
+      padding: 1.75rem 2rem;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--hp-dark);
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .hp-faq-question:hover {
+      color: var(--hp-primary);
+    }
+
+    .hp-faq-question::before {
+      content: 'Q';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--hp-gradient);
+      color: white;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .hp-faq-icon {
+      width: 28px;
+      height: 28px;
+      position: relative;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      background: var(--hp-primary-light);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .hp-faq-item.active .hp-faq-icon {
+      background: var(--hp-gradient);
+    }
+
+    .hp-faq-icon::before,
+    .hp-faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--hp-primary);
+      transition: all 0.3s ease;
+    }
+
+    .hp-faq-item.active .hp-faq-icon::before,
+    .hp-faq-item.active .hp-faq-icon::after {
+      background: white;
+    }
+
+    .hp-faq-icon::before {
+      width: 12px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hp-faq-icon::after {
+      width: 2px;
+      height: 12px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hp-faq-item.active .hp-faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      opacity: 0;
+    }
+
+    .hp-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hp-faq-item.active .hp-faq-answer {
+      max-height: 400px;
+    }
+
+    .hp-faq-answer-inner {
+      padding: 0 2rem 2rem 4.5rem;
+      color: var(--hp-gray);
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    /* LINE友だち追加ボタン */
+    .hp-line-btn-wrapper {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem 0 0;
+    }
+
+    .hp-line-btn-text {
+      font-size: 1.1rem;
+      color: var(--hp-dark);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .hp-line-btn {
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hp-line-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .hp-line-btn img {
+      height: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 195, 0, 0.3);
+    }
+
+    /* ========================================
+       Contact Section - 2025 Light Green CTA
+    ======================================== */
+    .hp-contact {
+      background: linear-gradient(135deg, #e8f5e0 0%, #f0f9eb 50%, #e8f5e0 100%);
+      padding: 120px 0;
+      text-align: center;
+      color: var(--hp-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* グラデーションオーブ */
+    .hp-contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(103, 173, 48, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74, 156, 62, 0.1) 0%, transparent 60%);
+      animation: contactBgFloat 15s ease-in-out infinite;
+    }
+
+    @keyframes contactBgFloat {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(5deg); }
+    }
+
+    /* グリッドオーバーレイ */
+    .hp-contact::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(103, 173, 48, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 173, 48, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .hp-contact .hp-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-contact-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--hp-dark);
+    }
+
+    .hp-contact-text {
+      opacity: 0.8;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .hp-contact-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--hp-primary);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      padding: 1rem 2rem;
+      background: var(--hp-white);
+      border-radius: var(--hp-radius-lg);
+      border: 2px solid var(--hp-primary);
+      box-shadow: 0 4px 20px rgba(103, 173, 48, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .hp-contact-phone:hover {
+      background: var(--hp-primary);
+      color: var(--hp-white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(103, 173, 48, 0.4);
+    }
+
+    .hp-contact-phone svg {
+      width: 36px;
+      height: 36px;
+      animation: phoneRing 2s ease-in-out infinite;
+    }
+
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(15deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(10deg); }
+      50% { transform: rotate(0deg); }
+    }
+
+    .hp-contact-hours {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 3rem;
+      font-weight: 500;
+    }
+
+    .hp-contact-buttons {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hp-btn-white {
+      background: var(--hp-white);
+      color: var(--hp-primary-dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .hp-btn-white:hover {
+      background: rgba(255,255,255,0.95);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .hp-btn-line {
+      background: #06C755;
+      color: var(--hp-white);
+      box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
+    }
+
+    .hp-btn-line:hover {
+      background: #05b34c;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(6, 199, 85, 0.5);
+    }
+
+    /* ========================================
+       Popup Button - 薄緑＋濃い緑ライン + アニメーション
+    ======================================== */
+    .hp-popup-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--hp-primary-light);
+      color: var(--hp-primary-dark);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(103, 173, 48, 0.4);
+      z-index: 1000;
+      animation: popupBounce 2s ease-in-out infinite, popupPulse 2s infinite;
+      border: 5px solid var(--hp-primary);
+      transition: all 0.3s ease;
+      padding: 1.25rem;
+    }
+
+    .hp-popup-btn:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 50px rgba(103, 173, 48, 0.6);
+      background: #d4edcc;
+      animation: none;
+    }
+
+    .hp-popup-btn-logo {
+      width: 65px;
+      height: auto;
+      margin-bottom: 0.6rem;
+      animation: popupLogoWiggle 3s ease-in-out infinite;
+    }
+
+    .hp-popup-btn:hover .hp-popup-btn-logo {
+      animation: popupLogoSpin 0.5s ease-out;
+    }
+
+    .hp-popup-btn-text {
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.4;
+      color: var(--hp-primary-dark);
+    }
+
+    /* バウンスアニメーション */
+    @keyframes popupBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* 影のパルスアニメーション */
+    @keyframes popupPulse {
+      0%, 100% {
+        box-shadow: 0 8px 30px rgba(103, 173, 48, 0.4);
+      }
+      50% {
+        box-shadow: 0 12px 50px rgba(103, 173, 48, 0.7);
+      }
+    }
+
+    /* ロゴの揺れアニメーション */
+    @keyframes popupLogoWiggle {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-5deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    /* ホバー時のロゴスピン */
+    @keyframes popupLogoSpin {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(10deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    /* ========================================
+       Footer
+    ======================================== */
+    .page-happiness .footer {
+      background: linear-gradient(135deg, #f8faf6 0%, #f0f5ec 100%);
+      color: var(--hp-dark);
+      padding: 80px 0 40px;
+    }
+
+    .page-happiness .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .page-happiness .footer-brand {
+      flex: 0 0 auto;
+    }
+
+    .page-happiness .footer-address {
+      margin-top: 1.5rem;
+      line-height: 1.8;
+      color: var(--hp-gray);
+    }
+
+    .page-happiness .footer-links {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .page-happiness .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .page-happiness .footer-column h4 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--hp-dark);
+    }
+
+    .page-happiness .footer a {
+      color: var(--hp-gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .page-happiness .footer a:hover {
+      color: var(--hp-primary);
+    }
+
+    .page-happiness .footer-bottom {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      color: var(--hp-gray);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    /* ========================================
+       Responsive - 2025
+    ======================================== */
+    @media (max-width: 1024px) {
+      .hp-about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hp-about-text {
+        padding-right: 0;
+        order: 2;
+      }
+
+      .hp-about-image {
+        order: 1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .hp-staff-grid {
+        padding: 0 1rem;
+      }
+
+      .hp-staff-card {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hp-staff-media {
+        width: 240px;
+        height: 320px;
+        margin: 0 auto;
+      }
+
+      .hp-staff-info {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hp-staff-name {
+        font-size: 2rem;
+      }
+
+      .hp-staff-details {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hp-section {
+        padding: 80px 0;
+      }
+
+      .hp-container {
+        padding: 0 1.5rem;
+      }
+
+      .hp-section-header {
+        margin-bottom: 3rem;
+      }
+
+      .hp-section-label::before,
+      .hp-section-label::after {
+        width: 20px;
+      }
+
+      .hp-hero {
+        min-height: 700px;
+      }
+
+      .hp-hero-logo {
+        width: 140px;
+      }
+
+      .hp-about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .hp-about-badge {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hp-stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .hp-stat-card {
+        padding: 2rem 1rem;
+      }
+
+      .hp-stat-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 14px;
+        margin-bottom: 1.25rem;
+      }
+
+      .hp-stat-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .hp-stat-number {
+        font-size: 2.4rem;
+      }
+
+      .hp-staff-media {
+        width: 220px;
+        height: 300px;
+      }
+
+      .hp-staff-name {
+        font-size: 1.8rem;
+      }
+
+      .hp-staff-nav-dots {
+        margin-top: 2rem;
+      }
+
+      .hp-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .hp-cta-card {
+        padding: 2.5rem 2rem;
+      }
+
+      /* モバイル用フロー - 左側に縦線 */
+      .hp-flow-timeline::before {
+        left: 30px;
+      }
+
+      .hp-flow-item,
+      .hp-flow-item:nth-child(odd),
+      .hp-flow-item:nth-child(even) {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+
+      .hp-flow-item:nth-child(odd) .hp-flow-content,
+      .hp-flow-item:nth-child(even) .hp-flow-content {
+        text-align: left;
+        margin-left: 80px;
+        margin-right: 0;
+      }
+
+      .hp-flow-number {
+        left: 30px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        box-shadow:
+          0 6px 20px rgba(103, 173, 48, 0.4),
+          0 0 0 4px var(--hp-white),
+          0 0 0 6px rgba(103, 173, 48, 0.15);
+      }
+
+      .hp-flow-item:hover .hp-flow-number {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .hp-flow-content {
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .hp-flow-title {
+        font-size: 1.1rem;
+      }
+
+      .hp-flow-text {
+        font-size: 0.85rem;
+      }
+
+      /* モバイルアニメーション */
+      .hp-flow-item:nth-child(odd).hp-reveal,
+      .hp-flow-item:nth-child(even).hp-reveal {
+        transform: translateX(20px);
+      }
+
+      /* モバイルでは画像非表示 */
+      .hp-flow-image {
+        display: none;
+      }
+
+      .hp-faq-question {
+        padding: 1.5rem;
+      }
+
+      .hp-faq-question::before {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+      }
+
+      .hp-faq-answer-inner {
+        padding: 0 1.5rem 1.5rem 3.5rem;
+      }
+
+      .hp-contact {
+        padding: 80px 0;
+      }
+
+      .hp-contact-phone {
+        padding: 0.75rem 1.5rem;
+      }
+
+      .hp-popup-btn {
+        width: 150px;
+        height: 150px;
+        bottom: 20px;
+        right: 20px;
+        padding: 1rem;
+        border-width: 4px;
+      }
+
+      .hp-popup-btn-logo {
+        width: 50px;
+        margin-bottom: 0.5rem;
+      }
+
+      .hp-popup-btn-text {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hp-section {
+        padding: 60px 0;
+      }
+
+      .hp-hero {
+        min-height: 600px;
+      }
+
+      .hp-hero-logo {
+        width: 120px;
+      }
+
+      .hp-hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hp-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hp-stats-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .hp-stat-card {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hp-stat-number {
+        font-size: 2rem;
+      }
+
+      .hp-staff-media {
+        width: 200px;
+        height: 280px;
+      }
+
+      .hp-staff-role {
+        font-size: 0.85rem;
+      }
+
+      .hp-staff-name {
+        font-size: 1.5rem;
+      }
+
+      .hp-staff-detail-label {
+        width: 80px;
+        font-size: 0.8rem;
+      }
+
+      .hp-staff-detail-value {
+        font-size: 0.8rem;
+      }
+
+      .hp-flow-item,
+      .hp-flow-item:nth-child(odd),
+      .hp-flow-item:nth-child(even) {
+        padding-left: 0;
+      }
+
+      .hp-flow-item:nth-child(odd) .hp-flow-content,
+      .hp-flow-item:nth-child(even) .hp-flow-content {
+        margin-left: 65px;
+      }
+
+      .hp-flow-timeline::before {
+        left: 25px;
+      }
+
+      .hp-flow-number {
+        left: 25px;
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+      }
+
+      .hp-flow-content {
+        padding: 1rem 1.25rem;
+      }
+
+      .hp-flow-title {
+        font-size: 1rem;
+      }
+
+      .hp-contact-buttons {
+        flex-direction: column;
+      }
+
+      .hp-popup-btn {
+        width: 130px;
+        height: 130px;
+        bottom: 15px;
+        right: 15px;
+      }
+
+      .hp-popup-btn-logo {
+        width: 42px;
+      }
+
+      .hp-popup-btn-text {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ========================================
+       Reveal Animation
+    ======================================== */
+    .hp-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hp-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Counter Animation */
+    .hp-stat-number {
+      opacity: 0;
+    }
+
+    .hp-stat-number.counted {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="page-happiness">
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/happiness_logo.png" alt="ハピネス" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ========================================
+       Header (メインページと同じ)
+  ======================================== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+        </div>
+
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+        </div>
+
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+        </div>
+      </nav>
+
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- ========================================
+       Main Content
+  ======================================== -->
+  <main id="main-content">
+
+    <!-- ========================================
+         Hero Section
+    ======================================== -->
+    <section class="hp-hero">
+      <!-- Background Image with Blur/Hue-Rotate Effect -->
+      <picture class="hp-hero-picture">
+        <img src="./images/happiness_data01.jpg" alt="background">
+      </picture>
+
+      <div class="hp-hero-content">
+        <img src="./images/happiness_logo.png" alt="ハピネス" class="hp-hero-logo">
+        <span class="hp-hero-label">老人ホーム紹介事業</span>
+        <h1 class="hp-hero-title">
+          ハピネス老人ホーム<br>紹介センター大阪
+        </h1>
+        <p class="hp-hero-subtitle">
+          大切なご家族の新しい暮らしを、<br class="sp-only">経験豊富なスタッフがサポートいたします
+        </p>
+        <div class="hp-hero-cta">
+          <a href="#contact" class="hp-btn hp-btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+            </svg>
+            無料相談はこちら
+          </a>
+          <a href="#flow" class="hp-btn hp-btn-outline">
+            ご利用の流れ
+          </a>
+        </div>
+      </div>
+
+      <div class="hp-hero-scroll">SCROLL</div>
+    </section>
+
+    <!-- ========================================
+         About Section - 事業紹介
+    ======================================== -->
+    <section class="hp-section hp-about" id="about">
+      <div class="hp-container">
+        <div class="hp-section-header hp-reveal">
+          <span class="hp-section-label">About</span>
+          <h2 class="hp-section-title">ハピネス老人ホーム紹介センター大阪</h2>
+        </div>
+
+        <div class="hp-about-content">
+          <div class="hp-about-text hp-reveal">
+            <h3>ご家族に寄り添い、最適な施設選びをサポート</h3>
+            <p>
+              ハピネス老人ホーム紹介センター大阪は、大阪を中心に関西エリアの老人ホーム・介護施設をご紹介しています。
+              ご相談からご入居まで完全無料でサポート。施設選びに悩むご家族様の負担を軽減し、
+              ご本人様にとって最適な環境を一緒にお探しします。
+            </p>
+
+            <!-- 2025 Feature Cards -->
+            <div class="hp-about-features">
+              <div class="hp-about-feature">
+                <div class="hp-about-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <span>最短当日対応</span>
+              </div>
+              <div class="hp-about-feature">
+                <div class="hp-about-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <span>完全無料</span>
+              </div>
+              <div class="hp-about-feature">
+                <div class="hp-about-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <span>経験豊富なスタッフ</span>
+              </div>
+              <div class="hp-about-feature">
+                <div class="hp-about-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <span>安心の実績</span>
+              </div>
+            </div>
+
+            <a href="https://osaka-roujinhome.net/" target="_blank" class="hp-btn hp-btn-primary">まずは無料相談</a>
+          </div>
+          <div class="hp-about-image hp-reveal">
+            <!-- 2025 Image Badge -->
+            <div class="hp-about-badge">
+              <div class="hp-about-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                </svg>
+              </div>
+              <div class="hp-about-badge-text">
+                <strong>98%以上</strong>
+                お客様満足度を維持
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Stats Section - 実績カウンター（独立カード）
+    ======================================== -->
+    <section class="hp-stats-section">
+      <div class="hp-container">
+        <div class="hp-stats-cards">
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="1500">0</div>
+            <div class="hp-stat-label">年間紹介実績</div>
+            <div class="hp-stat-unit">件</div>
+          </div>
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="3000">0</div>
+            <div class="hp-stat-label">提携施設数</div>
+            <div class="hp-stat-unit">件以上</div>
+          </div>
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="98">0</div>
+            <div class="hp-stat-label">お客様満足度</div>
+            <div class="hp-stat-unit">%</div>
+          </div>
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="10">0</div>
+            <div class="hp-stat-label">サービス開始</div>
+            <div class="hp-stat-unit">年目</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Staff Section - 横長カードレイアウト
+         ※WordPress編集対応: 各カードのデータを動的に入れ替え可能
+    ======================================== -->
+    <section class="hp-section hp-staff" id="staff">
+      <div class="hp-container">
+        <div class="hp-section-header hp-reveal">
+          <span class="hp-section-label">Team</span>
+          <h2 class="hp-section-title">相談員紹介</h2>
+        </div>
+
+        <!-- メインコンテナ -->
+        <div class="hp-staff-main">
+          <!-- 上部：選択したスタッフの詳細（写真大+情報） -->
+          <div class="hp-staff-detail-area">
+            <div class="hp-staff-detail visible">
+              <!-- 大きな写真/動画 -->
+              <div class="hp-staff-media">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face" alt="山田 太郎" id="staffDetailImg">
+                <video loop muted playsinline id="staffDetailVideo">
+                  <source src="" type="video/mp4">
+                </video>
+                <!-- 再生ボタン -->
+                <button class="hp-staff-play-btn" aria-label="動画を再生">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- 情報パネル -->
+              <div class="hp-staff-info-panel">
+                <div class="hp-staff-info-header">
+                  <p class="hp-staff-role" id="staffDetailRole">センター長</p>
+                  <h3 class="hp-staff-name" id="staffDetailName">山田 太郎</h3>
+                </div>
+                <div class="hp-staff-info-list">
+                  <div class="hp-staff-info-item">
+                    <p class="hp-staff-info-label">趣味・特技</p>
+                    <p class="hp-staff-info-value" id="staffDetailHobby">ゴルフ、読書</p>
+                  </div>
+                  <div class="hp-staff-info-item">
+                    <p class="hp-staff-info-label">資格</p>
+                    <p class="hp-staff-info-value" id="staffDetailQualification">介護福祉士、ケアマネージャー</p>
+                  </div>
+                  <div class="hp-staff-info-item">
+                    <p class="hp-staff-info-label">自己紹介</p>
+                    <p class="hp-staff-info-value" id="staffDetailIntro">介護業界15年の経験を持つベテラン。ご家族様の不安に寄り添い、丁寧なヒアリングで最適な施設をご提案します。</p>
+                  </div>
+                  <div class="hp-staff-info-item">
+                    <p class="hp-staff-info-label">入社年</p>
+                    <p class="hp-staff-info-value" id="staffDetailYear">2010年入社</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 下部：スタッフ写真グリッド（4枚表示） -->
+          <div class="hp-staff-carousel-wrapper">
+            <!-- 左ナビゲーション -->
+            <button class="hp-staff-nav prev" id="staffNavPrev" aria-label="前へ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+
+            <div class="hp-staff-carousel" id="staffCarousel">
+              <!-- スタッフ1 -->
+              <article class="hp-staff-card active" data-staff="0"
+                       data-role="センター長"
+                       data-name="山田 太郎"
+                       data-hobby="ゴルフ、読書"
+                       data-intro="介護業界15年の経験を持つベテラン。ご家族様の不安に寄り添い、丁寧なヒアリングで最適な施設をご提案します。"
+                       data-qualification="介護福祉士、ケアマネージャー"
+                       data-year="2010年入社"
+                       data-img="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face">
+                <div class="hp-staff-thumb">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face" alt="山田 太郎">
+                </div>
+                <p class="hp-staff-card-name">山田 太郎</p>
+              </article>
+
+              <!-- スタッフ2 -->
+              <article class="hp-staff-card" data-staff="1"
+                       data-role="相談員"
+                       data-name="佐藤 花子"
+                       data-hobby="カフェ巡り、ヨガ"
+                       data-intro="お客様一人ひとりに寄り添った丁寧なカウンセリングを心がけています。看護師経験を活かし、医療面でのご相談にも対応可能です。"
+                       data-qualification="看護師、福祉住環境コーディネーター"
+                       data-year="2018年入社"
+                       data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face">
+                <div class="hp-staff-thumb">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face" alt="佐藤 花子">
+                </div>
+                <p class="hp-staff-card-name">佐藤 花子</p>
+              </article>
+
+              <!-- スタッフ3 -->
+              <article class="hp-staff-card" data-staff="2"
+                       data-role="相談員"
+                       data-name="鈴木 一郎"
+                       data-hobby="野球観戦、料理"
+                       data-intro="施設での介護経験を経て相談員になりました。現場を知っているからこそ、ご入居者様の立場に立ったご提案ができます。"
+                       data-qualification="社会福祉士、介護福祉士"
+                       data-year="2015年入社"
+                       data-img="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face">
+                <div class="hp-staff-thumb">
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face" alt="鈴木 一郎">
+                </div>
+                <p class="hp-staff-card-name">鈴木 一郎</p>
+              </article>
+
+              <!-- スタッフ4 -->
+              <article class="hp-staff-card" data-staff="3"
+                       data-role="アドバイザー"
+                       data-name="田中 美咲"
+                       data-hobby="旅行、映画鑑賞"
+                       data-intro="資金計画や費用面でのご相談に強いスタッフ。予算に応じた施設選びや、利用可能な制度のご案内など、お金の不安を解消します。"
+                       data-qualification="FP2級、宅地建物取引士"
+                       data-year="2020年入社"
+                       data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face">
+                <div class="hp-staff-thumb">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face" alt="田中 美咲">
+                </div>
+                <p class="hp-staff-card-name">田中 美咲</p>
+              </article>
+
+              <!-- スタッフ5（ナビゲーションで表示切替） -->
+              <article class="hp-staff-card" data-staff="4"
+                       data-role="相談員"
+                       data-name="高橋 健太"
+                       data-hobby="テニス、写真撮影"
+                       data-intro="医療機関との連携に強みを持つスタッフ。病院からの退院調整や医療依存度の高い方の施設探しを得意としています。"
+                       data-qualification="社会福祉主事、医療連携専門"
+                       data-year="2019年入社"
+                       data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face">
+                <div class="hp-staff-thumb">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face" alt="高橋 健太">
+                </div>
+                <p class="hp-staff-card-name">高橋 健太</p>
+              </article>
+            </div>
+
+            <!-- 右ナビゲーション -->
+            <button class="hp-staff-nav next" id="staffNavNext" aria-label="次へ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- インジケーター（ドット） -->
+          <div class="hp-staff-indicators" id="staffIndicators">
+            <span class="hp-staff-dot active" data-index="0"></span>
+            <span class="hp-staff-dot" data-index="1"></span>
+            <span class="hp-staff-dot" data-index="2"></span>
+            <span class="hp-staff-dot" data-index="3"></span>
+            <span class="hp-staff-dot" data-index="4"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         CTA Section
+    ======================================== -->
+    <section class="hp-section hp-cta">
+      <div class="hp-container">
+        <div class="hp-cta-grid">
+          <a href="https://osaka-roujinhome.net/" target="_blank" class="hp-cta-card primary hp-reveal">
+            <div class="hp-cta-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3 class="hp-cta-title">入居先をお探しの方</h3>
+            <p class="hp-cta-text">
+              ご本人様・ご家族様向け。<br>
+              専門スタッフが無料で施設探しをサポートします。
+            </p>
+            <span class="hp-cta-link">
+              施設を探す
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="./contact.html" class="hp-cta-card accent hp-reveal">
+            <div class="hp-cta-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <h3 class="hp-cta-title">介護施設・企業様向け</h3>
+            <p class="hp-cta-text">
+              入居者募集・業務提携のご相談など、<br>
+              お気軽にお問い合わせください。
+            </p>
+            <span class="hp-cta-link">
+              お問い合わせ
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Flow Section - ご入居までの流れ
+    ======================================== -->
+    <section class="hp-section hp-flow" id="flow">
+      <!-- 背景アニメーション要素 -->
+      <div class="hp-flow-bg-circle"></div>
+      <div class="hp-flow-bg-circle"></div>
+      <div class="hp-flow-bg-circle"></div>
+
+      <div class="hp-container">
+        <div class="hp-section-header hp-reveal">
+          <span class="hp-section-label">Flow</span>
+          <h2 class="hp-section-title">ご入居までの流れ</h2>
+        </div>
+
+        <div class="hp-flow-timeline">
+          <div class="hp-flow-item hp-reveal">
+            <div class="hp-flow-number">1</div>
+            <div class="hp-flow-content">
+              <h3 class="hp-flow-title">お問い合わせ・ご相談</h3>
+              <p class="hp-flow-text">
+                お電話・メール・LINEでお気軽にご相談ください。
+                ご希望の条件やお悩みをお聞かせください。
+              </p>
+            </div>
+            <div class="hp-flow-image">
+              <img src="./images/happiness_data01.jpg" alt="お問い合わせ・ご相談">
+            </div>
+          </div>
+
+          <div class="hp-flow-item hp-reveal">
+            <div class="hp-flow-number">2</div>
+            <div class="hp-flow-content">
+              <h3 class="hp-flow-title">ヒアリング・施設のご提案</h3>
+              <p class="hp-flow-text">
+                ご本人様の状態やご家族のご要望を詳しくお伺いし、
+                最適な施設をご提案いたします。
+              </p>
+            </div>
+            <div class="hp-flow-image">
+              <img src="./images/happiness_data02.jpg" alt="ヒアリング・施設のご提案">
+            </div>
+          </div>
+
+          <div class="hp-flow-item hp-reveal">
+            <div class="hp-flow-number">3</div>
+            <div class="hp-flow-content">
+              <h3 class="hp-flow-title">施設見学</h3>
+              <p class="hp-flow-text">
+                気になる施設へ実際に見学へ。
+                スタッフが同行し、チェックポイントもアドバイス。
+              </p>
+            </div>
+            <div class="hp-flow-image">
+              <div class="hp-flow-image-placeholder">写真</div>
+            </div>
+          </div>
+
+          <div class="hp-flow-item hp-reveal">
+            <div class="hp-flow-number">4</div>
+            <div class="hp-flow-content">
+              <h3 class="hp-flow-title">体験入居・ご契約</h3>
+              <p class="hp-flow-text">
+                体験入居で実際の生活をお試し。
+                納得いただけたらご契約手続きへ。
+              </p>
+            </div>
+            <div class="hp-flow-image">
+              <div class="hp-flow-image-placeholder">写真</div>
+            </div>
+          </div>
+
+          <div class="hp-flow-item hp-reveal">
+            <div class="hp-flow-number">5</div>
+            <div class="hp-flow-content">
+              <h3 class="hp-flow-title">ご入居・アフターフォロー</h3>
+              <p class="hp-flow-text">
+                ご入居後もお困りごとがあればいつでもご相談ください。
+                継続的にサポートいたします。
+              </p>
+            </div>
+            <div class="hp-flow-image">
+              <div class="hp-flow-image-placeholder">写真</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         FAQ Section
+    ======================================== -->
+    <section class="hp-section hp-faq" id="faq">
+      <div class="hp-container">
+        <div class="hp-section-header hp-reveal">
+          <span class="hp-section-label">FAQ</span>
+          <h2 class="hp-section-title">よくあるご質問</h2>
+        </div>
+
+        <div class="hp-faq-list">
+          <div class="hp-faq-item hp-reveal">
+            <button class="hp-faq-question">
+              相談は本当に無料ですか？
+              <span class="hp-faq-icon"></span>
+            </button>
+            <div class="hp-faq-answer">
+              <div class="hp-faq-answer-inner">
+                はい、ご相談から施設のご紹介、ご入居までのサポートはすべて無料です。
+                費用は施設側からいただいておりますので、ご利用者様に費用をご負担いただくことはございません。
+              </div>
+            </div>
+          </div>
+
+          <div class="hp-faq-item hp-reveal">
+            <button class="hp-faq-question">
+              どのような施設を紹介してもらえますか？
+              <span class="hp-faq-icon"></span>
+            </button>
+            <div class="hp-faq-answer">
+              <div class="hp-faq-answer-inner">
+                有料老人ホーム、サービス付き高齢者向け住宅、グループホーム、特別養護老人ホームなど、
+                様々なタイプの施設をご紹介可能です。ご本人様の状態やご希望に合わせて最適な施設をお探しします。
+              </div>
+            </div>
+          </div>
+
+          <div class="hp-faq-item hp-reveal">
+            <button class="hp-faq-question">
+              見学の際はスタッフが同行してくれますか？
+              <span class="hp-faq-icon"></span>
+            </button>
+            <div class="hp-faq-answer">
+              <div class="hp-faq-answer-inner">
+                はい、施設見学には専門スタッフが同行いたします。
+                見学時のチェックポイントや質問のアドバイスなど、施設選びをしっかりサポートします。
+              </div>
+            </div>
+          </div>
+
+          <div class="hp-faq-item hp-reveal">
+            <button class="hp-faq-question">
+              急いで入居先を探しているのですが対応可能ですか？
+              <span class="hp-faq-icon"></span>
+            </button>
+            <div class="hp-faq-answer">
+              <div class="hp-faq-answer-inner">
+                はい、緊急のご相談にも対応しております。
+                病院からの退院日が決まっている場合など、お急ぎの方はお電話でご相談ください。迅速にサポートいたします。
+              </div>
+            </div>
+          </div>
+
+          <div class="hp-faq-item hp-reveal">
+            <button class="hp-faq-question">
+              認知症でも入居できる施設はありますか？
+              <span class="hp-faq-icon"></span>
+            </button>
+            <div class="hp-faq-answer">
+              <div class="hp-faq-answer-inner">
+                はい、認知症の方向けのグループホームや、認知症ケアに力を入れている施設も多数ご紹介可能です。
+                症状の程度に合わせて、適切な施設をお探しいたします。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINE友だち追加ボタン -->
+        <div class="hp-line-btn-wrapper hp-reveal">
+          <p class="hp-line-btn-text">お気軽にお問い合わせください</p>
+          <a href="https://lin.ee/LOKRAlF" class="hp-line-btn">
+            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Contact Section
+    ======================================== -->
+    <section class="hp-contact" id="contact">
+      <div class="hp-container">
+        <h2 class="hp-contact-title hp-reveal">まずはお気軽にご相談ください</h2>
+        <p class="hp-contact-text hp-reveal">
+          施設選びのお悩み、不安なこと、何でもお聞かせください。<br>
+          経験豊富なスタッフが丁寧にサポートいたします。
+        </p>
+
+        <a href="tel:0649632332" class="hp-contact-phone hp-reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+          </svg>
+          06-4963-2332
+        </a>
+
+        <p class="hp-contact-hours hp-reveal">受付時間：9:00〜18:00（土日祝も対応）</p>
+
+        <div class="hp-contact-buttons hp-reveal">
+          <a href="./contact.html" class="hp-btn hp-btn-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            メールで相談
+          </a>
+          <a href="https://lin.ee/LOKRAlF" class="hp-btn hp-btn-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.365 9.863c.349 0 .63.285.631.631 0 .345-.282.63-.63.631H17.61v1.755h1.755c.349 0 .631.283.631.63 0 .349-.282.631-.631.631h-2.386c-.345 0-.627-.282-.63-.629V9.862c0-.349.282-.63.63-.63h2.386zm-3.855 0c.352 0 .635.282.635.631v3.146c0 .349-.283.631-.631.631h-.002c-.349 0-.632-.282-.632-.631V10.5c0-.349.283-.631.631-.631h-.001zm-2.77 0a.63.63 0 0 1 .612.492l.012.057.001.082-.001.082c-.014.074-.037.143-.071.205l-1.411 2.283v1.046c0 .349-.282.631-.631.631-.347 0-.63-.282-.63-.631v-1.046l-1.411-2.283a.632.632 0 0 1-.071-.287c0-.349.282-.631.631-.631.248 0 .469.143.574.367l.896 1.449.896-1.449a.633.633 0 0 1 .574-.367h.051zm-4.783 0c.349 0 .63.282.631.631v1.755c0 .801-.652 1.453-1.454 1.453H5.327a.631.631 0 0 1-.63-.631V10.5c0-.349.282-.631.63-.631.349 0 .63.282.63.631v1.755h1.016c.105 0 .19-.084.19-.19v-1.565a.63.63 0 0 1 .631-.631h.163zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.593.121.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.077 14.464 24 12.494 24 10.314"/>
+            </svg>
+            LINEで相談
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       Footer
+  ======================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/happiness_logo.png" alt="ハピネス老人ホーム紹介センター" class="footer-logo-img" style="max-width: 180px;">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>サービス</h4>
+            <a href="#about">ハピネスについて</a>
+            <a href="#flow">ご利用の流れ</a>
+            <a href="#faq">よくある質問</a>
+          </div>
+          <div class="footer-column">
+            <h4>お問い合わせ</h4>
+            <a href="tel:0649632332">06-4963-2332</a>
+            <a href="./contact.html">メールで相談</a>
+          </div>
+          <div class="footer-column">
+            <h4>運営会社</h4>
+            <a href="./index.html">株式会社イデア</a>
+            <a href="./privacy.html">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 IDEA Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popup Button -->
+  <a href="https://osaka-roujinhome.net/" target="_blank" class="hp-popup-btn">
+    <img src="./images/happiness_logo.png" alt="ハピネス" class="hp-popup-btn-logo">
+    <span class="hp-popup-btn-text">施設探しは<br>コチラ！</span>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="ページトップへ戻る">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+  <script>
+    // ========================================
+    // Happiness Page Scripts
+    // ========================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ----------------------------------------
+      // Reveal Animation
+      // ----------------------------------------
+      const revealElements = document.querySelectorAll('.hp-reveal');
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ----------------------------------------
+      // Counter Animation
+      // ----------------------------------------
+      const counters = document.querySelectorAll('.hp-stat-number');
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            entry.target.classList.add('counted');
+            animateCounter(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => counterObserver.observe(counter));
+
+      function animateCounter(element) {
+        const target = parseInt(element.dataset.count);
+        const duration = 2000;
+        const start = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(target * easeOut);
+
+          element.textContent = current.toLocaleString();
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            element.textContent = target.toLocaleString();
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      // ----------------------------------------
+      // Staff Section - シームレスループカルーセル
+      // ----------------------------------------
+      const staffCarousel = document.getElementById('staffCarousel');
+      const staffCards = document.querySelectorAll('.hp-staff-card');
+      const staffDetail = document.querySelector('.hp-staff-detail');
+      const staffMedia = document.querySelector('.hp-staff-media');
+      const staffDetailImg = document.getElementById('staffDetailImg');
+      const staffDetailVideo = document.getElementById('staffDetailVideo');
+      const staffPlayBtn = document.querySelector('.hp-staff-play-btn');
+      const staffNavPrev = document.getElementById('staffNavPrev');
+      const staffNavNext = document.getElementById('staffNavNext');
+
+      // 詳細情報の要素
+      const staffDetailRole = document.getElementById('staffDetailRole');
+      const staffDetailName = document.getElementById('staffDetailName');
+      const staffDetailHobby = document.getElementById('staffDetailHobby');
+      const staffDetailQualification = document.getElementById('staffDetailQualification');
+      const staffDetailIntro = document.getElementById('staffDetailIntro');
+      const staffDetailYear = document.getElementById('staffDetailYear');
+
+      // シームレスループ用
+      const originalCards = Array.from(staffCards);
+      const totalOriginal = originalCards.length;
+      let activeIndex = 0;
+      let isAnimating = false;
+
+      const cardWidth = 180;
+      const cardGap = 24;
+      const cardTotal = cardWidth + cardGap;
+
+      // 前後にクローンを追加してシームレスループ
+      const clonesPerSide = 3;
+
+      // 後ろにクローン追加
+      for (let i = 0; i < clonesPerSide; i++) {
+        const clone = originalCards[i % totalOriginal].cloneNode(true);
+        clone.classList.add('clone');
+        clone.dataset.cloneOf = i % totalOriginal;
+        staffCarousel.appendChild(clone);
+      }
+
+      // 前にクローン追加
+      for (let i = 0; i < clonesPerSide; i++) {
+        const srcIdx = totalOriginal - 1 - (i % totalOriginal);
+        const clone = originalCards[srcIdx].cloneNode(true);
+        clone.classList.add('clone');
+        clone.dataset.cloneOf = srcIdx;
+        staffCarousel.insertBefore(clone, staffCarousel.firstChild);
+      }
+
+      // 全カード取得
+      const allCards = staffCarousel.querySelectorAll('.hp-staff-card');
+      const offsetIndex = clonesPerSide;
+
+      allCards.forEach(card => {
+        card.style.display = 'block';
+      });
+
+      // スライド位置を設定
+      function slideCarousel(index, animate = true) {
+        const wrapperWidth = staffCarousel.parentElement.offsetWidth;
+        const centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+        const slideX = centerOffset - (index * cardTotal);
+
+        staffCarousel.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+        staffCarousel.style.transform = `translateX(${slideX}px)`;
+      }
+
+      // アクティブ状態を更新
+      function updateVisualState(index) {
+        allCards.forEach(c => c.classList.remove('active'));
+        if (allCards[index]) allCards[index].classList.add('active');
+      }
+
+      // インジケーター取得
+      const staffDots = document.querySelectorAll('.hp-staff-dot');
+
+      // インジケーター更新
+      function updateIndicators(index) {
+        staffDots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      // インジケータークリック
+      staffDots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          if (isAnimating) return;
+          activeIndex = idx;
+          visualIndex = offsetIndex + activeIndex;
+          slideCarousel(visualIndex, true);
+          updateVisualState(visualIndex);
+          updateIndicators(activeIndex);
+          updateStaffDetail(originalCards[activeIndex]);
+        });
+      });
+
+      let visualIndex = offsetIndex + activeIndex;
+
+      // ナビゲーション
+      function navigate(direction) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        visualIndex += direction;
+        slideCarousel(visualIndex, true);
+        updateVisualState(visualIndex);
+
+        activeIndex += direction;
+        if (activeIndex >= totalOriginal) activeIndex = 0;
+        if (activeIndex < 0) activeIndex = totalOriginal - 1;
+
+        updateIndicators(activeIndex);
+        updateStaffDetail(originalCards[activeIndex]);
+
+        setTimeout(() => {
+          if (visualIndex <= offsetIndex - 1) {
+            visualIndex = offsetIndex + totalOriginal - 1;
+            slideCarousel(visualIndex, false);
+            updateVisualState(visualIndex);
+          } else if (visualIndex >= offsetIndex + totalOriginal) {
+            visualIndex = offsetIndex;
+            slideCarousel(visualIndex, false);
+            updateVisualState(visualIndex);
+          }
+          isAnimating = false;
+        }, 520);
+      }
+
+      if (staffNavPrev) {
+        staffNavPrev.addEventListener('click', () => navigate(-1));
+      }
+
+      if (staffNavNext) {
+        staffNavNext.addEventListener('click', () => navigate(1));
+      }
+
+      // カードクリック
+      allCards.forEach((card, idx) => {
+        card.addEventListener('click', () => {
+          if (isAnimating) return;
+          const cloneOf = card.dataset.cloneOf;
+          if (cloneOf !== undefined) {
+            activeIndex = parseInt(cloneOf);
+          } else {
+            activeIndex = idx - offsetIndex;
+          }
+          visualIndex = offsetIndex + activeIndex;
+          slideCarousel(visualIndex, true);
+          updateVisualState(visualIndex);
+          updateIndicators(activeIndex);
+          updateStaffDetail(originalCards[activeIndex]);
+        });
+      });
+
+      // 初期表示
+      slideCarousel(visualIndex, false);
+      updateVisualState(visualIndex);
+
+      // リサイズ対応
+      window.addEventListener('resize', () => {
+        slideCarousel(visualIndex, false);
+      });
+
+      // 詳細パネルを更新
+      function updateStaffDetail(card) {
+        if (!staffDetail) return;
+
+        const role = card.dataset.role || '相談員';
+        const name = card.dataset.name || '名前';
+        const hobby = card.dataset.hobby || '-';
+        const intro = card.dataset.intro || '-';
+        const qualification = card.dataset.qualification || '-';
+        const year = card.dataset.year || '-';
+        const img = card.dataset.img || '';
+
+        // 一度非表示にしてアニメーション
+        staffDetail.classList.remove('visible');
+
+        setTimeout(() => {
+          // テキスト更新
+          if (staffDetailRole) staffDetailRole.textContent = role;
+          if (staffDetailName) staffDetailName.textContent = name;
+          if (staffDetailHobby) staffDetailHobby.textContent = hobby;
+          if (staffDetailQualification) staffDetailQualification.textContent = qualification;
+          if (staffDetailIntro) staffDetailIntro.textContent = intro;
+          if (staffDetailYear) staffDetailYear.textContent = year;
+
+          // 画像更新
+          if (staffDetailImg && img) {
+            staffDetailImg.src = img;
+            staffDetailImg.alt = name;
+          }
+
+          // 動画停止・リセット
+          if (staffMedia) {
+            staffMedia.classList.remove('playing');
+          }
+          if (staffDetailVideo) {
+            staffDetailVideo.pause();
+            staffDetailVideo.currentTime = 0;
+          }
+
+          // 表示
+          staffDetail.classList.add('visible');
+        }, 150);
+      }
+
+      // カードクリック
+      staffCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          activeIndex = index; // インデックスを更新
+          setActiveCard(activeIndex);
+        });
+      });
+
+      // 再生ボタンクリックで動画再生
+      if (staffPlayBtn && staffMedia) {
+        staffPlayBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // 動画がある場合のみ再生
+          const videoSource = staffDetailVideo ? staffDetailVideo.querySelector('source') : null;
+          if (videoSource && videoSource.src) {
+            staffMedia.classList.toggle('playing');
+            if (staffMedia.classList.contains('playing')) {
+              staffDetailVideo.play();
+            } else {
+              staffDetailVideo.pause();
+            }
+          }
+        });
+      }
+
+      // ----------------------------------------
+      // FAQ Accordion
+      // ----------------------------------------
+      const faqItems = document.querySelectorAll('.hp-faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.hp-faq-question');
+
+        question.addEventListener('click', function() {
+          const isActive = item.classList.contains('active');
+
+          // 他のアイテムを閉じる
+          faqItems.forEach(i => i.classList.remove('active'));
+
+          // クリックしたアイテムをトグル
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

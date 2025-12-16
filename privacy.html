@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社イデアのプライバシーポリシー。個人情報の取り扱いについて。">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="./assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>プライバシーポリシー | 株式会社イデア</title>
+
+  <style>
+    .privacy-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .privacy-content h2 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin: var(--space-3xl) 0 var(--space-lg);
+      padding-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .privacy-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .privacy-content p {
+      color: var(--color-gray-600);
+      line-height: 2;
+      margin-bottom: var(--space-lg);
+    }
+
+    .privacy-content ul {
+      margin-bottom: var(--space-lg);
+      padding-left: var(--space-xl);
+    }
+
+    .privacy-content li {
+      color: var(--color-gray-600);
+      line-height: 2;
+      margin-bottom: var(--space-sm);
+      list-style: disc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <!-- 老人ホーム紹介事業 -->
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./happiness.html">サービス概要</a>
+              <a href="./happiness.html#flow">ご利用の流れ</a>
+              <a href="./contact.html">無料相談</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- デジケア -->
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./marketing.html">サービス概要</a>
+              <a href="./marketing.html#seo">SEO対策</a>
+              <a href="./marketing.html#meo">MEO対策</a>
+              <a href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作事業 -->
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/crankup_logo.png" alt="クランクアップ">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./crankup.html">サービス概要</a>
+              <a href="./crankup.html#video">動画制作</a>
+              <a href="./crankup.html#web">WEB制作</a>
+              <a href="./crankup.html#design">デザイン</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PC版メガメニュートグル -->
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- PC版メガメニュー -->
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">プライバシーポリシー</h1>
+      <nav class="breadcrumb">
+        <a href="./">ホーム</a>
+        <span>/</span>
+        <span>プライバシーポリシー</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Content -->
+  <section class="section">
+    <div class="container">
+      <div class="privacy-content reveal">
+        <p>
+          株式会社イデア（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と認識し、以下のとおりプライバシーポリシーを定め、個人情報の適切な取り扱いに努めます。
+        </p>
+
+        <h2>1. 個人情報の定義</h2>
+        <p>
+          本プライバシーポリシーにおいて「個人情報」とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの、または個人識別符号が含まれるものを指します。
+        </p>
+
+        <h2>2. 個人情報の収集</h2>
+        <p>
+          当社は、以下の場合に個人情報を収集することがあります。
+        </p>
+        <ul>
+          <li>お問い合わせフォームからのご連絡</li>
+          <li>サービスのお申し込み</li>
+          <li>採用へのご応募</li>
+          <li>その他、当社サービスのご利用</li>
+        </ul>
+
+        <h2>3. 個人情報の利用目的</h2>
+        <p>
+          当社は、収集した個人情報を以下の目的で利用いたします。
+        </p>
+        <ul>
+          <li>お問い合わせへの回答</li>
+          <li>サービスの提供・運営</li>
+          <li>サービスに関するご案内</li>
+          <li>採用選考</li>
+          <li>当社サービスの改善・開発</li>
+          <li>その他、上記利用目的に付随する業務</li>
+        </ul>
+
+        <h2>4. 個人情報の第三者提供</h2>
+        <p>
+          当社は、以下の場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。
+        </p>
+        <ul>
+          <li>法令に基づく場合</li>
+          <li>人の生命、身体または財産の保護のために必要がある場合</li>
+          <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
+          <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+        </ul>
+
+        <h2>5. 個人情報の安全管理</h2>
+        <p>
+          当社は、個人情報の漏洩、滅失またはき損の防止その他の個人情報の安全管理のために必要かつ適切な措置を講じます。
+        </p>
+
+        <h2>6. 個人情報の開示・訂正・削除</h2>
+        <p>
+          お客様は、当社が保有するご自身の個人情報について、開示、訂正、削除等を請求することができます。ご請求の際は、下記お問い合わせ先までご連絡ください。
+        </p>
+
+        <h2>7. Cookieの使用について</h2>
+        <p>
+          当社のウェブサイトでは、サービスの利便性向上のためCookieを使用する場合があります。Cookieの使用を希望されない場合は、ブラウザの設定により無効にすることができます。
+        </p>
+
+        <h2>8. プライバシーポリシーの変更</h2>
+        <p>
+          当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、当社ウェブサイトに掲載した時点から効力を生じるものとします。
+        </p>
+
+        <h2>9. お問い合わせ先</h2>
+        <p>
+          本プライバシーポリシーに関するお問い合わせは、下記までご連絡ください。
+        </p>
+        <p>
+          株式会社イデア<br>
+          〒542-0076 大阪府大阪市中央区難波2-3-11<br>
+          TEL: 06-4963-2332
+        </p>
+
+        <p style="text-align: right; margin-top: var(--space-3xl); color: var(--color-gray-500);">
+          制定日：○○年○○月○○日<br>
+          最終改定日：○○年○○月○○日
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./works.html">実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

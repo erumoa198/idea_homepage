@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>コラム | 株式会社イデア - 介護業界のマーケティング情報</title>
+  <meta name="description" content="介護業界のマーケティングに役立つ情報をお届けします。MEO対策、SNS運用、採用マーケティング、Web制作のノウハウを解説。">
+  <meta name="keywords" content="介護マーケティング,MEO対策,SNS運用,採用マーケティング,介護施設,コラム">
+  <meta name="author" content="株式会社イデア">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="株式会社イデア">
+  <meta property="og:title" content="コラム | 株式会社イデア">
+  <meta property="og:description" content="介護業界のマーケティングに役立つ情報をお届けします。">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Page Specific Styles -->
+  <style>
+    /* ========================================
+       コラムページ専用スタイル
+    ======================================== */
+
+    /* ページヒーロー */
+    .page-hero {
+      padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl);
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      text-align: center;
+    }
+
+    .page-hero-label {
+      display: inline-block;
+      font-family: var(--font-accent);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-md);
+    }
+
+    .page-hero-title {
+      font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-lg);
+    }
+
+    .page-hero-desc {
+      font-size: var(--text-lg);
+      color: var(--color-text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* カテゴリフィルター */
+    .column-filter {
+      padding: var(--space-2xl) 0;
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .column-filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+
+    .column-filter-item {
+      padding: var(--space-sm) var(--space-xl);
+      background: var(--color-off-white);
+      color: var(--color-text);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      border-radius: var(--radius-full);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .column-filter-item:hover,
+    .column-filter-item.active {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    /* コラム一覧 */
+    .column-list {
+      padding: var(--space-5xl) 0;
+    }
+
+    .column-list-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2xl);
+    }
+
+    /* コラムカード（大きいバージョン） */
+    .column-item {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+    }
+
+    .column-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .column-item-link {
+      display: block;
+      color: inherit;
+    }
+
+    .column-item-image {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .column-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .column-item:hover .column-item-image img {
+      transform: scale(1.05);
+    }
+
+    .column-item-category {
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-md);
+      padding: var(--space-xs) var(--space-md);
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+    }
+
+    .column-item-content {
+      padding: var(--space-xl);
+    }
+
+    .column-item-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .column-item-date {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .column-item-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin-bottom: var(--space-md);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .column-item-excerpt {
+      font-size: var(--text-sm);
+      color: var(--color-text-light);
+      line-height: 1.8;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 記事詳細セクション */
+    .column-detail {
+      padding: var(--space-5xl) 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .column-detail-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .column-detail-header {
+      margin-bottom: var(--space-3xl);
+    }
+
+    .column-detail-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .column-detail-category {
+      padding: var(--space-xs) var(--space-md);
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+    }
+
+    .column-detail-date {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .column-detail-title {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--color-text);
+      margin-bottom: var(--space-xl);
+    }
+
+    .column-detail-image {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .column-detail-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 記事本文 */
+    .column-detail-body {
+      font-size: var(--text-base);
+      line-height: 2;
+      color: var(--color-text);
+    }
+
+    .column-detail-body h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-top: var(--space-4xl);
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-md);
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    .column-detail-body h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-top: var(--space-3xl);
+      margin-bottom: var(--space-lg);
+      color: var(--color-primary);
+    }
+
+    .column-detail-body p {
+      margin-bottom: var(--space-xl);
+    }
+
+    .column-detail-body ul,
+    .column-detail-body ol {
+      margin-bottom: var(--space-xl);
+      padding-left: var(--space-xl);
+    }
+
+    .column-detail-body li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .column-detail-body blockquote {
+      padding: var(--space-xl);
+      background: var(--color-off-white);
+      border-left: 4px solid var(--color-primary);
+      margin-bottom: var(--space-xl);
+      font-style: italic;
+    }
+
+    /* 関連記事 */
+    .column-related {
+      padding: var(--space-5xl) 0;
+      background: var(--color-off-white);
+    }
+
+    .column-related-title {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .column-related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+
+    /* CTA セクション */
+    .column-cta {
+      padding: var(--space-5xl) 0;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #004a7a 100%);
+      text-align: center;
+    }
+
+    .column-cta-title {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: var(--space-lg);
+    }
+
+    .column-cta-desc {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .column-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-3xl);
+      background: var(--color-white);
+      color: var(--color-primary);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      transition: var(--transition-fast);
+    }
+
+    .column-cta-btn:hover {
+      background: var(--color-accent);
+      color: var(--color-white);
+      transform: translateY(-2px);
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 1024px) {
+      .column-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .column-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .column-list-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .column-related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .column-filter-list {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--space-md);
+      }
+
+      .column-filter-item {
+        white-space: nowrap;
+      }
+
+      .column-detail-title {
+        font-size: var(--text-2xl);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav">
+        <a href="./index.html#about">会社について</a>
+        <a href="./index.html#services">サービス</a>
+        <a href="./cases.html">導入事例</a>
+        <a href="./column.html" class="active">コラム</a>
+        <a href="./recruit.html">採用情報</a>
+        <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile">
+      <a href="./index.html">ホーム</a>
+      <a href="./index.html#about">会社について</a>
+      <a href="./index.html#services">サービス</a>
+      <a href="./cases.html">導入事例</a>
+      <a href="./column.html">コラム</a>
+      <a href="./happiness.html">老人ホーム紹介</a>
+      <a href="./marketing.html">デジケア</a>
+      <a href="./crankup.html">制作事業</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./contact.html" class="btn btn-primary mt-xl">お問い合わせ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <main id="main-content">
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-label">COLUMN</span>
+        <h1 class="page-hero-title">コラム</h1>
+        <p class="page-hero-desc">
+          介護業界のマーケティングに役立つ情報をお届けします。<br>
+          現場で使えるノウハウを分かりやすく解説しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- カテゴリフィルター -->
+    <section class="column-filter">
+      <div class="container">
+        <div class="column-filter-list">
+          <button class="column-filter-item active">すべて</button>
+          <button class="column-filter-item">MEO対策</button>
+          <button class="column-filter-item">SNS運用</button>
+          <button class="column-filter-item">採用</button>
+          <button class="column-filter-item">Web制作</button>
+          <button class="column-filter-item">動画制作</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 記事詳細 1 -->
+    <section class="column-detail" id="col1">
+      <div class="container">
+        <div class="column-detail-inner reveal">
+          <div class="column-detail-header">
+            <div class="column-detail-meta">
+              <span class="column-detail-category">MEO対策</span>
+              <time class="column-detail-date" datetime="2024-12-01">2024年12月1日</time>
+            </div>
+            <h2 class="column-detail-title">介護施設のためのMEO対策入門〜Googleマップで選ばれる施設になるには〜</h2>
+          </div>
+          <div class="column-detail-image">
+            <img src="https://picsum.photos/seed/column-detail1/1200/600" alt="MEO対策の基本" loading="lazy">
+          </div>
+          <div class="column-detail-body">
+            <p>
+              「介護施設 近く」「老人ホーム 〇〇区」などの検索で、Googleマップに自分の施設が表示されていますか？MEO対策（Map Engine Optimization）は、地域密着型の介護施設にとって非常に重要なマーケティング手法です。
+            </p>
+
+            <h2>MEO対策とは？</h2>
+            <p>
+              MEO対策とは、Googleマップやローカル検索結果で自社の情報を上位表示させるための施策です。介護施設を探すご家族の多くは、まず「近くの施設」を検索します。その際にGoogleマップで上位表示されることで、問い合わせにつながりやすくなります。
+            </p>
+
+            <h3>なぜ介護業界でMEO対策が重要なのか</h3>
+            <ul>
+              <li>施設選びは「地域」が重要な判断基準</li>
+              <li>ご家族はスマホで検索することが多い</li>
+              <li>口コミ・評価が信頼性に直結する</li>
+              <li>競合との差別化が可能</li>
+            </ul>
+
+            <h2>すぐに始められる3つの施策</h2>
+
+            <h3>1. Googleビジネスプロフィールの最適化</h3>
+            <p>
+              まずは基本情報を正確に入力しましょう。施設名、住所、電話番号、営業時間など、すべての項目を埋めることが重要です。特に「カテゴリ」の設定は検索結果に大きく影響します。
+            </p>
+
+            <h3>2. 写真・動画の定期的な投稿</h3>
+            <p>
+              施設の雰囲気が伝わる写真を定期的に投稿しましょう。スタッフの笑顔、イベントの様子、居室の写真など、「ここに入居したい」と思える写真が効果的です。
+            </p>
+
+            <h3>3. 口コミへの丁寧な返信</h3>
+            <p>
+              良い口コミにも悪い口コミにも、必ず返信しましょう。返信の姿勢がそのまま施設の印象になります。誠実な対応が新規のお客様への信頼につながります。
+            </p>
+
+            <blockquote>
+              MEO対策は「一度やって終わり」ではありません。継続的な運用が成果を生みます。まずは基本的な情報整備から始めて、少しずつ施策を広げていきましょう。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 記事詳細 2 -->
+    <section class="column-detail" id="col2">
+      <div class="container">
+        <div class="column-detail-inner reveal">
+          <div class="column-detail-header">
+            <div class="column-detail-meta">
+              <span class="column-detail-category">SNS運用</span>
+              <time class="column-detail-date" datetime="2024-11-15">2024年11月15日</time>
+            </div>
+            <h2 class="column-detail-title">介護施設のSNS活用術〜Instagramで施設の魅力を発信するコツ〜</h2>
+          </div>
+          <div class="column-detail-image">
+            <img src="https://picsum.photos/seed/column-detail2/1200/600" alt="SNS活用術" loading="lazy">
+          </div>
+          <div class="column-detail-body">
+            <p>
+              「SNSで何を発信すればいいかわからない」「若い人向けのツールでは？」そんな声をよく聞きます。しかし、Instagramは介護施設の魅力を伝えるのに最適なツールです。
+            </p>
+
+            <h2>なぜInstagramなのか？</h2>
+            <p>
+              Instagramのユーザー層は30代〜50代にも広がっています。ご家族が施設を探す際、Instagramで雰囲気を確認するケースが増えています。また、採用活動においても「この施設で働きたい」と思ってもらうきっかけになります。
+            </p>
+
+            <h3>投稿のポイント</h3>
+            <ul>
+              <li>日常の何気ない一コマを切り取る</li>
+              <li>スタッフの笑顔を積極的に発信</li>
+              <li>季節のイベントや行事を紹介</li>
+              <li>入居者様（許可を得て）の生き生きとした表情</li>
+            </ul>
+
+            <h2>運用を続けるコツ</h2>
+
+            <h3>1. 担当者を決める</h3>
+            <p>
+              「みんなでやろう」は「誰もやらない」になりがち。責任者を1人決めて、その人が中心になって運用しましょう。
+            </p>
+
+            <h3>2. 投稿テンプレートを作る</h3>
+            <p>
+              毎回ゼロから考えるのは大変です。「月曜日は食事紹介」「金曜日はスタッフ紹介」など、曜日ごとのテーマを決めると継続しやすくなります。
+            </p>
+
+            <h3>3. 完璧を求めすぎない</h3>
+            <p>
+              プロのような写真でなくても大丈夫。むしろ「リアルな日常」が伝わる方が、見る人の心に響きます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 記事詳細 3 -->
+    <section class="column-detail" id="col3">
+      <div class="container">
+        <div class="column-detail-inner reveal">
+          <div class="column-detail-header">
+            <div class="column-detail-meta">
+              <span class="column-detail-category">採用</span>
+              <time class="column-detail-date" datetime="2024-11-01">2024年11月1日</time>
+            </div>
+            <h2 class="column-detail-title">人材不足を解消！介護業界の採用マーケティング成功のポイント</h2>
+          </div>
+          <div class="column-detail-image">
+            <img src="https://picsum.photos/seed/column-detail3/1200/600" alt="採用成功のポイント" loading="lazy">
+          </div>
+          <div class="column-detail-body">
+            <p>
+              介護業界の人材不足は深刻な課題です。求人を出しても応募が来ない、来ても続かない。そんな悩みを抱える施設は少なくありません。しかし、マーケティングの視点を取り入れることで、採用活動を大きく改善できます。
+            </p>
+
+            <h2>採用マーケティングとは？</h2>
+            <p>
+              採用マーケティングとは、商品やサービスを売るマーケティング手法を採用活動に応用することです。「応募者を待つ」姿勢から「求職者に選ばれる」姿勢への転換が重要です。
+            </p>
+
+            <h3>成功のための3つのポイント</h3>
+
+            <h3>1. 施設の「らしさ」を明確にする</h3>
+            <p>
+              「うちの施設で働く魅力は何か？」を言語化しましょう。給与や福利厚生だけでなく、職場の雰囲気、成長機会、働き方など、あなたの施設ならではの魅力を伝えることが大切です。
+            </p>
+
+            <h3>2. 求職者目線でコンテンツを作る</h3>
+            <p>
+              求職者が知りたいのは「実際に働いたらどうなるか」です。先輩スタッフのインタビュー、1日の流れ、キャリアパスなど、リアルな情報を発信しましょう。
+            </p>
+
+            <h3>3. 複数のチャネルで接点を作る</h3>
+            <p>
+              求人サイトだけでなく、Instagram、YouTube、自社ホームページなど、複数のチャネルで情報を発信。求職者との接点を増やすことで、認知から応募への流れを作ります。
+            </p>
+
+            <blockquote>
+              採用活動は「人材獲得競争」です。他社と同じことをしていては差別化できません。マーケティングの力で、選ばれる施設になりましょう。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 記事詳細 4 -->
+    <section class="column-detail" id="col4">
+      <div class="container">
+        <div class="column-detail-inner reveal">
+          <div class="column-detail-header">
+            <div class="column-detail-meta">
+              <span class="column-detail-category">Web制作</span>
+              <time class="column-detail-date" datetime="2024-10-20">2024年10月20日</time>
+            </div>
+            <h2 class="column-detail-title">問い合わせが増える介護施設ホームページの作り方</h2>
+          </div>
+          <div class="column-detail-image">
+            <img src="https://picsum.photos/seed/column-detail4/1200/600" alt="ホームページ活用" loading="lazy">
+          </div>
+          <div class="column-detail-body">
+            <p>
+              「ホームページはあるけど問い合わせが来ない」そんなお悩みはありませんか？ホームページは作るだけでは効果がありません。「問い合わせにつながる」設計が必要です。
+            </p>
+
+            <h2>問い合わせが来ないホームページの特徴</h2>
+            <ul>
+              <li>スマホで見づらい（レスポンシブ非対応）</li>
+              <li>情報が古いまま放置されている</li>
+              <li>問い合わせ方法がわかりにくい</li>
+              <li>写真が少ない、または古い</li>
+              <li>施設の「強み」が伝わらない</li>
+            </ul>
+
+            <h2>改善のための5つのポイント</h2>
+
+            <h3>1. スマホファースト</h3>
+            <p>
+              施設を探すご家族の多くはスマホで検索します。スマホで見やすく、操作しやすいデザインを最優先にしましょう。
+            </p>
+
+            <h3>2. ファーストビューで伝える</h3>
+            <p>
+              ページを開いた瞬間（スクロールする前）に、施設の魅力が伝わるようにしましょう。キャッチコピー、メイン写真、連絡先が一目でわかることが大切です。
+            </p>
+
+            <h3>3. 写真で雰囲気を伝える</h3>
+            <p>
+              文章よりも写真のほうが情報が伝わります。施設内観、居室、スタッフ、イベントなど、多様な写真を掲載しましょう。
+            </p>
+
+            <h3>4. 問い合わせボタンを目立たせる</h3>
+            <p>
+              「問い合わせはこちら」のボタンは、スクロールしても常に表示される固定ボタンにするのがおすすめです。電話番号もすぐにタップできるようにしましょう。
+            </p>
+
+            <h3>5. 定期的に更新する</h3>
+            <p>
+              最終更新日が何年も前のホームページは信頼性が下がります。ブログやお知らせを定期的に更新して、「活発に運営されている施設」という印象を与えましょう。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="column-cta">
+      <div class="container">
+        <h2 class="column-cta-title reveal">マーケティングでお悩みではありませんか？</h2>
+        <p class="column-cta-desc reveal">
+          介護業界に特化した私たちが、あなたの施設に合った解決策をご提案します。<br>
+          まずはお気軽にご相談ください。
+        </p>
+        <a href="./contact.html" class="column-cta-btn reveal">
+          無料相談はこちら
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./cases.html">導入事例</a></li>
+              <li><a href="./column.html">コラム</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="./js/main.js"></script>
+  <script>
+    // カテゴリフィルターの動作
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterItems = document.querySelectorAll('.column-filter-item');
+
+      filterItems.forEach(item => {
+        item.addEventListener('click', function() {
+          filterItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+          // ここでフィルタリング処理を追加できます
+        });
+      });
+    });
+  </script>
+</body>
+</html>

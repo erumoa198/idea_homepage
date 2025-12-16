@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社イデアへのお問い合わせ。お気軽にご相談ください。">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="./assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>お問い合わせ | 株式会社イデア</title>
+
+  <style>
+    .contact-form-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-xl);
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      font-size: var(--text-sm);
+    }
+
+    .form-label .required {
+      display: inline-block;
+      padding: 2px 8px;
+      background: var(--color-error);
+      color: var(--color-white);
+      font-size: var(--text-xs);
+      border-radius: var(--radius-sm);
+      margin-left: var(--space-sm);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: var(--space-md);
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: var(--text-base);
+      transition: var(--transition-base);
+      background: var(--color-white);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+
+    .form-input.error,
+    .form-textarea.error,
+    .form-select.error {
+      border-color: var(--color-error);
+    }
+
+    .form-textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    .form-checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+    }
+
+    .form-checkbox {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      cursor: pointer;
+    }
+
+    .form-checkbox input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--color-accent);
+    }
+
+    .form-submit {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-2xl);
+    }
+
+    .form-submit button {
+      min-width: 300px;
+      padding: var(--space-lg) var(--space-3xl);
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      transition: var(--transition-base);
+    }
+
+    .form-submit button:hover {
+      background: var(--color-accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .contact-info-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .contact-info-card {
+      padding: var(--space-xl);
+      background: var(--color-gray-50);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+
+    .contact-info-card-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-md);
+      color: var(--color-accent);
+    }
+
+    .contact-info-card-title {
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+
+    .contact-info-card-value {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .contact-info-card-value a {
+      color: inherit;
+    }
+
+    .contact-info-card-value a:hover {
+      color: var(--color-accent);
+    }
+
+    @media (max-width: 768px) {
+      .contact-info-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .form-checkbox-group {
+        flex-direction: column;
+      }
+
+      .form-submit button {
+        width: 100%;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <!-- 老人ホーム紹介事業 -->
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./happiness.html">サービス概要</a>
+              <a href="./happiness.html#flow">ご利用の流れ</a>
+              <a href="./contact.html">無料相談</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- デジケア -->
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./marketing.html">サービス概要</a>
+              <a href="./marketing.html#seo">SEO対策</a>
+              <a href="./marketing.html#meo">MEO対策</a>
+              <a href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作事業 -->
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/crankup_logo.png" alt="クランクアップ">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./crankup.html">サービス概要</a>
+              <a href="./crankup.html#video">動画制作</a>
+              <a href="./crankup.html#web">WEB制作</a>
+              <a href="./crankup.html#design">デザイン</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PC版メガメニュートグル -->
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- PC版メガメニュー -->
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">お問い合わせ</h1>
+      <nav class="breadcrumb">
+        <a href="./">ホーム</a>
+        <span>/</span>
+        <span>お問い合わせ</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="contact-form-section">
+        <div class="contact-info-cards reveal">
+          <div class="contact-info-card">
+            <div class="contact-info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <p class="contact-info-card-title">お電話でのお問い合わせ</p>
+            <p class="contact-info-card-value">
+              <a href="tel:06-4963-2332">06-4963-2332</a>
+            </p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <p class="contact-info-card-title">所在地</p>
+            <p class="contact-info-card-value" style="font-size: var(--text-base);">
+              〒542-0076<br>
+              大阪府大阪市中央区難波2-3-11
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-form-section">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Contact Form</span>
+          <h2 class="section-title">フォームでのお問い合わせ</h2>
+        </div>
+
+        <form class="contact-form reveal" action="#" method="post">
+          <div class="form-group">
+            <label class="form-label" for="inquiry-type">
+              お問い合わせ種別
+              <span class="required">必須</span>
+            </label>
+            <select class="form-select" id="inquiry-type" name="inquiry_type" required>
+              <option value="">選択してください</option>
+              <option value="老人ホーム紹介について">老人ホーム紹介について</option>
+              <option value="デジケアについて">デジケアについて</option>
+              <option value="制作について">制作について</option>
+              <option value="採用について">採用について</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="company">
+              会社名・団体名
+            </label>
+            <input type="text" class="form-input" id="company" name="company" placeholder="株式会社○○">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="name">
+              お名前
+              <span class="required">必須</span>
+            </label>
+            <input type="text" class="form-input" id="name" name="name" required data-label="お名前" placeholder="山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">
+              メールアドレス
+              <span class="required">必須</span>
+            </label>
+            <input type="email" class="form-input" id="email" name="email" required data-label="メールアドレス" placeholder="example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tel">
+              電話番号
+            </label>
+            <input type="tel" class="form-input" id="tel" name="tel" placeholder="06-0000-0000">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              お問い合わせ内容
+              <span class="required">必須</span>
+            </label>
+            <textarea class="form-textarea" id="message" name="message" required data-label="お問い合わせ内容" placeholder="お問い合わせ内容をご入力ください"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              <input type="checkbox" required style="margin-right: var(--space-sm);">
+              <a href="./privacy.html" target="_blank" style="color: var(--color-accent); text-decoration: underline;">プライバシーポリシー</a>に同意する
+              <span class="required">必須</span>
+            </label>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit">送信する</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./works.html">実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

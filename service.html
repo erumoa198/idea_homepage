@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社イデアの事業一覧。老人ホーム紹介事業、介護福祉デジケア、クランクアップをご紹介します。">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="./assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>事業一覧 | 株式会社イデア</title>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <!-- 老人ホーム紹介事業 -->
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./happiness.html">サービス概要</a>
+              <a href="./happiness.html#flow">ご利用の流れ</a>
+              <a href="./contact.html">無料相談</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- デジケア -->
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./marketing.html">サービス概要</a>
+              <a href="./marketing.html#seo">SEO対策</a>
+              <a href="./marketing.html#meo">MEO対策</a>
+              <a href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作事業 -->
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/crankup_logo.png" alt="クランクアップ">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./crankup.html">サービス概要</a>
+              <a href="./crankup.html#video">動画制作</a>
+              <a href="./crankup.html#web">WEB制作</a>
+              <a href="./crankup.html#design">デザイン</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PC版メガメニュートグル -->
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- PC版メガメニュー -->
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">事業一覧</h1>
+      <nav class="breadcrumb">
+        <a href="./">ホーム</a>
+        <span>/</span>
+        <span>事業一覧</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <!-- Service 1 -->
+      <article class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; margin-bottom: var(--space-5xl);">
+        <div style="aspect-ratio: 16/10; background: var(--color-gray-200); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+          写真
+        </div>
+        <div>
+          <span class="section-label">Service 01</span>
+          <h2 style="font-size: var(--text-2xl); font-weight: 700; margin: var(--space-sm) 0 var(--space-lg);">老人ホーム紹介事業</h2>
+          <p style="color: var(--color-gray-600); line-height: 2; margin-bottom: var(--space-xl);">
+            「ハピネス老人ホーム紹介センター大阪」として、ご利用者様とご家族様に最適な老人ホームをご紹介しています。専門のアドバイザーが親身になってサポートします。
+          </p>
+          <a href="./happiness.html" class="btn btn-primary">
+            詳しく見る
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; margin-bottom: var(--space-5xl);">
+        <div style="order: 2; aspect-ratio: 16/10; background: var(--color-gray-200); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+          写真
+        </div>
+        <div style="order: 1;">
+          <span class="section-label">Service 02</span>
+          <h2 style="font-size: var(--text-2xl); font-weight: 700; margin: var(--space-sm) 0 var(--space-lg);">介護福祉デジケア</h2>
+          <p style="color: var(--color-gray-600); line-height: 2; margin-bottom: var(--space-xl);">
+            介護・福祉業界に特化したデジケア支援を行っています。ホームページ制作、SEO対策、MEO対策、SNS運用など、集客とブランディングをトータルでサポートします。
+          </p>
+          <a href="./marketing.html" class="btn btn-primary">
+            詳しく見る
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center;">
+        <div style="aspect-ratio: 16/10; background: var(--color-gray-200); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+          写真
+        </div>
+        <div>
+          <span class="section-label">Service 03</span>
+          <h2 style="font-size: var(--text-2xl); font-weight: 700; margin: var(--space-sm) 0 var(--space-lg);">クランクアップ</h2>
+          <p style="color: var(--color-gray-600); line-height: 2; margin-bottom: var(--space-xl);">
+            動画制作・WEB制作・デザインなど、クリエイティブ制作を幅広く手がけています。企業のプロモーションや採用活動を映像とデザインの力で支援します。
+          </p>
+          <a href="./crankup.html" class="btn btn-primary">
+            詳しく見る
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./works.html">実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

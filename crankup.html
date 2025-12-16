@@ -1,0 +1,5250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="クランクアップ - 動画制作・WEB制作・デザインなど、クリエイティブ制作を幅広く手がけます。">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="./assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>クランクアップ | 制作事業 | 株式会社イデア</title>
+
+  <style>
+    /* ===================================
+       CrankUp Page CSS Variables Override
+    =================================== */
+    :root {
+      --cu-primary: #1a5f6c;
+      --cu-primary-dark: #0d3d47;
+      --cu-primary-light: #2a8a9c;
+      --cu-accent: #e8b923;
+      --cu-accent-light: #f5d35a;
+      --cu-white: #ffffff;
+      --cu-black: #0a0a0a;
+      --cu-gray-100: #f7f9fa;
+      --cu-gray-200: #e5eaed;
+      --cu-gray-300: #c5ced3;
+      --cu-gray-400: #8a9aa3;
+      --cu-gray-500: #5a6a73;
+      --cu-gray-600: #3a4a53;
+      --cu-text: #1a2a30;
+      --cu-text-light: rgba(255, 255, 255, 0.85);
+
+      --cu-gradient-dark: linear-gradient(135deg, #0d3d47 0%, #1a5f6c 50%, #2a8a9c 100%);
+      --cu-gradient-light: linear-gradient(180deg, #f7f9fa 0%, #ffffff 100%);
+
+      --cu-shadow-sm: 0 2px 8px rgba(26, 95, 108, 0.08);
+      --cu-shadow-md: 0 8px 30px rgba(26, 95, 108, 0.12);
+      --cu-shadow-lg: 0 20px 60px rgba(26, 95, 108, 0.18);
+      --cu-shadow-glow: 0 0 40px rgba(232, 185, 35, 0.3);
+
+      --cu-radius-sm: 8px;
+      --cu-radius-md: 16px;
+      --cu-radius-lg: 24px;
+      --cu-radius-xl: 40px;
+      --cu-radius-full: 9999px;
+
+      --cu-transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --cu-transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --cu-transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      --cu-font-display: 'Outfit', sans-serif;
+      --cu-font-body: 'Noto Sans JP', sans-serif;
+    }
+
+    /* ===================================
+       Header Color Override for CrankUp
+    =================================== */
+    .page-crankup .header {
+      background: rgba(26, 95, 108, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .page-crankup .header.scrolled {
+      background: rgba(26, 95, 108, 0.88);
+    }
+
+    .page-crankup .nav-main-label {
+      color: var(--cu-white);
+    }
+
+    .page-crankup .nav-main-logo-placeholder {
+      color: var(--cu-white);
+    }
+
+    .page-crankup .mega-menu-toggle {
+      color: var(--cu-white);
+    }
+
+    .page-crankup .mega-menu-toggle span {
+      color: var(--cu-white);
+    }
+
+    .page-crankup .mega-menu-icon span {
+      background: var(--cu-white);
+    }
+
+    .page-crankup .menu-toggle span {
+      background: var(--cu-white);
+    }
+
+    /* ヘッダーのロゴを白く反転（ナビバー上のみ） */
+    .page-crankup .header > .header-inner .logo-img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* ナビバー直下のロゴのみ白に（ホバー時は通常カラーに戻す） */
+    .page-crankup .nav-main > .nav-main-item > .nav-main-link > .nav-main-logo-large {
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    /* ホバー時（白いアニメーション背景が出る時）はロゴを通常カラーに */
+    .page-crankup .nav-main > .nav-main-item:hover > .nav-main-link > .nav-main-logo-large {
+      filter: none;
+    }
+
+    /* ドロップダウン内のロゴは通常表示（反転しない） */
+    .page-crankup .nav-dropdown .nav-dropdown-logo img {
+      filter: none !important;
+    }
+
+    /* ===================================
+       CrankUp Page Sections
+    =================================== */
+    .cu-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cu-container {
+        padding: 0 20px;
+      }
+    }
+
+    .cu-section {
+      padding: 120px 0;
+    }
+
+    @media (max-width: 768px) {
+      .cu-section {
+        padding: 80px 0;
+      }
+    }
+
+    /* ===================================
+       WebGL Slider Hero Section
+    =================================== */
+
+    /* Slider Variables */
+    :root {
+      --slider-bg: #0d1117;
+      --slider-text: #e6edf3;
+      --slider-accent: var(--cu-accent);
+      --slider-muted: rgba(255,255,255,0.5);
+    }
+
+    /* Preloader */
+    .slider-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--cu-gradient-dark);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .slider-preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-text {
+      font-family: var(--cu-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--cu-white);
+      letter-spacing: 0.2em;
+      margin-bottom: 30px;
+    }
+
+    .preloader-bar {
+      width: 200px;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .preloader-progress {
+      height: 100%;
+      background: var(--cu-accent);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Main Slider Wrapper */
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--slider-bg);
+    }
+
+    .slider-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Slide Content Overlay */
+    .slide-content-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .slide-content {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      padding: 0 60px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .slide-content.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Ensure first slide is visible on load */
+    .slide-content[data-slide="0"] {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide-content[data-slide="0"]:not(.active) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .slide-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--cu-font-display);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cu-accent);
+      margin-bottom: 20px;
+    }
+
+    .slide-label::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--cu-accent);
+    }
+
+    .slide-title {
+      font-family: var(--cu-font-display);
+      font-size: clamp(42px, 7vw, 90px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--cu-white);
+      margin-bottom: 24px;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .slide-title span {
+      display: block;
+    }
+
+    .slide-description {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    .slide-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: var(--cu-accent);
+      color: var(--cu-black);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--cu-radius-full);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      pointer-events: auto;
+    }
+
+    .slide-cta:hover {
+      background: var(--cu-accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(232, 185, 35, 0.3);
+    }
+
+    .slide-cta svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .slide-cta:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Slide Number */
+    .slide-number {
+      position: absolute;
+      bottom: 60px;
+      left: 60px;
+      z-index: 20;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: var(--cu-font-display);
+    }
+
+    .slide-current {
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--cu-white);
+      line-height: 1;
+    }
+
+    .slide-separator {
+      font-size: 24px;
+      color: var(--slider-muted);
+    }
+
+    .slide-total {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--slider-muted);
+    }
+
+    /* Progress Indicators */
+    .slide-progress {
+      position: absolute;
+      bottom: 60px;
+      right: 60px;
+      z-index: 20;
+      display: flex;
+      gap: 12px;
+    }
+
+    .progress-dot {
+      width: 60px;
+      height: 3px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .progress-dot:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--cu-accent);
+      border-radius: 2px;
+    }
+
+    .progress-dot.active .progress-fill {
+      animation: progressFill 5s linear forwards;
+    }
+
+    .progress-dot.completed .progress-fill {
+      width: 100%;
+    }
+
+    @keyframes progressFill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    /* Navigation Arrows */
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+    }
+
+    .slider-nav.prev {
+      left: 30px;
+    }
+
+    .slider-nav.next {
+      right: 30px;
+    }
+
+    .slider-nav button {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: var(--cu-white);
+    }
+
+    .slider-nav button:hover {
+      background: var(--cu-accent);
+      border-color: var(--cu-accent);
+      color: var(--cu-black);
+      transform: scale(1.1);
+    }
+
+    .slider-nav button svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Effect Label */
+    .effect-label {
+      position: absolute;
+      top: calc(var(--header-height, 80px) + 30px);
+      right: 60px;
+      z-index: 20;
+      font-family: var(--cu-font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slider-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .effect-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--cu-accent);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Scroll Hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--slider-muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-hint .mouse {
+      width: 24px;
+      height: 38px;
+      border: 2px solid currentColor;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .scroll-hint .wheel {
+      width: 4px;
+      height: 8px;
+      background: currentColor;
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollWheel 2s ease infinite;
+    }
+
+    @keyframes scrollWheel {
+      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .slide-content {
+        padding: 0 40px;
+        text-align: center;
+      }
+
+      .slide-label {
+        justify-content: center;
+      }
+
+      .slide-label::before {
+        display: none;
+      }
+
+      .slide-description {
+        margin: 0 auto 32px;
+      }
+
+      .slide-number {
+        left: 40px;
+        bottom: 40px;
+      }
+
+      .slide-current {
+        font-size: 48px;
+      }
+
+      .slide-progress {
+        right: 40px;
+        bottom: 40px;
+      }
+
+      .slider-nav {
+        display: none;
+      }
+
+      .effect-label {
+        right: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slide-content {
+        padding: 0 24px;
+      }
+
+      .slide-number {
+        left: 24px;
+        bottom: 30px;
+      }
+
+      .slide-current {
+        font-size: 36px;
+      }
+
+      .slide-total,
+      .slide-separator {
+        font-size: 18px;
+      }
+
+      .slide-progress {
+        right: 24px;
+        bottom: 30px;
+      }
+
+      .progress-dot {
+        width: 40px;
+      }
+
+      .effect-label {
+        display: none;
+      }
+
+      .scroll-hint {
+        display: none;
+      }
+    }
+
+    /* Legacy cu-btn-header for compatibility */
+    .cu-btn-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--cu-accent);
+      color: var(--cu-black);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--cu-radius-full);
+      transition: var(--cu-transition-fast);
+    }
+
+    .cu-btn-header:hover {
+      background: var(--cu-accent-light);
+      transform: translateY(-2px);
+      box-shadow: var(--cu-shadow-glow);
+    }
+
+    /* ===================================
+       Business Section (Quote Style)
+    =================================== */
+    .cu-business {
+      background: var(--cu-white);
+      position: relative;
+    }
+
+    .cu-business-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .cu-business-visual {
+      position: relative;
+    }
+
+    .cu-business-image {
+      aspect-ratio: 4/3;
+      background: var(--cu-gray-200);
+      border-radius: var(--cu-radius-lg);
+      overflow: hidden;
+    }
+
+    .cu-business-content {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .cu-business-content::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--cu-primary) 0%, var(--cu-accent) 100%);
+      border-radius: 2px;
+    }
+
+    .cu-business-label {
+      display: inline-block;
+      font-family: var(--cu-font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cu-primary);
+      margin-bottom: 16px;
+    }
+
+    .cu-business-title {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      color: var(--cu-text);
+    }
+
+    .cu-business-quote {
+      font-size: 18px;
+      line-height: 2;
+      color: var(--cu-gray-500);
+      margin-bottom: 32px;
+    }
+
+    .cu-business-quote strong {
+      color: var(--cu-primary);
+      font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+      .cu-business-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ===================================
+       Gallery Section - Film Strip Design
+    =================================== */
+    .cu-gallery {
+      padding: 40px 0;
+      background: var(--cu-gray-100);
+      overflow: hidden;
+    }
+
+    .cu-film-strip {
+      position: relative;
+      background: #1a1a1a;
+      padding: 0;
+    }
+
+    /* Sprocket holes - Top */
+    .cu-film-sprockets-top,
+    .cu-film-sprockets-bottom {
+      display: flex;
+      justify-content: flex-start;
+      gap: 0;
+      background: #1a1a1a;
+      padding: 8px 0;
+      animation: sprocketScroll 40s linear infinite;
+    }
+
+    .cu-film-sprocket {
+      flex-shrink: 0;
+      width: 20px;
+      height: 14px;
+      background: #c4a574;
+      border-radius: 3px;
+      margin: 0 30px;
+    }
+
+    @keyframes sprocketScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Film track (images area) */
+    .cu-gallery-track {
+      display: flex;
+      gap: 4px;
+      animation: galleryScroll 40s linear infinite;
+      background: #1a1a1a;
+      padding: 4px 0;
+    }
+
+    @keyframes galleryScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Film frame dividers */
+    .cu-gallery-item {
+      flex-shrink: 0;
+      width: 320px;
+      aspect-ratio: 4/3;
+      background: #c4a574;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--cu-transition-base);
+      border-left: 2px solid #0a0a0a;
+      border-right: 2px solid #0a0a0a;
+    }
+
+    .cu-gallery-item:hover {
+      filter: brightness(1.1);
+    }
+
+    .cu-gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.6) 100%);
+      opacity: 0;
+      transition: var(--cu-transition-base);
+      z-index: 2;
+    }
+
+    .cu-gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    /* Film grain overlay */
+    .cu-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .cu-gallery-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: var(--cu-white);
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--cu-transition-base);
+      z-index: 3;
+    }
+
+    .cu-gallery-item:hover .cu-gallery-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive film strip */
+    @media (max-width: 768px) {
+      .cu-gallery-item {
+        width: 240px;
+      }
+      .cu-film-sprocket {
+        width: 16px;
+        height: 12px;
+        margin: 0 22px;
+      }
+    }
+
+    /* ===================================
+       Services Section (Tabs)
+    =================================== */
+    .cu-services {
+      background: var(--cu-white);
+    }
+
+    .cu-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .cu-section-label {
+      display: inline-block;
+      font-family: var(--cu-font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cu-primary);
+      margin-bottom: 16px;
+    }
+
+    .cu-section-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--cu-text);
+      line-height: 1.3;
+    }
+
+    /* ===================================
+       Game-style Service Selector
+    =================================== */
+    .cu-game-selector {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      min-height: 600px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Left Menu (Game-style buttons) */
+    .cu-game-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cu-game-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cu-gray-500);
+      background: var(--cu-white);
+      border: 2px solid var(--cu-gray-200);
+      border-radius: var(--cu-radius-md);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .cu-game-btn::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--cu-accent);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .cu-game-btn:hover {
+      color: var(--cu-primary);
+      border-color: var(--cu-primary);
+      transform: translateX(8px);
+      box-shadow: var(--cu-shadow-md);
+    }
+
+    .cu-game-btn:hover::before {
+      transform: scaleY(1);
+    }
+
+    .cu-game-btn.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #1a5f6c 0%, #2a7f8c 100%) !important;
+      border-color: #1a5f6c !important;
+      transform: translateX(8px);
+      box-shadow: 0 8px 30px rgba(26, 95, 108, 0.4);
+    }
+
+    .cu-game-btn.active::before {
+      transform: scaleY(1);
+      background: var(--cu-accent);
+    }
+
+    .cu-game-btn-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26, 95, 108, 0.1);
+      border-radius: var(--cu-radius-sm);
+      transition: all 0.3s ease;
+    }
+
+    .cu-game-btn.active .cu-game-btn-icon {
+      background: rgba(255, 255, 255, 0.25) !important;
+    }
+
+    .cu-game-btn-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--cu-primary);
+      transition: stroke 0.3s ease;
+    }
+
+    .cu-game-btn.active .cu-game-btn-icon svg {
+      stroke: #ffffff !important;
+    }
+
+    .cu-game-btn-text {
+      flex: 1;
+    }
+
+    .cu-game-btn-count {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: rgba(26, 95, 108, 0.1);
+      border-radius: var(--cu-radius-full);
+      color: var(--cu-primary);
+      transition: all 0.3s ease;
+    }
+
+    .cu-game-btn.active .cu-game-btn-count {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    /* Right Content (3D Carousel Portfolio Display) */
+    .cu-portfolio-display {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 650px;
+      padding: 20px 0;
+    }
+
+    /* Carousel Container */
+    .cu-carousel-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Navigation Arrows */
+    .cu-carousel-arrows {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 20;
+    }
+
+    .cu-carousel-arrow {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .cu-carousel-arrow:hover {
+      background: var(--cu-primary);
+      transform: scale(1.1);
+    }
+
+    .cu-carousel-arrow:hover svg {
+      stroke: var(--cu-white);
+    }
+
+    .cu-carousel-arrow svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--cu-gray-500);
+      stroke-width: 2.5;
+      transition: stroke 0.3s ease;
+    }
+
+    /* Portfolio Panel (per category) */
+    .cu-portfolio-panel {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cu-portfolio-panel.active {
+      display: block;
+      animation: panelFadeIn 0.4s ease forwards;
+    }
+
+    @keyframes panelFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 3D Carousel Track */
+    .cu-carousel-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    /* Carousel Items */
+    .cu-carousel-item {
+      position: absolute;
+      width: 520px;
+      max-width: 85%;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    /* Position States */
+    .cu-carousel-item[data-position="prev-2"] {
+      transform: translateY(-280px) scale(0.6);
+      opacity: 0.3;
+      z-index: 1;
+      filter: blur(2px);
+    }
+
+    .cu-carousel-item[data-position="prev"] {
+      transform: translateY(-160px) scale(0.8);
+      opacity: 0.6;
+      z-index: 2;
+    }
+
+    .cu-carousel-item[data-position="current"] {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .cu-carousel-item[data-position="next"] {
+      transform: translateY(160px) scale(0.8);
+      opacity: 0.6;
+      z-index: 2;
+    }
+
+    .cu-carousel-item[data-position="next-2"] {
+      transform: translateY(280px) scale(0.6);
+      opacity: 0.3;
+      z-index: 1;
+      filter: blur(2px);
+    }
+
+    .cu-carousel-item[data-position="hidden"] {
+      transform: translateY(400px) scale(0.4);
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Portfolio Card Design */
+    .cu-portfolio-card {
+      display: flex;
+      background: var(--cu-white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+    }
+
+    .cu-carousel-item[data-position="current"] .cu-portfolio-card {
+      box-shadow: 0 20px 60px rgba(26, 95, 108, 0.25);
+    }
+
+    .cu-carousel-item[data-position="current"]:hover .cu-portfolio-card {
+      box-shadow: 0 25px 70px rgba(26, 95, 108, 0.35);
+    }
+
+    /* Card Thumbnail */
+    .cu-portfolio-thumb-wrapper {
+      flex-shrink: 0;
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--cu-radius-md);
+    }
+
+    .cu-portfolio-thumb-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .cu-portfolio-card:hover .cu-portfolio-thumb-img {
+      transform: scale(1.05);
+    }
+
+    .cu-portfolio-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(26, 95, 108, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cu-portfolio-play-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+      margin-left: 3px;
+    }
+
+    .cu-portfolio-card:hover .cu-portfolio-play-btn {
+      opacity: 1;
+    }
+
+    .cu-portfolio-play-btn:hover {
+      background: var(--cu-accent);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .cu-portfolio-thumb-placeholder {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s ease;
+    }
+
+    /* Gradient variations for visual interest */
+    .cu-carousel-item:nth-child(odd) .cu-portfolio-thumb-placeholder {
+      background: linear-gradient(135deg, #d4a853 0%, #f2d184 50%, #e8c96d 100%);
+    }
+
+    .cu-carousel-item:nth-child(even) .cu-portfolio-thumb-placeholder {
+      background: linear-gradient(135deg, #c9a04a 0%, #e8c96d 50%, #d4a853 100%);
+    }
+
+    .cu-carousel-item[data-position="current"]:hover .cu-portfolio-thumb-placeholder {
+      transform: scale(1.05);
+    }
+
+    .cu-portfolio-thumb-placeholder svg {
+      width: 48px;
+      height: 48px;
+      stroke: rgba(255, 255, 255, 0.7);
+      stroke-width: 1.5;
+    }
+
+    /* Card Info */
+    .cu-portfolio-card-info {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cu-portfolio-card-category {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--cu-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 8px;
+    }
+
+    .cu-portfolio-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--cu-text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .cu-portfolio-card-desc {
+      font-size: 13px;
+      color: var(--cu-gray-500);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cu-portfolio-card-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--cu-gray-400);
+    }
+
+    .cu-portfolio-card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cu-portfolio-card-meta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Creator Team Link Card */
+    .cu-creator-link-card {
+      cursor: pointer;
+    }
+
+    .cu-creator-thumb {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #1a5f6c 0%, #2a7f8c 50%, #1a5f6c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cu-creator-thumb::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+    }
+
+    .cu-creator-thumb svg {
+      width: 64px;
+      height: 64px;
+      stroke: rgba(255, 255, 255, 0.9);
+      stroke-width: 1.5;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .cu-creator-link-card:hover .cu-creator-thumb svg {
+      transform: scale(1.1);
+    }
+
+    .cu-external-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cu-accent);
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cu-external-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .cu-creator-link-card:hover .cu-external-link {
+      color: var(--cu-accent-dark);
+    }
+
+    .cu-creator-link-card:hover .cu-external-link svg {
+      transform: translateX(4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cu-game-selector {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        min-height: auto;
+      }
+
+      .cu-game-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .cu-game-btn {
+        padding: 14px 18px;
+        font-size: 13px;
+        flex: 1 1 calc(50% - 5px);
+        min-width: 150px;
+      }
+
+      .cu-game-btn-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .cu-game-btn:hover,
+      .cu-game-btn.active {
+        transform: none;
+      }
+
+      .cu-portfolio-display {
+        min-height: 550px;
+      }
+
+      .cu-carousel-container {
+        height: 500px;
+      }
+
+      .cu-carousel-item {
+        width: 90%;
+      }
+
+      .cu-carousel-arrows {
+        right: 10px;
+      }
+
+      .cu-carousel-arrow {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cu-game-btn {
+        flex: 1 1 100%;
+      }
+
+      .cu-portfolio-display {
+        min-height: 500px;
+      }
+
+      .cu-carousel-container {
+        height: 450px;
+      }
+
+      .cu-portfolio-card {
+        flex-direction: column;
+      }
+
+      .cu-portfolio-thumb-wrapper {
+        width: 100%;
+      }
+
+      .cu-portfolio-thumb-placeholder {
+        height: 140px;
+      }
+
+      .cu-portfolio-card-info {
+        padding: 16px;
+      }
+
+      .cu-carousel-item[data-position="prev"] {
+        transform: translateY(-120px) scale(0.75);
+      }
+
+      .cu-carousel-item[data-position="next"] {
+        transform: translateY(120px) scale(0.75);
+      }
+
+      .cu-carousel-arrows {
+        flex-direction: row;
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 10px;
+        transform: translateX(-50%);
+      }
+
+      .cu-carousel-arrow {
+        width: 44px;
+        height: 44px;
+      }
+
+      .cu-carousel-arrow svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* ===================================
+       Staff Section (Premium Style)
+    =================================== */
+    .cu-staff {
+      background: var(--cu-gradient-dark);
+      color: var(--cu-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cu-staff::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(26, 95, 108, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(232, 185, 35, 0.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .cu-staff .cu-section-label,
+    .cu-staff .cu-section-title {
+      color: var(--cu-white);
+    }
+
+    /* Staff Grid - 2名用の大きなカード */
+    .cu-staff-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* Premium Staff Card */
+    .cu-staff-card-premium {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cu-staff-card-premium::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cu-accent), var(--cu-primary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cu-staff-card-premium:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      border-color: rgba(232, 185, 35, 0.3);
+    }
+
+    .cu-staff-card-premium:hover::before {
+      opacity: 1;
+    }
+
+    /* Photo Area */
+    .cu-staff-photo-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .cu-staff-photo-premium {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(26, 95, 108, 0.3) 0%, rgba(42, 127, 140, 0.2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s ease;
+    }
+
+    .cu-staff-photo-premium img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cu-staff-card-premium:hover .cu-staff-photo-premium {
+      transform: scale(1.05);
+    }
+
+    /* Photo Placeholder Icon */
+    .cu-staff-photo-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cu-staff-photo-placeholder svg {
+      width: 40px;
+      height: 40px;
+      stroke: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Staff Info Area */
+    .cu-staff-info {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cu-staff-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .cu-staff-name-premium {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .cu-staff-role-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--cu-accent);
+      background: rgba(232, 185, 35, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(232, 185, 35, 0.3);
+    }
+
+    .cu-staff-role-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Number Badge */
+    .cu-staff-number {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.08);
+      font-family: 'Outfit', sans-serif;
+      pointer-events: none;
+    }
+
+    /* Bio Text */
+    .cu-staff-bio-premium {
+      font-size: 15px;
+      line-height: 1.9;
+      opacity: 0.85;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* Skills */
+    .cu-staff-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .cu-staff-skill {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .cu-staff-card-premium:hover .cu-staff-skill {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Social Links (将来用) */
+    .cu-staff-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cu-staff-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .cu-staff-social-link:hover {
+      background: var(--cu-accent);
+      transform: translateY(-3px);
+    }
+
+    .cu-staff-social-link svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--cu-white);
+    }
+
+    /* Responsive - Mobile */
+    @media (max-width: 768px) {
+      .cu-staff-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .cu-staff-name-premium {
+        font-size: 22px;
+      }
+
+      .cu-staff-info {
+        padding: 24px;
+      }
+
+      .cu-staff-number {
+        font-size: 48px;
+      }
+    }
+
+    /* 将来の拡張用 - 3名以上の場合 */
+    @media (min-width: 1200px) {
+      .cu-staff-showcase.staff-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .cu-staff-showcase.staff-4 {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+    }
+
+    /* 旧カルーセル用（非表示だが互換性のため残す） */
+    .cu-staff-carousel {
+      display: none;
+    }
+
+    .cu-carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .cu-carousel-btn {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cu-white);
+      transition: var(--cu-transition-fast);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cu-carousel-btn:hover {
+      background: var(--cu-accent);
+      color: var(--cu-black);
+    }
+
+    .cu-carousel-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .cu-staff-card {
+        width: calc(50% - 15px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cu-staff-card {
+        width: 100%;
+      }
+    }
+
+    /* ===================================
+       Flow Section (Timeline)
+    =================================== */
+    .cu-flow {
+      background: var(--cu-gray-100);
+    }
+
+    .cu-flow-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .cu-flow-timeline::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: var(--cu-gray-300);
+    }
+
+    .cu-flow-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .cu-flow-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      background: var(--cu-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--cu-shadow-md);
+      position: relative;
+      z-index: 1;
+      transition: var(--cu-transition-base);
+    }
+
+    .cu-flow-step:hover .cu-flow-icon {
+      background: var(--cu-primary);
+      transform: scale(1.1);
+    }
+
+    .cu-flow-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--cu-primary);
+      transition: var(--cu-transition-base);
+    }
+
+    .cu-flow-step:hover .cu-flow-icon svg {
+      stroke: var(--cu-white);
+    }
+
+    .cu-flow-number {
+      font-family: var(--cu-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cu-accent);
+      margin-bottom: 8px;
+    }
+
+    .cu-flow-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cu-text);
+      margin-bottom: 8px;
+    }
+
+    .cu-flow-desc {
+      font-size: 13px;
+      color: var(--cu-gray-500);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .cu-flow-timeline {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cu-flow-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 48px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+
+      .cu-flow-step {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 24px;
+        text-align: left;
+      }
+
+      .cu-flow-icon {
+        margin: 0;
+      }
+
+      .cu-flow-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    /* ===================================
+       FAQ Section (Accordion)
+    =================================== */
+    .cu-faq {
+      background: var(--cu-white);
+    }
+
+    .cu-faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cu-faq-item {
+      border-bottom: 1px solid var(--cu-gray-200);
+    }
+
+    .cu-faq-question {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      padding: 28px 0;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .cu-faq-badge {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--cu-primary);
+      color: var(--cu-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--cu-font-display);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .cu-faq-text {
+      flex: 1;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--cu-text);
+    }
+
+    .cu-faq-toggle {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--cu-gray-100);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--cu-transition-fast);
+    }
+
+    .cu-faq-toggle svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--cu-gray-500);
+      transition: var(--cu-transition-fast);
+    }
+
+    .cu-faq-item.open .cu-faq-toggle {
+      background: var(--cu-primary);
+    }
+
+    .cu-faq-item.open .cu-faq-toggle svg {
+      stroke: var(--cu-white);
+      transform: rotate(180deg);
+    }
+
+    .cu-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .cu-faq-item.open .cu-faq-answer {
+      max-height: 500px;
+    }
+
+    .cu-faq-answer-inner {
+      padding: 0 0 28px 64px;
+      font-size: 15px;
+      line-height: 2;
+      color: var(--cu-gray-500);
+    }
+
+    /* ===================================
+       導入事例 Section
+    =================================== */
+    .cu-cases {
+      background: var(--cu-gray-50);
+    }
+
+    .cu-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .cu-case-card {
+      background: var(--cu-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
+    }
+
+    .cu-case-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .cu-case-image {
+      position: relative;
+      aspect-ratio: 3/2;
+      overflow: hidden;
+    }
+
+    .cu-case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .cu-case-card:hover .cu-case-image img {
+      transform: scale(1.08);
+    }
+
+    .cu-case-category {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 16px;
+      background: var(--cu-accent);
+      color: var(--cu-dark);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .cu-case-content {
+      padding: 28px;
+    }
+
+    .cu-case-title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--cu-dark);
+      margin-bottom: 8px;
+    }
+
+    .cu-case-client {
+      font-size: 13px;
+      color: var(--cu-gray-400);
+      margin-bottom: 14px;
+    }
+
+    .cu-case-excerpt {
+      font-size: 14px;
+      color: var(--cu-gray-500);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .cu-case-results {
+      display: flex;
+      gap: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cu-gray-100);
+    }
+
+    .cu-case-result {
+      text-align: center;
+    }
+
+    .cu-case-result-value {
+      display: block;
+      font-family: var(--cu-font-accent);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--cu-accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .cu-case-result-label {
+      font-size: 11px;
+      color: var(--cu-gray-400);
+    }
+
+    .cu-cases-more {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .cu-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--cu-dark);
+      border: 2px solid var(--cu-dark);
+      border-radius: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cu-btn-outline:hover {
+      background: var(--cu-dark);
+      color: var(--cu-white);
+    }
+
+    .cu-btn-outline svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 1024px) {
+      .cu-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cu-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ===================================
+       Contact Section
+    =================================== */
+    .cu-contact {
+      background: var(--cu-gradient-dark);
+      color: var(--cu-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cu-contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(232, 185, 35, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(42, 138, 156, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cu-contact .cu-section-label,
+    .cu-contact .cu-section-title {
+      color: var(--cu-white);
+    }
+
+    .cu-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cu-contact-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: var(--cu-radius-lg);
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      transition: var(--cu-transition-base);
+    }
+
+    .cu-contact-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-8px);
+    }
+
+    .cu-contact-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cu-contact-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--cu-accent);
+    }
+
+    .cu-contact-label {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .cu-contact-value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .cu-btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 32px;
+      background: #06C755;
+      color: var(--cu-white);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: var(--cu-radius-md);
+      margin-top: 16px;
+      transition: var(--cu-transition-fast);
+    }
+
+    .cu-btn-line:hover {
+      background: #05b54c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(6, 199, 85, 0.3);
+    }
+
+    .cu-btn-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 32px;
+      background: var(--cu-accent);
+      color: var(--cu-black);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: var(--cu-radius-md);
+      margin-top: 16px;
+      transition: var(--cu-transition-fast);
+    }
+
+    .cu-btn-contact:hover {
+      background: var(--cu-accent-light);
+      transform: translateY(-2px);
+      box-shadow: var(--cu-shadow-glow);
+    }
+
+    @media (max-width: 768px) {
+      .cu-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* ===================================
+       Footer Override for CrankUp
+    =================================== */
+    .page-crankup .footer {
+      background: #0a1a1f;
+    }
+
+    .page-crankup .footer-nav-title {
+      color: var(--cu-accent);
+    }
+
+    /* ===================================
+       Reveal Animations
+    =================================== */
+    .cu-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .cu-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cu-reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .cu-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .cu-reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .cu-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger Animation */
+    .cu-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .cu-stagger.revealed > *:nth-child(1) { transition-delay: 0.1s; }
+    .cu-stagger.revealed > *:nth-child(2) { transition-delay: 0.2s; }
+    .cu-stagger.revealed > *:nth-child(3) { transition-delay: 0.3s; }
+    .cu-stagger.revealed > *:nth-child(4) { transition-delay: 0.4s; }
+    .cu-stagger.revealed > *:nth-child(5) { transition-delay: 0.5s; }
+
+    .cu-stagger.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================================
+       Portfolio Modal
+    =================================== */
+    .portfolio-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .portfolio-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .portfolio-modal {
+      background: var(--cu-white);
+      border-radius: var(--cu-radius-lg);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      transform: translateY(30px) scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    .portfolio-modal-overlay.active .portfolio-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .portfolio-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .portfolio-modal-close:hover {
+      background: var(--cu-accent);
+      transform: rotate(90deg);
+    }
+
+    .portfolio-modal-close svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cu-text);
+    }
+
+    .portfolio-modal-close:hover svg {
+      stroke: var(--cu-black);
+    }
+
+    .portfolio-modal-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--cu-primary-dark) 0%, var(--cu-primary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio-modal-image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .portfolio-modal-image-placeholder svg {
+      width: 80px;
+      height: 80px;
+      stroke: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Video Play Button */
+    .portfolio-modal-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 3px solid var(--cu-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .portfolio-modal-play:hover {
+      background: var(--cu-primary);
+      border-color: var(--cu-primary);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .portfolio-modal-play svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--cu-white);
+      margin-left: 4px;
+    }
+
+    .portfolio-modal-play-text {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--cu-white);
+      white-space: nowrap;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .portfolio-modal-image {
+      cursor: pointer;
+    }
+
+    .portfolio-modal-content {
+      padding: 40px;
+      max-height: calc(90vh - 350px);
+      overflow-y: auto;
+    }
+
+    .portfolio-modal-category {
+      display: inline-block;
+      font-family: var(--cu-font-display);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cu-accent);
+      background: rgba(232, 185, 35, 0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-modal-title {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--cu-text);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .portfolio-modal-meta {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--cu-gray-200);
+    }
+
+    .portfolio-modal-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .portfolio-modal-meta-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cu-gray-400);
+    }
+
+    .portfolio-modal-meta-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--cu-text);
+    }
+
+    .portfolio-modal-description {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--cu-gray-500);
+      margin-bottom: 24px;
+    }
+
+    .portfolio-modal-details {
+      background: var(--cu-gray-100);
+      border-radius: var(--cu-radius-md);
+      padding: 24px;
+    }
+
+    .portfolio-modal-details-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cu-text);
+      margin-bottom: 16px;
+    }
+
+    .portfolio-modal-details-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .portfolio-modal-tag {
+      font-size: 13px;
+      color: var(--cu-gray-500);
+      background: var(--cu-white);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--cu-gray-200);
+    }
+
+    /* Make portfolio cards clickable */
+    .cu-portfolio-card {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cu-portfolio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 95, 108, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-modal-overlay {
+        padding: 20px;
+      }
+
+      .portfolio-modal-content {
+        padding: 24px;
+      }
+
+      .portfolio-modal-meta {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .portfolio-modal-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body class="page-crankup">
+
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ========================================
+       Header (Same as Main Site)
+  ======================================== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <!-- 老人ホーム紹介事業 -->
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./happiness.html">サービス概要</a>
+              <a href="./happiness.html#flow">ご利用の流れ</a>
+              <a href="./contact.html">無料相談</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- デジケア -->
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./marketing.html">サービス概要</a>
+              <a href="./marketing.html#seo">SEO対策</a>
+              <a href="./marketing.html#meo">MEO対策</a>
+              <a href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作事業 -->
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/crankup_logo.png" alt="クランクアップ">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./crankup.html">サービス概要</a>
+              <a href="#services">サービス / 実績</a>
+              <a href="#staff">スタッフ</a>
+              <a href="#contact">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PC版メガメニュートグル -->
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- PC版メガメニュー -->
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- ========================================
+       Main Content
+  ======================================== -->
+  <main id="main-content">
+
+  <!-- Slider Preloader -->
+  <div class="slider-preloader" id="sliderPreloader">
+    <div class="preloader-text">LOADING</div>
+    <div class="preloader-bar">
+      <div class="preloader-progress" id="preloaderProgress"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section - WebGL Slider -->
+  <section class="slider-wrapper" id="sliderWrapper">
+    <!-- WebGL Canvas -->
+    <canvas class="slider-canvas" id="sliderCanvas"></canvas>
+
+    <!-- Slide Content Overlay -->
+    <div class="slide-content-wrapper">
+      <!-- Slide 1: 映像制作 -->
+      <div class="slide-content active" data-slide="0">
+        <span class="slide-label">Video Production</span>
+        <h1 class="slide-title">
+          <span>映像で、</span>
+          <span>想いを動かす</span>
+        </h1>
+        <p class="slide-description">
+          ミュージックビデオ、企業VP、プロモーション映像など<br>
+          感動を生み出す映像制作をお届けします
+        </p>
+        <a href="#services" class="slide-cta">
+          サービスを見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Slide 2: WEB制作 -->
+      <div class="slide-content" data-slide="1">
+        <span class="slide-label">Web Design</span>
+        <h1 class="slide-title">
+          <span>WEBで、</span>
+          <span>世界を広げる</span>
+        </h1>
+        <p class="slide-description">
+          コーポレートサイト、LP、ECサイトまで<br>
+          ビジネスを加速させるWEB制作
+        </p>
+        <a href="#services" class="slide-cta">
+          サービスを見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Slide 3: デザイン -->
+      <div class="slide-content" data-slide="2">
+        <span class="slide-label">Graphic Design</span>
+        <h1 class="slide-title">
+          <span>デザインで、</span>
+          <span>価値を伝える</span>
+        </h1>
+        <p class="slide-description">
+          ロゴ、名刺、パンフレット、ポスターなど<br>
+          ブランドの魅力を最大限に引き出すデザイン
+        </p>
+        <a href="#services" class="slide-cta">
+          サービスを見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Slide 4: クリエイティブ全般 -->
+      <div class="slide-content" data-slide="3">
+        <span class="slide-label">Creative Production</span>
+        <h1 class="slide-title">
+          <span>クリエイティブで、</span>
+          <span>未来を創る</span>
+        </h1>
+        <p class="slide-description">
+          企画から制作、運用まで一貫サポート<br>
+          あなたのビジョンをカタチにします
+        </p>
+        <a href="#contact" class="slide-cta">
+          無料相談はこちら
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide Number -->
+    <div class="slide-number">
+      <span class="slide-current" id="slideCurrentNum">01</span>
+      <span class="slide-separator">/</span>
+      <span class="slide-total">04</span>
+    </div>
+
+    <!-- Progress Indicators -->
+    <div class="slide-progress" id="slideProgress">
+      <div class="progress-dot active" data-index="0"><div class="progress-fill"></div></div>
+      <div class="progress-dot" data-index="1"><div class="progress-fill"></div></div>
+      <div class="progress-dot" data-index="2"><div class="progress-fill"></div></div>
+      <div class="progress-dot" data-index="3"><div class="progress-fill"></div></div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="slider-nav prev">
+      <button id="prevSlide" aria-label="前のスライド">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="slider-nav next">
+      <button id="nextSlide" aria-label="次のスライド">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Business Section -->
+  <section id="business" class="cu-section cu-business">
+    <div class="cu-container">
+      <div class="cu-business-inner">
+        <div class="cu-business-visual cu-reveal-left">
+          <div class="cu-business-image">
+            <!-- 事業紹介の画像 -->
+          </div>
+        </div>
+        <div class="cu-business-content cu-reveal-right">
+          <span class="cu-business-label">About Us</span>
+          <h2 class="cu-business-title">
+            クリエイティブで<br>
+            ビジネスの可能性を広げる
+          </h2>
+          <p class="cu-business-quote">
+            私たちクランクアップは、<strong>映像制作・WEB制作・デザイン</strong>を通じて、
+            お客様のビジネスを次のステージへと導きます。<br><br>
+            単なる制作会社ではなく、<strong>ビジネスパートナー</strong>として、
+            企画から制作、運用まで一貫してサポートいたします。
+          </p>
+          <a href="#services" class="cu-btn-header" style="display: inline-flex;">
+            サービスを見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section - Film Strip Design -->
+  <section class="cu-gallery">
+    <div class="cu-film-strip">
+      <!-- Top Sprocket Holes -->
+      <div class="cu-film-sprockets-top">
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+      </div>
+
+      <!-- Film Frames (Gallery Items) -->
+      <div class="cu-gallery-track">
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">ミュージックビデオ</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">企業VP</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">WEBサイト</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">採用動画</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">イベント映像</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">SNS動画</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">プロモーション</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">ドローン撮影</span>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">ミュージックビデオ</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">企業VP</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">WEBサイト</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">採用動画</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">イベント映像</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">SNS動画</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">プロモーション</span>
+        </div>
+        <div class="cu-gallery-item">
+          <span class="cu-gallery-label">ドローン撮影</span>
+        </div>
+      </div>
+
+      <!-- Bottom Sprocket Holes -->
+      <div class="cu-film-sprockets-bottom">
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+        <div class="cu-film-sprocket"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section (Game-style Selector) -->
+  <section id="services" class="cu-section cu-services">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">Services & Portfolio</span>
+        <h2 class="cu-section-title">サービス・制作実績</h2>
+      </div>
+
+      <div class="cu-game-selector cu-reveal">
+        <!-- Left: Game-style Menu -->
+        <div class="cu-game-menu">
+          <button class="cu-game-btn active" data-category="corporate">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">企業PV/PR映像</span>
+            <span class="cu-game-btn-count">10</span>
+          </button>
+          <button class="cu-game-btn" data-category="mv">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">ミュージックビデオ</span>
+            <span class="cu-game-btn-count">1</span>
+          </button>
+          <button class="cu-game-btn" data-category="personal">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">個人向け映像</span>
+            <span class="cu-game-btn-count">5</span>
+          </button>
+          <button class="cu-game-btn" data-category="design">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">写真/デザイン</span>
+            <span class="cu-game-btn-count">3</span>
+          </button>
+          <button class="cu-game-btn" data-category="event">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">イベント制作</span>
+            <span class="cu-game-btn-count">2</span>
+          </button>
+          <button class="cu-game-btn" data-category="music">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">楽曲制作</span>
+            <span class="cu-game-btn-count">2</span>
+          </button>
+          <button class="cu-game-btn" data-category="award">
+            <span class="cu-game-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </span>
+            <span class="cu-game-btn-text">受賞作品</span>
+            <span class="cu-game-btn-count">3</span>
+          </button>
+        </div>
+
+        <!-- Right: 3D Carousel Portfolio Display -->
+        <div class="cu-portfolio-display">
+          <div class="cu-carousel-container">
+            <!-- Navigation Arrows -->
+            <div class="cu-carousel-arrows">
+              <button class="cu-carousel-arrow" id="carouselUp" aria-label="上へ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </button>
+              <button class="cu-carousel-arrow" id="carouselDown" aria-label="下へ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Corporate Panel (企業PV/PR映像 - 10件) -->
+            <div class="cu-portfolio-panel active" data-panel="corporate">
+              <div class="cu-carousel-track">
+                <!-- 1. 道頓堀大型ビジョンCM -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">道頓堀大型ビジョンCM</h3>
+                      <p class="cu-portfolio-card-desc">インフルエンサー企業様向けの撮影から編集まで一貫制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.10</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2. 関西コレクション内ディスプレイ広告映像 -->
+                <div class="cu-carousel-item" data-index="1">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">関西コレクション ディスプレイ広告映像</h3>
+                      <p class="cu-portfolio-card-desc">美容クリニック様の出演者用ブース内デジタルサイネージ映像を制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.08</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 3. HP用ヒーロー映像 -->
+                <div class="cu-carousel-item" data-index="2">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">専門学校 HP用ヒーロー映像</h3>
+                      <p class="cu-portfolio-card-desc">ホームページのメインビジュアル用に迫力のある映像とアニメーションを制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.11</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 4. SNS用縦型映像 -->
+                <div class="cu-carousel-item" data-index="3">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">専門学校 SNS用縦型映像</h3>
+                      <p class="cu-portfolio-card-desc">学生と教員のショート映像を企画・撮影・編集</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.10</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 5. YouTubeチャンネル映像 -->
+                <div class="cu-carousel-item" data-index="4">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">専門学校 YouTubeチャンネル映像</h3>
+                      <p class="cu-portfolio-card-desc">学校公式YouTubeチャンネル向けの映像撮影・制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.09</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 6. 社内イベント用映像 -->
+                <div class="cu-carousel-item" data-index="5">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">社内イベント用映像</h3>
+                      <p class="cu-portfolio-card-desc">大型LEDパネルのサイズに合わせた各種アニメーション・映像を制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.09</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 7. 人材紹介会社 求人用映像 -->
+                <div class="cu-carousel-item" data-index="6">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">人材紹介会社 求人用映像</h3>
+                      <p class="cu-portfolio-card-desc">インタビューを軸に、パーソナルな魅力を引き出した採用映像</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.07</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 8. 海外イベント用映像 -->
+                <div class="cu-carousel-item" data-index="7">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">海外イベント用映像</h3>
+                      <p class="cu-portfolio-card-desc">車販売店様向けにドローンを駆使した迫力のあるプロモーション映像</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.07</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 9. 化学メーカー 企業VP -->
+                <div class="cu-carousel-item" data-index="8">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">化学メーカー 企業VP</h3>
+                      <p class="cu-portfolio-card-desc">代表メッセージを多彩なカットで印象的に映像化</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.02</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 10. 社内イベント OP映像 -->
+                <div class="cu-carousel-item" data-index="9">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Corporate Video</span>
+                      <h3 class="cu-portfolio-card-title">社内表彰式 オープニング映像</h3>
+                      <p class="cu-portfolio-card-desc">自社グループの社内表彰式イベントを盛り上げるOP映像</p>
+                      <div class="cu-portfolio-card-meta"><span>2023</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MV Panel -->
+            <div class="cu-portfolio-panel" data-panel="mv">
+              <div class="cu-carousel-track">
+                <!-- MV 1: ひとりじゃない - UnpRayable -->
+                <div class="cu-carousel-item" data-index="0" data-youtube="https://www.youtube.com/watch?v=IX4_Adi5We0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <img src="https://img.youtube.com/vi/IX4_Adi5We0/maxresdefault.jpg" alt="ひとりじゃない - UnpRayable" class="cu-portfolio-thumb-img">
+                      <div class="cu-portfolio-play-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Music Video</span>
+                      <h3 class="cu-portfolio-card-title">UnpRayable -「ひとりじゃない」</h3>
+                      <p class="cu-portfolio-card-desc">2013年リリースのセルフカバー楽曲を、学校を舞台にしたストーリー仕立ての映像で表現</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.02</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personal Panel (個人向け映像 - 5件) -->
+            <div class="cu-portfolio-panel" data-panel="personal">
+              <div class="cu-carousel-track">
+                <!-- 1. マリンスポーツ映像 -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Personal</span>
+                      <h3 class="cu-portfolio-card-title">マリンスポーツ映像</h3>
+                      <p class="cu-portfolio-card-desc">アクションカメラやドローンを駆使したダイナミックなマリンスポーツ映像</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.07</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2. 結婚式OP (2025.04) -->
+                <div class="cu-carousel-item" data-index="1">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Personal</span>
+                      <h3 class="cu-portfolio-card-title">結婚式オープニング映像</h3>
+                      <p class="cu-portfolio-card-desc">思い出の写真をアニメーションで彩り映像化</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.04</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 3. 結婚式OP (2025.02) -->
+                <div class="cu-carousel-item" data-index="2">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Personal</span>
+                      <h3 class="cu-portfolio-card-title">結婚式オープニング映像</h3>
+                      <p class="cu-portfolio-card-desc">お預かりした写真にアニメーションを付けて感動的に演出</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.02</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 4. 車紹介映像 -->
+                <div class="cu-carousel-item" data-index="3">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Personal</span>
+                      <h3 class="cu-portfolio-card-title">車紹介映像</h3>
+                      <p class="cu-portfolio-card-desc">ドローンやアクションカメラで愛車の魅力を余すことなく撮影</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.05</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 5. 結婚式用OP・ゲーム映像 -->
+                <div class="cu-carousel-item" data-index="4">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Personal</span>
+                      <h3 class="cu-portfolio-card-title">結婚式 OP・ゲーム映像</h3>
+                      <p class="cu-portfolio-card-desc">オープニング撮影からオリジナルゲーム映像まで制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.03</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Design Panel (写真/デザイン - 3件) -->
+            <div class="cu-portfolio-panel" data-panel="design">
+              <div class="cu-carousel-track">
+                <!-- 1. 専門学校教員宣材写真 -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Photo</span>
+                      <h3 class="cu-portfolio-card-title">専門学校 教員宣材写真</h3>
+                      <p class="cu-portfolio-card-desc">ホームページ掲載用の教員プロフィール写真を撮影・編集</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.10</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2. ヘアサロンスタッフ宣材写真 -->
+                <div class="cu-carousel-item" data-index="1">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Photo</span>
+                      <h3 class="cu-portfolio-card-title">ヘアサロン スタッフ宣材写真</h3>
+                      <p class="cu-portfolio-card-desc">サロンの雰囲気に合わせたスタッフ写真の撮影・レタッチ</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.08</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 3. 人材紹介会社HP用写真 -->
+                <div class="cu-carousel-item" data-index="2">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Photo</span>
+                      <h3 class="cu-portfolio-card-title">人材紹介会社 HP用写真</h3>
+                      <p class="cu-portfolio-card-desc">コーポレートサイト用のビジネス宣材写真を撮影</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.05</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event Panel (イベント制作 - 2件) -->
+            <div class="cu-portfolio-panel" data-panel="event">
+              <div class="cu-carousel-track">
+                <!-- 1. 結婚式2次会 -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Event</span>
+                      <h3 class="cu-portfolio-card-title">結婚式二次会 トータルプロデュース</h3>
+                      <p class="cu-portfolio-card-desc">ゲストキャスティングから企画・進行、グッズや映像制作まで一貫サポート</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.03</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2. 販売店グループ表彰式 -->
+                <div class="cu-carousel-item" data-index="1">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Event</span>
+                      <h3 class="cu-portfolio-card-title">販売店グループ表彰式</h3>
+                      <p class="cu-portfolio-card-desc">企画・進行からグッズデザインまでイベント全体をプロデュース</p>
+                      <div class="cu-portfolio-card-meta"><span>2024.09</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Music Panel (楽曲制作 - 1件 + クリエイターチームリンク) -->
+            <div class="cu-portfolio-panel" data-panel="music">
+              <div class="cu-carousel-track">
+                <!-- 1. ビジョンCM用楽曲 -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Music Production</span>
+                      <h3 class="cu-portfolio-card-title">大型ビジョンCM用オリジナルBGM</h3>
+                      <p class="cu-portfolio-card-desc">インフルエンサー企業様の映像に合わせたオリジナル楽曲を制作</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.10</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- クリエイターチームリンク -->
+                <div class="cu-carousel-item" data-index="1">
+                  <div class="cu-portfolio-card cu-creator-link-card" onclick="window.open('https://or-create.vercel.app/index.html', '_blank')">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder cu-creator-thumb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Creator Team</span>
+                      <h3 class="cu-portfolio-card-title">クリエイターチーム「Or Create」</h3>
+                      <p class="cu-portfolio-card-desc">楽曲制作を担当するクリエイターチームの詳細はこちら</p>
+                      <div class="cu-portfolio-card-meta">
+                        <span class="cu-external-link">詳しく見る →</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Award Panel (受賞作品 - 1件) -->
+            <div class="cu-portfolio-panel" data-panel="award">
+              <div class="cu-carousel-track">
+                <!-- 1. Contrast 大阪市北区コンテスト -->
+                <div class="cu-carousel-item" data-index="0">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Award</span>
+                      <h3 class="cu-portfolio-card-title">「Contrast」大阪市北区映像コンテスト</h3>
+                      <p class="cu-portfolio-card-desc">大阪市北区の魅力を伝える映像作品で2部門受賞</p>
+                      <div class="cu-portfolio-card-meta"><span>2025.01</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Staff Section -->
+  <section id="staff" class="cu-section cu-staff">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">Team</span>
+        <h2 class="cu-section-title">スタッフ紹介</h2>
+      </div>
+
+      <!-- Premium Staff Showcase - 2名用 -->
+      <div class="cu-staff-showcase cu-reveal">
+        <!-- Staff 1 -->
+        <article class="cu-staff-card-premium">
+          <span class="cu-staff-number">01</span>
+          <div class="cu-staff-photo-wrapper">
+            <div class="cu-staff-photo-premium">
+              <!-- 写真が入る場所 -->
+              <div class="cu-staff-photo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="cu-staff-info">
+            <div class="cu-staff-header">
+              <div>
+                <h3 class="cu-staff-name-premium">スタッフ名</h3>
+                <span class="cu-staff-role-premium">
+                  <svg class="cu-staff-role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="23 7 16 12 23 17 23 7"/>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                  </svg>
+                  ディレクター / 映像クリエイター
+                </span>
+              </div>
+            </div>
+            <p class="cu-staff-bio-premium">
+              映像制作歴10年以上のベテランクリエイター。企業PVからミュージックビデオまで幅広いジャンルを手がけ、クライアントの想いを映像で表現することを大切にしています。
+            </p>
+            <div class="cu-staff-skills">
+              <span class="cu-staff-skill">映像ディレクション</span>
+              <span class="cu-staff-skill">企画構成</span>
+              <span class="cu-staff-skill">撮影</span>
+              <span class="cu-staff-skill">After Effects</span>
+              <span class="cu-staff-skill">Premiere Pro</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Staff 2 -->
+        <article class="cu-staff-card-premium">
+          <span class="cu-staff-number">02</span>
+          <div class="cu-staff-photo-wrapper">
+            <div class="cu-staff-photo-premium">
+              <!-- 写真が入る場所 -->
+              <div class="cu-staff-photo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="cu-staff-info">
+            <div class="cu-staff-header">
+              <div>
+                <h3 class="cu-staff-name-premium">スタッフ名</h3>
+                <span class="cu-staff-role-premium">
+                  <svg class="cu-staff-role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  デザイナー / WEBクリエイター
+                </span>
+              </div>
+            </div>
+            <p class="cu-staff-bio-premium">
+              UI/UXデザインからコーディングまでワンストップで対応するマルチクリエイター。ユーザー目線に立った使いやすく美しいデザインを追求しています。
+            </p>
+            <div class="cu-staff-skills">
+              <span class="cu-staff-skill">WEBデザイン</span>
+              <span class="cu-staff-skill">UI/UX</span>
+              <span class="cu-staff-skill">HTML/CSS</span>
+              <span class="cu-staff-skill">Figma</span>
+              <span class="cu-staff-skill">グラフィック</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow Section -->
+  <section id="flow" class="cu-section cu-flow">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">Process</span>
+        <h2 class="cu-section-title">制作の流れ</h2>
+      </div>
+
+      <div class="cu-flow-timeline cu-stagger">
+        <div class="cu-flow-step">
+          <div class="cu-flow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="cu-flow-content">
+            <span class="cu-flow-number">STEP 01</span>
+            <h3 class="cu-flow-title">お問い合わせ</h3>
+            <p class="cu-flow-desc">まずはお気軽にご相談ください</p>
+          </div>
+        </div>
+        <div class="cu-flow-step">
+          <div class="cu-flow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="cu-flow-content">
+            <span class="cu-flow-number">STEP 02</span>
+            <h3 class="cu-flow-title">ヒアリング</h3>
+            <p class="cu-flow-desc">目的・ご要望を詳しくお聞きします</p>
+          </div>
+        </div>
+        <div class="cu-flow-step">
+          <div class="cu-flow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <line x1="10" y1="9" x2="8" y2="9"/>
+            </svg>
+          </div>
+          <div class="cu-flow-content">
+            <span class="cu-flow-number">STEP 03</span>
+            <h3 class="cu-flow-title">企画・提案</h3>
+            <p class="cu-flow-desc">最適なプランをご提案します</p>
+          </div>
+        </div>
+        <div class="cu-flow-step">
+          <div class="cu-flow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+          </div>
+          <div class="cu-flow-content">
+            <span class="cu-flow-number">STEP 04</span>
+            <h3 class="cu-flow-title">制作</h3>
+            <p class="cu-flow-desc">プロフェッショナルが制作します</p>
+          </div>
+        </div>
+        <div class="cu-flow-step">
+          <div class="cu-flow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="cu-flow-content">
+            <span class="cu-flow-number">STEP 05</span>
+            <h3 class="cu-flow-title">納品</h3>
+            <p class="cu-flow-desc">ご確認後、データを納品します</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="cu-section cu-faq">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">FAQ</span>
+        <h2 class="cu-section-title">よくある質問</h2>
+      </div>
+
+      <div class="cu-faq-list cu-reveal">
+        <div class="cu-faq-item">
+          <button class="cu-faq-question">
+            <span class="cu-faq-badge">Q</span>
+            <span class="cu-faq-text">制作費用の目安を教えてください</span>
+            <span class="cu-faq-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="cu-faq-answer">
+            <div class="cu-faq-answer-inner">
+              制作内容や規模によって異なりますが、動画制作は30万円〜、WEB制作は50万円〜、デザイン制作は5万円〜を目安にしております。詳しくはお見積もりをご依頼ください。
+            </div>
+          </div>
+        </div>
+        <div class="cu-faq-item">
+          <button class="cu-faq-question">
+            <span class="cu-faq-badge">Q</span>
+            <span class="cu-faq-text">納期はどのくらいですか？</span>
+            <span class="cu-faq-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="cu-faq-answer">
+            <div class="cu-faq-answer-inner">
+              制作内容によって異なりますが、動画制作は2週間〜1ヶ月、WEB制作は1〜2ヶ月程度が目安です。お急ぎの場合はご相談ください。
+            </div>
+          </div>
+        </div>
+        <div class="cu-faq-item">
+          <button class="cu-faq-question">
+            <span class="cu-faq-badge">Q</span>
+            <span class="cu-faq-text">対応エリアを教えてください</span>
+            <span class="cu-faq-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="cu-faq-answer">
+            <div class="cu-faq-answer-inner">
+              大阪を拠点に、関西全域での撮影・打ち合わせに対応しております。その他のエリアについてもオンラインでの対応が可能です。
+            </div>
+          </div>
+        </div>
+        <div class="cu-faq-item">
+          <button class="cu-faq-question">
+            <span class="cu-faq-badge">Q</span>
+            <span class="cu-faq-text">修正は何回まで可能ですか？</span>
+            <span class="cu-faq-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="cu-faq-answer">
+            <div class="cu-faq-answer-inner">
+              基本的に2回までの修正は料金内で対応しております。大幅な変更や追加作業が発生する場合は、別途お見積もりさせていただきます。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入事例 Section -->
+  <section id="cases" class="cu-section cu-cases">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">Cases</span>
+        <h2 class="cu-section-title">導入事例</h2>
+        <p class="cu-section-desc">制作事業で成果を出したお客様の事例をご紹介します</p>
+      </div>
+
+      <div class="cu-cases-grid cu-stagger">
+        <!-- Case 1: 動画制作 -->
+        <article class="cu-case-card">
+          <div class="cu-case-image">
+            <img src="https://picsum.photos/seed/cu-case1/600/400" alt="有料老人ホームC様" loading="lazy">
+            <span class="cu-case-category">動画制作</span>
+          </div>
+          <div class="cu-case-content">
+            <h3 class="cu-case-title">施設紹介動画で入居相談数UP</h3>
+            <p class="cu-case-client">有料老人ホーム C様（大阪府）</p>
+            <p class="cu-case-excerpt">施設の雰囲気が伝わる動画制作により、見学前の安心感を提供し相談数が増加しました。</p>
+            <div class="cu-case-results">
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">40%UP</span>
+                <span class="cu-case-result-label">入居相談数</span>
+              </div>
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">5,000回</span>
+                <span class="cu-case-result-label">再生回数</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 2: Web制作 -->
+        <article class="cu-case-card">
+          <div class="cu-case-image">
+            <img src="https://picsum.photos/seed/cu-case2/600/400" alt="訪問介護D様" loading="lazy">
+            <span class="cu-case-category">Web制作</span>
+          </div>
+          <div class="cu-case-content">
+            <h3 class="cu-case-title">ホームページリニューアルで問い合わせ増加</h3>
+            <p class="cu-case-client">訪問介護事業所 D様（京都府）</p>
+            <p class="cu-case-excerpt">レスポンシブデザインで全面リニューアル。ユーザビリティ向上で問い合わせが増加しました。</p>
+            <div class="cu-case-results">
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">2倍</span>
+                <span class="cu-case-result-label">問い合わせ数</span>
+              </div>
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">-50%</span>
+                <span class="cu-case-result-label">離脱率改善</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 3: デザイン制作 -->
+        <article class="cu-case-card">
+          <div class="cu-case-image">
+            <img src="https://picsum.photos/seed/cu-case3/600/400" alt="介護施設F様" loading="lazy">
+            <span class="cu-case-category">デザイン</span>
+          </div>
+          <div class="cu-case-content">
+            <h3 class="cu-case-title">パンフレット・チラシで認知度向上</h3>
+            <p class="cu-case-client">介護施設 F様（大阪府）</p>
+            <p class="cu-case-excerpt">統一感のあるデザインでブランディングを強化。地域での認知度向上に貢献しました。</p>
+            <div class="cu-case-results">
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">+60%</span>
+                <span class="cu-case-result-label">認知度向上</span>
+              </div>
+              <div class="cu-case-result">
+                <span class="cu-case-result-value">統一</span>
+                <span class="cu-case-result-label">ブランドイメージ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="cu-cases-more cu-reveal">
+        <a href="./cases.html" class="cu-btn cu-btn-outline">
+          すべての事例を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="cu-section cu-contact">
+    <div class="cu-container">
+      <div class="cu-section-header cu-reveal">
+        <span class="cu-section-label">Contact</span>
+        <h2 class="cu-section-title">お問い合わせ</h2>
+      </div>
+
+      <div class="cu-contact-grid cu-stagger">
+        <div class="cu-contact-card">
+          <div class="cu-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <p class="cu-contact-label">LINEで相談</p>
+          <p class="cu-contact-value">気軽に相談できます</p>
+          <a href="#" class="cu-btn-line">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+            </svg>
+            LINEで相談する
+          </a>
+        </div>
+        <div class="cu-contact-card">
+          <div class="cu-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <p class="cu-contact-label">メールで問い合わせ</p>
+          <p class="cu-contact-value">24時間受付中</p>
+          <a href="./contact.html" class="cu-btn-contact">
+            お問い合わせフォーム
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="cu-contact-card">
+          <div class="cu-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <p class="cu-contact-label">お電話でのお問い合わせ</p>
+          <p class="cu-contact-value" style="font-family: var(--cu-font-display); font-size: 24px;">06-4963-2332</p>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 8px;">平日 9:00〜18:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main><!-- /main-content -->
+
+  <!-- ========================================
+       Footer (Same as Main Site)
+  ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./works.html">実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Main Script -->
+  <script src="./js/main.js"></script>
+
+  <!-- CrankUp Page Specific Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ===================================
+      // Reveal Animations on Scroll
+      // ===================================
+      const revealElements = document.querySelectorAll('.cu-reveal, .cu-reveal-left, .cu-reveal-right, .cu-stagger');
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ===================================
+      // Game-style Service Selector with 3D Carousel
+      // ===================================
+      const gameButtons = document.querySelectorAll('.cu-game-btn');
+      const portfolioPanels = document.querySelectorAll('.cu-portfolio-panel');
+      const carouselUpBtn = document.getElementById('carouselUp');
+      const carouselDownBtn = document.getElementById('carouselDown');
+
+      // Track current index for each panel
+      const carouselStates = {};
+
+      // Initialize carousel for each panel
+      function initCarousels() {
+        portfolioPanels.forEach(panel => {
+          const category = panel.dataset.panel;
+          const items = panel.querySelectorAll('.cu-carousel-item');
+          carouselStates[category] = {
+            currentIndex: 0,
+            totalItems: items.length
+          };
+          updateCarouselPositions(panel);
+        });
+      }
+
+      // Update carousel item positions with looping
+      function updateCarouselPositions(panel) {
+        const category = panel.dataset.panel;
+        const state = carouselStates[category];
+        const items = panel.querySelectorAll('.cu-carousel-item');
+        const total = state.totalItems;
+
+        items.forEach((item, index) => {
+          // Calculate position relative to current
+          let relativePos = index - state.currentIndex;
+
+          // Handle looping
+          if (relativePos > total / 2) relativePos -= total;
+          if (relativePos < -total / 2) relativePos += total;
+
+          // Assign position attribute
+          if (relativePos === 0) {
+            item.setAttribute('data-position', 'current');
+          } else if (relativePos === -1) {
+            item.setAttribute('data-position', 'prev');
+          } else if (relativePos === 1) {
+            item.setAttribute('data-position', 'next');
+          } else if (relativePos === -2) {
+            item.setAttribute('data-position', 'prev-2');
+          } else if (relativePos === 2) {
+            item.setAttribute('data-position', 'next-2');
+          } else {
+            item.setAttribute('data-position', 'hidden');
+          }
+        });
+      }
+
+      // Navigate carousel
+      function navigateCarousel(direction) {
+        const activePanel = document.querySelector('.cu-portfolio-panel.active');
+        if (!activePanel) return;
+
+        const category = activePanel.dataset.panel;
+        const state = carouselStates[category];
+        const total = state.totalItems;
+
+        if (direction === 'up') {
+          state.currentIndex = (state.currentIndex - 1 + total) % total;
+        } else {
+          state.currentIndex = (state.currentIndex + 1) % total;
+        }
+
+        updateCarouselPositions(activePanel);
+      }
+
+      // Game button click handler
+      gameButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const category = btn.dataset.category;
+
+          // Update active button
+          gameButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Switch panels with animation
+          portfolioPanels.forEach(panel => {
+            panel.classList.remove('active');
+            if (panel.dataset.panel === category) {
+              panel.classList.add('active');
+              // Reset carousel to first item
+              carouselStates[category].currentIndex = 0;
+              updateCarouselPositions(panel);
+            }
+          });
+        });
+      });
+
+      // Carousel navigation
+      if (carouselUpBtn) {
+        carouselUpBtn.addEventListener('click', () => navigateCarousel('up'));
+      }
+      if (carouselDownBtn) {
+        carouselDownBtn.addEventListener('click', () => navigateCarousel('down'));
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        const servicesSection = document.getElementById('services');
+        const rect = servicesSection?.getBoundingClientRect();
+        if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
+          if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            navigateCarousel('up');
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            navigateCarousel('down');
+          }
+        }
+      });
+
+      // Click on carousel item to make it current
+      portfolioPanels.forEach(panel => {
+        panel.addEventListener('click', (e) => {
+          const item = e.target.closest('.cu-carousel-item');
+          if (!item) return;
+
+          const position = item.getAttribute('data-position');
+          if (position === 'prev' || position === 'prev-2') {
+            navigateCarousel('up');
+          } else if (position === 'next' || position === 'next-2') {
+            navigateCarousel('down');
+          }
+        });
+      });
+
+      // Initialize carousels
+      initCarousels();
+
+      // ===================================
+      // YouTube Link Handler - Now opens modal instead of direct link
+      // ===================================
+      // YouTube links are now handled by the Portfolio Modal Script below
+
+      // ===================================
+      // FAQ Accordion
+      // ===================================
+      const faqItems = document.querySelectorAll('.cu-faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.cu-faq-question');
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          // Close all
+          faqItems.forEach(i => i.classList.remove('open'));
+
+          // Open clicked if it wasn't open
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // ===================================
+      // Staff Carousel
+      // ===================================
+      const staffTrack = document.querySelector('.cu-staff-track');
+      const staffCards = document.querySelectorAll('.cu-staff-card');
+      const prevBtn = document.getElementById('prevStaff');
+      const nextBtn = document.getElementById('nextStaff');
+      let currentIndex = 0;
+      const cardWidth = staffCards[0]?.offsetWidth + 30 || 0;
+      const maxIndex = Math.max(0, staffCards.length - 4);
+
+      function updateCarousel() {
+        if (staffTrack) {
+          staffTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentIndex = Math.max(0, currentIndex - 1);
+          updateCarousel();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentIndex = Math.min(maxIndex, currentIndex + 1);
+          updateCarousel();
+        });
+      }
+    });
+  </script>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- WebGL Slider Script -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Configuration
+      const CONFIG = {
+        slideCount: 4,
+        autoPlayInterval: 5000,
+        transitionDuration: 1.2,
+        effects: ['glass', 'ripple', 'frost', 'plasma']
+      };
+
+      // Slide Images (Placeholder)
+      const slideImages = [
+        'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80', // Video/Camera
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80', // Web design
+        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1920&q=80', // Graphic design
+        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80'  // Creative team
+      ];
+
+      // State
+      let currentSlide = 0;
+      let isTransitioning = false;
+      let isSliderInitialized = false;
+
+      // DOM Elements
+      const preloader = document.getElementById('sliderPreloader');
+      const preloaderProgress = document.getElementById('preloaderProgress');
+      const canvas = document.getElementById('sliderCanvas');
+      const slideContents = document.querySelectorAll('.slide-content');
+      const slideCurrentNum = document.getElementById('slideCurrentNum');
+      const progressDots = document.querySelectorAll('.progress-dot');
+      const effectLabel = document.getElementById('effectLabel');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+
+      // Three.js Setup
+      let scene, camera, renderer, material, mesh;
+      let textures = [];
+      let currentTexture = 0;
+      let nextTexture = 1;
+      let transitionProgress = 0;
+
+      // Vertex Shader
+      const vertexShader = `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `;
+
+      // Fragment Shader with multiple effects
+      const fragmentShader = `
+        uniform sampler2D uTexture1;
+        uniform sampler2D uTexture2;
+        uniform float uProgress;
+        uniform float uTime;
+        uniform int uEffect;
+        uniform vec2 uResolution;
+        varying vec2 vUv;
+
+        // Noise function
+        float random(vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+        }
+
+        // Glass effect
+        vec4 glassEffect(vec2 uv, float progress) {
+          float distortion = sin(uv.y * 20.0 + uTime * 2.0) * 0.02 * (1.0 - abs(progress - 0.5) * 2.0);
+          vec2 uv1 = uv + vec2(distortion * (1.0 - progress), 0.0);
+          vec2 uv2 = uv + vec2(-distortion * progress, 0.0);
+
+          vec4 tex1 = texture2D(uTexture1, uv1);
+          vec4 tex2 = texture2D(uTexture2, uv2);
+
+          float edge = smoothstep(0.0, 0.1, progress) * smoothstep(1.0, 0.9, progress);
+          float blend = smoothstep(0.4, 0.6, progress + (random(uv * 10.0) - 0.5) * 0.1 * edge);
+
+          return mix(tex1, tex2, blend);
+        }
+
+        // Ripple effect
+        vec4 rippleEffect(vec2 uv, float progress) {
+          vec2 center = vec2(0.5, 0.5);
+          float dist = distance(uv, center);
+          float ripple = sin(dist * 30.0 - uTime * 5.0) * 0.03 * (1.0 - progress);
+
+          vec2 uv1 = uv + normalize(uv - center) * ripple;
+          vec2 uv2 = uv - normalize(uv - center) * ripple * progress;
+
+          vec4 tex1 = texture2D(uTexture1, uv1);
+          vec4 tex2 = texture2D(uTexture2, uv2);
+
+          float mask = smoothstep(0.0, 1.0, progress * 1.5 - dist);
+          return mix(tex1, tex2, mask);
+        }
+
+        // Frost effect
+        vec4 frostEffect(vec2 uv, float progress) {
+          float noise = random(uv * 100.0 + uTime);
+          float frost = noise * 0.05 * sin(progress * 3.14159);
+
+          vec2 uv1 = uv + vec2(frost, frost * 0.5);
+          vec2 uv2 = uv - vec2(frost * 0.5, frost);
+
+          vec4 tex1 = texture2D(uTexture1, uv1);
+          vec4 tex2 = texture2D(uTexture2, uv2);
+
+          float blend = smoothstep(0.3, 0.7, progress + noise * 0.2 - 0.1);
+          vec4 result = mix(tex1, tex2, blend);
+
+          // Add frosted glass overlay
+          float frostOverlay = noise * 0.1 * sin(progress * 3.14159);
+          result.rgb += vec3(frostOverlay);
+
+          return result;
+        }
+
+        // Plasma effect
+        vec4 plasmaEffect(vec2 uv, float progress) {
+          float plasma = sin(uv.x * 10.0 + uTime) * sin(uv.y * 10.0 + uTime * 0.5);
+          plasma += sin(distance(uv, vec2(0.5)) * 15.0 - uTime * 2.0);
+          plasma *= 0.02 * sin(progress * 3.14159);
+
+          vec2 uv1 = uv + vec2(plasma, plasma * 0.5);
+          vec2 uv2 = uv - vec2(plasma * 0.5, plasma);
+
+          vec4 tex1 = texture2D(uTexture1, uv1);
+          vec4 tex2 = texture2D(uTexture2, uv2);
+
+          float wave = sin(uv.x * 5.0 + progress * 10.0) * 0.1;
+          float blend = smoothstep(0.0, 1.0, progress + wave);
+
+          return mix(tex1, tex2, blend);
+        }
+
+        void main() {
+          vec4 color;
+
+          // When not transitioning (progress = 0), show static image
+          if (uProgress < 0.001) {
+            color = texture2D(uTexture1, vUv);
+          } else if (uEffect == 0) {
+            color = glassEffect(vUv, uProgress);
+          } else if (uEffect == 1) {
+            color = rippleEffect(vUv, uProgress);
+          } else if (uEffect == 2) {
+            color = frostEffect(vUv, uProgress);
+          } else {
+            color = plasmaEffect(vUv, uProgress);
+          }
+
+          // Vignette
+          float vignette = 1.0 - distance(vUv, vec2(0.5)) * 0.5;
+          color.rgb *= vignette;
+
+          // Color grading (CrankUp brand colors)
+          color.rgb = mix(color.rgb, color.rgb * vec3(0.9, 1.0, 1.05), 0.3);
+
+          gl_FragColor = color;
+        }
+      `;
+
+      // Initialize Three.js
+      function initThree() {
+        scene = new THREE.Scene();
+        camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+        camera.position.z = 1;
+
+        renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Create material with shaders
+        material = new THREE.ShaderMaterial({
+          uniforms: {
+            uTexture1: { value: null },
+            uTexture2: { value: null },
+            uProgress: { value: 0 },
+            uTime: { value: 0 },
+            uEffect: { value: 0 },
+            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+          },
+          vertexShader: vertexShader,
+          fragmentShader: fragmentShader
+        });
+
+        // Create plane geometry
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Handle resize
+        window.addEventListener('resize', onResize);
+      }
+
+      // Load textures
+      function loadTextures() {
+        const loader = new THREE.TextureLoader();
+        let loaded = 0;
+
+        slideImages.forEach((url, index) => {
+          loader.load(
+            url,
+            (texture) => {
+              texture.minFilter = THREE.LinearFilter;
+              texture.magFilter = THREE.LinearFilter;
+              textures[index] = texture;
+              loaded++;
+
+              // Update preloader progress
+              const progress = (loaded / slideImages.length) * 100;
+              if (preloaderProgress) {
+                preloaderProgress.style.width = progress + '%';
+              }
+
+              // All textures loaded
+              if (loaded === slideImages.length) {
+                onTexturesLoaded();
+              }
+            },
+            undefined,
+            (error) => {
+              // Create fallback gradient texture
+              const canvas = document.createElement('canvas');
+              canvas.width = 1920;
+              canvas.height = 1080;
+              const ctx = canvas.getContext('2d');
+
+              const colors = [
+                ['#0d3d47', '#1a5f6c'],
+                ['#1a5f6c', '#2a8a9c'],
+                ['#2a8a9c', '#3ab0c4'],
+                ['#0d3d47', '#2a8a9c']
+              ];
+
+              const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+              gradient.addColorStop(0, colors[index][0]);
+              gradient.addColorStop(1, colors[index][1]);
+              ctx.fillStyle = gradient;
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+              const texture = new THREE.CanvasTexture(canvas);
+              textures[index] = texture;
+              loaded++;
+
+              const progress = (loaded / slideImages.length) * 100;
+              if (preloaderProgress) {
+                preloaderProgress.style.width = progress + '%';
+              }
+
+              if (loaded === slideImages.length) {
+                onTexturesLoaded();
+              }
+            }
+          );
+        });
+      }
+
+      // On textures loaded
+      function onTexturesLoaded() {
+        // Initialize textures - set texture1 to first slide
+        material.uniforms.uTexture1.value = textures[0];
+        material.uniforms.uTexture2.value = textures[0];
+        material.uniforms.uProgress.value = 0;
+        material.uniforms.uEffect.value = 0;
+
+        // Ensure first slide content is visible
+        updateUI();
+
+        // Force a render to ensure WebGL is initialized
+        renderer.render(scene, camera);
+
+        // Mark slider as initialized immediately
+        isSliderInitialized = true;
+
+        // Start the auto-play timer immediately (first slide gets same duration as others)
+        startAutoPlay();
+
+        // Hide preloader with animation (doesn't delay auto-play)
+        if (preloader) {
+          preloader.classList.add('hidden');
+        }
+      }
+
+      // Resize handler
+      function onResize() {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+      }
+
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        material.uniforms.uTime.value += 0.016;
+        renderer.render(scene, camera);
+      }
+
+      // Go to slide
+      function goToSlide(index, direction = 1) {
+        if (!isSliderInitialized || isTransitioning || index === currentSlide) return;
+        if (index < 0) index = CONFIG.slideCount - 1;
+        if (index >= CONFIG.slideCount) index = 0;
+
+        isTransitioning = true;
+        const prevSlide = currentSlide;
+        currentSlide = index;
+
+        // Update textures
+        material.uniforms.uTexture1.value = textures[prevSlide];
+        material.uniforms.uTexture2.value = textures[currentSlide];
+
+        // Set effect
+        const effectIndex = currentSlide % CONFIG.effects.length;
+        material.uniforms.uEffect.value = effectIndex;
+
+        // Update effect label
+        const effectNames = ['Glass Effect', 'Ripple Effect', 'Frost Effect', 'Plasma Effect'];
+        if (effectLabel) {
+          effectLabel.textContent = effectNames[effectIndex];
+        }
+
+        // Animate transition
+        const startTime = performance.now();
+        const duration = CONFIG.transitionDuration * 1000;
+
+        function animateTransition() {
+          const elapsed = performance.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Easing
+          const eased = 1 - Math.pow(1 - progress, 3);
+          material.uniforms.uProgress.value = eased;
+
+          if (progress < 1) {
+            requestAnimationFrame(animateTransition);
+          } else {
+            material.uniforms.uProgress.value = 0;
+            material.uniforms.uTexture1.value = textures[currentSlide];
+            isTransitioning = false;
+          }
+        }
+
+        animateTransition();
+
+        // Update UI
+        updateUI();
+        resetAutoPlay();
+      }
+
+      // Update UI
+      function updateUI() {
+        // Update slide number
+        if (slideCurrentNum) {
+          slideCurrentNum.textContent = String(currentSlide + 1).padStart(2, '0');
+        }
+
+        // Update slide content
+        slideContents.forEach((content, index) => {
+          content.classList.toggle('active', index === currentSlide);
+        });
+
+        // Update progress dots
+        progressDots.forEach((dot, index) => {
+          dot.classList.remove('active', 'completed');
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else if (index < currentSlide) {
+            dot.classList.add('completed');
+          }
+        });
+      }
+
+      // Auto play - using setTimeout chain for more reliable timing
+      let autoPlayTimeoutId = null;
+      let isAutoPlayPaused = false;
+
+      function stopAutoPlay() {
+        if (autoPlayTimeoutId) {
+          clearTimeout(autoPlayTimeoutId);
+          autoPlayTimeoutId = null;
+        }
+      }
+
+      function scheduleNextSlide() {
+        stopAutoPlay();
+        if (!isSliderInitialized || isAutoPlayPaused) return;
+
+        autoPlayTimeoutId = setTimeout(() => {
+          if (!isTransitioning && isSliderInitialized && !isAutoPlayPaused) {
+            goToSlide(currentSlide + 1);
+          } else if (!isAutoPlayPaused) {
+            // If transitioning, try again shortly
+            scheduleNextSlide();
+          }
+        }, CONFIG.autoPlayInterval);
+      }
+
+      function startAutoPlay() {
+        if (!isSliderInitialized) return;
+        isAutoPlayPaused = false;
+        scheduleNextSlide();
+      }
+
+      function pauseAutoPlay() {
+        isAutoPlayPaused = true;
+        stopAutoPlay();
+      }
+
+      function resetAutoPlay() {
+        if (!isSliderInitialized) return;
+        isAutoPlayPaused = false;
+        scheduleNextSlide();
+      }
+
+      // Event listeners
+      function setupEventListeners() {
+        // Navigation buttons
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1, -1));
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1, 1));
+        }
+
+        // Progress dots
+        progressDots.forEach((dot, index) => {
+          dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1, -1);
+          if (e.key === 'ArrowRight') goToSlide(currentSlide + 1, 1);
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        if (sliderWrapper) {
+          sliderWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+          }, { passive: true });
+
+          sliderWrapper.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) {
+                goToSlide(currentSlide + 1, 1);
+              } else {
+                goToSlide(currentSlide - 1, -1);
+              }
+            }
+          }, { passive: true });
+        }
+
+        // Pause on hover - disabled for continuous playback
+        // const wrapper = document.getElementById('sliderWrapper');
+        // if (wrapper) {
+        //   wrapper.addEventListener('mouseenter', () => {
+        //     pauseAutoPlay();
+        //   });
+        //   wrapper.addEventListener('mouseleave', () => {
+        //     resetAutoPlay();
+        //   });
+        // }
+      }
+
+      // Initialize
+      function init() {
+        if (!canvas) return;
+
+        initThree();
+        loadTextures();
+        animate();
+        setupEventListeners();
+        updateUI();
+      }
+
+      // Start when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+  <!-- Portfolio Modal -->
+  <div class="portfolio-modal-overlay" id="portfolioModal">
+    <button class="portfolio-modal-close" id="modalClose" aria-label="閉じる">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="portfolio-modal">
+      <div class="portfolio-modal-image" id="modalImageArea">
+        <div class="portfolio-modal-image-placeholder" id="modalImagePlaceholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span>Preview</span>
+        </div>
+        <a href="#" class="portfolio-modal-play" id="modalPlayBtn" target="_blank" rel="noopener noreferrer" style="display: none;">
+          <svg viewBox="0 0 24 24">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+          <span class="portfolio-modal-play-text">映像を見る</span>
+        </a>
+      </div>
+      <div class="portfolio-modal-content">
+        <span class="portfolio-modal-category" id="modalCategory">Corporate Video</span>
+        <h2 class="portfolio-modal-title" id="modalTitle">プロジェクトタイトル</h2>
+        <div class="portfolio-modal-meta">
+          <div class="portfolio-modal-meta-item">
+            <span class="portfolio-modal-meta-label">制作時期</span>
+            <span class="portfolio-modal-meta-value" id="modalDate">2025.10</span>
+          </div>
+          <div class="portfolio-modal-meta-item">
+            <span class="portfolio-modal-meta-label">クライアント</span>
+            <span class="portfolio-modal-meta-value" id="modalClient">企業様</span>
+          </div>
+          <div class="portfolio-modal-meta-item">
+            <span class="portfolio-modal-meta-label">種別</span>
+            <span class="portfolio-modal-meta-value" id="modalType">映像制作</span>
+          </div>
+        </div>
+        <p class="portfolio-modal-description" id="modalDescription">
+          プロジェクトの詳細説明がここに表示されます。
+        </p>
+        <div class="portfolio-modal-details">
+          <h4 class="portfolio-modal-details-title">制作内容</h4>
+          <div class="portfolio-modal-details-list" id="modalTags">
+            <span class="portfolio-modal-tag">企画</span>
+            <span class="portfolio-modal-tag">撮影</span>
+            <span class="portfolio-modal-tag">編集</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal Script -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Portfolio data with detailed information
+      const portfolioData = {
+        corporate: [
+          {
+            title: '道頓堀大型ビジョンCM',
+            category: 'Corporate Video',
+            date: '2025.10',
+            client: 'インフルエンサー企業様',
+            type: '大型ビジョン映像',
+            description: 'インフルエンサー企業様向けの道頓堀大型ビジョン用CM映像を制作しました。撮影から編集まで一貫して担当し、街行く人々の目を引くインパクトのある映像に仕上げました。大型LEDビジョンの特性を活かした色彩設計と、ブランドメッセージを効果的に伝えるストーリー構成にこだわりました。',
+            tags: ['企画', '撮影', '編集', 'カラーグレーディング', 'サウンドデザイン'],
+            videoUrl: '' // 映像URLをここに追加
+          },
+          {
+            title: '関西コレクション ディスプレイ広告映像',
+            category: 'Corporate Video',
+            date: '2025.08',
+            client: '美容クリニック様',
+            type: 'イベント映像',
+            description: '関西コレクション内の出演者用ブースに設置するデジタルサイネージ映像を制作しました。美容クリニック様のブランドイメージを効果的に訴求し、来場者の興味を引く洗練された映像に仕上げています。イベントの雰囲気に合わせた華やかなビジュアルと、サービス内容をわかりやすく伝える構成を心がけました。',
+            tags: ['企画', '撮影', '編集', 'モーショングラフィックス'],
+            videoUrl: '' // 映像URLをここに追加
+          },
+          {
+            title: '専門学校 HP用ヒーロー映像',
+            category: 'Corporate Video',
+            date: '2025.11',
+            client: '専門学校様',
+            type: 'WEB映像',
+            description: 'ホームページのメインビジュアル用に、学校の魅力を凝縮した迫力ある映像とアニメーションを制作しました。学生の活気ある様子や充実した施設を映像で表現し、入学を検討している方に学校の雰囲気を伝えています。ファーストビューで印象に残るダイナミックな演出を採用しました。',
+            tags: ['企画', '撮影', '編集', 'アニメーション', 'WEB最適化'],
+            videoUrl: '' // 映像URLをここに追加
+          },
+          {
+            title: '専門学校 SNS用縦型映像',
+            category: 'Corporate Video',
+            date: '2025.10',
+            client: '専門学校様',
+            type: 'SNS映像',
+            description: '学生と教員が出演するショート映像を企画・撮影・編集しました。TikTokやInstagramリールなどの縦型プラットフォームに最適化し、若い世代にリーチする親しみやすいコンテンツに仕上げています。学校生活のリアルな魅力を伝える等身大の映像です。',
+            tags: ['企画', '撮影', '編集', 'SNS最適化', '縦型動画'],
+            videoUrl: '' // 映像URLをここに追加
+          },
+          {
+            title: '専門学校 YouTubeチャンネル映像',
+            category: 'Corporate Video',
+            date: '2025.09',
+            client: '専門学校様',
+            type: 'YouTube映像',
+            description: '学校公式YouTubeチャンネル向けの映像コンテンツを制作しました。学校紹介、学科説明、オープンキャンパス告知など、様々な目的に応じた映像を継続的に制作しています。SEOを意識したタイトル設計やサムネイル制作もサポートしています。',
+            tags: ['企画', '撮影', '編集', 'サムネイル制作', 'SEO対策'],
+            videoUrl: '' // 映像URLをここに追加
+          },
+          {
+            title: '社内イベント用映像',
+            category: 'Corporate Video',
+            date: '2024.09',
+            client: '企業様',
+            type: 'イベント映像',
+            description: '大型LEDパネルのサイズに合わせた各種アニメーション・映像を制作しました。社内イベントを盛り上げるオープニング映像や、表彰式用の演出映像など、イベントの各シーンに最適な映像コンテンツを提供しています。',
+            tags: ['企画', 'アニメーション', '映像制作', 'LED最適化'],
+            videoUrl: ''
+          },
+          {
+            title: '人材紹介会社 求人用映像',
+            category: 'Corporate Video',
+            date: '2025.07',
+            client: '人材紹介会社様',
+            type: '採用映像',
+            description: 'インタビューを軸に、パーソナルな魅力を引き出した採用映像を制作しました。社員の生の声と職場の雰囲気を伝え、求職者に響くコンテンツに仕上げています。',
+            tags: ['企画', '撮影', '編集', 'インタビュー', 'ナレーション'],
+            videoUrl: ''
+          },
+          {
+            title: '海外イベント用映像',
+            category: 'Corporate Video',
+            date: '2024.07',
+            client: '車販売店様',
+            type: 'プロモーション映像',
+            description: '車販売店様向けにドローンを駆使した迫力のあるプロモーション映像を制作しました。海外イベントでの上映を想定し、言語に頼らない視覚的なインパクトを重視しています。',
+            tags: ['企画', '撮影', '編集', 'ドローン撮影', 'カラーグレーディング'],
+            videoUrl: ''
+          },
+          {
+            title: '化学メーカー 企業VP',
+            category: 'Corporate Video',
+            date: '2024.02',
+            client: '化学メーカー様',
+            type: '企業VP',
+            description: '代表メッセージを軸に会社カットで企業の強みを映像化しました。企業理念や事業内容を分かりやすく伝え、採用活動やステークホルダーへの説明資料として活用されています。',
+            tags: ['企画', '撮影', '編集', 'ナレーション', '字幕制作'],
+            videoUrl: ''
+          },
+          {
+            title: '社内表彰式 オープニング映像',
+            category: 'Corporate Video',
+            date: '2023',
+            client: '自社グループ',
+            type: 'イベント映像',
+            description: '自社グループの社内表彰式イベントを盛り上げるオープニング映像を制作しました。一年間の成果を振り返りながら、受賞者への期待感を高める演出を施しています。',
+            tags: ['企画', '編集', 'モーショングラフィックス', 'サウンドデザイン'],
+            videoUrl: ''
+          }
+        ],
+        mv: [
+          {
+            title: 'UnpRayable -「ひとりじゃない」',
+            category: 'Music Video',
+            date: '2024.02',
+            client: 'UnpRayable',
+            type: 'ミュージックビデオ',
+            description: '2013年リリースのセルフカバー楽曲を、学校を舞台にしたストーリー仕立ての映像で表現しました。青春の情景と楽曲の持つメッセージを融合させ、視聴者の心に響く作品に仕上げています。企画から撮影、編集、カラーグレーディングまで一貫して担当しました。',
+            tags: ['企画', '撮影', '編集', 'カラーグレーディング', 'ストーリーボード'],
+            videoUrl: 'https://www.youtube.com/watch?v=IX4_Adi5We0',
+            thumbnail: 'https://img.youtube.com/vi/IX4_Adi5We0/maxresdefault.jpg'
+          }
+        ],
+        personal: [
+          {
+            title: 'マリンスポーツ映像',
+            category: 'Personal',
+            date: '2025.07',
+            client: '個人様',
+            type: '趣味・アクション映像',
+            description: 'アクションカメラやドローンを駆使したダイナミックなマリンスポーツ映像を制作しました。波の迫力や水しぶきの美しさを捉え、スポーツの躍動感を最大限に引き出しています。GoProやDJI機材を活用した撮影から編集まで一貫して対応しました。',
+            tags: ['撮影', '編集', 'ドローン撮影', 'アクションカメラ', 'カラーグレーディング'],
+            videoUrl: ''
+          },
+          {
+            title: '結婚式オープニング映像',
+            category: 'Personal',
+            date: '2025.04',
+            client: '個人様',
+            type: 'ウェディング映像',
+            description: '思い出の写真をアニメーションで彩り、お二人の歩みを感動的に映像化しました。BGMに合わせたタイミング設計と、温かみのあるエフェクトで会場を盛り上げる演出を施しています。',
+            tags: ['企画', '編集', 'アニメーション', 'サウンドデザイン'],
+            videoUrl: ''
+          },
+          {
+            title: '結婚式オープニング映像',
+            category: 'Personal',
+            date: '2025.02',
+            client: '個人様',
+            type: 'ウェディング映像',
+            description: 'お預かりした写真にアニメーションを付けて感動的に演出しました。新郎新婦様の出会いから現在までのストーリーを、心温まる映像として仕上げています。',
+            tags: ['企画', '編集', 'アニメーション', 'モーショングラフィックス'],
+            videoUrl: ''
+          },
+          {
+            title: '車紹介映像',
+            category: 'Personal',
+            date: '2024.05',
+            client: '個人様',
+            type: '趣味・プロモーション映像',
+            description: 'ドローンやアクションカメラで愛車の魅力を余すことなく撮影しました。車体のディテールから走行シーンまで、オーナー様のこだわりを映像で表現しています。',
+            tags: ['撮影', '編集', 'ドローン撮影', 'カラーグレーディング'],
+            videoUrl: ''
+          },
+          {
+            title: '結婚式 OP・ゲーム映像',
+            category: 'Personal',
+            date: '2024.03',
+            client: '個人様',
+            type: 'ウェディング映像',
+            description: 'オープニング撮影からオリジナルゲーム映像まで、結婚式を盛り上げるコンテンツを総合的に制作しました。ゲストも参加できるインタラクティブな演出で、思い出に残る披露宴を演出しています。',
+            tags: ['企画', '撮影', '編集', 'ゲーム制作', 'アニメーション'],
+            videoUrl: ''
+          }
+        ],
+        design: [
+          {
+            title: '専門学校 教員宣材写真',
+            category: 'Photo',
+            date: '2025.10',
+            client: '専門学校様',
+            type: '宣材写真',
+            description: 'ホームページ掲載用の教員プロフィール写真を撮影・編集しました。各教員の個性と専門性が伝わるポートレートを、統一感のあるトーンで仕上げています。',
+            tags: ['撮影', 'レタッチ', 'ポートレート', 'ライティング'],
+            videoUrl: ''
+          },
+          {
+            title: 'ヘアサロン スタッフ宣材写真',
+            category: 'Photo',
+            date: '2025.08',
+            client: 'ヘアサロン様',
+            type: '宣材写真',
+            description: 'サロンの雰囲気に合わせたスタッフ写真の撮影・レタッチを行いました。お客様に安心感を与える、親しみやすい表情を引き出すディレクションを心がけています。',
+            tags: ['撮影', 'レタッチ', 'ポートレート', 'ロケ撮影'],
+            videoUrl: ''
+          },
+          {
+            title: '人材紹介会社 HP用写真',
+            category: 'Photo',
+            date: '2025.05',
+            client: '人材紹介会社様',
+            type: 'ビジネス写真',
+            description: 'コーポレートサイト用のビジネス宣材写真を撮影しました。企業の信頼感とプロフェッショナリズムを表現する、クリーンで洗練されたビジュアルに仕上げています。',
+            tags: ['撮影', 'レタッチ', 'ビジネスポートレート', 'オフィス撮影'],
+            videoUrl: ''
+          }
+        ],
+        event: [
+          {
+            title: '結婚式二次会 トータルプロデュース',
+            category: 'Event',
+            date: '2025.03',
+            client: '個人様',
+            type: 'イベントプロデュース',
+            description: 'ゲストキャスティングから企画・進行、グッズや映像制作まで一貫してサポートしました。新郎新婦様のご要望を形にし、ゲスト全員が楽しめる二次会を実現しています。',
+            tags: ['企画', '進行', '映像制作', 'グッズデザイン', 'キャスティング'],
+            videoUrl: ''
+          },
+          {
+            title: '販売店グループ表彰式',
+            category: 'Event',
+            date: '2024.09',
+            client: '販売店グループ様',
+            type: 'イベントプロデュース',
+            description: '企画・進行からグッズデザインまでイベント全体をプロデュースしました。受賞者の功績を讃える演出と、参加者全員のモチベーションを高める構成を心がけています。',
+            tags: ['企画', '進行', 'グッズデザイン', '映像制作', '会場演出'],
+            videoUrl: ''
+          }
+        ],
+        music: [
+          {
+            title: '大型ビジョンCM用オリジナルBGM',
+            category: 'Music Production',
+            date: '2025.10',
+            client: 'インフルエンサー企業様',
+            type: 'オリジナル楽曲',
+            description: 'インフルエンサー企業様の映像に合わせたオリジナル楽曲を制作しました。ブランドイメージに沿った印象的なサウンドで、映像の訴求力を高めています。',
+            tags: ['作曲', '編曲', 'ミキシング', 'マスタリング'],
+            videoUrl: ''
+          },
+          {
+            title: 'クリエイターチーム「Or Create」',
+            category: 'Creator Team',
+            date: '',
+            client: '',
+            type: 'チーム紹介',
+            description: '楽曲制作を担当するクリエイターチームです。多様なジャンルに対応可能なメンバーが揃い、映像に最適なサウンドを提供しています。詳細はチームサイトをご覧ください。',
+            tags: ['楽曲制作', 'サウンドデザイン', 'BGM', 'SE制作'],
+            videoUrl: 'https://or-create.vercel.app/index.html'
+          }
+        ],
+        award: [
+          {
+            title: '「Contrast」大阪市北区映像コンテスト',
+            category: 'Award',
+            date: '2025.01',
+            client: '自主制作',
+            type: '受賞作品',
+            description: '大阪市北区の魅力を伝える映像作品で2部門受賞しました。昼と夜、新旧、動と静のコントラストをテーマに、北区の多様な魅力を表現しています。',
+            tags: ['企画', '撮影', '編集', 'カラーグレーディング', 'サウンドデザイン'],
+            videoUrl: ''
+          }
+        ]
+      };
+
+      // DOM Elements
+      const modal = document.getElementById('portfolioModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalCategory = document.getElementById('modalCategory');
+      const modalDate = document.getElementById('modalDate');
+      const modalClient = document.getElementById('modalClient');
+      const modalType = document.getElementById('modalType');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalTags = document.getElementById('modalTags');
+      const modalPlayBtn = document.getElementById('modalPlayBtn');
+      const modalImageArea = document.getElementById('modalImageArea');
+      const modalImagePlaceholder = document.getElementById('modalImagePlaceholder');
+
+      // Open modal with data
+      function openModal(category, index) {
+        const data = portfolioData[category];
+        if (!data || !data[index]) return;
+
+        const item = data[index];
+
+        modalTitle.textContent = item.title;
+        modalCategory.textContent = item.category;
+        modalDate.textContent = item.date;
+        modalClient.textContent = item.client;
+        modalType.textContent = item.type;
+        modalDescription.textContent = item.description;
+
+        // Update tags
+        modalTags.innerHTML = item.tags.map(tag =>
+          `<span class="portfolio-modal-tag">${tag}</span>`
+        ).join('');
+
+        // Update thumbnail image
+        const existingImg = modalImageArea.querySelector('img.modal-thumb-img');
+        if (existingImg) existingImg.remove();
+
+        if (item.thumbnail && item.thumbnail.trim() !== '') {
+          const img = document.createElement('img');
+          img.src = item.thumbnail;
+          img.alt = item.title;
+          img.className = 'modal-thumb-img';
+          img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
+          modalImageArea.insertBefore(img, modalImageArea.firstChild);
+          modalImagePlaceholder.style.display = 'none';
+        } else {
+          modalImagePlaceholder.style.display = 'flex';
+        }
+
+        // Update video link
+        if (item.videoUrl && item.videoUrl.trim() !== '') {
+          modalPlayBtn.href = item.videoUrl;
+          modalPlayBtn.style.display = 'flex';
+        } else {
+          modalPlayBtn.style.display = 'none';
+        }
+
+        // Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Event listeners
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      // Escape key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Add click events to portfolio cards
+      document.querySelectorAll('.cu-portfolio-panel').forEach(panel => {
+        const category = panel.dataset.panel;
+        panel.querySelectorAll('.cu-carousel-item').forEach((carouselItem) => {
+          const card = carouselItem.querySelector('.cu-portfolio-card');
+          const index = parseInt(carouselItem.dataset.index, 10);
+          if (card && !isNaN(index)) {
+            card.addEventListener('click', (e) => {
+              // Only open modal if clicking on the current (center) item
+              if (carouselItem.dataset.position === 'current') {
+                e.preventDefault();
+                e.stopPropagation();
+                openModal(category, index);
+              }
+            });
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>動画マーケティングの基礎｜企業が知っておくべき映像制作の第一歩 | コラム | 株式会社イデア</title>
+  <meta name="description" content="動画広告市場は7,209億円規模に。91%の企業が動画をマーケティングに活用する時代、効果的な映像制作のポイントと企画の立て方を基礎から解説します。">
+  <meta name="keywords" content="動画制作,映像制作,動画マーケティング,YouTube,企業PR,プロモーション動画">
+  <meta name="author" content="株式会社イデア">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="株式会社イデア">
+  <meta property="og:title" content="動画マーケティングの基礎｜企業が知っておくべき映像制作の第一歩">
+  <meta property="og:description" content="効果的な映像制作のポイントと企画の立て方を基礎から解説。">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .article-hero {
+      padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl);
+      background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%);
+      color: var(--color-white);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-md);
+      background: rgba(255,255,255,0.2);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      margin-bottom: var(--space-lg);
+    }
+
+    .article-title {
+      font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: var(--space-lg);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      font-size: var(--text-sm);
+      opacity: 0.9;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-4xl) var(--space-xl);
+    }
+
+    .article-content h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: var(--space-3xl) 0 var(--space-lg);
+      padding-bottom: var(--space-md);
+      border-bottom: 3px solid #FF5722;
+    }
+
+    .article-content h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      color: var(--color-text);
+      margin: var(--space-2xl) 0 var(--space-md);
+    }
+
+    .article-content p {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      color: var(--color-text);
+      margin-bottom: var(--space-lg);
+    }
+
+    .article-content ul, .article-content ol {
+      margin: var(--space-lg) 0;
+      padding-left: var(--space-xl);
+    }
+
+    .article-content li {
+      font-size: var(--text-base);
+      line-height: 1.8;
+      margin-bottom: var(--space-sm);
+    }
+
+    .highlight-box {
+      background: var(--color-off-white);
+      border-left: 4px solid #FF5722;
+      padding: var(--space-xl);
+      margin: var(--space-2xl) 0;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    .data-box {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      margin: var(--space-2xl) 0;
+    }
+
+    .data-box-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: #E64A19;
+      margin-bottom: var(--space-md);
+    }
+
+    .video-type-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+
+    .video-type-card h4 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: #FF5722;
+      margin-bottom: var(--space-sm);
+    }
+
+    .video-type-card p {
+      margin-bottom: var(--space-sm);
+    }
+
+    .video-type-card .meta {
+      display: flex;
+      gap: var(--space-lg);
+      font-size: var(--text-sm);
+      color: var(--color-text-light);
+      margin-top: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .checklist {
+      background: #f5f5f5;
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-2xl) 0;
+    }
+
+    .checklist h4 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .checklist ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: var(--space-sm);
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: #FF5722;
+    }
+
+    .article-cta {
+      background: var(--color-off-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-3xl);
+      text-align: center;
+      margin-top: var(--space-4xl);
+    }
+
+    .article-cta-title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .article-cta-text {
+      color: var(--color-text-light);
+      margin-bottom: var(--space-xl);
+    }
+
+    .article-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-2xl);
+      background: #FF5722;
+      color: var(--color-white);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .article-cta .btn:hover {
+      background: #E64A19;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/idea_logo.png" alt="株式会社イデア">
+      </a>
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <li><a href="../about.html">会社概要</a></li>
+          <li><a href="../service.html">サービス</a></li>
+          <li><a href="../cases.html">導入事例</a></li>
+          <li><a href="../column.html" class="current">コラム</a></li>
+          <li><a href="../recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <a href="../contact.html" class="header-cta">お問い合わせ</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 記事ヒーロー -->
+    <section class="article-hero">
+      <div class="article-hero-inner">
+        <span class="article-category">映像制作</span>
+        <h1 class="article-title">動画マーケティングの基礎｜企業が知っておくべき映像制作の第一歩</h1>
+        <div class="article-meta">
+          <span>2025年1月5日</span>
+          <span>読了時間：約10分</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 記事本文 -->
+    <article class="article-content">
+
+      <p>スマートフォンの普及とともに、動画コンテンツの消費量は爆発的に増加しました。通勤電車の中でYouTubeを見る人、SNSのリール動画をスクロールする人——動画は今や日常の一部です。そんな時代において、企業が動画マーケティングに取り組まない理由はありません。本記事では、映像制作の基礎知識から効果的な企画の立て方まで、動画マーケティングの第一歩を解説します。</p>
+
+      <div class="data-box">
+        <p class="data-box-title">動画マーケティングの現状</p>
+        <p>2024年の動画広告市場規模は7,209億円に達し、2027年には1兆円を超える見通しです。グローバルな調査では、91%の企業がマーケティングツールとして動画を活用しており、動画コンテンツを活用した企業の約62%が「静止画に比べて成果が向上した」と回答しています。</p>
+      </div>
+
+      <h2>なぜ動画が効果的なのか</h2>
+
+      <p>動画が他のコンテンツ形式に比べて効果的とされる理由は、いくつかの科学的・心理学的な要因に基づいています。</p>
+
+      <h3>情報伝達量の圧倒的な差</h3>
+
+      <p>「1分間の動画は180万語に相当する」という研究結果があります。もちろんこれは比喩的な表現ですが、映像は視覚・聴覚を同時に刺激し、テキストや静止画では伝えきれない情報量を短時間で届けることができます。</p>
+
+      <h3>感情への訴求力</h3>
+
+      <p>映像は人の感情を動かす力を持っています。BGM、ナレーションのトーン、映像のテンポ——これらの要素が組み合わさることで、見る人の心に深く響くコンテンツを作ることができます。テキストだけでは伝わりにくい「雰囲気」や「空気感」を表現できるのは、動画ならではの強みです。</p>
+
+      <h3>記憶への定着</h3>
+
+      <p>テキストで読んだ情報は3日後に10%しか記憶に残らないのに対し、動画で視聴した情報は65%が記憶に残るという研究もあります。ブランドや商品の印象を残したい場合、動画は非常に有効な手段です。</p>
+
+      <h2>企業動画の種類と用途</h2>
+
+      <p>一口に「企業動画」といっても、目的に応じてさまざまな種類があります。</p>
+
+      <div class="video-type-card">
+        <h4>会社紹介・企業PR動画</h4>
+        <p>企業の理念、事業内容、強みなどを伝える動画です。採用活動、営業ツール、ウェブサイトのトップページなど、幅広い場面で活用できます。</p>
+        <div class="meta">
+          <span>推奨時間：2〜5分</span>
+          <span>活用場面：採用、営業、Web</span>
+        </div>
+      </div>
+
+      <div class="video-type-card">
+        <h4>サービス・商品紹介動画</h4>
+        <p>特定のサービスや商品の特徴、使い方、メリットを紹介する動画です。ウェブサイトやECサイトの商品ページ、展示会などで活用されます。</p>
+        <div class="meta">
+          <span>推奨時間：1〜3分</span>
+          <span>活用場面：Web、EC、展示会</span>
+        </div>
+      </div>
+
+      <div class="video-type-card">
+        <h4>お客様の声・事例紹介動画</h4>
+        <p>実際に商品やサービスを利用したお客様にインタビューする動画です。第三者の声として信頼性が高く、購入検討者の背中を押す効果があります。</p>
+        <div class="meta">
+          <span>推奨時間：2〜4分</span>
+          <span>活用場面：Web、営業提案</span>
+        </div>
+      </div>
+
+      <div class="video-type-card">
+        <h4>ハウツー・解説動画</h4>
+        <p>商品の使い方やノウハウを解説する動画です。YouTubeとの相性が良く、検索流入も期待できます。専門性をアピールし、信頼を構築する効果があります。</p>
+        <div class="meta">
+          <span>推奨時間：5〜15分</span>
+          <span>活用場面：YouTube、Web</span>
+        </div>
+      </div>
+
+      <div class="video-type-card">
+        <h4>採用動画</h4>
+        <p>求職者に向けて、職場の雰囲気や先輩社員の声を届ける動画です。求人サイトや採用ページに掲載し、応募意欲を高めます。</p>
+        <div class="meta">
+          <span>推奨時間：3〜7分</span>
+          <span>活用場面：採用サイト、説明会</span>
+        </div>
+      </div>
+
+      <div class="video-type-card">
+        <h4>SNS向けショート動画</h4>
+        <p>TikTok、Instagram Reels、YouTube Shortsなど、短尺動画プラットフォーム向けのコンテンツです。拡散力が高く、認知拡大に効果的です。</p>
+        <div class="meta">
+          <span>推奨時間：15秒〜60秒</span>
+          <span>活用場面：各種SNS</span>
+        </div>
+      </div>
+
+      <h2>効果的な動画を作るための企画の立て方</h2>
+
+      <p>動画制作で最も重要なのは、撮影や編集の技術ではなく「企画」です。目的が曖昧なまま制作を進めると、誰にも響かない動画が出来上がってしまいます。</p>
+
+      <h3>Step 1：目的を明確にする</h3>
+
+      <p>まず「この動画で何を達成したいのか」を言語化します。目的が曖昧なまま進めると、制作途中で方向性がブレたり、効果測定ができなくなったりします。</p>
+
+      <ul>
+        <li>認知を広げたい（ブランド名を覚えてもらう）</li>
+        <li>理解を深めてもらいたい（サービス内容を知ってもらう）</li>
+        <li>行動を促したい（問い合わせ、購入、応募など）</li>
+      </ul>
+
+      <h3>Step 2：ターゲットを設定する</h3>
+
+      <p>「誰に見てもらいたいか」を具体的に設定します。年齢、性別、職業、課題、悩み——ペルソナを詳細に描くことで、響くメッセージが見えてきます。</p>
+
+      <h3>Step 3：伝えるメッセージを絞る</h3>
+
+      <p>動画1本で伝えられるメッセージは1つか2つが限界です。あれもこれも詰め込もうとすると、結局何も印象に残らない動画になってしまいます。「この動画を見た人に、何を覚えておいてほしいか」を一言で言えるようにしましょう。</p>
+
+      <h3>Step 4：配信先と尺を決める</h3>
+
+      <p>どこで配信するかによって、適切な動画の長さは変わります。YouTubeなら5〜10分の長尺も許容されますが、SNSでは60秒以内、できれば30秒以内が理想です。</p>
+
+      <div class="highlight-box">
+        <p><strong>重要：</strong>最初の3秒で視聴者の心をつかめるかどうかが勝負です。冒頭にインパクトのある映像やメッセージを配置し、「続きが気になる」と思わせる構成を心がけましょう。</p>
+      </div>
+
+      <h2>動画制作の進め方</h2>
+
+      <p>動画制作は一般的に以下のような流れで進みます。</p>
+
+      <ol>
+        <li><strong>企画・構成：</strong>目的、ターゲット、メッセージ、配信先を決定し、絵コンテや台本を作成します。</li>
+        <li><strong>撮影準備：</strong>撮影場所の手配、出演者の調整、機材準備、スケジュール調整を行います。</li>
+        <li><strong>撮影：</strong>企画に沿って映像を撮影します。インタビュー、施設撮影、商品撮影など、内容によって所要時間が変わります。</li>
+        <li><strong>編集：</strong>撮影した素材を切り貼りし、テロップ、BGM、効果音を加えて1本の動画に仕上げます。</li>
+        <li><strong>確認・修正：</strong>クライアント確認を経て、必要に応じて修正を加えます。</li>
+        <li><strong>納品・配信：</strong>最終版を納品し、各プラットフォームで配信します。</li>
+      </ol>
+
+      <div class="checklist">
+        <h4>動画制作依頼前チェックリスト</h4>
+        <ul>
+          <li>動画の目的は明確になっているか</li>
+          <li>ターゲットは具体的に設定されているか</li>
+          <li>伝えたいメッセージは1〜2つに絞られているか</li>
+          <li>配信先と希望の動画尺は決まっているか</li>
+          <li>参考にしたい動画のイメージはあるか</li>
+          <li>予算と納期の目安は共有できているか</li>
+          <li>出演者や撮影場所の手配は可能か</li>
+        </ul>
+      </div>
+
+      <h2>介護業界における動画活用</h2>
+
+      <p>介護業界では、動画の活用がまだ十分に進んでいないのが現状です。しかし、だからこそ取り組む価値があります。</p>
+
+      <h3>施設紹介動画</h3>
+
+      <p>写真だけでは伝わらない施設の雰囲気、スタッフの人柄、利用者様の笑顔。これらを動画で見せることで、ご家族の不安を軽減し、見学や問い合わせにつなげることができます。</p>
+
+      <h3>採用動画</h3>
+
+      <p>介護業界の人手不足は深刻です。「やりがい」「成長」「チームワーク」——現場で働くスタッフのリアルな声を動画で届けることで、求職者に働く姿をイメージしてもらえます。</p>
+
+      <h3>家族向け情報発信</h3>
+
+      <p>介護に関するお役立ち情報を動画で発信することで、潜在的な顧客との接点を作ることができます。専門性のアピールと信頼構築に効果的です。</p>
+
+      <h2>まとめ</h2>
+
+      <p>動画は、テキストや静止画では伝えきれない情報量と感情を、短時間で届けられる強力なツールです。ただし、効果的な動画を作るためには、入念な企画が不可欠です。「誰に」「何を」「どう伝えるか」を明確にした上で、制作に取り組みましょう。</p>
+
+      <p>初めての動画制作は不安も多いかもしれませんが、プロと一緒に進めることで、確実に成果につながる動画を作ることができます。まずは小さな一本から始めてみませんか。</p>
+
+      <div class="article-cta">
+        <p class="article-cta-title">動画制作をご検討中ですか？</p>
+        <p class="article-cta-text">企画から撮影・編集まで、ワンストップでサポートします。</p>
+        <a href="../contact.html" class="btn">無料相談を申し込む</a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="../images/idea_logo_white.png" alt="株式会社イデア" class="footer-logo">
+          <p class="footer-address">〒542-0076 大阪府大阪市中央区難波2-3-11</p>
+          <p class="footer-tel">TEL: 06-4963-2332</p>
+        </div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="../about.html">会社概要</a></li>
+            <li><a href="../service.html">サービス</a></li>
+            <li><a href="../cases.html">導入事例</a></li>
+            <li><a href="../column.html">コラム</a></li>
+            <li><a href="../recruit.html">採用情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer-copyright">&copy; 2025 IDEA Inc. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>採用情報 | 株式会社イデア - あなたの「やりたい」が仕事になる</title>
+  <meta name="description" content="株式会社イデアの採用情報。老人ホーム紹介・デジケア・クリエイティブ制作。未経験歓迎、年間休日120日以上、残業月平均3.7時間。あなたらしく働ける環境がここにあります。">
+  <meta name="keywords" content="株式会社イデア,採用,求人,大阪,難波,未経験歓迎,老人ホーム紹介,デジケア">
+  <meta name="author" content="株式会社イデア">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="株式会社イデア">
+  <meta property="og:title" content="採用情報 | 株式会社イデア">
+  <meta property="og:description" content="あなたの「やりたい」が仕事になる。未経験歓迎、年間休日120日以上。">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Recruit Page Specific Styles -->
+  <style>
+    /* ========================================
+       採用ページ専用スタイル
+       Z世代向け・画像多め・インパクト重視
+    ======================================== */
+
+    /* カラー変数追加 */
+    :root {
+      --recruit-primary: #00a9d5;
+      --recruit-secondary: #1a1a1a;
+      --recruit-accent: #ff6b35;
+      --recruit-gradient: linear-gradient(135deg, #00a9d5 0%, #0063a4 100%);
+    }
+
+    /* ----------------------------------------
+       ヒーローセクション（全画面動画・シネマクロップ対応）
+    ---------------------------------------- */
+    .recruit-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #000;
+    }
+
+    /* 動画スタイル（上下の黒帯を隠すため拡大・位置調整） */
+    .recruit-hero-video {
+      position: absolute;
+      top: -18%;
+      left: 0;
+      width: 100%;
+      height: 136%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* 動画オーバーレイ（白系・左側濃いめ） */
+    .recruit-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* キーワードアニメーション（左寄り） */
+    .recruit-keywords {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translateY(-50%);
+      z-index: 3;
+      text-align: left;
+      pointer-events: none;
+    }
+
+    .recruit-keyword {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      font-family: var(--font-accent);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: #1a1a1a;
+      text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9);
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    .recruit-keyword.active {
+      animation: keywordFadeInOut 3.5s ease-in-out forwards;
+    }
+
+    @keyframes keywordFadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(-20px);
+        filter: blur(10px);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+        filter: blur(0);
+      }
+      80% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+        filter: blur(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(20px);
+        filter: blur(5px);
+      }
+    }
+
+    /* キーワードのハイライト */
+    .recruit-keyword .highlight {
+      color: var(--recruit-primary);
+      text-shadow: 0 0 30px rgba(0, 169, 213, 0.5);
+    }
+
+    /* サブテキスト */
+    .recruit-keyword-sub {
+      display: block;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      margin-top: var(--space-md);
+      color: #555;
+      letter-spacing: 0.1em;
+    }
+
+    /* シネマクロップ（水色帯）エリア - 上 */
+    .recruit-cinema-bar-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 12%;
+      background: linear-gradient(135deg, #0088b3 0%, #00a9d5 50%, #0095c8 100%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--space-3xl);
+      box-shadow: 0 4px 20px rgba(0, 169, 213, 0.3);
+    }
+
+    .recruit-cinema-bar-top .cinema-label {
+      font-family: var(--font-accent);
+      font-size: var(--text-xs);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .recruit-cinema-bar-top .cinema-tagline {
+      font-family: var(--font-accent);
+      font-size: var(--text-sm);
+      letter-spacing: 0.15em;
+      color: var(--color-white);
+      animation: cinemaTextGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes cinemaTextGlow {
+      0% { opacity: 0.8; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+      100% { opacity: 1; text-shadow: 0 0 20px rgba(255,255,255,0.6); }
+    }
+
+    /* シネマクロップ（水色帯）エリア - 下 */
+    .recruit-cinema-bar-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12%;
+      background: linear-gradient(135deg, #0095c8 0%, #00a9d5 50%, #0088b3 100%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 var(--space-3xl);
+      box-shadow: 0 -4px 20px rgba(0, 169, 213, 0.3);
+    }
+
+    .recruit-cinema-stats {
+      display: flex;
+      gap: var(--space-4xl);
+      align-items: center;
+    }
+
+    .recruit-cinema-stat {
+      text-align: center;
+      opacity: 0;
+      animation: cinemaStatFadeIn 0.8s ease forwards;
+    }
+
+    .recruit-cinema-stat:nth-child(1) { animation-delay: 0.5s; }
+    .recruit-cinema-stat:nth-child(2) { animation-delay: 0.7s; }
+    .recruit-cinema-stat:nth-child(3) { animation-delay: 0.9s; }
+    .recruit-cinema-stat:nth-child(4) { animation-delay: 1.1s; }
+
+    @keyframes cinemaStatFadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .recruit-cinema-stat-value {
+      font-family: var(--font-accent);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .recruit-cinema-stat-value span {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .recruit-cinema-stat-label {
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      color: var(--color-white);
+      opacity: 0.95;
+      margin-top: var(--space-sm);
+      letter-spacing: 0.08em;
+    }
+
+    .recruit-cinema-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* 動画再生中のヘッダー（透明） */
+    .header.recruit-video-playing {
+      background: transparent !important;
+    }
+
+    /* 動画終了後のコンテンツ（中央ロゴ配置） */
+    .recruit-hero-end-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .recruit-hero-end-content.visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: auto;
+    }
+
+    .recruit-hero-end-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xl);
+    }
+
+    .recruit-hero-end-logo {
+      width: clamp(180px, 25vw, 280px);
+      height: auto;
+      filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 0.3));
+      animation: logoFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .recruit-hero-end-tagline {
+      font-family: var(--font-accent);
+      font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
+      letter-spacing: 0.15em;
+      color: #333;
+      margin-bottom: var(--space-md);
+    }
+
+    .recruit-hero-end-subtitle {
+      font-size: var(--text-base);
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .recruit-hero-end-cta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: var(--space-lg);
+    }
+
+    .recruit-hero-end-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-2xl);
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: var(--text-base);
+      transition: var(--transition-base);
+      box-shadow: 0 4px 20px rgba(0,169,213,0.4);
+    }
+
+    .recruit-hero-end-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,169,213,0.5);
+    }
+
+    .recruit-hero-end-btn-secondary {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .recruit-hero-end-btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: var(--color-white);
+      box-shadow: none;
+    }
+
+    /* リプレイボタン */
+    .recruit-replay-btn {
+      position: absolute;
+      bottom: 15%;
+      right: var(--space-3xl);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-lg);
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius-full);
+      color: var(--color-white);
+      font-family: var(--font-accent);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition-base);
+      backdrop-filter: blur(10px);
+    }
+
+    .recruit-replay-btn.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .recruit-replay-btn:hover {
+      background: rgba(0,169,213,0.3);
+      border-color: var(--recruit-primary);
+    }
+
+    .recruit-replay-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* スクロールインジケーター */
+    .recruit-hero-scroll {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      text-align: center;
+      color: var(--color-white);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .recruit-hero-scroll.visible {
+      opacity: 1;
+    }
+
+    .recruit-hero-scroll-mouse {
+      width: 24px;
+      height: 36px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 12px;
+      margin: 0 auto var(--space-xs);
+      position: relative;
+    }
+
+    .recruit-hero-scroll-wheel {
+      width: 3px;
+      height: 6px;
+      background: var(--color-white);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollWheel 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollWheel {
+      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.3; transform: translateX(-50%) translateY(8px); }
+    }
+
+    .recruit-hero-scroll-text {
+      font-family: var(--font-accent);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    /* レスポンシブ：シネマバー */
+    @media (max-width: 768px) {
+      .recruit-cinema-bar-top,
+      .recruit-cinema-bar-bottom {
+        height: 10%;
+        padding: 0 var(--space-lg);
+      }
+
+      .recruit-cinema-bar-top .cinema-tagline {
+        display: none;
+      }
+
+      .recruit-cinema-stats {
+        gap: var(--space-xl);
+      }
+
+      .recruit-cinema-stat-value {
+        font-size: var(--text-lg);
+      }
+
+      .recruit-cinema-stat-label {
+        font-size: 10px;
+      }
+
+      .recruit-cinema-divider {
+        height: 30px;
+      }
+
+      .recruit-hero-end-logo {
+        width: clamp(140px, 35vw, 200px);
+      }
+
+      .recruit-replay-btn {
+        right: var(--space-lg);
+        bottom: 12%;
+      }
+
+      .recruit-hero-scroll {
+        bottom: 12%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recruit-cinema-stats {
+        gap: var(--space-md);
+      }
+
+      .recruit-hero-end-logo {
+        width: 140px;
+      }
+
+      .recruit-hero-end-tagline {
+        font-size: var(--text-base);
+      }
+
+      .recruit-cinema-stat-value {
+        font-size: var(--text-base);
+      }
+
+      .recruit-cinema-divider {
+        height: 24px;
+      }
+
+      .recruit-hero-end-cta {
+        flex-direction: column;
+      }
+
+      .recruit-hero-end-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* ボタン共通 */
+    .recruit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-2xl);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      transition: var(--transition-base);
+      text-decoration: none;
+    }
+
+    .recruit-btn-primary {
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      box-shadow: 0 4px 20px rgba(0,169,213,0.4);
+    }
+
+    .recruit-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,169,213,0.5);
+    }
+
+    .recruit-btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .recruit-btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: var(--color-white);
+    }
+
+    /* ----------------------------------------
+       セクション共通スタイル
+    ---------------------------------------- */
+    .recruit-section {
+      padding: var(--space-5xl) var(--space-xl);
+      position: relative;
+    }
+
+    .recruit-section-header {
+      text-align: center;
+      margin-bottom: var(--space-4xl);
+    }
+
+    .recruit-section-label {
+      font-family: var(--font-accent);
+      font-size: var(--text-sm);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--recruit-primary);
+      margin-bottom: var(--space-md);
+      font-weight: 600;
+    }
+
+    .recruit-section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--recruit-secondary);
+      line-height: 1.3;
+    }
+
+    .recruit-section-subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-gray-600);
+      margin-top: var(--space-lg);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ----------------------------------------
+       メッセージセクション
+    ---------------------------------------- */
+    .recruit-message {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .recruit-message-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+
+    .recruit-message-image {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .recruit-message-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .recruit-message-text h3 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-xl);
+      line-height: 1.5;
+    }
+
+    .recruit-message-text p {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+      line-height: 2;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ----------------------------------------
+       数字で見る会社セクション
+    ---------------------------------------- */
+    .recruit-numbers {
+      background: var(--recruit-secondary);
+      color: var(--color-white);
+    }
+
+    .recruit-numbers .recruit-section-label {
+      color: var(--recruit-primary);
+    }
+
+    .recruit-numbers .recruit-section-title {
+      color: var(--color-white);
+    }
+
+    .recruit-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xl);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .recruit-number-card {
+      text-align: center;
+      padding: var(--space-2xl) var(--space-lg);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition-base);
+    }
+
+    .recruit-number-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-5px);
+    }
+
+    .recruit-number-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto var(--space-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--recruit-gradient);
+      border-radius: var(--radius-lg);
+    }
+
+    .recruit-number-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--color-white);
+    }
+
+    .recruit-number-value {
+      font-family: var(--font-accent);
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      color: var(--recruit-primary);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .recruit-number-value span {
+      font-size: var(--text-xl);
+      margin-left: 2px;
+    }
+
+    .recruit-number-label {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    /* ----------------------------------------
+       3つの魅力セクション
+    ---------------------------------------- */
+    .recruit-features {
+      background: var(--color-white);
+    }
+
+    .recruit-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2xl);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .recruit-feature-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-base);
+    }
+
+    .recruit-feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .recruit-feature-image {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .recruit-feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .recruit-feature-card:hover .recruit-feature-image img {
+      transform: scale(1.05);
+    }
+
+    .recruit-feature-number {
+      position: absolute;
+      top: var(--space-lg);
+      left: var(--space-lg);
+      font-family: var(--font-accent);
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      color: var(--color-white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      line-height: 1;
+    }
+
+    .recruit-feature-content {
+      padding: var(--space-xl);
+      background: var(--color-white);
+    }
+
+    .recruit-feature-title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-md);
+    }
+
+    .recruit-feature-text {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.8;
+    }
+
+    /* ----------------------------------------
+       社員インタビューセクション
+    ---------------------------------------- */
+    .recruit-interview {
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .recruit-interview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2xl);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .recruit-interview-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      transition: var(--transition-base);
+    }
+
+    .recruit-interview-card:hover {
+      box-shadow: var(--shadow-2xl);
+      transform: translateY(-5px);
+    }
+
+    .recruit-interview-image {
+      width: 200px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .recruit-interview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recruit-interview-content {
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .recruit-interview-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .recruit-interview-dept {
+      font-size: var(--text-xs);
+      padding: var(--space-xs) var(--space-sm);
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      font-weight: 500;
+    }
+
+    .recruit-interview-year {
+      font-size: var(--text-xs);
+      color: var(--color-gray-500);
+    }
+
+    .recruit-interview-name {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .recruit-interview-role {
+      font-size: var(--text-sm);
+      color: var(--color-gray-500);
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-interview-quote {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.8;
+      flex-grow: 1;
+      position: relative;
+      padding-left: var(--space-lg);
+    }
+
+    .recruit-interview-quote::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      font-size: var(--text-3xl);
+      color: var(--recruit-primary);
+      font-family: Georgia, serif;
+    }
+
+    /* YouTube動画埋め込み */
+    .recruit-interview-video {
+      max-width: 900px;
+      margin: 0 auto var(--space-3xl);
+    }
+
+    .recruit-video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+      background: var(--color-gray-100);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .recruit-video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ----------------------------------------
+       1日のスケジュールセクション（2職種比較）
+    ---------------------------------------- */
+    .recruit-schedule {
+      background: var(--color-white);
+    }
+
+    .recruit-schedule-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 職種ヘッダー */
+    .recruit-schedule-header {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+      align-items: end;
+    }
+
+    .recruit-schedule-job {
+      text-align: center;
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+    }
+
+    .recruit-schedule-job-left {
+      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    }
+
+    .recruit-schedule-job-right {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    }
+
+    .recruit-schedule-job-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .recruit-schedule-job-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .recruit-schedule-job-left .recruit-schedule-job-icon svg {
+      stroke: #00838f;
+      fill: none;
+    }
+
+    .recruit-schedule-job-right .recruit-schedule-job-icon svg {
+      stroke: #e65100;
+      fill: none;
+    }
+
+    .recruit-schedule-job-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+    }
+
+    .recruit-schedule-job-sub {
+      font-size: var(--text-xs);
+      color: var(--color-gray-500);
+      margin-top: var(--space-xs);
+    }
+
+    .recruit-schedule-header-center {
+      text-align: center;
+      font-family: var(--font-accent);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-gray-400);
+      letter-spacing: 0.1em;
+    }
+
+    /* タイムライン */
+    .recruit-schedule-timeline {
+      position: relative;
+    }
+
+    .recruit-schedule-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--recruit-primary) 0%, #0063a4 100%);
+      border-radius: 2px;
+    }
+
+    .recruit-schedule-row {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: var(--space-md);
+      align-items: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-schedule-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 時刻（中央） */
+    .recruit-schedule-time {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .recruit-schedule-time-inner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--color-white);
+      border: 3px solid var(--recruit-primary);
+      border-radius: 50%;
+      font-family: var(--font-accent);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-primary);
+    }
+
+    /* カード（左右） */
+    .recruit-schedule-card {
+      background: var(--color-gray-50);
+      padding: var(--space-md);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-base);
+    }
+
+    .recruit-schedule-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .recruit-schedule-card-left {
+      text-align: right;
+      border-left: 3px solid #00bcd4;
+    }
+
+    .recruit-schedule-card-right {
+      text-align: left;
+      border-left: 3px solid #ff9800;
+    }
+
+    .recruit-schedule-card-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .recruit-schedule-card-desc {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.6;
+    }
+
+    /* 共通時間（ランチ・退社など） */
+    .recruit-schedule-shared {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-lg);
+      padding: var(--space-md) 0;
+    }
+
+    .recruit-schedule-shared-time {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--recruit-primary);
+      border-radius: 50%;
+      font-family: var(--font-accent);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-white);
+      position: relative;
+      z-index: 2;
+    }
+
+    .recruit-schedule-shared-content {
+      background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+      padding: var(--space-md) var(--space-xl);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+
+    .recruit-schedule-shared-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+    }
+
+    .recruit-schedule-shared-desc {
+      font-size: var(--text-sm);
+      color: var(--color-gray-500);
+      margin-top: var(--space-xs);
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      .recruit-schedule-header {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
+      }
+
+      .recruit-schedule-header-center {
+        display: none;
+      }
+
+      .recruit-schedule-job {
+        padding: var(--space-md);
+      }
+
+      .recruit-schedule-job-icon {
+        font-size: 1.5rem;
+      }
+
+      .recruit-schedule-job-title {
+        font-size: var(--text-sm);
+      }
+
+      .recruit-schedule-timeline::before {
+        display: none;
+      }
+
+      .recruit-schedule-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+
+      .recruit-schedule-time {
+        order: -1;
+      }
+
+      .recruit-schedule-time-inner {
+        width: 50px;
+        height: 50px;
+        font-size: var(--text-sm);
+      }
+
+      .recruit-schedule-card-left,
+      .recruit-schedule-card-right {
+        text-align: left;
+      }
+
+      .recruit-schedule-card-left::before {
+        content: '相談員';
+        display: inline-block;
+        font-size: 10px;
+        background: #00bcd4;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 10px;
+        margin-bottom: var(--space-xs);
+      }
+
+      .recruit-schedule-card-right::before {
+        content: 'マーケ/制作';
+        display: inline-block;
+        font-size: 10px;
+        background: #ff9800;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 10px;
+        margin-bottom: var(--space-xs);
+      }
+
+      .recruit-schedule-shared {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+    }
+
+    /* ----------------------------------------
+       福利厚生セクション
+    ---------------------------------------- */
+    .recruit-benefits {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .recruit-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .recruit-benefit-card {
+      background: var(--color-white);
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-base);
+    }
+
+    .recruit-benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .recruit-benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto var(--space-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border-radius: var(--radius-lg);
+    }
+
+    .recruit-benefit-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--recruit-primary);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .recruit-benefit-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .recruit-benefit-desc {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+    }
+
+    /* ----------------------------------------
+       キャリアパスセクション
+    ---------------------------------------- */
+    .recruit-career {
+      background: var(--color-white);
+    }
+
+    .recruit-career-path {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .recruit-career-step {
+      text-align: center;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .recruit-career-step-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto var(--space-lg);
+      background: var(--recruit-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-family: var(--font-accent);
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,169,213,0.3);
+    }
+
+    .recruit-career-step-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .recruit-career-step-desc {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+    }
+
+    .recruit-career-arrow {
+      font-size: var(--text-3xl);
+      color: var(--color-gray-300);
+    }
+
+    /* ----------------------------------------
+       募集要項セクション
+    ---------------------------------------- */
+    .recruit-positions {
+      background: var(--recruit-secondary);
+      color: var(--color-white);
+    }
+
+    .recruit-positions .recruit-section-title {
+      color: var(--color-white);
+    }
+
+    .recruit-positions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .recruit-position-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      transition: var(--transition-base);
+    }
+
+    .recruit-position-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--recruit-primary);
+    }
+
+    .recruit-position-tag {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-md);
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-position-title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-position-info {
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-position-row {
+      display: flex;
+      gap: var(--space-md);
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: var(--text-sm);
+    }
+
+    .recruit-position-row:last-child {
+      border-bottom: none;
+    }
+
+    .recruit-position-label {
+      width: 80px;
+      flex-shrink: 0;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .recruit-position-value {
+      color: var(--color-white);
+    }
+
+    .recruit-position-btn {
+      display: block;
+      width: 100%;
+      padding: var(--space-md);
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      text-align: center;
+      border-radius: var(--radius-lg);
+      font-weight: 700;
+      transition: var(--transition-base);
+    }
+
+    .recruit-position-btn:hover {
+      background: #0090b8;
+    }
+
+    /* ----------------------------------------
+       CTAセクション
+    ---------------------------------------- */
+    .recruit-cta {
+      position: relative;
+      padding: var(--space-6xl) var(--space-xl);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .recruit-cta-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .recruit-cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recruit-cta-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,169,213,0.9) 0%, rgba(0,99,164,0.9) 100%);
+      z-index: 2;
+    }
+
+    .recruit-cta-content {
+      position: relative;
+      z-index: 3;
+      color: var(--color-white);
+    }
+
+    .recruit-cta-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: var(--space-lg);
+    }
+
+    .recruit-cta-subtitle {
+      font-size: var(--text-lg);
+      opacity: 0.9;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .recruit-cta-buttons {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .recruit-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-2xl);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      transition: var(--transition-base);
+    }
+
+    .recruit-cta-btn-primary {
+      background: var(--color-white);
+      color: var(--recruit-primary);
+    }
+
+    .recruit-cta-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .recruit-cta-btn-secondary {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid var(--color-white);
+    }
+
+    .recruit-cta-btn-secondary:hover {
+      background: var(--color-white);
+      color: var(--recruit-primary);
+    }
+
+    /* ----------------------------------------
+       FAQセクション
+    ---------------------------------------- */
+    .recruit-faq {
+      background: var(--color-gray-50);
+    }
+
+    .recruit-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .recruit-faq-item {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .recruit-faq-question {
+      padding: var(--space-lg) var(--space-xl);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--recruit-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .recruit-faq-question:hover {
+      background: var(--color-gray-50);
+    }
+
+    .recruit-faq-question::before {
+      content: 'Q';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--recruit-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      font-family: var(--font-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .recruit-faq-answer {
+      padding: 0 var(--space-xl) var(--space-lg);
+      padding-left: calc(var(--space-xl) + 32px + var(--space-md));
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.8;
+    }
+
+    /* ----------------------------------------
+       レスポンシブ対応
+    ---------------------------------------- */
+    @media (max-width: 1024px) {
+      .recruit-numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .recruit-features-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .recruit-interview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recruit-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .recruit-positions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .recruit-section {
+        padding: var(--space-4xl) var(--space-lg);
+      }
+
+      .recruit-message-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .recruit-message-image {
+        order: -1;
+      }
+
+      .recruit-interview-card {
+        flex-direction: column;
+      }
+
+      .recruit-interview-image {
+        width: 100%;
+        height: 200px;
+      }
+
+      .recruit-schedule-timeline {
+        padding-left: 80px;
+      }
+
+      .recruit-schedule-time {
+        left: -80px;
+        width: 60px;
+        font-size: var(--text-base);
+      }
+
+      .recruit-schedule-item {
+        flex-direction: column;
+      }
+
+      .recruit-schedule-image {
+        width: 100%;
+        height: 180px;
+        margin-top: var(--space-md);
+      }
+
+      .recruit-career-arrow {
+        display: none;
+      }
+
+      .recruit-career-path {
+        flex-direction: column;
+      }
+
+      .recruit-hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .recruit-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recruit-numbers-grid,
+      .recruit-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recruit-number-value {
+        font-size: var(--text-4xl);
+      }
+    }
+
+    /* ----------------------------------------
+       アニメーション
+    ---------------------------------------- */
+    .recruit-fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .recruit-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .recruit-fade-in-delay-1 { transition-delay: 0.1s; }
+    .recruit-fade-in-delay-2 { transition-delay: 0.2s; }
+    .recruit-fade-in-delay-3 { transition-delay: 0.3s; }
+    .recruit-fade-in-delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-inner">
+      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <img src="./images/idea_logo.png" alt="株式会社イデア" class="logo-img">
+      </a>
+
+      <nav class="nav-main">
+        <!-- 老人ホーム紹介事業 -->
+        <div class="nav-main-item" data-dropdown="happiness">
+          <a href="./happiness.html" class="nav-main-link">
+            <img src="./images/happiness_logo.png" alt="ハピネス" class="nav-main-logo-large">
+            <span class="nav-main-label">老人ホーム紹介事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./happiness.html">サービス概要</a>
+              <a href="./happiness.html#flow">ご利用の流れ</a>
+              <a href="./contact.html">無料相談</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- デジケア -->
+        <div class="nav-main-item" data-dropdown="marketing">
+          <a href="./marketing.html" class="nav-main-link">
+            <div class="nav-main-logo-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="nav-main-label">デジケア</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./marketing.html">サービス概要</a>
+              <a href="./marketing.html#seo">SEO対策</a>
+              <a href="./marketing.html#meo">MEO対策</a>
+              <a href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作事業 -->
+        <div class="nav-main-item" data-dropdown="crankup">
+          <a href="./crankup.html" class="nav-main-link">
+            <img src="./images/crankup_logo.png" alt="クランクアップ" class="nav-main-logo-large">
+            <span class="nav-main-label">制作事業</span>
+          </a>
+          <div class="nav-dropdown nav-dropdown-with-logo">
+            <div class="nav-dropdown-logo">
+              <img src="./images/crankup_logo.png" alt="クランクアップ">
+            </div>
+            <div class="nav-dropdown-links">
+              <a href="./crankup.html">サービス概要</a>
+              <a href="./crankup.html#video">動画制作</a>
+              <a href="./crankup.html#web">WEB制作</a>
+              <a href="./crankup.html#design">デザイン</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PC版メガメニュートグル -->
+      <button class="mega-menu-toggle" aria-label="メニューを開く">
+        <span>MENU</span>
+        <div class="mega-menu-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- PC版メガメニュー -->
+    <div class="mega-menu">
+      <div class="mega-menu-inner">
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">事業内容</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./service.html">事業一覧</a></li>
+            <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./crankup.html">制作事業</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">企業情報</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./works.html">実績</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-section">
+          <h3 class="mega-menu-title">その他</h3>
+          <ul class="mega-menu-list">
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-contact">
+          <a href="tel:0649632332" class="btn-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            06-4963-2332
+          </a>
+          <a href="./contact.html" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+      <a href="./service.html">事業一覧</a>
+      <a href="./about.html">企業概要</a>
+      <a href="./recruit.html">採用情報</a>
+      <a href="./works.html">実績</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./contact.html">問い合わせ</a>
+      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- ========================================
+       メインコンテンツ
+  ======================================== -->
+  <main>
+    <!-- ヒーローセクション（動画・シネマクロップ） -->
+    <section class="recruit-hero" id="recruit-hero">
+      <!-- 動画 -->
+      <video class="recruit-hero-video" id="recruit-video" muted playsinline>
+        <source src="./images/HP_saiyou.mp4" type="video/mp4">
+      </video>
+
+      <!-- オーバーレイ -->
+      <div class="recruit-hero-overlay"></div>
+
+      <!-- キーワードアニメーション -->
+      <div class="recruit-keywords" id="recruit-keywords">
+        <div class="recruit-keyword" data-index="0">
+          相手を<span class="highlight">知る</span>
+          <span class="recruit-keyword-sub">発見 ー 一人ひとりと向き合う仕事</span>
+        </div>
+        <div class="recruit-keyword" data-index="1">
+          想いを<span class="highlight">感じる</span>
+          <span class="recruit-keyword-sub">共感 ー 心に寄り添うチーム</span>
+        </div>
+        <div class="recruit-keyword" data-index="2">
+          期待を<span class="highlight">超える</span>
+          <span class="recruit-keyword-sub">創造 ー あなたの可能性を広げる</span>
+        </div>
+        <div class="recruit-keyword" data-index="3">
+          <span class="highlight">感動</span>を生み出す
+          <span class="recruit-keyword-sub">私たちと一緒に</span>
+        </div>
+      </div>
+
+      <!-- シネマクロップ（水色帯）上部 -->
+      <div class="recruit-cinema-bar-top"></div>
+
+      <!-- シネマクロップ（黒帯）下部 - 統計 -->
+      <div class="recruit-cinema-bar-bottom">
+        <div class="recruit-cinema-stats">
+          <div class="recruit-cinema-stat">
+            <div class="recruit-cinema-stat-value">120<span>日+</span></div>
+            <div class="recruit-cinema-stat-label">年間休日</div>
+          </div>
+          <div class="recruit-cinema-divider"></div>
+          <div class="recruit-cinema-stat">
+            <div class="recruit-cinema-stat-value">3.7<span>h</span></div>
+            <div class="recruit-cinema-stat-label">月平均残業</div>
+          </div>
+          <div class="recruit-cinema-divider"></div>
+          <div class="recruit-cinema-stat">
+            <div class="recruit-cinema-stat-value">80<span>%</span></div>
+            <div class="recruit-cinema-stat-label">未経験入社</div>
+          </div>
+          <div class="recruit-cinema-divider"></div>
+          <div class="recruit-cinema-stat">
+            <div class="recruit-cinema-stat-value">28<span>歳</span></div>
+            <div class="recruit-cinema-stat-label">平均年齢</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 動画終了後のコンテンツ（中央ロゴ） -->
+      <div class="recruit-hero-end-content" id="recruit-end-content">
+        <div class="recruit-hero-end-inner">
+          <!-- ロゴ -->
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="recruit-hero-end-logo">
+
+          <!-- タグライン -->
+          <p class="recruit-hero-end-tagline">感動を、一緒に。</p>
+
+          <!-- サブテキスト -->
+          <p class="recruit-hero-end-subtitle">
+            あなたの「想い」が誰かの「笑顔」になる
+          </p>
+
+          <!-- CTA -->
+          <div class="recruit-hero-end-cta">
+            <a href="#positions" class="recruit-hero-end-btn">
+              募集職種を見る
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- リプレイボタン -->
+      <button class="recruit-replay-btn" id="recruit-replay-btn" aria-label="動画を再生">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+
+      <!-- スクロールインジケーター -->
+      <div class="recruit-hero-scroll" id="recruit-scroll-indicator">
+        <div class="recruit-hero-scroll-mouse">
+          <div class="recruit-hero-scroll-wheel"></div>
+        </div>
+        <span class="recruit-hero-scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- メッセージセクション -->
+    <section id="message" class="recruit-section recruit-message">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Philosophy</p>
+        <h2 class="recruit-section-title">感動を生み出す</h2>
+      </div>
+      <div class="recruit-message-content">
+        <div class="recruit-message-image recruit-fade-in">
+          <!-- 仮画像：代表や社員の写真 -->
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="オフィスの様子">
+        </div>
+        <div class="recruit-message-text recruit-fade-in recruit-fade-in-delay-1">
+          <h3>相手を知り、想いを感じ、<br>期待を超える。</h3>
+          <p>
+            私たちは、老人ホーム紹介を通じて、高齢者とそのご家族の人生の大きな選択に寄り添っています。一人ひとりの声に耳を傾け、本当に必要なことを「発見」する。
+          </p>
+          <p>
+            介護業界のデジケアやクリエイティブ制作では、お客様の想いに「共感」し、その先にある課題解決を目指しています。
+          </p>
+          <p>
+            そして、期待を超える価値を「創造」し、関わるすべての人に感動を届ける。それが、イデアの仕事です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数字で見る会社 -->
+    <section class="recruit-section recruit-numbers">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Data</p>
+        <h2 class="recruit-section-title">数字で見るイデア</h2>
+        <p class="recruit-section-subtitle" style="color: rgba(255,255,255,0.7);">
+          働きやすさを数字で実感してください
+        </p>
+      </div>
+      <div class="recruit-numbers-grid">
+        <div class="recruit-number-card recruit-fade-in">
+          <div class="recruit-number-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div class="recruit-number-value">120<span>日+</span></div>
+          <div class="recruit-number-label">年間休日</div>
+        </div>
+        <div class="recruit-number-card recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-number-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          </div>
+          <div class="recruit-number-value">3.7<span>h</span></div>
+          <div class="recruit-number-label">月平均残業時間</div>
+        </div>
+        <div class="recruit-number-card recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-number-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="recruit-number-value">80<span>%</span></div>
+          <div class="recruit-number-label">未経験入社率</div>
+        </div>
+        <div class="recruit-number-card recruit-fade-in recruit-fade-in-delay-3">
+          <div class="recruit-number-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="recruit-number-value">28<span>歳</span></div>
+          <div class="recruit-number-label">平均年齢</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3つの行動指針 -->
+    <section class="recruit-section recruit-features">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Our Values</p>
+        <h2 class="recruit-section-title">私たちの行動指針</h2>
+      </div>
+      <div class="recruit-features-grid">
+        <div class="recruit-feature-card recruit-fade-in">
+          <div class="recruit-feature-image">
+            <!-- 仮画像：発見のイメージ -->
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="相手を知る">
+            <span class="recruit-feature-number">01</span>
+          </div>
+          <div class="recruit-feature-content">
+            <h3 class="recruit-feature-title">相手を知る（発見）</h3>
+            <p class="recruit-feature-text">
+              一人ひとりと真剣に向き合い、本当に必要なことを見つけ出す。表面的な対応ではなく、深く理解することから始めます。
+            </p>
+          </div>
+        </div>
+        <div class="recruit-feature-card recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-feature-image">
+            <!-- 仮画像：共感のイメージ -->
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="想いを感じる">
+            <span class="recruit-feature-number">02</span>
+          </div>
+          <div class="recruit-feature-content">
+            <h3 class="recruit-feature-title">想いを感じる（共感）</h3>
+            <p class="recruit-feature-text">
+              言葉にならない想いにも耳を傾け、心に寄り添う。チーム全体で支え合い、一緒に考える文化があります。
+            </p>
+          </div>
+        </div>
+        <div class="recruit-feature-card recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-feature-image">
+            <!-- 仮画像：創造のイメージ -->
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="期待を超える">
+            <span class="recruit-feature-number">03</span>
+          </div>
+          <div class="recruit-feature-content">
+            <h3 class="recruit-feature-title">期待を超える（創造）</h3>
+            <p class="recruit-feature-text">
+              求められた以上の価値を届ける。「ありがとう」の先にある「感動」を生み出すことが、私たちの目標です。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 社員インタビュー -->
+    <section class="recruit-section recruit-interview">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Interview</p>
+        <h2 class="recruit-section-title">社員インタビュー</h2>
+        <p class="recruit-section-subtitle">
+          実際に働いている社員のリアルな声をお届けします
+        </p>
+      </div>
+
+      <!-- YouTube動画埋め込み -->
+      <div class="recruit-interview-video recruit-fade-in">
+        <div class="recruit-video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/IaYfDWD3S7w?si=nxUWHqZGXSHQhfWo"
+            title="社員インタビュー動画"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="recruit-interview-grid">
+        <div class="recruit-interview-card recruit-fade-in">
+          <div class="recruit-interview-image">
+            <!-- 仮画像：女性社員 -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="社員A">
+          </div>
+          <div class="recruit-interview-content">
+            <div class="recruit-interview-meta">
+              <span class="recruit-interview-dept">老人ホーム紹介</span>
+              <span class="recruit-interview-year">2022年入社</span>
+            </div>
+            <h3 class="recruit-interview-name">Y.Sさん</h3>
+            <p class="recruit-interview-role">アドバイザー</p>
+            <p class="recruit-interview-quote">
+              未経験で入社しましたが、先輩方のサポートのおかげで、今では自信を持ってお客様に提案できるようになりました。「あなたに相談して良かった」と言っていただけることが何よりの喜びです。
+            </p>
+          </div>
+        </div>
+        <div class="recruit-interview-card recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-interview-image">
+            <!-- 仮画像：男性社員 -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="社員B">
+          </div>
+          <div class="recruit-interview-content">
+            <div class="recruit-interview-meta">
+              <span class="recruit-interview-dept">デジケア</span>
+              <span class="recruit-interview-year">2021年入社</span>
+            </div>
+            <h3 class="recruit-interview-name">K.Tさん</h3>
+            <p class="recruit-interview-role">マーケター</p>
+            <p class="recruit-interview-quote">
+              介護業界×ITという珍しい組み合わせに興味を持ちました。自分のスキルで業界の課題解決に貢献できることにやりがいを感じています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1日のスケジュール（2職種比較） -->
+    <section class="recruit-section recruit-schedule">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Schedule</p>
+        <h2 class="recruit-section-title">1日のスケジュール</h2>
+        <p class="recruit-section-subtitle">
+          職種ごとの1日の流れをご紹介します
+        </p>
+      </div>
+      <div class="recruit-schedule-container">
+        <!-- 職種ヘッダー -->
+        <div class="recruit-schedule-header recruit-fade-in">
+          <div class="recruit-schedule-job recruit-schedule-job-left">
+            <div class="recruit-schedule-job-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+              </div>
+            <div class="recruit-schedule-job-title">老人ホーム紹介<br>相談員</div>
+            <div class="recruit-schedule-job-sub">ハピネス事業部</div>
+          </div>
+          <div class="recruit-schedule-header-center">TIME</div>
+          <div class="recruit-schedule-job recruit-schedule-job-right">
+            <div class="recruit-schedule-job-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+            <div class="recruit-schedule-job-title">デジケア<br>/ 制作</div>
+            <div class="recruit-schedule-job-sub">クランクアップ事業部</div>
+          </div>
+        </div>
+
+        <!-- タイムライン -->
+        <div class="recruit-schedule-timeline">
+          <!-- 9:00 出社 -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-card recruit-schedule-card-left">
+              <h4 class="recruit-schedule-card-title">出社・朝礼</h4>
+              <p class="recruit-schedule-card-desc">メールチェック、今日の予定確認。チームで情報共有。</p>
+            </div>
+            <div class="recruit-schedule-time">
+              <span class="recruit-schedule-time-inner">9:00</span>
+            </div>
+            <div class="recruit-schedule-card recruit-schedule-card-right">
+              <h4 class="recruit-schedule-card-title">出社・タスク確認</h4>
+              <p class="recruit-schedule-card-desc">Slackチェック、進行中プロジェクトの状況確認。</p>
+            </div>
+          </div>
+
+          <!-- 10:00 午前業務 -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-card recruit-schedule-card-left">
+              <h4 class="recruit-schedule-card-title">お客様対応</h4>
+              <p class="recruit-schedule-card-desc">電話・オンラインでのご相談。ご希望をヒアリング。</p>
+            </div>
+            <div class="recruit-schedule-time">
+              <span class="recruit-schedule-time-inner">10:00</span>
+            </div>
+            <div class="recruit-schedule-card recruit-schedule-card-right">
+              <h4 class="recruit-schedule-card-title">制作・マーケ作業</h4>
+              <p class="recruit-schedule-card-desc">デザイン制作、SEO/MEO対策、コンテンツ更新など。</p>
+            </div>
+          </div>
+
+          <!-- 12:00 ランチ（共通） -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-shared">
+              <span class="recruit-schedule-shared-time">12:00</span>
+              <div class="recruit-schedule-shared-content">
+                <h4 class="recruit-schedule-shared-title">ランチ</h4>
+                <p class="recruit-schedule-shared-desc">難波エリアにはおいしいお店がたくさん！チームでランチに行くことも。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14:00 午後業務 -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-card recruit-schedule-card-left">
+              <h4 class="recruit-schedule-card-title">施設見学同行</h4>
+              <p class="recruit-schedule-card-desc">お客様と一緒に施設を見学。実際に目で見て、ご不安を解消。</p>
+            </div>
+            <div class="recruit-schedule-time">
+              <span class="recruit-schedule-time-inner">14:00</span>
+            </div>
+            <div class="recruit-schedule-card recruit-schedule-card-right">
+              <h4 class="recruit-schedule-card-title">クライアント打合せ</h4>
+              <p class="recruit-schedule-card-desc">オンラインMTGで進捗報告、新規提案など。</p>
+            </div>
+          </div>
+
+          <!-- 16:00 夕方業務 -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-card recruit-schedule-card-left">
+              <h4 class="recruit-schedule-card-title">事務作業</h4>
+              <p class="recruit-schedule-card-desc">契約書類作成、施設への連絡、翌日の準備。</p>
+            </div>
+            <div class="recruit-schedule-time">
+              <span class="recruit-schedule-time-inner">16:00</span>
+            </div>
+            <div class="recruit-schedule-card recruit-schedule-card-right">
+              <h4 class="recruit-schedule-card-title">レポート・分析</h4>
+              <p class="recruit-schedule-card-desc">アクセス解析、効果測定、改善提案の準備。</p>
+            </div>
+          </div>
+
+          <!-- 18:00 退社（共通） -->
+          <div class="recruit-schedule-row recruit-fade-in">
+            <div class="recruit-schedule-shared">
+              <span class="recruit-schedule-shared-time">18:00</span>
+              <div class="recruit-schedule-shared-content">
+                <h4 class="recruit-schedule-shared-title">退社</h4>
+                <p class="recruit-schedule-shared-desc">日報を書いて退社。残業はほぼなし！自分の時間を大切にできます。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 福利厚生 -->
+    <section class="recruit-section recruit-benefits">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Benefits</p>
+        <h2 class="recruit-section-title">福利厚生・働く環境</h2>
+      </div>
+      <div class="recruit-benefits-grid">
+        <div class="recruit-benefit-card recruit-fade-in">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">年間休日120日+</h3>
+          <p class="recruit-benefit-desc">土日祝休み、GW・夏季・年末年始休暇</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">インセンティブ制度</h3>
+          <p class="recruit-benefit-desc">成果に応じた報酬で頑張りを評価</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">研修制度</h3>
+          <p class="recruit-benefit-desc">入社後3ヶ月の充実した研修プログラム</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-3">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              <path d="M9 14l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">交通費全額支給</h3>
+          <p class="recruit-benefit-desc">通勤にかかる費用は全額会社負担</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">資格取得支援</h3>
+          <p class="recruit-benefit-desc">業務に関連する資格取得をサポート</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">育休・産休制度</h3>
+          <p class="recruit-benefit-desc">ライフイベントに合わせた働き方が可能</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">駅チカオフィス</h3>
+          <p class="recruit-benefit-desc">難波駅徒歩5分、ランチスポット豊富</p>
+        </div>
+        <div class="recruit-benefit-card recruit-fade-in recruit-fade-in-delay-3">
+          <div class="recruit-benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="recruit-benefit-title">社内イベント</h3>
+          <p class="recruit-benefit-desc">BBQ、忘年会などチームビルディング</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- キャリアパス -->
+    <section class="recruit-section recruit-career">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Career Path</p>
+        <h2 class="recruit-section-title">キャリアステップ</h2>
+        <p class="recruit-section-subtitle">
+          あなたの成長に合わせたキャリアパスをご用意しています
+        </p>
+      </div>
+      <div class="recruit-career-path">
+        <div class="recruit-career-step recruit-fade-in">
+          <div class="recruit-career-step-icon">1</div>
+          <h3 class="recruit-career-step-title">新人研修</h3>
+          <p class="recruit-career-step-desc">入社〜3ヶ月<br>基礎知識の習得</p>
+        </div>
+        <span class="recruit-career-arrow">→</span>
+        <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-career-step-icon">2</div>
+          <h3 class="recruit-career-step-title">アドバイザー</h3>
+          <p class="recruit-career-step-desc">3ヶ月〜1年<br>実務経験を積む</p>
+        </div>
+        <span class="recruit-career-arrow">→</span>
+        <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-career-step-icon">3</div>
+          <h3 class="recruit-career-step-title">シニアアドバイザー</h3>
+          <p class="recruit-career-step-desc">1〜3年<br>後輩指導も担当</p>
+        </div>
+        <span class="recruit-career-arrow">→</span>
+        <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-3">
+          <div class="recruit-career-step-icon">4</div>
+          <h3 class="recruit-career-step-title">マネージャー</h3>
+          <p class="recruit-career-step-desc">3年〜<br>チームを率いる</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 募集要項 -->
+    <section id="positions" class="recruit-section recruit-positions">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">Positions</p>
+        <h2 class="recruit-section-title">募集職種</h2>
+      </div>
+      <div class="recruit-positions-grid">
+        <div class="recruit-position-card recruit-fade-in">
+          <span class="recruit-position-tag">積極採用中</span>
+          <h3 class="recruit-position-title">老人ホーム紹介アドバイザー</h3>
+          <div class="recruit-position-info">
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">雇用形態</span>
+              <span class="recruit-position-value">正社員</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">給与</span>
+              <span class="recruit-position-value">月給23万円〜 + インセンティブ</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">勤務地</span>
+              <span class="recruit-position-value">大阪市中央区難波</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">応募資格</span>
+              <span class="recruit-position-value">未経験歓迎・普通自動車免許</span>
+            </div>
+          </div>
+          <a href="./contact.html" class="recruit-position-btn">詳細を見る</a>
+        </div>
+        <div class="recruit-position-card recruit-fade-in recruit-fade-in-delay-1">
+          <span class="recruit-position-tag">募集中</span>
+          <h3 class="recruit-position-title">WEBマーケター</h3>
+          <div class="recruit-position-info">
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">雇用形態</span>
+              <span class="recruit-position-value">正社員</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">給与</span>
+              <span class="recruit-position-value">月給25万円〜 （経験者優遇）</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">勤務地</span>
+              <span class="recruit-position-value">大阪市中央区難波</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">応募資格</span>
+              <span class="recruit-position-value">デジケア経験者優遇</span>
+            </div>
+          </div>
+          <a href="./contact.html" class="recruit-position-btn">詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="recruit-section recruit-faq">
+      <div class="recruit-section-header">
+        <p class="recruit-section-label">FAQ</p>
+        <h2 class="recruit-section-title">よくある質問</h2>
+      </div>
+      <div class="recruit-faq-list">
+        <div class="recruit-faq-item recruit-fade-in">
+          <div class="recruit-faq-question">未経験でも応募できますか？</div>
+          <div class="recruit-faq-answer">
+            はい、大歓迎です！入社後3ヶ月の研修プログラムがあり、先輩社員がマンツーマンでサポートします。実際に社員の80%が未経験からスタートしています。
+          </div>
+        </div>
+        <div class="recruit-faq-item recruit-fade-in recruit-fade-in-delay-1">
+          <div class="recruit-faq-question">残業はどれくらいありますか？</div>
+          <div class="recruit-faq-answer">
+            月平均3.7時間と、ほぼ残業はありません。18時には退社できることがほとんどです。プライベートの時間を大切にしてほしいと考えています。
+          </div>
+        </div>
+        <div class="recruit-faq-item recruit-fade-in recruit-fade-in-delay-2">
+          <div class="recruit-faq-question">服装の規定はありますか？</div>
+          <div class="recruit-faq-answer">
+            お客様との面談時はオフィスカジュアルをお願いしていますが、普段はカジュアルな服装でOKです。自分らしくリラックスして働ける環境です。
+          </div>
+        </div>
+        <div class="recruit-faq-item recruit-fade-in recruit-fade-in-delay-3">
+          <div class="recruit-faq-question">介護の知識がなくても大丈夫ですか？</div>
+          <div class="recruit-faq-answer">
+            もちろん大丈夫です。研修で基礎から学べますし、資格取得支援制度もあります。入社後に介護関連の資格を取得した社員も多くいます。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="recruit-cta">
+      <div class="recruit-cta-bg">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80" alt="チーム">
+      </div>
+      <div class="recruit-cta-overlay"></div>
+      <div class="recruit-cta-content">
+        <h2 class="recruit-cta-title">あなたの「やりたい」を<br>一緒にカタチにしませんか？</h2>
+        <p class="recruit-cta-subtitle">
+          まずはカジュアル面談から。お気軽にご連絡ください。
+        </p>
+        <div class="recruit-cta-buttons">
+          <a href="./contact.html" class="recruit-cta-btn recruit-cta-btn-primary">
+            エントリーする
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="./contact.html" class="recruit-cta-btn recruit-cta-btn-secondary">
+            カジュアル面談を申し込む
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
+          <p class="footer-address">
+            〒542-0076<br>
+            大阪府大阪市中央区難波2-3-11
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <div>
+            <p class="footer-nav-title">事業内容</p>
+            <ul class="footer-nav-list">
+              <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
+              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./crankup.html">制作事業</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">企業情報</p>
+            <ul class="footer-nav-list">
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./works.html">実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-nav-title">その他</p>
+            <ul class="footer-nav-list">
+              <li><a href="./contact.html">お問い合わせ</a></li>
+              <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span class="current-year">2025</span> IDEA Inc. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="./js/main.js"></script>
+  <script>
+    // 採用ページ専用スクリプト
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ========================================
+      // 動画ヒーローコントロール
+      // ========================================
+      const recruitVideo = document.getElementById('recruit-video');
+      const recruitEndContent = document.getElementById('recruit-end-content');
+      const recruitReplayBtn = document.getElementById('recruit-replay-btn');
+      const recruitScrollIndicator = document.getElementById('recruit-scroll-indicator');
+      const recruitKeywords = document.getElementById('recruit-keywords');
+      const header = document.querySelector('.header');
+
+      let recruitVideoEnded = false;
+      let keywordInterval = null;
+      let currentKeywordIndex = 0;
+
+      // キーワードアニメーション
+      function startKeywordAnimation() {
+        if (!recruitKeywords) return;
+
+        const keywords = recruitKeywords.querySelectorAll('.recruit-keyword');
+        if (keywords.length === 0) return;
+
+        currentKeywordIndex = 0;
+
+        // 最初のキーワードを表示
+        keywords[0].classList.add('active');
+
+        // 3.5秒ごとに次のキーワードへ
+        keywordInterval = setInterval(() => {
+          // 現在のキーワードからactiveを削除
+          keywords[currentKeywordIndex].classList.remove('active');
+
+          // 次のインデックスへ
+          currentKeywordIndex++;
+
+          // ループまたは終了
+          if (currentKeywordIndex < keywords.length) {
+            keywords[currentKeywordIndex].classList.add('active');
+          } else {
+            // 全キーワード表示完了
+            clearInterval(keywordInterval);
+            keywordInterval = null;
+          }
+        }, 3500);
+      }
+
+      // キーワードアニメーション停止
+      function stopKeywordAnimation() {
+        if (keywordInterval) {
+          clearInterval(keywordInterval);
+          keywordInterval = null;
+        }
+        if (recruitKeywords) {
+          const keywords = recruitKeywords.querySelectorAll('.recruit-keyword');
+          keywords.forEach(kw => kw.classList.remove('active'));
+        }
+      }
+
+      // 動画の自動再生
+      if (recruitVideo) {
+        // ページ読み込み後に再生開始
+        setTimeout(() => {
+          recruitVideo.play().catch(e => {
+            console.log('Auto-play prevented:', e);
+            // 自動再生がブロックされた場合、終了状態を表示
+            showRecruitEndState();
+          });
+        }, 500);
+
+        // 動画再生中：ヘッダー透過 + キーワードアニメーション開始
+        recruitVideo.addEventListener('play', () => {
+          if (header) {
+            header.classList.add('recruit-video-playing');
+          }
+          // スクロールインジケーターを非表示
+          if (recruitScrollIndicator) {
+            recruitScrollIndicator.style.opacity = '0';
+          }
+          // キーワードアニメーション開始（少し遅らせる）
+          setTimeout(() => {
+            startKeywordAnimation();
+          }, 1000);
+        });
+
+        // 動画終了時
+        recruitVideo.addEventListener('ended', () => {
+          stopKeywordAnimation();
+          showRecruitEndState();
+        });
+      }
+
+      // 終了状態を表示
+      function showRecruitEndState() {
+        recruitVideoEnded = true;
+
+        // キーワードを非表示
+        if (recruitKeywords) {
+          recruitKeywords.style.opacity = '0';
+        }
+
+        // ヘッダーの透過を解除
+        if (header) {
+          header.classList.remove('recruit-video-playing');
+        }
+
+        // 終了コンテンツを表示
+        if (recruitEndContent) {
+          recruitEndContent.classList.add('visible');
+        }
+
+        // リプレイボタンを表示
+        if (recruitReplayBtn) {
+          recruitReplayBtn.classList.add('visible');
+        }
+
+        // スクロールインジケーターを表示
+        if (recruitScrollIndicator) {
+          recruitScrollIndicator.style.opacity = '1';
+        }
+      }
+
+      // リプレイボタン
+      if (recruitReplayBtn && recruitVideo) {
+        recruitReplayBtn.addEventListener('click', () => {
+          // 終了コンテンツを非表示
+          if (recruitEndContent) {
+            recruitEndContent.classList.remove('visible');
+          }
+
+          // リプレイボタンを非表示
+          recruitReplayBtn.classList.remove('visible');
+
+          // 動画を最初から再生
+          recruitVideo.currentTime = 0;
+          recruitVideo.play();
+          recruitVideoEnded = false;
+        });
+      }
+
+      // ========================================
+      // スクロールアニメーション
+      // ========================================
+      const fadeElements = document.querySelectorAll('.recruit-fade-in');
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      fadeElements.forEach(el => observer.observe(el));
+
+      // 数字カウントアップアニメーション
+      const numberCards = document.querySelectorAll('.recruit-number-value');
+
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const text = target.textContent;
+            const match = text.match(/([0-9.]+)/);
+            if (match) {
+              const endValue = parseFloat(match[1]);
+              const suffix = text.replace(match[1], '');
+              let current = 0;
+              const increment = endValue / 50;
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= endValue) {
+                  current = endValue;
+                  clearInterval(timer);
+                }
+                const displayValue = endValue % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
+                target.innerHTML = displayValue + suffix;
+              }, 30);
+            }
+            countObserver.unobserve(target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      numberCards.forEach(card => countObserver.observe(card));
+
+      // スムーススクロール
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
