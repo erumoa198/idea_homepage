@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- Background -->
+  <rect width="600" height="400" rx="12" fill="#f0fdfa"/>
+
+  <!-- Map representation -->
+  <rect x="60" y="40" width="280" height="320" rx="16" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Map grid lines -->
+  <line x1="60" y1="120" x2="340" y2="120" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="60" y1="200" x2="340" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="60" y1="280" x2="340" y2="280" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="160" y1="40" x2="160" y2="360" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="240" y1="40" x2="240" y2="360" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Roads -->
+  <path d="M80 160 L320 160" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 60 L200 340" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Location pin - main (highlighted) -->
+  <g transform="translate(180, 100)">
+    <ellipse cx="20" cy="55" rx="12" ry="4" fill="#000" opacity="0.1"/>
+    <path d="M20 0 C10 0 2 8 2 18 C2 32 20 50 20 50 C20 50 38 32 38 18 C38 8 30 0 20 0Z" fill="#0891b2"/>
+    <circle cx="20" cy="17" r="7" fill="white"/>
+    <text x="20" y="20" text-anchor="middle" font-size="8" fill="#0891b2" font-weight="bold" font-family="sans-serif">1</text>
+  </g>
+
+  <!-- Other pins -->
+  <g transform="translate(100, 200)" opacity="0.5">
+    <path d="M10 0 C5 0 1 4 1 9 C1 16 10 25 10 25 C10 25 19 16 19 9 C19 4 15 0 10 0Z" fill="#94a3b8"/>
+    <circle cx="10" cy="8.5" r="3.5" fill="white"/>
+  </g>
+  <g transform="translate(260, 240)" opacity="0.5">
+    <path d="M10 0 C5 0 1 4 1 9 C1 16 10 25 10 25 C10 25 19 16 19 9 C19 4 15 0 10 0Z" fill="#94a3b8"/>
+    <circle cx="10" cy="8.5" r="3.5" fill="white"/>
+  </g>
+
+  <!-- Search bar -->
+  <rect x="80" y="55" width="240" height="36" rx="18" fill="white" stroke="#0891b2" stroke-width="2"/>
+  <text x="100" y="78" font-size="13" fill="#64748b" font-family="sans-serif">介護施設 近くの</text>
+  <circle cx="296" cy="73" r="12" fill="#0891b2"/>
+  <path d="M292 70 L300 78 M294 68 C290 68 288 72 288 74 C288 78 292 80 294 80 C298 80 300 78 300 74 C300 72 298 68 294 68Z" stroke="white" stroke-width="1.5" fill="none"/>
+
+  <!-- Right side - Results/Stars -->
+  <g transform="translate(380, 50)">
+    <rect width="180" height="100" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="16" y="30" font-size="14" fill="#0f172a" font-weight="bold" font-family="sans-serif">検索順位</text>
+    <text x="16" y="55" font-size="36" fill="#0891b2" font-weight="bold" font-family="sans-serif">TOP 3</text>
+    <text x="115" y="55" font-size="14" fill="#64748b" font-family="sans-serif">達成!</text>
+    <!-- Stars -->
+    <g transform="translate(16, 68)">
+      <polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#fbbf24"/>
+      <polygon points="28,0 30,6 36,6 31,10 33,16 28,12 23,16 25,10 20,6 26,6" fill="#fbbf24"/>
+      <polygon points="48,0 50,6 56,6 51,10 53,16 48,12 43,16 45,10 40,6 46,6" fill="#fbbf24"/>
+      <polygon points="68,0 70,6 76,6 71,10 73,16 68,12 63,16 65,10 60,6 66,6" fill="#fbbf24"/>
+      <polygon points="88,0 90,6 96,6 91,10 93,16 88,12 83,16 85,10 80,6 86,6" fill="#fbbf24" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Arrow up -->
+  <g transform="translate(380, 180)">
+    <rect width="180" height="100" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="16" y="30" font-size="14" fill="#0f172a" font-weight="bold" font-family="sans-serif">問い合わせ数</text>
+    <text x="16" y="65" font-size="40" fill="#059669" font-weight="bold" font-family="sans-serif">3倍</text>
+    <path d="M130 70 L150 40 L170 70" stroke="#059669" stroke-width="3" fill="none"/>
+    <path d="M150 40 L150 85" stroke="#059669" stroke-width="3"/>
+  </g>
+
+  <!-- Review card -->
+  <g transform="translate(380, 310)">
+    <rect width="180" height="60" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="16" y="25" font-size="11" fill="#64748b" font-family="sans-serif">口コミ数</text>
+    <text x="16" y="48" font-size="22" fill="#0891b2" font-weight="bold" font-family="sans-serif">+120件</text>
+  </g>
+</svg>

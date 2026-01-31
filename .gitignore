@@ -29,3 +29,7 @@ build/
 
 # Progress log (internal use)
 PROGRESS_LOG.md
+PROGRESS_SESSION.md
+
+# Backup files
+images_backup/

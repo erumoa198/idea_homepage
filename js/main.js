@@ -76,7 +76,7 @@
 
           // 動画を最初から再生
           heroVideo.currentTime = 0;
-          heroVideo.play().catch(e => console.log('Video replay prevented:', e));
+          heroVideo.play().catch(() => {});
         });
       }
     }
@@ -91,7 +91,7 @@
         // ブラー演出の途中で動画再生開始（間くらいの被せ）
         setTimeout(() => {
           if (heroVideo) {
-            heroVideo.play().catch(e => console.log('Video autoplay prevented:', e));
+            heroVideo.play().catch(() => {});
           }
         }, 220); // 間くらいで再生開始
 
@@ -114,7 +114,7 @@
         loader.classList.add('fade-out');
         setTimeout(() => {
           if (heroVideo) {
-            heroVideo.play().catch(e => console.log('Video autoplay prevented:', e));
+            heroVideo.play().catch(() => {});
           }
         }, 220);
         setTimeout(() => {
@@ -742,8 +742,6 @@
 
       if (isValid) {
         const formData = new FormData(this);
-        console.log('Form submitted:', Object.fromEntries(formData));
-
         // 送信成功時のフィードバック
         const submitBtn = this.querySelector('[type="submit"]');
         if (submitBtn) {
@@ -1092,27 +1090,40 @@
         right: 20px;
         z-index: 9999;
         animation: recruitPopupBounce 2s ease-in-out infinite;
+        transition: opacity 0.5s ease;
+      }
+
+      /* 動画再生中は透過 */
+      .recruit-popup.video-playing {
+        opacity: 0.15;
+        animation: none;
+        pointer-events: none;
+      }
+
+      .recruit-popup.video-playing:hover {
+        opacity: 0.8;
+        pointer-events: auto;
       }
 
       .recruit-popup-link {
         display: flex;
         align-items: center;
         gap: 8px;
-        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
         color: #fff;
         padding: 12px 20px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 700;
         font-size: 14px;
-        box-shadow: 0 4px 20px rgba(238, 90, 90, 0.4);
+        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
         transition: all 0.3s ease;
         white-space: nowrap;
       }
 
       .recruit-popup-link:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 30px rgba(238, 90, 90, 0.5);
+        box-shadow: 0 6px 30px rgba(8, 145, 178, 0.5);
       }
 
       .recruit-popup-icon {
@@ -1197,6 +1208,27 @@
     // セッション中に閉じた場合は非表示
     if (sessionStorage.getItem('recruitPopupClosed') === 'true') {
       popup.style.display = 'none';
+    }
+
+    // 動画再生中は透過させる
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+      heroVideo.addEventListener('play', () => {
+        popup.classList.add('video-playing');
+      });
+
+      heroVideo.addEventListener('pause', () => {
+        popup.classList.remove('video-playing');
+      });
+
+      heroVideo.addEventListener('ended', () => {
+        popup.classList.remove('video-playing');
+      });
+
+      // 初期状態で再生中かチェック
+      if (!heroVideo.paused && !heroVideo.ended) {
+        popup.classList.add('video-playing');
+      }
     }
   })();
 

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <!-- Background shapes -->
+  <circle cx="300" cy="250" r="200" fill="#e0f2fe" opacity="0.5"/>
+  <circle cx="420" cy="150" r="80" fill="#cffafe" opacity="0.4"/>
+  <circle cx="180" cy="350" r="60" fill="#ccfbf1" opacity="0.4"/>
+
+  <!-- Laptop -->
+  <rect x="180" y="180" width="240" height="160" rx="10" fill="#0e7490" opacity="0.9"/>
+  <rect x="192" y="192" width="216" height="130" rx="4" fill="#ecfeff"/>
+  <!-- Screen content - chart -->
+  <rect x="210" y="220" width="30" height="80" rx="3" fill="#0891b2" opacity="0.7"/>
+  <rect x="250" y="240" width="30" height="60" rx="3" fill="#06b6d4" opacity="0.7"/>
+  <rect x="290" y="200" width="30" height="100" rx="3" fill="#0891b2" opacity="0.9"/>
+  <rect x="330" y="210" width="30" height="90" rx="3" fill="#22d3ee" opacity="0.7"/>
+  <rect x="370" y="230" width="30" height="70" rx="3" fill="#06b6d4" opacity="0.6"/>
+  <!-- Upward arrow -->
+  <path d="M220 290 L390 210" stroke="#0e7490" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <polygon points="394,206 382,214 388,220" fill="#0e7490"/>
+  <!-- Laptop base -->
+  <path d="M160 340 L180 340 L420 340 L440 340 L440 350 Q440 360 430 360 L170 360 Q160 360 160 350 Z" fill="#0e7490" opacity="0.85"/>
+
+  <!-- Person left - caregiver -->
+  <circle cx="130" cy="200" r="28" fill="#fbbf24" opacity="0.2"/>
+  <circle cx="130" cy="195" r="20" fill="#fed7aa"/>
+  <path d="M110 240 Q110 220 130 220 Q150 220 150 240 L150 300 Q150 310 140 310 L120 310 Q110 310 110 300 Z" fill="#0891b2"/>
+  <!-- Heart icon on shirt -->
+  <path d="M130 260 C125 254 118 258 118 264 C118 272 130 280 130 280 C130 280 142 272 142 264 C142 258 135 254 130 260Z" fill="white" opacity="0.5" transform="scale(0.5) translate(130, 260)"/>
+
+  <!-- Person right - elderly -->
+  <circle cx="470" cy="220" r="22" fill="#e5e7eb"/>
+  <circle cx="470" cy="215" r="18" fill="#fed7aa"/>
+  <path d="M452 255 Q452 240 470 240 Q488 240 488 255 L488 310 Q488 318 480 318 L460 318 Q452 318 452 310 Z" fill="#6ee7b7"/>
+
+  <!-- Floating icons -->
+  <!-- Location pin -->
+  <g transform="translate(80, 120)">
+    <circle cx="20" cy="20" r="20" fill="white" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+    <path d="M20 8 C14 8 9 13 9 19 C9 27 20 34 20 34 C20 34 31 27 31 19 C31 13 26 8 20 8Z" fill="#ef4444" opacity="0.8"/>
+    <circle cx="20" cy="18" r="4" fill="white"/>
+  </g>
+
+  <!-- Chart icon -->
+  <g transform="translate(480, 100)">
+    <circle cx="20" cy="20" r="20" fill="white" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+    <rect x="10" y="18" width="6" height="14" rx="1" fill="#0891b2"/>
+    <rect x="18" y="12" width="6" height="20" rx="1" fill="#06b6d4"/>
+    <rect x="26" y="22" width="6" height="10" rx="1" fill="#22d3ee"/>
+  </g>
+
+  <!-- Smartphone icon -->
+  <g transform="translate(500, 300)">
+    <circle cx="20" cy="20" r="20" fill="white" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+    <rect x="12" y="8" width="16" height="24" rx="3" fill="#0e7490"/>
+    <rect x="14" y="12" width="12" height="14" rx="1" fill="#ecfeff"/>
+    <circle cx="20" cy="29" r="1.5" fill="#ecfeff"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="520" cy="400" r="4" fill="#0891b2" opacity="0.3"/>
+  <circle cx="540" cy="380" r="3" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="80" cy="300" r="3" fill="#0891b2" opacity="0.3"/>
+  <circle cx="60" cy="320" r="4" fill="#06b6d4" opacity="0.2"/>
+</svg>

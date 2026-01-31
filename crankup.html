@@ -209,6 +209,9 @@
       height: 100vh;
       overflow: hidden;
       background: var(--slider-bg);
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.8s ease;
     }
 
     .slider-canvas {
@@ -217,6 +220,26 @@
       left: 0;
       width: 100%;
       height: 100%;
+      display: none;
+    }
+
+    /* Hero dark overlay for text readability */
+    .slider-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(15, 23, 42, 0.45) 0%,
+        rgba(15, 23, 42, 0.25) 40%,
+        rgba(15, 23, 42, 0.35) 70%,
+        rgba(15, 23, 42, 0.6) 100%
+      );
+      z-index: 5;
+      pointer-events: none;
     }
 
     /* Slide Content Overlay */
@@ -236,7 +259,7 @@
       left: 0;
       transform: translateY(-50%);
       width: 100%;
-      padding: 0 60px;
+      padding: 0 60px 0 140px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -522,6 +545,21 @@
       50% { opacity: 0; transform: translateX(-50%) translateY(10px); }
     }
 
+    /* CrankUp Logo - Always visible in hero */
+    .cu-hero-logo {
+      position: absolute;
+      bottom: 40px;
+      right: 120px;
+      z-index: 15;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    .cu-hero-logo img {
+      width: 180px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .slide-content {
@@ -562,6 +600,14 @@
       .effect-label {
         right: 40px;
       }
+
+      .cu-hero-logo {
+        right: 40px;
+        bottom: 30px;
+      }
+      .cu-hero-logo img {
+        width: 140px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -598,6 +644,14 @@
 
       .scroll-hint {
         display: none;
+      }
+
+      .cu-hero-logo {
+        right: 24px;
+        bottom: 24px;
+      }
+      .cu-hero-logo img {
+        width: 110px;
       }
     }
 
@@ -642,8 +696,8 @@
 
     .cu-business-image {
       aspect-ratio: 4/3;
-      background: var(--cu-gray-200);
-      border-radius: var(--cu-radius-lg);
+      background: transparent;
+      border-radius: 0;
       overflow: hidden;
     }
 
@@ -1543,6 +1597,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 30%;
     }
 
     .cu-staff-card-premium:hover .cu-staff-photo-premium {
@@ -1974,7 +2029,7 @@
     }
 
     /* ===================================
-       導入事例 Section
+       制作事例 Section
     =================================== */
     .cu-cases {
       background: var(--cu-gray-50);
@@ -2644,18 +2699,12 @@
         <!-- デジケア -->
         <div class="nav-main-item" data-dropdown="marketing">
           <a href="./marketing.html" class="nav-main-link">
-            <div class="nav-main-logo-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <span class="nav-main-label">デジケア</span>
+            <img src="./images/DigiCare_logp.png" alt="デジケア" class="nav-main-logo">
+            <span class="nav-main-label">WEB対策事業</span>
           </a>
           <div class="nav-dropdown nav-dropdown-with-logo">
-            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
+            <div class="nav-dropdown-logo">
+              <img src="./images/DigiCare_logp.png" alt="デジケア" style="width: 120px; height: auto;">
             </div>
             <div class="nav-dropdown-links">
               <a href="./marketing.html">サービス概要</a>
@@ -2710,7 +2759,7 @@
           <ul class="mega-menu-list">
             <li><a href="./service.html">事業一覧</a></li>
             <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
-            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./marketing.html">WEB対策事業</a></li>
             <li><a href="./crankup.html">制作事業</a></li>
           </ul>
         </div>
@@ -2718,8 +2767,9 @@
           <h3 class="mega-menu-title">企業情報</h3>
           <ul class="mega-menu-list">
             <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./cases.html">制作事例</a></li>
+            <li><a href="./column.html">コラム</a></li>
             <li><a href="./recruit.html">採用情報</a></li>
-            <li><a href="./works.html">実績</a></li>
           </ul>
         </div>
         <div class="mega-menu-section">
@@ -2745,8 +2795,9 @@
     <nav class="nav-mobile">
       <a href="./service.html">事業一覧</a>
       <a href="./about.html">企業概要</a>
+      <a href="./cases.html">制作事例</a>
+      <a href="./column.html">コラム</a>
       <a href="./recruit.html">採用情報</a>
-      <a href="./works.html">実績</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
       <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
@@ -2768,7 +2819,7 @@
   </div>
 
   <!-- Hero Section - WebGL Slider -->
-  <section class="slider-wrapper" id="sliderWrapper">
+  <section class="slider-wrapper" id="sliderWrapper" style="background-image: url('./images/Create/Hero_01.png');">
     <!-- WebGL Canvas -->
     <canvas class="slider-canvas" id="sliderCanvas"></canvas>
 
@@ -2834,16 +2885,16 @@
         </a>
       </div>
 
-      <!-- Slide 4: クリエイティブ全般 -->
+      <!-- Slide 4: イベントOP映像 -->
       <div class="slide-content" data-slide="3">
-        <span class="slide-label">Creative Production</span>
+        <span class="slide-label">Event Opening Movie</span>
         <h1 class="slide-title">
-          <span>クリエイティブで、</span>
-          <span>未来を創る</span>
+          <span>イベントを、</span>
+          <span>感動で彩る</span>
         </h1>
         <p class="slide-description">
-          企画から制作、運用まで一貫サポート<br>
-          あなたのビジョンをカタチにします
+          結婚式・企業イベント・式典のオープニング映像など<br>
+          特別な瞬間を演出する映像制作
         </p>
         <a href="#contact" class="slide-cta">
           無料相談はこちら
@@ -2886,6 +2937,11 @@
       </button>
     </div>
 
+    <!-- CrankUp Logo -->
+    <div class="cu-hero-logo">
+      <img src="./images/crankup_logo.png" alt="CrankUp">
+    </div>
+
     <!-- Scroll Hint -->
     <div class="scroll-hint">
       <div class="mouse">
@@ -2900,8 +2956,8 @@
     <div class="cu-container">
       <div class="cu-business-inner">
         <div class="cu-business-visual cu-reveal-left">
-          <div class="cu-business-image">
-            <!-- 事業紹介の画像 -->
+          <div class="cu-business-image" style="display: flex; align-items: center; justify-content: center; padding: var(--cu-space-2xl);">
+            <img src="./images/crankup_logo.png" alt="CrankUp ロゴ" style="width: 55%; max-width: 260px; height: auto; object-fit: contain;">
           </div>
         </div>
         <div class="cu-business-content cu-reveal-right">
@@ -2994,53 +3050,53 @@
 
       <!-- Film Frames (Gallery Items) -->
       <div class="cu-gallery-track">
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/MV.png') center/cover;">
           <span class="cu-gallery-label">ミュージックビデオ</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/VP.png') center/cover;">
           <span class="cu-gallery-label">企業VP</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/WEBSite.JPG') center/cover;">
           <span class="cu-gallery-label">WEBサイト</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Saiyou.png') center/cover;">
           <span class="cu-gallery-label">採用動画</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Event.png') center/cover;">
           <span class="cu-gallery-label">イベント映像</span>
         </div>
-        <div class="cu-gallery-item">
-          <span class="cu-gallery-label">SNS動画</span>
+        <div class="cu-gallery-item" style="background: url('./images/Create/Event_OP.png') center/cover;">
+          <span class="cu-gallery-label">イベントOP映像</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/promotion.png') center/cover;">
           <span class="cu-gallery-label">プロモーション</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Drone.png') center/cover;">
           <span class="cu-gallery-label">ドローン撮影</span>
         </div>
         <!-- Duplicate for seamless loop -->
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/MV.png') center/cover;">
           <span class="cu-gallery-label">ミュージックビデオ</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/VP.png') center/cover;">
           <span class="cu-gallery-label">企業VP</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/WEBSite.JPG') center/cover;">
           <span class="cu-gallery-label">WEBサイト</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Saiyou.png') center/cover;">
           <span class="cu-gallery-label">採用動画</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Event.png') center/cover;">
           <span class="cu-gallery-label">イベント映像</span>
         </div>
-        <div class="cu-gallery-item">
-          <span class="cu-gallery-label">SNS動画</span>
+        <div class="cu-gallery-item" style="background: url('./images/Create/Event_OP.png') center/cover;">
+          <span class="cu-gallery-label">イベントOP映像</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/promotion.png') center/cover;">
           <span class="cu-gallery-label">プロモーション</span>
         </div>
-        <div class="cu-gallery-item">
+        <div class="cu-gallery-item" style="background: url('./images/Create/Drone.png') center/cover;">
           <span class="cu-gallery-label">ドローン撮影</span>
         </div>
       </div>
@@ -3181,7 +3237,7 @@
               </svg>
             </span>
             <span class="cu-game-btn-text">楽曲制作</span>
-            <span class="cu-game-btn-count">2</span>
+            <span class="cu-game-btn-count">4</span>
           </button>
           <button class="cu-game-btn" data-category="award">
             <span class="cu-game-btn-icon">
@@ -3598,9 +3654,41 @@
                     </div>
                   </div>
                 </div>
-                <!-- クリエイターチームリンク -->
+                <!-- 2. プロ野球チームゲームアプリBGM/SE -->
                 <div class="cu-carousel-item" data-index="1">
-                  <div class="cu-portfolio-card cu-creator-link-card" onclick="window.open('https://or-create.vercel.app/index.html', '_blank')">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Music Production</span>
+                      <h3 class="cu-portfolio-card-title">プロ野球チームゲームアプリ BGM/SE制作</h3>
+                      <p class="cu-portfolio-card-desc">スマートフォン向けゲームアプリのBGM・効果音を制作</p>
+                      <div class="cu-portfolio-card-meta"><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 3. アニメ楽曲ベース制作 -->
+                <div class="cu-carousel-item" data-index="2">
+                  <div class="cu-portfolio-card">
+                    <div class="cu-portfolio-thumb-wrapper">
+                      <div class="cu-portfolio-thumb-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                      </div>
+                    </div>
+                    <div class="cu-portfolio-card-info">
+                      <span class="cu-portfolio-card-category">Music Production</span>
+                      <h3 class="cu-portfolio-card-title">人気アニメ キャラクターソング ベース演奏</h3>
+                      <p class="cu-portfolio-card-desc">人気アニメ新シリーズの新キャラクターソングにてベースを担当</p>
+                      <div class="cu-portfolio-card-meta"><span>2025</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- クリエイターチーム紹介 -->
+                <div class="cu-carousel-item" data-index="3">
+                  <div class="cu-portfolio-card">
                     <div class="cu-portfolio-thumb-wrapper">
                       <div class="cu-portfolio-thumb-placeholder cu-creator-thumb">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -3610,9 +3698,6 @@
                       <span class="cu-portfolio-card-category">Creator Team</span>
                       <h3 class="cu-portfolio-card-title">クリエイターチーム「Or Create」</h3>
                       <p class="cu-portfolio-card-desc">楽曲制作を担当するクリエイターチームの詳細はこちら</p>
-                      <div class="cu-portfolio-card-meta">
-                        <span class="cu-external-link">詳しく見る →</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -3660,37 +3745,31 @@
           <span class="cu-staff-number">01</span>
           <div class="cu-staff-photo-wrapper">
             <div class="cu-staff-photo-premium">
-              <!-- 写真が入る場所 -->
-              <div class="cu-staff-photo-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </div>
+              <img src="./images/Create/sugiyama.png" alt="杉山 卓也" loading="lazy">
             </div>
           </div>
           <div class="cu-staff-info">
             <div class="cu-staff-header">
               <div>
-                <h3 class="cu-staff-name-premium">スタッフ名</h3>
+                <h3 class="cu-staff-name-premium">杉山 卓也</h3>
                 <span class="cu-staff-role-premium">
                   <svg class="cu-staff-role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="23 7 16 12 23 17 23 7"/>
                     <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                   </svg>
-                  ディレクター / 映像クリエイター
+                  プロデューサー / クリエイター
                 </span>
               </div>
             </div>
             <p class="cu-staff-bio-premium">
-              映像制作歴10年以上のベテランクリエイター。企業PVからミュージックビデオまで幅広いジャンルを手がけ、クライアントの想いを映像で表現することを大切にしています。
+              映像・音楽・イベント・写真・デザインと多彩な領域を横断するマルチクリエイター。クライアントに寄り添いながら、WEBマーケティングの視点を掛け合わせた企画提案を得意とします。大阪市北区の映像コンテストで2賞受賞。二等無人航空機操縦士の国家資格を保有し、ドローン空撮にも対応。元プロミュージシャンとしての音楽的感性を活かした映像演出にも定評があります。
             </p>
             <div class="cu-staff-skills">
-              <span class="cu-staff-skill">映像ディレクション</span>
-              <span class="cu-staff-skill">企画構成</span>
-              <span class="cu-staff-skill">撮影</span>
-              <span class="cu-staff-skill">After Effects</span>
-              <span class="cu-staff-skill">Premiere Pro</span>
+              <span class="cu-staff-skill">DaVinci Resolve</span>
+              <span class="cu-staff-skill">Adobeソフト</span>
+              <span class="cu-staff-skill">Cubase</span>
+              <span class="cu-staff-skill">ドローン撮影</span>
+              <span class="cu-staff-skill">企画・プロデュース</span>
             </div>
           </div>
         </article>
@@ -3712,26 +3791,26 @@
           <div class="cu-staff-info">
             <div class="cu-staff-header">
               <div>
-                <h3 class="cu-staff-name-premium">スタッフ名</h3>
+                <h3 class="cu-staff-name-premium">矢野 龍生</h3>
                 <span class="cu-staff-role-premium">
                   <svg class="cu-staff-role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <polyline points="21 15 16 10 5 21"/>
                   </svg>
-                  デザイナー / WEBクリエイター
+                  クリエイター / カメラマン
                 </span>
               </div>
             </div>
             <p class="cu-staff-bio-premium">
-              UI/UXデザインからコーディングまでワンストップで対応するマルチクリエイター。ユーザー目線に立った使いやすく美しいデザインを追求しています。
+              MVやYouTube動画を中心とした映像編集を得意とし、テキストアニメーションや3Dアニメーションの制作にも対応。写真・映像の撮影からポストプロダクションまで一貫して手がけ、クライアントの想いを映像で形にします。
             </p>
             <div class="cu-staff-skills">
-              <span class="cu-staff-skill">WEBデザイン</span>
-              <span class="cu-staff-skill">UI/UX</span>
-              <span class="cu-staff-skill">HTML/CSS</span>
-              <span class="cu-staff-skill">Figma</span>
-              <span class="cu-staff-skill">グラフィック</span>
+              <span class="cu-staff-skill">映像編集</span>
+              <span class="cu-staff-skill">Adobeソフト</span>
+              <span class="cu-staff-skill">3Dアニメーション</span>
+              <span class="cu-staff-skill">写真撮影</span>
+              <span class="cu-staff-skill">映像撮影</span>
             </div>
           </div>
         </article>
@@ -3897,82 +3976,52 @@
     </div>
   </section>
 
-  <!-- 導入事例 Section -->
+  <!-- 制作事例 Section -->
   <section id="cases" class="cu-section cu-cases">
     <div class="cu-container">
       <div class="cu-section-header cu-reveal">
         <span class="cu-section-label">Cases</span>
-        <h2 class="cu-section-title">導入事例</h2>
-        <p class="cu-section-desc">制作事業で成果を出したお客様の事例をご紹介します</p>
+        <h2 class="cu-section-title">制作事例</h2>
+        <p class="cu-section-desc">クランクアップが手がけた制作事例をご紹介します</p>
       </div>
 
       <div class="cu-cases-grid cu-stagger">
-        <!-- Case 1: 動画制作 -->
+        <!-- Case 1: MV撮影 -->
         <article class="cu-case-card">
           <div class="cu-case-image">
-            <img src="https://picsum.photos/seed/cu-case1/600/400" alt="有料老人ホームC様" loading="lazy">
-            <span class="cu-case-category">動画制作</span>
+            <img src="./images/Create/MV.png" alt="MV撮影" loading="lazy">
+            <span class="cu-case-category">MV撮影</span>
           </div>
           <div class="cu-case-content">
-            <h3 class="cu-case-title">施設紹介動画で入居相談数UP</h3>
-            <p class="cu-case-client">有料老人ホーム C様（大阪府）</p>
-            <p class="cu-case-excerpt">施設の雰囲気が伝わる動画制作により、見学前の安心感を提供し相談数が増加しました。</p>
-            <div class="cu-case-results">
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">40%UP</span>
-                <span class="cu-case-result-label">入居相談数</span>
-              </div>
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">5,000回</span>
-                <span class="cu-case-result-label">再生回数</span>
-              </div>
-            </div>
+            <h3 class="cu-case-title">ミュージックビデオ撮影</h3>
+            <p class="cu-case-client">バンド代表者様（京都府）</p>
+            <p class="cu-case-excerpt">バンドの世界観を映像で表現したミュージックビデオの企画・撮影・編集を担当しました。</p>
           </div>
         </article>
 
-        <!-- Case 2: Web制作 -->
+        <!-- Case 2: イベント制作 -->
         <article class="cu-case-card">
           <div class="cu-case-image">
-            <img src="https://picsum.photos/seed/cu-case2/600/400" alt="訪問介護D様" loading="lazy">
-            <span class="cu-case-category">Web制作</span>
+            <img src="./images/Create/Event.png" alt="イベント制作" loading="lazy">
+            <span class="cu-case-category">イベント制作</span>
           </div>
           <div class="cu-case-content">
-            <h3 class="cu-case-title">ホームページリニューアルで問い合わせ増加</h3>
-            <p class="cu-case-client">訪問介護事業所 D様（京都府）</p>
-            <p class="cu-case-excerpt">レスポンシブデザインで全面リニューアル。ユーザビリティ向上で問い合わせが増加しました。</p>
-            <div class="cu-case-results">
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">2倍</span>
-                <span class="cu-case-result-label">問い合わせ数</span>
-              </div>
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">-50%</span>
-                <span class="cu-case-result-label">離脱率改善</span>
-              </div>
-            </div>
+            <h3 class="cu-case-title">結婚式のイベント制作</h3>
+            <p class="cu-case-client">個人ご依頼のご夫婦様（大阪府）</p>
+            <p class="cu-case-excerpt">お二人の思い出を映像や演出で彩る、結婚式イベントの企画・制作を担当しました。</p>
           </div>
         </article>
 
-        <!-- Case 3: デザイン制作 -->
+        <!-- Case 3: WEB制作 -->
         <article class="cu-case-card">
           <div class="cu-case-image">
-            <img src="https://picsum.photos/seed/cu-case3/600/400" alt="介護施設F様" loading="lazy">
-            <span class="cu-case-category">デザイン</span>
+            <img src="./images/Create/WEBSite.JPG" alt="WEB制作" loading="lazy">
+            <span class="cu-case-category">WEB制作</span>
           </div>
           <div class="cu-case-content">
-            <h3 class="cu-case-title">パンフレット・チラシで認知度向上</h3>
-            <p class="cu-case-client">介護施設 F様（大阪府）</p>
-            <p class="cu-case-excerpt">統一感のあるデザインでブランディングを強化。地域での認知度向上に貢献しました。</p>
-            <div class="cu-case-results">
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">+60%</span>
-                <span class="cu-case-result-label">認知度向上</span>
-              </div>
-              <div class="cu-case-result">
-                <span class="cu-case-result-value">統一</span>
-                <span class="cu-case-result-label">ブランドイメージ</span>
-              </div>
-            </div>
+            <h3 class="cu-case-title">専門学校のWEBコンテンツ制作</h3>
+            <p class="cu-case-client">専門学校 学校長様（大阪府）</p>
+            <p class="cu-case-excerpt">学校の魅力を伝えるWEBサイトのデザイン・コンテンツ制作を担当しました。</p>
           </div>
         </article>
       </div>
@@ -4065,7 +4114,7 @@
             <p class="footer-nav-title">事業内容</p>
             <ul class="footer-nav-list">
               <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
-              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./marketing.html">WEB対策事業</a></li>
               <li><a href="./crankup.html">制作事業</a></li>
             </ul>
           </div>
@@ -4073,8 +4122,9 @@
             <p class="footer-nav-title">企業情報</p>
             <ul class="footer-nav-list">
               <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./cases.html">制作事例</a></li>
+              <li><a href="./column.html">コラム</a></li>
               <li><a href="./recruit.html">採用情報</a></li>
-              <li><a href="./works.html">実績</a></li>
             </ul>
           </div>
           <div>
@@ -4337,12 +4387,12 @@
         effects: ['glass', 'ripple', 'frost', 'plasma']
       };
 
-      // Slide Images (Placeholder)
+      // Slide Images
       const slideImages = [
-        'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80', // Video/Camera
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80', // Web design
-        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1920&q=80', // Graphic design
-        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80'  // Creative team
+        './images/Create/Hero_01.png',      // 映像制作
+        './images/Create/Hero_02.png',      // WEB制作
+        './images/Create/Hero_03.png',      // デザイン
+        './images/Create/Hero_04.png'       // イベントOP映像
       ];
 
       // State
@@ -4385,7 +4435,20 @@
         uniform float uTime;
         uniform int uEffect;
         uniform vec2 uResolution;
+        uniform float uImageAspect;
         varying vec2 vUv;
+
+        // Cover-fit UV (like CSS object-fit: cover)
+        vec2 coverUV(vec2 uv) {
+          float screenAspect = uResolution.x / uResolution.y;
+          vec2 s = vec2(1.0);
+          if (screenAspect > uImageAspect) {
+            s.y = uImageAspect / screenAspect;
+          } else {
+            s.x = screenAspect / uImageAspect;
+          }
+          return (uv - 0.5) * s + 0.5;
+        }
 
         // Noise function
         float random(vec2 st) {
@@ -4463,23 +4526,24 @@
         }
 
         void main() {
+          vec2 uv = coverUV(vUv);
           vec4 color;
 
           // When not transitioning (progress = 0), show static image
           if (uProgress < 0.001) {
-            color = texture2D(uTexture1, vUv);
+            color = texture2D(uTexture1, uv);
           } else if (uEffect == 0) {
-            color = glassEffect(vUv, uProgress);
+            color = glassEffect(uv, uProgress);
           } else if (uEffect == 1) {
-            color = rippleEffect(vUv, uProgress);
+            color = rippleEffect(uv, uProgress);
           } else if (uEffect == 2) {
-            color = frostEffect(vUv, uProgress);
+            color = frostEffect(uv, uProgress);
           } else {
-            color = plasmaEffect(vUv, uProgress);
+            color = plasmaEffect(uv, uProgress);
           }
 
           // Vignette
-          float vignette = 1.0 - distance(vUv, vec2(0.5)) * 0.5;
+          float vignette = 1.0 - distance(uv, vec2(0.5)) * 0.5;
           color.rgb *= vignette;
 
           // Color grading (CrankUp brand colors)
@@ -4507,7 +4571,8 @@
             uProgress: { value: 0 },
             uTime: { value: 0 },
             uEffect: { value: 0 },
-            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            uImageAspect: { value: 1920.0 / 1080.0 }
           },
           vertexShader: vertexShader,
           fragmentShader: fragmentShader
@@ -4670,6 +4735,12 @@
         }
 
         animateTransition();
+
+        // Update CSS background fallback
+        var wrapper = document.getElementById('sliderWrapper');
+        if (wrapper) {
+          wrapper.style.backgroundImage = "url('" + slideImages[currentSlide] + "')";
+        }
 
         // Update UI
         updateUI();
@@ -5113,14 +5184,34 @@
             videoUrl: ''
           },
           {
+            title: 'プロ野球チームゲームアプリ BGM/SE制作',
+            category: 'Music Production',
+            date: '',
+            client: '',
+            type: 'ゲームBGM・SE',
+            description: 'プロ野球チームの公式スマートフォン向けゲームアプリに使用するBGMおよび効果音（SE）の制作を担当しました。試合中の臨場感あるサウンドからUI操作音まで、ゲーム体験を彩る多彩な音源を納品しています。',
+            tags: ['BGM制作', 'SE制作', 'ゲームサウンド', 'アプリ'],
+            videoUrl: ''
+          },
+          {
+            title: '人気アニメ キャラクターソング ベース演奏',
+            category: 'Music Production',
+            date: '2025',
+            client: '',
+            type: 'レコーディング',
+            description: '人気アニメの新シリーズに登場する新キャラクターのキャラクターソングにて、ベースの演奏・レコーディングを担当しました。作品の世界観に寄り添いながら、キャラクターの個性を引き立てるグルーヴィーなベースラインを制作しています。',
+            tags: ['ベース演奏', 'レコーディング', 'アニメ楽曲', 'キャラソン'],
+            videoUrl: ''
+          },
+          {
             title: 'クリエイターチーム「Or Create」',
             category: 'Creator Team',
             date: '',
             client: '',
             type: 'チーム紹介',
-            description: '楽曲制作を担当するクリエイターチームです。多様なジャンルに対応可能なメンバーが揃い、映像に最適なサウンドを提供しています。詳細はチームサイトをご覧ください。',
+            description: '楽曲制作を担当するクリエイターチームです。多様なジャンルに対応可能なメンバーが揃い、映像に最適なサウンドを提供しています。',
             tags: ['楽曲制作', 'サウンドデザイン', 'BGM', 'SE制作'],
-            videoUrl: 'https://or-create.vercel.app/index.html'
+            videoUrl: ''
           }
         ],
         award: [

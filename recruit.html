@@ -640,8 +640,30 @@
        数字で見る会社セクション
     ---------------------------------------- */
     .recruit-numbers {
-      background: var(--recruit-secondary);
+      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #155e75 100%);
       color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+    }
+
+    .recruit-numbers .recruit-section-header {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .recruit-numbers::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('./images/Saiyou/Banner.png') center top/cover no-repeat;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .recruit-numbers > * {
+      position: relative;
+      z-index: 1;
     }
 
     .recruit-numbers .recruit-section-label {
@@ -662,16 +684,19 @@
 
     .recruit-number-card {
       text-align: center;
-      padding: var(--space-2xl) var(--space-lg);
-      background: rgba(255,255,255,0.05);
+      padding: var(--space-lg) var(--space-md);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9);
       transition: var(--transition-base);
     }
 
     .recruit-number-card:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.95);
       transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,1);
     }
 
     .recruit-number-icon {
@@ -707,7 +732,7 @@
 
     .recruit-number-label {
       font-size: var(--text-sm);
-      color: rgba(255,255,255,0.8);
+      color: var(--color-gray-600);
       font-weight: 500;
     }
 
@@ -915,7 +940,7 @@
        1日のスケジュールセクション（2職種比較）
     ---------------------------------------- */
     .recruit-schedule {
-      background: var(--color-white);
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     }
 
     .recruit-schedule-container {
@@ -929,57 +954,61 @@
       grid-template-columns: 1fr 80px 1fr;
       gap: var(--space-md);
       margin-bottom: var(--space-xl);
-      align-items: end;
+      align-items: stretch;
     }
 
     .recruit-schedule-job {
       text-align: center;
-      padding: var(--space-lg);
-      border-radius: var(--radius-lg);
+      padding: var(--space-xl) var(--space-lg);
+      border-radius: 16px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .recruit-schedule-job:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .recruit-schedule-job::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      z-index: 0;
+    }
+
+    .recruit-schedule-job > * {
+      position: relative;
+      z-index: 1;
     }
 
     .recruit-schedule-job-left {
-      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(240,253,250,0.93) 100%), url('./images/Saiyou/happiness_Back.png') center/cover no-repeat;
     }
 
     .recruit-schedule-job-right {
-      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(255,249,240,0.93) 100%), url('./images/Saiyou/DegiCare_Back.png') center/cover no-repeat;
     }
 
-    .recruit-schedule-job-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto var(--space-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .recruit-schedule-job-icon svg {
-      width: 32px;
-      height: 32px;
-    }
-
-    .recruit-schedule-job-left .recruit-schedule-job-icon svg {
-      stroke: #00838f;
-      fill: none;
-    }
-
-    .recruit-schedule-job-right .recruit-schedule-job-icon svg {
-      stroke: #e65100;
-      fill: none;
-    }
-
-    .recruit-schedule-job-title {
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--recruit-secondary);
+    .recruit-schedule-job-logo {
+      margin: 0 auto var(--space-md);
     }
 
     .recruit-schedule-job-sub {
-      font-size: var(--text-xs);
-      color: var(--color-gray-500);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-gray-600);
       margin-top: var(--space-xs);
+      letter-spacing: 0.03em;
     }
 
     .recruit-schedule-header-center {
@@ -989,6 +1018,8 @@
       font-weight: 600;
       color: var(--color-gray-400);
       letter-spacing: 0.1em;
+      align-self: end;
+      padding-bottom: var(--space-md);
     }
 
     /* タイムライン */
@@ -1004,8 +1035,9 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: linear-gradient(180deg, var(--recruit-primary) 0%, #0063a4 100%);
+      background: linear-gradient(180deg, var(--recruit-primary) 0%, #0063a4 50%, var(--recruit-primary) 100%);
       border-radius: 2px;
+      opacity: 0.6;
     }
 
     .recruit-schedule-row {
@@ -1040,23 +1072,25 @@
       font-size: var(--text-base);
       font-weight: 700;
       color: var(--recruit-primary);
+      box-shadow: 0 3px 12px rgba(0,105,167,0.15);
     }
 
     /* カード（左右） */
     .recruit-schedule-card {
-      background: var(--color-gray-50);
-      padding: var(--space-md);
-      border-radius: var(--radius-lg);
-      transition: var(--transition-base);
+      background: var(--color-white);
+      padding: var(--space-lg) var(--space-md);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
 
     .recruit-schedule-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
     }
 
     .recruit-schedule-card-left {
-      text-align: right;
+      text-align: left;
       border-left: 3px solid #00bcd4;
     }
 
@@ -1069,13 +1103,13 @@
       font-size: var(--text-base);
       font-weight: 700;
       color: var(--recruit-secondary);
-      margin-bottom: var(--space-xs);
+      margin-bottom: 6px;
     }
 
     .recruit-schedule-card-desc {
       font-size: var(--text-sm);
-      color: var(--color-gray-600);
-      line-height: 1.6;
+      color: var(--color-gray-500);
+      line-height: 1.7;
     }
 
     /* 共通時間（ランチ・退社など） */
@@ -1094,7 +1128,7 @@
       justify-content: center;
       width: 60px;
       height: 60px;
-      background: var(--recruit-primary);
+      background: linear-gradient(135deg, var(--recruit-primary) 0%, #0063a4 100%);
       border-radius: 50%;
       font-family: var(--font-accent);
       font-size: var(--text-base);
@@ -1102,13 +1136,16 @@
       color: var(--color-white);
       position: relative;
       z-index: 2;
+      box-shadow: 0 4px 14px rgba(0,105,167,0.25);
+      flex-shrink: 0;
     }
 
     .recruit-schedule-shared-content {
-      background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+      background: var(--color-white);
       padding: var(--space-md) var(--space-xl);
-      border-radius: var(--radius-lg);
+      border-radius: 12px;
       text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
 
     .recruit-schedule-shared-title {
@@ -1320,32 +1357,41 @@
        募集要項セクション
     ---------------------------------------- */
     .recruit-positions {
-      background: var(--recruit-secondary);
-      color: var(--color-white);
+      background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+      color: var(--color-gray-900);
     }
 
     .recruit-positions .recruit-section-title {
-      color: var(--color-white);
+      color: var(--color-gray-900);
+    }
+
+    .recruit-positions .recruit-section-label {
+      color: var(--recruit-primary);
     }
 
     .recruit-positions-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-xl);
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
+      align-items: start;
     }
 
     .recruit-position-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
       border-radius: var(--radius-xl);
       padding: var(--space-2xl);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
       transition: var(--transition-base);
+      display: flex;
+      flex-direction: column;
     }
 
     .recruit-position-card:hover {
-      background: rgba(255,255,255,0.1);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
       border-color: var(--recruit-primary);
     }
 
@@ -1363,18 +1409,20 @@
     .recruit-position-title {
       font-size: var(--text-xl);
       font-weight: 700;
+      color: var(--color-gray-900);
       margin-bottom: var(--space-lg);
     }
 
     .recruit-position-info {
       margin-bottom: var(--space-lg);
+      flex: 1;
     }
 
     .recruit-position-row {
       display: flex;
       gap: var(--space-md);
       padding: var(--space-sm) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--color-gray-100);
       font-size: var(--text-sm);
     }
 
@@ -1385,14 +1433,15 @@
     .recruit-position-label {
       width: 80px;
       flex-shrink: 0;
-      color: rgba(255,255,255,0.6);
+      color: var(--color-gray-500);
+      font-weight: 500;
     }
 
     .recruit-position-value {
-      color: var(--color-white);
+      color: var(--color-gray-700);
     }
 
-    .recruit-position-btn {
+    .recruit-position-toggle-btn {
       display: block;
       width: 100%;
       padding: var(--space-md);
@@ -1401,11 +1450,80 @@
       text-align: center;
       border-radius: var(--radius-lg);
       font-weight: 700;
+      border: none;
+      cursor: pointer;
       transition: var(--transition-base);
+      font-size: var(--text-sm);
     }
 
-    .recruit-position-btn:hover {
+    .recruit-position-toggle-btn:hover {
       background: #0090b8;
+    }
+
+    .recruit-position-toggle-btn svg {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .recruit-position-card.is-open .recruit-position-toggle-btn svg {
+      transform: rotate(180deg);
+    }
+
+    .recruit-position-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+      opacity: 0;
+      margin-top: 0;
+    }
+
+    .recruit-position-card.is-open .recruit-position-detail {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: var(--space-lg);
+    }
+
+    .recruit-position-detail-inner {
+      padding: var(--space-lg);
+      background: var(--color-gray-50);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.8;
+    }
+
+    .recruit-position-detail-inner h4 {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin-bottom: var(--space-sm);
+    }
+
+    .recruit-position-detail-inner ul {
+      list-style: disc;
+      padding-left: 1.2em;
+      margin-bottom: var(--space-md);
+    }
+
+    .recruit-position-apply-btn {
+      display: block;
+      width: 100%;
+      padding: var(--space-md);
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      color: var(--color-white);
+      text-align: center;
+      border-radius: var(--radius-lg);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      transition: var(--transition-base);
+      margin-top: var(--space-md);
+    }
+
+    .recruit-position-apply-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
 
     /* ----------------------------------------
@@ -1720,18 +1838,12 @@
         <!-- デジケア -->
         <div class="nav-main-item" data-dropdown="marketing">
           <a href="./marketing.html" class="nav-main-link">
-            <div class="nav-main-logo-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <span class="nav-main-label">デジケア</span>
+            <img src="./images/DigiCare_logp.png" alt="デジケア" class="nav-main-logo">
+            <span class="nav-main-label">WEB対策事業</span>
           </a>
           <div class="nav-dropdown nav-dropdown-with-logo">
-            <div class="nav-dropdown-logo nav-dropdown-logo-icon">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
+            <div class="nav-dropdown-logo">
+              <img src="./images/DigiCare_logp.png" alt="デジケア" style="width: 120px; height: auto;">
             </div>
             <div class="nav-dropdown-links">
               <a href="./marketing.html">サービス概要</a>
@@ -1786,7 +1898,7 @@
           <ul class="mega-menu-list">
             <li><a href="./service.html">事業一覧</a></li>
             <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
-            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./marketing.html">WEB対策事業</a></li>
             <li><a href="./crankup.html">制作事業</a></li>
           </ul>
         </div>
@@ -1794,8 +1906,9 @@
           <h3 class="mega-menu-title">企業情報</h3>
           <ul class="mega-menu-list">
             <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./cases.html">制作事例</a></li>
+            <li><a href="./column.html">コラム</a></li>
             <li><a href="./recruit.html">採用情報</a></li>
-            <li><a href="./works.html">実績</a></li>
           </ul>
         </div>
         <div class="mega-menu-section">
@@ -1821,8 +1934,9 @@
     <nav class="nav-mobile">
       <a href="./service.html">事業一覧</a>
       <a href="./about.html">企業概要</a>
+      <a href="./cases.html">制作事例</a>
+      <a href="./column.html">コラム</a>
       <a href="./recruit.html">採用情報</a>
-      <a href="./works.html">実績</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
       <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
@@ -1881,12 +1995,12 @@
           </div>
           <div class="recruit-cinema-divider"></div>
           <div class="recruit-cinema-stat">
-            <div class="recruit-cinema-stat-value">80<span>%</span></div>
+            <div class="recruit-cinema-stat-value">90<span>%</span></div>
             <div class="recruit-cinema-stat-label">未経験入社</div>
           </div>
           <div class="recruit-cinema-divider"></div>
           <div class="recruit-cinema-stat">
-            <div class="recruit-cinema-stat-value">28<span>歳</span></div>
+            <div class="recruit-cinema-stat-value">25<span>歳</span></div>
             <div class="recruit-cinema-stat-label">平均年齢</div>
           </div>
         </div>
@@ -1942,19 +2056,18 @@
       </div>
       <div class="recruit-message-content">
         <div class="recruit-message-image recruit-fade-in">
-          <!-- 仮画像：代表や社員の写真 -->
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="オフィスの様子">
+          <img src="./images/saiyou.jpg" alt="イデアの仲間たち">
         </div>
         <div class="recruit-message-text recruit-fade-in recruit-fade-in-delay-1">
           <h3>相手を知り、想いを感じ、<br>期待を超える。</h3>
           <p>
-            私たちは、老人ホーム紹介を通じて、高齢者とそのご家族の人生の大きな選択に寄り添っています。一人ひとりの声に耳を傾け、本当に必要なことを「発見」する。
+            イデアは「老人ホーム紹介」「WEB対策」「クリエイティブ制作」の3つの事業を展開しています。異なる領域だからこそ、多角的な視点でお客様の課題を「発見」できる。
           </p>
           <p>
-            介護業界のデジケアやクリエイティブ制作では、お客様の想いに「共感」し、その先にある課題解決を目指しています。
+            一人ひとりのお客様に寄り添い、想いに「共感」する。そこから生まれる提案は、マニュアルにはない本物の価値を持っています。
           </p>
           <p>
-            そして、期待を超える価値を「創造」し、関わるすべての人に感動を届ける。それが、イデアの仕事です。
+            そして、期待を超える成果を「創造」し、関わるすべての人に感動を届ける。若いチームだからこそ、挑戦を恐れず、新しいアイデアが生まれ続ける環境がここにあります。
           </p>
         </div>
       </div>
@@ -1988,14 +2101,14 @@
           <div class="recruit-number-icon">
             <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
           </div>
-          <div class="recruit-number-value">80<span>%</span></div>
+          <div class="recruit-number-value">90<span>%</span></div>
           <div class="recruit-number-label">未経験入社率</div>
         </div>
         <div class="recruit-number-card recruit-fade-in recruit-fade-in-delay-3">
           <div class="recruit-number-icon">
             <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
           </div>
-          <div class="recruit-number-value">28<span>歳</span></div>
+          <div class="recruit-number-value">25<span>歳</span></div>
           <div class="recruit-number-label">平均年齢</div>
         </div>
       </div>
@@ -2010,8 +2123,7 @@
       <div class="recruit-features-grid">
         <div class="recruit-feature-card recruit-fade-in">
           <div class="recruit-feature-image">
-            <!-- 仮画像：発見のイメージ -->
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="相手を知る">
+            <img src="./images/Saiyou/Hakken.png" alt="相手を知る">
             <span class="recruit-feature-number">01</span>
           </div>
           <div class="recruit-feature-content">
@@ -2023,8 +2135,7 @@
         </div>
         <div class="recruit-feature-card recruit-fade-in recruit-fade-in-delay-1">
           <div class="recruit-feature-image">
-            <!-- 仮画像：共感のイメージ -->
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="想いを感じる">
+            <img src="./images/Saiyou/Kyoukan.png" alt="想いを感じる">
             <span class="recruit-feature-number">02</span>
           </div>
           <div class="recruit-feature-content">
@@ -2036,8 +2147,7 @@
         </div>
         <div class="recruit-feature-card recruit-fade-in recruit-fade-in-delay-2">
           <div class="recruit-feature-image">
-            <!-- 仮画像：創造のイメージ -->
-            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="期待を超える">
+            <img src="./images/Saiyou/Souzou.png" alt="期待を超える">
             <span class="recruit-feature-number">03</span>
           </div>
           <div class="recruit-feature-content">
@@ -2077,35 +2187,33 @@
       <div class="recruit-interview-grid">
         <div class="recruit-interview-card recruit-fade-in">
           <div class="recruit-interview-image">
-            <!-- 仮画像：女性社員 -->
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="社員A">
+            <img src="./images/Saiyou/nakai.png" alt="中井">
           </div>
           <div class="recruit-interview-content">
             <div class="recruit-interview-meta">
               <span class="recruit-interview-dept">老人ホーム紹介</span>
-              <span class="recruit-interview-year">2022年入社</span>
+              <span class="recruit-interview-year">2025年入社</span>
             </div>
-            <h3 class="recruit-interview-name">Y.Sさん</h3>
-            <p class="recruit-interview-role">アドバイザー</p>
+            <h3 class="recruit-interview-name">中井さん</h3>
+            <p class="recruit-interview-role">相談員</p>
             <p class="recruit-interview-quote">
-              未経験で入社しましたが、先輩方のサポートのおかげで、今では自信を持ってお客様に提案できるようになりました。「あなたに相談して良かった」と言っていただけることが何よりの喜びです。
+              未経験で入社しましたが、先輩が一から丁寧に教えてくれる環境があり、安心してスタートできました。ご家族から「あなたに相談して良かった」と言っていただけた時は、本当にこの仕事を選んで良かったと感じます。
             </p>
           </div>
         </div>
         <div class="recruit-interview-card recruit-fade-in recruit-fade-in-delay-1">
           <div class="recruit-interview-image">
-            <!-- 仮画像：男性社員 -->
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="社員B">
+            <img src="./images/Saiyou/yamanishi.png" alt="山西">
           </div>
           <div class="recruit-interview-content">
             <div class="recruit-interview-meta">
-              <span class="recruit-interview-dept">デジケア</span>
-              <span class="recruit-interview-year">2021年入社</span>
+              <span class="recruit-interview-dept">老人ホーム紹介</span>
+              <span class="recruit-interview-year">2025年入社</span>
             </div>
-            <h3 class="recruit-interview-name">K.Tさん</h3>
-            <p class="recruit-interview-role">マーケター</p>
+            <h3 class="recruit-interview-name">山西さん</h3>
+            <p class="recruit-interview-role">相談員</p>
             <p class="recruit-interview-quote">
-              介護業界×ITという珍しい組み合わせに興味を持ちました。自分のスキルで業界の課題解決に貢献できることにやりがいを感じています。
+              入居者様やご家族の人生に寄り添える仕事に魅力を感じて入社しました。若いメンバーが多く、チームの雰囲気がとても良いです。自分の提案で笑顔になってくれる瞬間が一番のやりがいです。
             </p>
           </div>
         </div>
@@ -2125,23 +2233,18 @@
         <!-- 職種ヘッダー -->
         <div class="recruit-schedule-header recruit-fade-in">
           <div class="recruit-schedule-job recruit-schedule-job-left">
-            <div class="recruit-schedule-job-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                </svg>
-              </div>
-            <div class="recruit-schedule-job-title">老人ホーム紹介<br>相談員</div>
-            <div class="recruit-schedule-job-sub">ハピネス事業部</div>
+            <div class="recruit-schedule-job-logo">
+              <img src="./images/happiness_logo.png" alt="ハピネス老人ホーム紹介センター" style="width: 160px; height: auto;">
+            </div>
+            <div class="recruit-schedule-job-sub">老人ホーム紹介事業 ｜ 相談員</div>
           </div>
           <div class="recruit-schedule-header-center">TIME</div>
           <div class="recruit-schedule-job recruit-schedule-job-right">
-            <div class="recruit-schedule-job-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              </div>
-            <div class="recruit-schedule-job-title">デジケア<br>/ 制作</div>
-            <div class="recruit-schedule-job-sub">クランクアップ事業部</div>
+            <div class="recruit-schedule-job-logo" style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+              <img src="./images/DigiCare_logp.png" alt="デジケア" style="width: 130px; height: auto;">
+              <img src="./images/crankup_logo.png" alt="クランクアップ" style="width: 90px; height: auto;">
+            </div>
+            <div class="recruit-schedule-job-sub">WEB対策事業 / 制作事業 ｜ スタッフ</div>
           </div>
         </div>
 
@@ -2151,29 +2254,29 @@
           <div class="recruit-schedule-row recruit-fade-in">
             <div class="recruit-schedule-card recruit-schedule-card-left">
               <h4 class="recruit-schedule-card-title">出社・朝礼</h4>
-              <p class="recruit-schedule-card-desc">メールチェック、今日の予定確認。チームで情報共有。</p>
+              <p class="recruit-schedule-card-desc">メールチェックと今日の訪問スケジュールを確認。チームで情報共有を行います。</p>
             </div>
             <div class="recruit-schedule-time">
               <span class="recruit-schedule-time-inner">9:00</span>
             </div>
             <div class="recruit-schedule-card recruit-schedule-card-right">
-              <h4 class="recruit-schedule-card-title">出社・タスク確認</h4>
-              <p class="recruit-schedule-card-desc">Slackチェック、進行中プロジェクトの状況確認。</p>
+              <h4 class="recruit-schedule-card-title">出社・プロジェクト確認</h4>
+              <p class="recruit-schedule-card-desc">進行中のプロジェクト状況やSNSの反応をチェック。今日のタスクを整理します。</p>
             </div>
           </div>
 
           <!-- 10:00 午前業務 -->
           <div class="recruit-schedule-row recruit-fade-in">
             <div class="recruit-schedule-card recruit-schedule-card-left">
-              <h4 class="recruit-schedule-card-title">お客様対応</h4>
-              <p class="recruit-schedule-card-desc">電話・オンラインでのご相談。ご希望をヒアリング。</p>
+              <h4 class="recruit-schedule-card-title">施設・病院への訪問</h4>
+              <p class="recruit-schedule-card-desc">提携施設や病院を訪問し、空室状況の確認やケアマネージャーとの情報交換を行います。</p>
             </div>
             <div class="recruit-schedule-time">
               <span class="recruit-schedule-time-inner">10:00</span>
             </div>
             <div class="recruit-schedule-card recruit-schedule-card-right">
-              <h4 class="recruit-schedule-card-title">制作・マーケ作業</h4>
-              <p class="recruit-schedule-card-desc">デザイン制作、SEO/MEO対策、コンテンツ更新など。</p>
+              <h4 class="recruit-schedule-card-title">デザイン制作・撮影</h4>
+              <p class="recruit-schedule-card-desc">クライアント向けの制作物デザインや、写真・動画の撮影を行います。</p>
             </div>
           </div>
 
@@ -2182,8 +2285,8 @@
             <div class="recruit-schedule-shared">
               <span class="recruit-schedule-shared-time">12:00</span>
               <div class="recruit-schedule-shared-content">
-                <h4 class="recruit-schedule-shared-title">ランチ</h4>
-                <p class="recruit-schedule-shared-desc">難波エリアにはおいしいお店がたくさん！チームでランチに行くことも。</p>
+                <h4 class="recruit-schedule-shared-title">昼食</h4>
+                <p class="recruit-schedule-shared-desc">難波エリアにはおいしいお店がたくさん。しっかり休憩してリフレッシュ！</p>
               </div>
             </div>
           </div>
@@ -2191,30 +2294,30 @@
           <!-- 14:00 午後業務 -->
           <div class="recruit-schedule-row recruit-fade-in">
             <div class="recruit-schedule-card recruit-schedule-card-left">
-              <h4 class="recruit-schedule-card-title">施設見学同行</h4>
-              <p class="recruit-schedule-card-desc">お客様と一緒に施設を見学。実際に目で見て、ご不安を解消。</p>
+              <h4 class="recruit-schedule-card-title">施設見学同行・ご紹介</h4>
+              <p class="recruit-schedule-card-desc">ご利用者様と一緒に施設を見学。ご要望に合った入居先のご提案を行います。</p>
             </div>
             <div class="recruit-schedule-time">
               <span class="recruit-schedule-time-inner">14:00</span>
             </div>
             <div class="recruit-schedule-card recruit-schedule-card-right">
-              <h4 class="recruit-schedule-card-title">クライアント打合せ</h4>
-              <p class="recruit-schedule-card-desc">オンラインMTGで進捗報告、新規提案など。</p>
+              <h4 class="recruit-schedule-card-title">映像編集・WEB制作</h4>
+              <p class="recruit-schedule-card-desc">撮影素材の映像編集やWEBページの制作・更新作業を進めます。</p>
             </div>
           </div>
 
           <!-- 16:00 夕方業務 -->
           <div class="recruit-schedule-row recruit-fade-in">
             <div class="recruit-schedule-card recruit-schedule-card-left">
-              <h4 class="recruit-schedule-card-title">事務作業</h4>
-              <p class="recruit-schedule-card-desc">契約書類作成、施設への連絡、翌日の準備。</p>
+              <h4 class="recruit-schedule-card-title">事務作業・終礼</h4>
+              <p class="recruit-schedule-card-desc">契約書類の作成、施設への連絡、翌日の訪問準備。終礼で1日の報告を共有します。</p>
             </div>
             <div class="recruit-schedule-time">
               <span class="recruit-schedule-time-inner">16:00</span>
             </div>
             <div class="recruit-schedule-card recruit-schedule-card-right">
-              <h4 class="recruit-schedule-card-title">レポート・分析</h4>
-              <p class="recruit-schedule-card-desc">アクセス解析、効果測定、改善提案の準備。</p>
+              <h4 class="recruit-schedule-card-title">SNS投稿・分析</h4>
+              <p class="recruit-schedule-card-desc">SNS投稿コンテンツの制作や、インサイト分析で効果を検証します。</p>
             </div>
           </div>
 
@@ -2324,6 +2427,7 @@
         <p class="recruit-section-subtitle">
           あなたの成長に合わせたキャリアパスをご用意しています
         </p>
+        <p style="font-size: var(--text-sm); color: var(--color-gray-500); margin-top: var(--space-sm);">※ 老人ホーム紹介事業の場合</p>
       </div>
       <div class="recruit-career-path">
         <div class="recruit-career-step recruit-fade-in">
@@ -2334,20 +2438,14 @@
         <span class="recruit-career-arrow">→</span>
         <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-1">
           <div class="recruit-career-step-icon">2</div>
-          <h3 class="recruit-career-step-title">アドバイザー</h3>
+          <h3 class="recruit-career-step-title">相談員</h3>
           <p class="recruit-career-step-desc">3ヶ月〜1年<br>実務経験を積む</p>
         </div>
         <span class="recruit-career-arrow">→</span>
         <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-2">
           <div class="recruit-career-step-icon">3</div>
-          <h3 class="recruit-career-step-title">シニアアドバイザー</h3>
-          <p class="recruit-career-step-desc">1〜3年<br>後輩指導も担当</p>
-        </div>
-        <span class="recruit-career-arrow">→</span>
-        <div class="recruit-career-step recruit-fade-in recruit-fade-in-delay-3">
-          <div class="recruit-career-step-icon">4</div>
           <h3 class="recruit-career-step-title">マネージャー</h3>
-          <p class="recruit-career-step-desc">3年〜<br>チームを率いる</p>
+          <p class="recruit-career-step-desc">チームを率いる</p>
         </div>
       </div>
     </section>
@@ -2359,9 +2457,10 @@
         <h2 class="recruit-section-title">募集職種</h2>
       </div>
       <div class="recruit-positions-grid">
+        <!-- 老人ホーム紹介相談員 -->
         <div class="recruit-position-card recruit-fade-in">
           <span class="recruit-position-tag">積極採用中</span>
-          <h3 class="recruit-position-title">老人ホーム紹介アドバイザー</h3>
+          <h3 class="recruit-position-title">老人ホーム紹介相談員</h3>
           <div class="recruit-position-info">
             <div class="recruit-position-row">
               <span class="recruit-position-label">雇用形態</span>
@@ -2380,8 +2479,30 @@
               <span class="recruit-position-value">未経験歓迎・普通自動車免許</span>
             </div>
           </div>
-          <a href="./contact.html" class="recruit-position-btn">詳細を見る</a>
+          <button class="recruit-position-toggle-btn" onclick="togglePositionCard(this)">
+            詳細を見る
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="recruit-position-detail">
+            <div class="recruit-position-detail-inner">
+              <h4>仕事内容</h4>
+              <ul>
+                <li>老人ホームをお探しのお客様へのヒアリング・ご提案</li>
+                <li>施設見学の同行・入居サポート</li>
+                <li>病院・ケアマネージャーへの訪問営業</li>
+              </ul>
+              <h4>求める人物像</h4>
+              <ul>
+                <li>人と接することが好きな方</li>
+                <li>誰かの役に立ちたいという気持ちがある方</li>
+                <li>成長意欲のある方</li>
+              </ul>
+              <a href="./contact.html" class="recruit-position-apply-btn">応募する</a>
+            </div>
+          </div>
         </div>
+
+        <!-- WEBマーケター -->
         <div class="recruit-position-card recruit-fade-in recruit-fade-in-delay-1">
           <span class="recruit-position-tag">募集中</span>
           <h3 class="recruit-position-title">WEBマーケター</h3>
@@ -2400,10 +2521,75 @@
             </div>
             <div class="recruit-position-row">
               <span class="recruit-position-label">応募資格</span>
-              <span class="recruit-position-value">デジケア経験者優遇</span>
+              <span class="recruit-position-value">経験者優遇</span>
             </div>
           </div>
-          <a href="./contact.html" class="recruit-position-btn">詳細を見る</a>
+          <button class="recruit-position-toggle-btn" onclick="togglePositionCard(this)">
+            詳細を見る
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="recruit-position-detail">
+            <div class="recruit-position-detail-inner">
+              <h4>仕事内容</h4>
+              <ul>
+                <li>MEO・SEO対策の企画・運用</li>
+                <li>SNSアカウントの運用・分析</li>
+                <li>Webサイトの改善提案・ディレクション</li>
+              </ul>
+              <h4>求める人物像</h4>
+              <ul>
+                <li>デジタルマーケティングに興味がある方</li>
+                <li>データ分析が好きな方</li>
+                <li>主体的に動ける方</li>
+              </ul>
+              <a href="./contact.html" class="recruit-position-apply-btn">応募する</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 動画制作スタッフ -->
+        <div class="recruit-position-card recruit-fade-in recruit-fade-in-delay-2">
+          <span class="recruit-position-tag">募集中</span>
+          <h3 class="recruit-position-title">動画制作スタッフ</h3>
+          <div class="recruit-position-info">
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">雇用形態</span>
+              <span class="recruit-position-value">正社員</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">給与</span>
+              <span class="recruit-position-value">月給23万円〜 （経験者優遇）</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">勤務地</span>
+              <span class="recruit-position-value">大阪市中央区難波</span>
+            </div>
+            <div class="recruit-position-row">
+              <span class="recruit-position-label">応募資格</span>
+              <span class="recruit-position-value">未経験歓迎・映像制作に興味がある方</span>
+            </div>
+          </div>
+          <button class="recruit-position-toggle-btn" onclick="togglePositionCard(this)">
+            詳細を見る
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="recruit-position-detail">
+            <div class="recruit-position-detail-inner">
+              <h4>仕事内容</h4>
+              <ul>
+                <li>企業PR・施設紹介動画の企画・撮影・編集</li>
+                <li>SNS向けショート動画の制作</li>
+                <li>サムネイル・グラフィックデザイン制作</li>
+              </ul>
+              <h4>求める人物像</h4>
+              <ul>
+                <li>映像制作・クリエイティブが好きな方</li>
+                <li>Adobe Premiere Pro等の編集ソフト経験者歓迎</li>
+                <li>新しい表現に挑戦したい方</li>
+              </ul>
+              <a href="./contact.html" class="recruit-position-apply-btn">応募する</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2418,7 +2604,7 @@
         <div class="recruit-faq-item recruit-fade-in">
           <div class="recruit-faq-question">未経験でも応募できますか？</div>
           <div class="recruit-faq-answer">
-            はい、大歓迎です！入社後3ヶ月の研修プログラムがあり、先輩社員がマンツーマンでサポートします。実際に社員の80%が未経験からスタートしています。
+            はい、大歓迎です！入社後3ヶ月の研修プログラムがあり、先輩社員がマンツーマンでサポートします。実際に社員の90%が未経験からスタートしています。
           </div>
         </div>
         <div class="recruit-faq-item recruit-fade-in recruit-fade-in-delay-1">
@@ -2485,7 +2671,7 @@
             <p class="footer-nav-title">事業内容</p>
             <ul class="footer-nav-list">
               <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
-              <li><a href="./marketing.html">デジケア</a></li>
+              <li><a href="./marketing.html">WEB対策事業</a></li>
               <li><a href="./crankup.html">制作事業</a></li>
             </ul>
           </div>
@@ -2493,8 +2679,9 @@
             <p class="footer-nav-title">企業情報</p>
             <ul class="footer-nav-list">
               <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./cases.html">制作事例</a></li>
+              <li><a href="./column.html">コラム</a></li>
               <li><a href="./recruit.html">採用情報</a></li>
-              <li><a href="./works.html">実績</a></li>
             </ul>
           </div>
           <div>
@@ -2525,8 +2712,36 @@
   <!-- JavaScript -->
   <script src="./js/main.js"></script>
   <script>
+    // 募集職種カード展開
+    function togglePositionCard(btn) {
+      var card = btn.closest('.recruit-position-card');
+      card.classList.toggle('is-open');
+    }
+
     // 採用ページ専用スクリプト
     document.addEventListener('DOMContentLoaded', function() {
+
+      // ========================================
+      // 募集職種カードの高さ揃え
+      // ========================================
+      function equalizePositionCards() {
+        var cards = document.querySelectorAll('.recruit-position-card');
+        // リセット
+        cards.forEach(function(c) { c.style.minHeight = ''; });
+        var maxH = 0;
+        cards.forEach(function(c) {
+          if (!c.classList.contains('is-open')) {
+            maxH = Math.max(maxH, c.offsetHeight);
+          }
+        });
+        cards.forEach(function(c) {
+          if (!c.classList.contains('is-open')) {
+            c.style.minHeight = maxH + 'px';
+          }
+        });
+      }
+      equalizePositionCards();
+      window.addEventListener('resize', equalizePositionCards);
 
       // ========================================
       // 動画ヒーローコントロール

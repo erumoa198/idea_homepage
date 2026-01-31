@@ -9,10 +9,10 @@
   <!-- Favicon -->
   <link rel="icon" href="./assets/favicon.ico">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Noto Sans JP (源ノ角ゴシック系) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
@@ -70,7 +70,7 @@
     }
 
     /* ========================================
-       Hero Section - Blur Hue-Rotate Effect
+       Hero Section - Bold Left-Aligned Design
     ======================================== */
     .hp-hero {
       position: relative;
@@ -78,7 +78,7 @@
       min-height: 700px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: hidden;
       background: #1a3a1a;
     }
@@ -96,359 +96,173 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 70% center;
+      filter: brightness(0.85);
+      animation: kenBurns 25s ease-in-out infinite alternate;
     }
 
-    /* ブラー＆Hue-Rotateエフェクト - Before */
-    .hp-hero-picture::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 25%;
-      height: 25%;
-      background-color: transparent;
-      z-index: 1;
-      animation: hpHeroBlurA 20s ease infinite;
-    }
-
-    @keyframes hpHeroBlurA {
+    @keyframes kenBurns {
       0% {
-        width: 25%; height: 25%;
-        left: 0; right: unset; top: 0; bottom: unset;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
-      }
-      12.49% { left: 0; }
-      12.5% {
-        width: 100%; left: unset;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      25% {
-        width: 25%; height: 25%;
-        backdrop-filter: blur(2vmin) hue-rotate(160deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
-      }
-      37.49% { top: 0; bottom: unset; }
-      37.5% {
-        top: unset; height: 100%;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      50% {
-        width: 25%; height: 25%;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
-      }
-      62.49% { left: unset; right: 0; }
-      62.5% {
-        right: unset; width: 100%; height: 100%;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      74.9% { top: unset; bottom: 0; }
-      75% {
-        width: 25%; height: 25%;
-        backdrop-filter: blur(2vmin) hue-rotate(160deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
-      }
-      87.49% { top: unset; bottom: 0; }
-      87.5% {
-        height: 100%; top: 0;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
+        transform: scale(1);
       }
       100% {
-        width: 25%; height: 25%;
-        left: 0; right: unset; top: 0; bottom: unset;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
+        transform: scale(1.06);
       }
     }
 
-    /* ブラー＆Hue-Rotateエフェクト - After */
-    .hp-hero-picture::after {
-      content: '';
+    /* グラデーションオーバーレイ - 左側を明るく */
+    .hp-hero-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 25%;
-      height: 25%;
-      background-color: transparent;
-      z-index: 1;
-      animation: hpHeroBlurB 10s ease infinite;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.25) 100%
+      );
+      z-index: 2;
     }
 
-    @keyframes hpHeroBlurB {
-      0% {
-        width: 25%; height: 25%;
-        left: 0; right: unset; top: 0; bottom: unset;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
-      }
-      12.49% { top: 0; }
-      12.5% {
-        height: 100%; top: unset;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      25% {
-        width: 25%; height: 25%;
-        backdrop-filter: blur(2vmin) hue-rotate(160deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
-      }
-      37.49% { left: 0; right: unset; }
-      37.5% {
-        left: unset; width: 100%;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      50% {
-        width: 25%; height: 25%;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
-      }
-      62.49% { top: unset; bottom: 0; }
-      62.5% {
-        top: 0; height: 100%;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      74.9% { bottom: unset; right: 0; }
-      75% {
-        width: 25%; height: 25%; left: unset;
-        backdrop-filter: blur(2vmin) hue-rotate(160deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(160deg);
-      }
-      87.49% { left: unset; right: 0; }
-      87.5% {
-        width: 100%; left: 0;
-        backdrop-filter: blur(0vmin) hue-rotate(80deg);
-        -webkit-backdrop-filter: blur(0vmin) hue-rotate(80deg);
-      }
-      100% {
-        width: 25%; height: 25%;
-        left: 0; right: unset; top: 0; bottom: unset;
-        backdrop-filter: blur(2vmin) hue-rotate(0deg);
-        -webkit-backdrop-filter: blur(2vmin) hue-rotate(0deg);
-      }
-    }
-
-    /* コンテンツボックス - Glassmorphism */
+    /* コンテンツ - ボックスなし、左寄せ */
     .hp-hero-content {
       position: relative;
       z-index: 10;
       width: 100%;
       max-width: 700px;
-      margin: 0 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 50px 40px;
+      margin-left: clamp(3rem, 10vw, 10rem);
+      padding: 2rem 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(15px) saturate(1.5);
-      -webkit-backdrop-filter: blur(15px) saturate(1.5);
-      border-radius: 20px;
+      align-items: flex-start;
+      text-align: left;
       color: #fff;
-      animation: hpContentHue 12s linear infinite;
     }
 
-    @keyframes hpContentHue {
-      from {
-        backdrop-filter: blur(15px) hue-rotate(0deg) saturate(1.5);
-        -webkit-backdrop-filter: blur(15px) hue-rotate(0deg) saturate(1.5);
-      }
-      to {
-        backdrop-filter: blur(15px) hue-rotate(360deg) saturate(1.5);
-        -webkit-backdrop-filter: blur(15px) hue-rotate(360deg) saturate(1.5);
-      }
+    /* ボックスなしのため疑似要素を削除 */
+    .hp-hero-content::before {
+      display: none;
     }
 
-    /* 装飾アクセント */
-    .hp-hero-content::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      width: 70px;
-      height: 70px;
-      background-image: linear-gradient(135deg, #67ad30, #4a9c3e, #38ef7d, #11998e);
-      border-radius: 16px;
-      z-index: -1;
-      animation: hpAccentSpin 6s linear infinite;
-    }
-
-    @keyframes hpAccentSpin {
-      from {
-        filter: hue-rotate(0deg) brightness(1.3);
-        transform: rotateZ(0deg);
-        border-radius: 16px;
-      }
-      50% {
-        border-radius: 50%;
-        filter: hue-rotate(180deg) brightness(1.5);
-      }
-      to {
-        filter: hue-rotate(360deg) brightness(1.3);
-        transform: rotateZ(360deg);
-        border-radius: 16px;
-      }
+    /* ロゴ */
+    .hp-hero-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      animation: heroLogoIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .hp-hero-logo {
-      width: 180px;
+      width: clamp(220px, 30vw, 360px);
       height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 4px 30px rgba(103, 173, 48, 0.4));
-      animation: heroLogoIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     @keyframes heroLogoIn {
       from {
         opacity: 0;
-        transform: scale(0.8) translateY(20px);
-        filter: drop-shadow(0 0px 0px rgba(103, 173, 48, 0));
+        transform: scale(0.9) translateY(20px);
       }
       to {
         opacity: 1;
         transform: scale(1) translateY(0);
-        filter: drop-shadow(0 4px 30px rgba(103, 173, 48, 0.4));
       }
     }
 
+    /* ラベルは非表示 */
     .hp-hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #fff;
-      padding: 0.6rem 1.5rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-    }
-
-    .hp-hero-label::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: #7ed957;
-      border-radius: 50%;
-      animation: labelPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes labelPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.2); }
+      display: none;
     }
 
     .hp-hero-title {
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
       font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.04em;
       color: #fff;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+      text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        0 4px 30px rgba(0, 0, 0, 0.3);
+      animation: floatUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
     }
 
     .hp-hero-subtitle {
+      font-family: 'Noto Sans JP', sans-serif;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 3rem;
-      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2.5rem;
+      line-height: 2;
       font-weight: 500;
-      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+      letter-spacing: 0.05em;
+      max-width: 520px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      animation: floatUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
     }
 
     .hp-hero-cta {
       display: flex;
-      gap: 1.25rem;
-      justify-content: center;
+      gap: 1rem;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+      animation: floatUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
     }
 
-    /* 2025 Button Styles */
+    /* 2025 Button Styles - Bold & Modern */
     .hp-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 1.1rem 2.2rem;
-      border-radius: 60px;
-      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       cursor: pointer;
       position: relative;
-      overflow: hidden;
-    }
-
-    .hp-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .hp-btn:hover::before {
-      opacity: 1;
     }
 
     .hp-btn-primary {
-      background: var(--hp-gradient);
+      background: var(--hp-primary);
       color: var(--hp-white);
-      box-shadow:
-        0 4px 20px rgba(103, 173, 48, 0.4),
-        0 0 0 0 rgba(103, 173, 48, 0.4);
+      box-shadow: 0 4px 20px rgba(103, 173, 48, 0.35);
     }
 
     .hp-btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow:
-        0 8px 35px rgba(103, 173, 48, 0.5),
-        0 0 0 4px rgba(103, 173, 48, 0.1);
+      background: var(--hp-primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(103, 173, 48, 0.45);
     }
 
     .hp-btn-primary:active {
-      transform: translateY(-1px) scale(0.98);
+      transform: translateY(-1px);
     }
 
     .hp-btn-outline {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.08);
       color: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
     }
 
     .hp-btn-outline:hover {
-      background: rgba(255,255,255,0.25);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.7);
       transform: translateY(-3px);
     }
 
     .hp-btn svg {
-      transition: transform 0.3s ease;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.25s ease;
     }
 
     .hp-btn:hover svg {
-      transform: translateX(3px);
+      transform: scale(1.15);
     }
 
     .hp-hero-scroll {
@@ -544,21 +358,24 @@
     }
 
     .hp-section-title {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
       font-weight: 900;
       color: var(--hp-dark);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
     }
 
     .hp-section-subtitle {
-      font-size: 1rem;
-      color: var(--hp-gray);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.95rem;
+      color: #444;
       margin-top: 1rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.8;
+      line-height: 1.9;
+      letter-spacing: 0.03em;
     }
 
     /* ========================================
@@ -606,19 +423,22 @@
     }
 
     .hp-about-text h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--hp-dark);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
       margin-bottom: 1.5rem;
-      line-height: 1.6;
-      letter-spacing: -0.01em;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
     }
 
     .hp-about-text p {
-      color: var(--hp-gray);
-      line-height: 2;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #444;
+      line-height: 2.1;
       margin-bottom: 2.5rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
     }
 
     .hp-about-features {
@@ -662,9 +482,11 @@
     }
 
     .hp-about-feature span {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--hp-dark);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 0.03em;
     }
 
     .hp-about-image {
@@ -672,7 +494,7 @@
       border-radius: var(--hp-radius-lg);
       overflow: hidden;
       aspect-ratio: 4/5;
-      background: url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&h=1000&fit=crop') center/cover;
+      background: url('./images/happiness_data02.jpg') center/cover;
       box-shadow: var(--hp-shadow-strong);
     }
 
@@ -945,7 +767,7 @@
       flex: 0 0 auto;
       width: 280px;
       aspect-ratio: 3/4;
-      background: #f5f3ef;
+      background: #ffffff;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 40px rgba(0,0,0,0.12);
@@ -1164,7 +986,7 @@
       aspect-ratio: 3/4;
       border-radius: 16px;
       overflow: hidden;
-      background: #e0e0e0;
+      background: #ffffff;
       box-shadow: 0 6px 25px rgba(0,0,0,0.1);
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -1180,6 +1002,38 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
+    }
+
+    /* 中嶋良太の写真調整（頭頂部を枠上部1行分の位置に） */
+    .hp-staff-card[data-staff="0"] .hp-staff-thumb img {
+      object-position: center top;
+      transform: scale(1.15) translateY(-3%);
+    }
+    .hp-staff-media[data-staff="0"] img {
+      object-position: center top;
+      transform: scale(1.15) translateY(-3%);
+    }
+
+    /* 森啓人の写真調整（頭頂部を枠上部1行分の位置に） */
+    .hp-staff-card[data-staff="1"] .hp-staff-thumb img {
+      object-position: center top;
+      transform: scale(1.15) translateY(-3%);
+    }
+    .hp-staff-media[data-staff="1"] img {
+      object-position: center top;
+      transform: scale(1.15) translateY(-3%);
+    }
+
+    /* 林幹太の写真調整（全身写真のためズーム必要） */
+    .hp-staff-card[data-staff="3"] .hp-staff-thumb img {
+      transform: scale(1.5) translateY(-5%);
+    }
+
+    /* 林幹太の詳細写真調整 */
+    .hp-staff-media[data-staff="3"] img {
+      object-fit: cover;
+      object-position: center top;
+      transform: scale(1.35) translateY(-3%);
     }
 
     /* カード内の名前 */
@@ -1532,7 +1386,7 @@
 
     .hp-flow-timeline {
       position: relative;
-      max-width: 700px;
+      max-width: 860px;
       margin: 0 auto;
       z-index: 1;
       padding: 0 20px;
@@ -2219,6 +2073,11 @@
       text-align: center;
     }
 
+    /* フッターロゴを通常カラーに */
+    .page-happiness .footer-logo-img {
+      filter: none;
+    }
+
     /* ========================================
        Responsive - 2025
     ======================================== */
@@ -2288,10 +2147,40 @@
 
       .hp-hero {
         min-height: 700px;
+        justify-content: center;
+      }
+
+      .hp-hero-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+
+      .hp-hero-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+        align-items: center;
+        text-align: center;
       }
 
       .hp-hero-logo {
-        width: 140px;
+        width: 220px;
+      }
+
+      .hp-hero-title {
+        font-size: 1.3rem;
+      }
+
+      .hp-hero-subtitle {
+        max-width: 100%;
+        font-size: 0.95rem;
+      }
+
+      .hp-hero-cta {
+        justify-content: center;
       }
 
       .hp-about-features {
@@ -2460,21 +2349,43 @@
       }
 
       .hp-hero {
-        min-height: 600px;
+        min-height: 100svh;
+      }
+
+      .hp-hero-content {
+        padding: 1.5rem 1rem;
+      }
+
+      .hp-hero-logo-wrap {
+        margin-bottom: 1.5rem;
       }
 
       .hp-hero-logo {
-        width: 120px;
+        width: 180px;
+      }
+
+      .hp-hero-title {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      .hp-hero-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+        line-height: 1.9;
+      }
+
+      .hp-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.875rem;
+        width: 100%;
+        justify-content: center;
       }
 
       .hp-hero-cta {
         flex-direction: column;
-        gap: 1rem;
-      }
-
-      .hp-btn {
         width: 100%;
-        justify-content: center;
+        max-width: 280px;
       }
 
       .hp-stats-cards {
@@ -2617,12 +2528,8 @@
 
         <div class="nav-main-item" data-dropdown="marketing">
           <a href="./marketing.html" class="nav-main-link">
-            <div class="nav-main-logo-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <span class="nav-main-label">デジケア</span>
+            <img src="./images/DigiCare_logp.png" alt="デジケア" class="nav-main-logo">
+            <span class="nav-main-label">WEB対策事業</span>
           </a>
         </div>
 
@@ -2656,7 +2563,7 @@
           <ul class="mega-menu-list">
             <li><a href="./service.html">事業一覧</a></li>
             <li><a href="./happiness.html">老人ホーム紹介事業</a></li>
-            <li><a href="./marketing.html">デジケア</a></li>
+            <li><a href="./marketing.html">WEB対策事業</a></li>
             <li><a href="./crankup.html">制作事業</a></li>
           </ul>
         </div>
@@ -2664,8 +2571,9 @@
           <h3 class="mega-menu-title">企業情報</h3>
           <ul class="mega-menu-list">
             <li><a href="./about.html">企業概要</a></li>
+            <li><a href="./cases.html">制作事例</a></li>
+            <li><a href="./column.html">コラム</a></li>
             <li><a href="./recruit.html">採用情報</a></li>
-            <li><a href="./works.html">実績</a></li>
           </ul>
         </div>
         <div class="mega-menu-section">
@@ -2690,8 +2598,9 @@
     <nav class="nav-mobile">
       <a href="./service.html">事業一覧</a>
       <a href="./about.html">企業概要</a>
+      <a href="./cases.html">制作事例</a>
+      <a href="./column.html">コラム</a>
       <a href="./recruit.html">採用情報</a>
-      <a href="./works.html">実績</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
     </nav>
@@ -2707,19 +2616,22 @@
          Hero Section
     ======================================== -->
     <section class="hp-hero">
-      <!-- Background Image with Blur/Hue-Rotate Effect -->
+      <!-- Background Image -->
       <picture class="hp-hero-picture">
         <img src="./images/happiness_data01.jpg" alt="background">
       </picture>
+      <!-- Gradient Overlay -->
+      <div class="hp-hero-overlay"></div>
 
       <div class="hp-hero-content">
-        <img src="./images/happiness_logo.png" alt="ハピネス" class="hp-hero-logo">
-        <span class="hp-hero-label">老人ホーム紹介事業</span>
+        <div class="hp-hero-logo-wrap">
+          <img src="./images/happiness_logo.png" alt="ハピネス老人ホーム紹介センター大阪" class="hp-hero-logo">
+        </div>
         <h1 class="hp-hero-title">
-          ハピネス老人ホーム<br>紹介センター大阪
+          老人ホーム・介護施設のご紹介
         </h1>
         <p class="hp-hero-subtitle">
-          大切なご家族の新しい暮らしを、<br class="sp-only">経験豊富なスタッフがサポートいたします
+          大阪を中心に、大切なご家族の新しい暮らしを<br class="sp-only">経験豊富なスタッフがサポートいたします
         </p>
         <div class="hp-hero-cta">
           <a href="#contact" class="hp-btn hp-btn-primary">
@@ -2770,7 +2682,11 @@
               <div class="hp-about-feature">
                 <div class="hp-about-feature-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    <!-- 円マーク ¥ -->
+                    <path d="M6 4l6 8 6-8"/>
+                    <path d="M12 12v10"/>
+                    <path d="M8 14h8"/>
+                    <path d="M8 17h8"/>
                   </svg>
                 </div>
                 <span>完全無料</span>
@@ -2826,36 +2742,13 @@
           <div class="hp-stat-card hp-reveal">
             <div class="hp-stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <div class="hp-stat-number" data-count="1500">0</div>
-            <div class="hp-stat-label">年間紹介実績</div>
-            <div class="hp-stat-unit">件</div>
-          </div>
-          <div class="hp-stat-card hp-reveal">
-            <div class="hp-stat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
               </svg>
             </div>
-            <div class="hp-stat-number" data-count="3000">0</div>
-            <div class="hp-stat-label">提携施設数</div>
+            <div class="hp-stat-number" data-count="5000">0</div>
+            <div class="hp-stat-label">全国施設契約数</div>
             <div class="hp-stat-unit">件以上</div>
-          </div>
-          <div class="hp-stat-card hp-reveal">
-            <div class="hp-stat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-              </svg>
-            </div>
-            <div class="hp-stat-number" data-count="98">0</div>
-            <div class="hp-stat-label">お客様満足度</div>
-            <div class="hp-stat-unit">%</div>
           </div>
           <div class="hp-stat-card hp-reveal">
             <div class="hp-stat-icon">
@@ -2866,7 +2759,29 @@
             </div>
             <div class="hp-stat-number" data-count="10">0</div>
             <div class="hp-stat-label">サービス開始</div>
-            <div class="hp-stat-unit">年目</div>
+            <div class="hp-stat-unit">年以上</div>
+          </div>
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="98">0</div>
+            <div class="hp-stat-label">お客様満足度</div>
+            <div class="hp-stat-unit">%以上</div>
+          </div>
+          <div class="hp-stat-card hp-reveal">
+            <div class="hp-stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/>
+                <path d="M15 7a2 2 0 0 1 2 2"/>
+                <path d="M19 7a6 6 0 0 1 0 10"/>
+              </svg>
+            </div>
+            <div class="hp-stat-number" data-count="24">0</div>
+            <div class="hp-stat-label">相談受付</div>
+            <div class="hp-stat-unit">時間対応</div>
           </div>
         </div>
       </div>
@@ -2889,10 +2804,10 @@
           <div class="hp-staff-detail-area">
             <div class="hp-staff-detail visible">
               <!-- 大きな写真/動画 -->
-              <div class="hp-staff-media">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face" alt="山田 太郎" id="staffDetailImg">
+              <div class="hp-staff-media" data-staff="0">
+                <img src="./images/staff_happiness/nakajima_web.png" alt="中嶋 良太" id="staffDetailImg">
                 <video loop muted playsinline id="staffDetailVideo">
-                  <source src="" type="video/mp4">
+                  <source src="./images/staff_happiness/nakajima_mv.mp4" type="video/mp4">
                 </video>
                 <!-- 再生ボタン -->
                 <button class="hp-staff-play-btn" aria-label="動画を再生">
@@ -2905,32 +2820,20 @@
               <!-- 情報パネル -->
               <div class="hp-staff-info-panel">
                 <div class="hp-staff-info-header">
-                  <p class="hp-staff-role" id="staffDetailRole">センター長</p>
-                  <h3 class="hp-staff-name" id="staffDetailName">山田 太郎</h3>
+                  <p class="hp-staff-role" id="staffDetailRole">代表</p>
+                  <h3 class="hp-staff-name" id="staffDetailName">中嶋 良太</h3>
                 </div>
                 <div class="hp-staff-info-list">
                   <div class="hp-staff-info-item">
-                    <p class="hp-staff-info-label">趣味・特技</p>
-                    <p class="hp-staff-info-value" id="staffDetailHobby">ゴルフ、読書</p>
-                  </div>
-                  <div class="hp-staff-info-item">
-                    <p class="hp-staff-info-label">資格</p>
-                    <p class="hp-staff-info-value" id="staffDetailQualification">介護福祉士、ケアマネージャー</p>
-                  </div>
-                  <div class="hp-staff-info-item">
-                    <p class="hp-staff-info-label">自己紹介</p>
-                    <p class="hp-staff-info-value" id="staffDetailIntro">介護業界15年の経験を持つベテラン。ご家族様の不安に寄り添い、丁寧なヒアリングで最適な施設をご提案します。</p>
-                  </div>
-                  <div class="hp-staff-info-item">
-                    <p class="hp-staff-info-label">入社年</p>
-                    <p class="hp-staff-info-value" id="staffDetailYear">2010年入社</p>
+                    <p class="hp-staff-info-label">メッセージ</p>
+                    <p class="hp-staff-info-value" id="staffDetailIntro">私たちは、「安心で人を繋ぎ、介護に関わる人たちに貢献する」ということを信念とし、地域社会に貢献しています。老人ホームの選定においては、ご家族の一員となり、ご本人・ご家族の拘りに寄り添い、ベストな老人ホームをご提案致します。</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 下部：スタッフ写真グリッド（4枚表示） -->
+          <!-- 下部：スタッフ写真グリッド（5枚表示） -->
           <div class="hp-staff-carousel-wrapper">
             <!-- 左ナビゲーション -->
             <button class="hp-staff-nav prev" id="staffNavPrev" aria-label="前へ">
@@ -2940,79 +2843,84 @@
             </button>
 
             <div class="hp-staff-carousel" id="staffCarousel">
-              <!-- スタッフ1 -->
+              <!-- スタッフ1: 中嶋良太（代表） -->
               <article class="hp-staff-card active" data-staff="0"
-                       data-role="センター長"
-                       data-name="山田 太郎"
-                       data-hobby="ゴルフ、読書"
-                       data-intro="介護業界15年の経験を持つベテラン。ご家族様の不安に寄り添い、丁寧なヒアリングで最適な施設をご提案します。"
-                       data-qualification="介護福祉士、ケアマネージャー"
-                       data-year="2010年入社"
-                       data-img="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face">
+                       data-role="代表"
+                       data-name="中嶋 良太"
+                       data-hobby=""
+                       data-intro="私たちは、「安心で人を繋ぎ、介護に関わる人たちに貢献する」ということを信念とし、地域社会に貢献しています。老人ホームの選定においては、ご家族の一員となり、ご本人・ご家族の拘りに寄り添い、ベストな老人ホームをご提案致します。「ハピネスの人たちと出会えてよかった。ありがとう。」と言っていただく事が最高の喜びです。"
+                       data-qualification=""
+                       data-year=""
+                       data-img="./images/staff_happiness/nakajima_web.png"
+                       data-video="./images/staff_happiness/nakajima_mv.mp4">
                 <div class="hp-staff-thumb">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face" alt="山田 太郎">
+                  <img src="./images/staff_happiness/nakajima_web.png" alt="中嶋 良太">
                 </div>
-                <p class="hp-staff-card-name">山田 太郎</p>
+                <p class="hp-staff-card-name">中嶋 良太</p>
               </article>
 
-              <!-- スタッフ2 -->
+              <!-- スタッフ2: 森啓人 -->
               <article class="hp-staff-card" data-staff="1"
                        data-role="相談員"
-                       data-name="佐藤 花子"
-                       data-hobby="カフェ巡り、ヨガ"
-                       data-intro="お客様一人ひとりに寄り添った丁寧なカウンセリングを心がけています。看護師経験を活かし、医療面でのご相談にも対応可能です。"
-                       data-qualification="看護師、福祉住環境コーディネーター"
-                       data-year="2018年入社"
-                       data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face">
+                       data-name="森 啓人"
+                       data-hobby=""
+                       data-intro="ご本人様、ご家族様に安心して任せていただき、&quot;本当にありがとう&quot;と言っていただけるよう、一切の妥協をせず、必ずベストな施設をご提案いたします。施設を選ぶ上での不安やお困り事は、どんな些細な事でも全て取り除きますので、安心してお問い合わせください。"
+                       data-qualification=""
+                       data-year=""
+                       data-img="./images/staff_happiness/mori_web.png"
+                       data-video="">
                 <div class="hp-staff-thumb">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face" alt="佐藤 花子">
+                  <img src="./images/staff_happiness/mori_web.png" alt="森 啓人">
                 </div>
-                <p class="hp-staff-card-name">佐藤 花子</p>
+                <p class="hp-staff-card-name">森 啓人</p>
               </article>
 
-              <!-- スタッフ3 -->
+              <!-- スタッフ3: 山西修輝 -->
               <article class="hp-staff-card" data-staff="2"
                        data-role="相談員"
-                       data-name="鈴木 一郎"
-                       data-hobby="野球観戦、料理"
-                       data-intro="施設での介護経験を経て相談員になりました。現場を知っているからこそ、ご入居者様の立場に立ったご提案ができます。"
-                       data-qualification="社会福祉士、介護福祉士"
-                       data-year="2015年入社"
-                       data-img="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face">
+                       data-name="山西 修輝"
+                       data-hobby="野球観戦"
+                       data-intro="相談者お一人おひとりに丁寧に寄り添い、「ここなら安心できる」と心から思っていただける施設をご紹介できるよう心がけています。はじめての施設探しは、不安や迷いが多いもの。そのお気持ちに寄り添いながら、お一人おひとりに合った施設をご提案いたします。"
+                       data-qualification="スキューバダイビングCカード"
+                       data-year=""
+                       data-img="./images/staff_happiness/yamanishi.png"
+                       data-video="./images/staff_happiness/yamanishi_mv.mp4">
                 <div class="hp-staff-thumb">
-                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face" alt="鈴木 一郎">
+                  <img src="./images/staff_happiness/yamanishi.png" alt="山西 修輝">
                 </div>
-                <p class="hp-staff-card-name">鈴木 一郎</p>
+                <p class="hp-staff-card-name">山西 修輝</p>
               </article>
 
-              <!-- スタッフ4 -->
+              <!-- スタッフ4: 林幹太 -->
               <article class="hp-staff-card" data-staff="3"
-                       data-role="アドバイザー"
-                       data-name="田中 美咲"
-                       data-hobby="旅行、映画鑑賞"
-                       data-intro="資金計画や費用面でのご相談に強いスタッフ。予算に応じた施設選びや、利用可能な制度のご案内など、お金の不安を解消します。"
-                       data-qualification="FP2級、宅地建物取引士"
-                       data-year="2020年入社"
-                       data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face">
+                       data-role="相談員"
+                       data-name="林 幹太"
+                       data-hobby=""
+                       data-intro="ご利用者様やご家族様の想いに真摯に向き合い、「この人に相談してよかった」と思っていただけるよう、一つひとつのご相談に全力で取り組みます。施設選びのお悩みや不安を丁寧にお伺いし、最適な住まいを一緒に見つけてまいります。"
+                       data-qualification=""
+                       data-year=""
+                       data-img="./images/staff_happiness/hayashi.jpg"
+                       data-video="">
                 <div class="hp-staff-thumb">
-                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face" alt="田中 美咲">
+                  <img src="./images/staff_happiness/hayashi.jpg" alt="林 幹太">
                 </div>
-                <p class="hp-staff-card-name">田中 美咲</p>
+                <p class="hp-staff-card-name">林 幹太</p>
               </article>
 
-              <!-- スタッフ5（ナビゲーションで表示切替） -->
+              <!-- スタッフ5: 中井一貴 -->
               <article class="hp-staff-card" data-staff="4"
                        data-role="相談員"
-                       data-name="高橋 健太"
-                       data-hobby="テニス、写真撮影"
-                       data-intro="医療機関との連携に強みを持つスタッフ。病院からの退院調整や医療依存度の高い方の施設探しを得意としています。"
-                       data-qualification="社会福祉主事、医療連携専門"
-                       data-year="2019年入社"
-                       data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face">
+                       data-name="中井 一貴"
+                       data-hobby="ボクシング、サウナ"
+                       data-intro="施設探しは、人生の大きな決断です。だからこそ、一人ひとりの背景やご希望を丁寧に伺い、その方に本当に合う環境を一緒に見つけることを大切にしています。私たちはその不安を一つずつ解消し、ご本人が安心して暮らせる施設をご提案します。"
+                       data-qualification="計算技術検定2級"
+                       data-year=""
+                       data-img="./images/staff_happiness/nakai.png"
+                       data-video="./images/staff_happiness/nakai_mv.mp4">
                 <div class="hp-staff-thumb">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face" alt="高橋 健太">
+                  <img src="./images/staff_happiness/nakai.png" alt="中井 一貴">
                 </div>
-                <p class="hp-staff-card-name">高橋 健太</p>
+                <p class="hp-staff-card-name">中井 一貴</p>
               </article>
             </div>
 
@@ -3141,7 +3049,7 @@
               </p>
             </div>
             <div class="hp-flow-image">
-              <div class="hp-flow-image-placeholder">写真</div>
+              <img src="./images/Kengaku.png" alt="施設見学">
             </div>
           </div>
 
@@ -3155,7 +3063,7 @@
               </p>
             </div>
             <div class="hp-flow-image">
-              <div class="hp-flow-image-placeholder">写真</div>
+              <img src="./images/keiyaku.png" alt="ご契約">
             </div>
           </div>
 
@@ -3169,7 +3077,7 @@
               </p>
             </div>
             <div class="hp-flow-image">
-              <div class="hp-flow-image-placeholder">写真</div>
+              <img src="./images/after.png" alt="アフターフォロー">
             </div>
           </div>
         </div>
@@ -3611,14 +3519,28 @@
             staffDetailImg.src = img;
             staffDetailImg.alt = name;
           }
+          // スタッフ識別用data属性を伝搬（CSS個別調整用）
+          if (staffMedia) {
+            staffMedia.dataset.staff = card.dataset.staff;
+          }
 
-          // 動画停止・リセット
+          // 動画停止・リセット＆ソース更新
           if (staffMedia) {
             staffMedia.classList.remove('playing');
           }
           if (staffDetailVideo) {
             staffDetailVideo.pause();
             staffDetailVideo.currentTime = 0;
+            const videoSource = staffDetailVideo.querySelector('source');
+            const videoUrl = card.dataset.video || '';
+            if (videoSource) {
+              videoSource.src = videoUrl;
+              staffDetailVideo.load();
+            }
+          }
+          // 動画がないスタッフは再生ボタンを非表示
+          if (staffPlayBtn) {
+            staffPlayBtn.style.display = (card.dataset.video) ? '' : 'none';
           }
 
           // 表示
