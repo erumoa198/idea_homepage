@@ -13,7 +13,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="株式会社イデアの実績紹介。これまでの取り組みをご紹介します。">
+  <meta name="description" content="お問い合わせありがとうございます。株式会社イデア">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="./assets/favicon.ico">
 
@@ -25,108 +26,268 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./css/style.css">
 
-  <title>実績 | 株式会社イデア</title>
+  <title>送信完了 | 株式会社イデア</title>
 
   <style>
-    .works-filter {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-md);
-      margin-bottom: var(--space-3xl);
-      flex-wrap: wrap;
-    }
-
-    .works-filter button {
-      padding: var(--space-sm) var(--space-xl);
-      border: 1px solid var(--color-gray-300);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      transition: var(--transition-base);
-    }
-
-    .works-filter button:hover,
-    .works-filter button.active {
-      background: var(--color-primary);
-      color: var(--color-white);
-      border-color: var(--color-primary);
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xl);
-    }
-
-    .works-item {
+    /* ===== ヒーローセクション ===== */
+    .contact-hero {
       position: relative;
-      aspect-ratio: 4/3;
-      background: var(--color-gray-200);
-      border-radius: var(--radius-lg);
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #0a1628 0%, #1a2d50 40%, #0891b2 100%);
       overflow: hidden;
-      cursor: pointer;
+      text-align: center;
+      color: #fff;
     }
 
-    .works-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-slow);
-    }
-
-    .works-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .works-item-overlay {
+    .contact-hero::before {
+      content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--space-lg);
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      color: var(--color-white);
-      transform: translateY(100%);
-      transition: var(--transition-base);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(8,145,178,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(99,102,241,0.2) 0%, transparent 50%),
+        radial-gradient(circle at 60% 80%, rgba(8,145,178,0.15) 0%, transparent 40%);
+      pointer-events: none;
     }
 
-    .works-item:hover .works-item-overlay {
-      transform: translateY(0);
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%);
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+      pointer-events: none;
     }
 
-    .works-item-category {
-      font-size: var(--text-xs);
-      opacity: 0.8;
-      margin-bottom: var(--space-xs);
+    .contact-hero .container {
+      position: relative;
+      z-index: 1;
     }
 
-    .works-item-title {
-      font-size: var(--text-base);
+    .contact-hero-label {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
       font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
     }
 
+    .contact-hero-title {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .contact-hero-wave svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ===== 送信完了コンテンツ ===== */
+    .thankyou-section {
+      padding: 80px 0 100px;
+      background: #f8fafb;
+      text-align: center;
+    }
+
+    .thankyou-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 60px 40px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    }
+
+    /* チェックマークアニメーション */
+    .thankyou-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+
+    .thankyou-icon-circle {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0891b2, #0e7490);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+    }
+
+    .thankyou-icon-circle svg {
+      width: 48px;
+      height: 48px;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .thankyou-icon-circle svg .check-path {
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.4s 0.4s ease forwards;
+    }
+
+    @keyframes scaleIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* リングエフェクト */
+    .thankyou-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid rgba(8,145,178,0.3);
+      transform: translate(-50%, -50%) scale(1);
+      animation: ringPulse 1.5s 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes ringPulse {
+      0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.6); }
+    }
+
+    .thankyou-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.5s 0.3s ease forwards;
+    }
+
+    .thankyou-message {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #6b7280;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.5s 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .thankyou-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.5s 0.7s ease forwards;
+    }
+
+    .thankyou-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .thankyou-btn-primary {
+      background: linear-gradient(135deg, #0891b2, #0e7490);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(8,145,178,0.3);
+    }
+
+    .thankyou-btn-primary:hover {
+      background: linear-gradient(135deg, #0e7490, #6366f1);
+      box-shadow: 0 8px 30px rgba(8,145,178,0.4);
+      transform: translateY(-2px);
+    }
+
+    .thankyou-btn-secondary {
+      background: #fff;
+      color: #374151;
+      border: 2px solid #e5e7eb;
+    }
+
+    .thankyou-btn-secondary:hover {
+      border-color: #0891b2;
+      color: #0891b2;
+      transform: translateY(-2px);
+    }
+
+    .thankyou-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* レスポンシブ */
     @media (max-width: 768px) {
-      .works-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .contact-hero {
+        padding: 100px 0 60px;
       }
-    }
-
-    @media (max-width: 480px) {
-      .works-grid {
-        grid-template-columns: 1fr;
+      .contact-hero-title {
+        font-size: 32px;
+      }
+      .thankyou-section {
+        padding: 60px 16px 80px;
+      }
+      .thankyou-card {
+        padding: 48px 24px;
+      }
+      .thankyou-title {
+        font-size: 24px;
+      }
+      .thankyou-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .thankyou-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Loading Animation -->
-  <div class="loader">
-    <div class="loader-inner">
-      <img src="./images/idea_logo.png" alt="IDEA" class="loader-logo">
-    </div>
-  </div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
   <div class="cursor-follower"></div>
 
   <!-- Header -->
@@ -268,84 +429,50 @@
     <div class="nav-overlay"></div>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
+  <!-- ヒーローセクション -->
+  <section class="contact-hero">
     <div class="container">
-      <h1 class="page-title">実績</h1>
-      <nav class="breadcrumb">
-        <a href="./">ホーム</a>
-        <span>/</span>
-        <span>実績</span>
-      </nav>
+      <span class="contact-hero-label">Thank You</span>
+      <h1 class="contact-hero-title">送信完了</h1>
+    </div>
+    <div class="contact-hero-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,40 C320,70 640,10 960,40 C1120,55 1280,50 1440,40 L1440,60 L0,60Z" fill="#f8fafb"/>
+      </svg>
     </div>
   </section>
 
-  <!-- Works -->
-  <section class="section">
+  <!-- 送信完了コンテンツ -->
+  <section class="thankyou-section">
     <div class="container">
-      <!-- Filter -->
-      <div class="works-filter reveal">
-        <button class="active" data-filter="all">すべて</button>
-        <button data-filter="web">WEB制作</button>
-        <button data-filter="video">動画制作</button>
-        <button data-filter="design">デザイン</button>
-        <button data-filter="marketing">マーケティング</button>
-      </div>
-
-      <!-- Works Grid -->
-      <div class="works-grid reveal">
-        <article class="works-item" data-category="web">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">WEB制作</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
+      <div class="thankyou-card">
+        <div class="thankyou-icon">
+          <div class="thankyou-icon-circle">
+            <svg viewBox="0 0 24 24">
+              <polyline class="check-path" points="6 12 10 16 18 8"></polyline>
+            </svg>
           </div>
-        </article>
-
-        <article class="works-item" data-category="video">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">動画制作</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
-          </div>
-        </article>
-
-        <article class="works-item" data-category="design">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">デザイン</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
-          </div>
-        </article>
-
-        <article class="works-item" data-category="marketing">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">マーケティング</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
-          </div>
-        </article>
-
-        <article class="works-item" data-category="web">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">WEB制作</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
-          </div>
-        </article>
-
-        <article class="works-item" data-category="video">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">実績画像</div>
-          <div class="works-item-overlay">
-            <p class="works-item-category">動画制作</p>
-            <h3 class="works-item-title">プロジェクト名が入ります</h3>
-          </div>
-        </article>
+        </div>
+        <h2 class="thankyou-title">お問い合わせありがとうございます</h2>
+        <p class="thankyou-message">
+          お問い合わせ内容を受け付けました。<br>
+          担当者より<strong>2営業日以内</strong>にご連絡いたします。<br>
+          しばらくお待ちくださいませ。
+        </p>
+        <div class="thankyou-buttons">
+          <a href="./index.html" class="thankyou-btn thankyou-btn-primary">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            トップページへ戻る
+          </a>
+          <a href="./contact.html" class="thankyou-btn thankyou-btn-secondary">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            お問い合わせページへ
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -353,7 +480,7 @@
           <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
           <p class="footer-address">
             〒542-0076<br>
-            大阪府大阪市中央区難波2-3-11
+            大阪府大阪市中央区難波2-3-11 6E
           </p>
         </div>
 
@@ -401,27 +528,5 @@
   </button>
 
   <script src="./js/main.js"></script>
-  <script>
-    // Works Filter
-    const filterBtns = document.querySelectorAll('.works-filter button');
-    const worksItems = document.querySelectorAll('.works-item');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        worksItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <!-- TODO: G-XXXXXXXXXX を実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ハピネス老人ホーム紹介センター大阪 | 株式会社イデア</title>
@@ -2153,9 +2163,9 @@
       .hp-hero-overlay {
         background: linear-gradient(
           180deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0.3) 50%,
-          rgba(0, 0, 0, 0.5) 100%
+          rgba(103, 173, 48, 0.45) 0%,
+          rgba(103, 173, 48, 0.3) 40%,
+          rgba(103, 173, 48, 0.45) 100%
         );
       }
 
@@ -2341,6 +2351,18 @@
       .hp-popup-btn-text {
         font-size: 0.85rem;
       }
+
+      /* 採用ポップアップ：右上・小さく・半透明 */
+      .recruit-popup {
+        top: 120px !important;
+        bottom: auto !important;
+        opacity: 0.55;
+        transform: scale(0.65);
+        transform-origin: top right;
+      }
+      .recruit-popup:hover {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 480px) {
@@ -2471,6 +2493,15 @@
       .hp-popup-btn-text {
         font-size: 0.75rem;
       }
+
+      /* 採用ポップアップ：右上・小さく・半透明 */
+      .recruit-popup {
+        top: 110px !important;
+        bottom: auto !important;
+        opacity: 0.5;
+        transform: scale(0.6);
+        transform-origin: top right;
+      }
     }
 
     /* ========================================
@@ -2573,7 +2604,7 @@
             <li><a href="./about.html">企業概要</a></li>
             <li><a href="./cases.html">制作事例</a></li>
             <li><a href="./column.html">コラム</a></li>
-            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./recruit-happiness.html">採用情報</a></li>
           </ul>
         </div>
         <div class="mega-menu-section">
@@ -2600,9 +2631,14 @@
       <a href="./about.html">企業概要</a>
       <a href="./cases.html">制作事例</a>
       <a href="./column.html">コラム</a>
-      <a href="./recruit.html">採用情報</a>
+      <a href="./recruit-happiness.html">採用情報</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
+      <div class="mt-xl" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+        <a href="./happiness.html" style="display: inline-block;"><img src="./images/happiness_logo.png" alt="ハピネス" style="height: 36px; width: auto;"></a>
+        <a href="./marketing.html" style="display: inline-block;"><img src="./images/DigiCare_logp.png" alt="デジケア" style="height: 36px; width: auto;"></a>
+        <a href="./crankup.html" style="display: inline-block;"><img src="./images/crankup_logo.png" alt="クランクアップ" style="height: 36px; width: auto;"></a>
+      </div>
     </nav>
     <div class="nav-overlay"></div>
   </header>
@@ -3386,8 +3422,12 @@
 
       // スライド位置を設定
       function slideCarousel(index, animate = true) {
-        const wrapperWidth = staffCarousel.parentElement.offsetWidth;
-        const centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+        const wrapper = staffCarousel.parentElement;
+        const wrapperStyle = getComputedStyle(wrapper);
+        const paddingL = parseFloat(wrapperStyle.paddingLeft) || 0;
+        const paddingR = parseFloat(wrapperStyle.paddingRight) || 0;
+        const contentWidth = wrapper.offsetWidth - paddingL - paddingR;
+        const centerOffset = (contentWidth / 2) - (cardWidth / 2);
         const slideX = centerOffset - (index * cardTotal);
 
         staffCarousel.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';

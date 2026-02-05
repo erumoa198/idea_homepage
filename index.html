@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <!-- TODO: G-XXXXXXXXXX を実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,8 +31,8 @@
   <meta property="og:site_name" content="株式会社イデア">
   <meta property="og:title" content="株式会社イデア | 大阪の老人ホーム紹介・介護福祉デジケア">
   <meta property="og:description" content="大阪・難波の株式会社イデア。老人ホーム紹介、介護福祉デジケア、動画・WEB制作を提供。">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:url" content="https://example.com/index.html">
+  <meta property="og:image" content="https://example.com/images/ogp.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -30,10 +40,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="株式会社イデア | 大阪の老人ホーム紹介・介護福祉デジケア">
   <meta name="twitter:description" content="大阪・難波の株式会社イデア。老人ホーム紹介、介護福祉デジケア、動画・WEB制作を提供。">
-  <meta name="twitter:image" content="">
+  <meta name="twitter:image" content="https://example.com/images/ogp.png">
 
   <!-- Canonical & Alternate -->
-  <link rel="canonical" href="">
+  <!-- TODO: 本番ドメイン確定後にURLを設定 -->
+  <link rel="canonical" href="https://example.com/index.html">
 
   <!-- Favicon -->
   <link rel="icon" href="./assets/favicon.ico">
@@ -60,13 +71,13 @@
     "@type": "Organization",
     "name": "株式会社イデア",
     "alternateName": "IDEA Inc.",
-    "url": "",
-    "logo": "",
+    "url": "https://example.com/",
+    "logo": "https://example.com/images/idea_logo.png",
     "description": "大阪・難波を拠点に、老人ホーム紹介事業（ハピネス老人ホーム紹介センター）、介護福祉業界向けデジケア、動画・WEB制作サービスを提供する企業です。",
-    "foundingDate": "",
+    "foundingDate": "2020",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "難波2-3-11",
+      "streetAddress": "難波2-3-11 ナンバ八千代ビル 6E",
       "addressLocality": "大阪市中央区",
       "addressRegion": "大阪府",
       "postalCode": "542-0076",
@@ -123,11 +134,11 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "株式会社イデア",
-    "image": "",
+    "image": "https://example.com/images/idea_logo.png",
     "telephone": "06-4963-2332",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "難波2-3-11",
+      "streetAddress": "難波2-3-11 ナンバ八千代ビル 6E",
       "addressLocality": "大阪市中央区",
       "addressRegion": "大阪府",
       "postalCode": "542-0076",
@@ -142,8 +153,8 @@
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "",
-        "longitude": ""
+        "latitude": "34.6629",
+        "longitude": "135.5013"
       },
       "geoRadius": "50000"
     },
@@ -161,7 +172,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "ホーム",
-        "item": ""
+        "item": "https://example.com/"
       }
     ]
   }
@@ -311,7 +322,11 @@
       <a href="./recruit.html">採用情報</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
-      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+      <div class="mt-xl" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+        <a href="./happiness.html" style="display: inline-block;"><img src="./images/happiness_logo.png" alt="ハピネス" style="height: 36px; width: auto;"></a>
+        <a href="./marketing.html" style="display: inline-block;"><img src="./images/DigiCare_logp.png" alt="デジケア" style="height: 36px; width: auto;"></a>
+        <a href="./crankup.html" style="display: inline-block;"><img src="./images/crankup_logo.png" alt="クランクアップ" style="height: 36px; width: auto;"></a>
+      </div>
     </nav>
     <div class="nav-overlay"></div>
   </header>
@@ -581,209 +596,95 @@
   </section>
 
   <!-- ========================================
-       Services Section (サービス)
+       Business Section (事業紹介)
   ======================================== -->
-  <section class="services section" id="services" aria-labelledby="services-title">
-    <div class="container">
+  <section class="business section" id="business" aria-labelledby="business-title">
+    <div class="business-container">
       <div class="section-header reveal">
-        <span class="section-label">Services</span>
-        <h2 class="section-title" id="services-title">サービス</h2>
+        <span class="section-label">Business</span>
+        <h2 class="section-title" id="business-title">事業紹介</h2>
       </div>
 
-      <div class="services-grid">
-        <!-- Service 1: 老人ホーム紹介事業 -->
-        <article class="service-card service-happiness reveal">
-          <div class="service-card-inner">
-            <!-- フロント面 -->
-            <div class="service-card-front">
-              <div class="service-front-content">
-                <div class="service-icon">
-                  <img src="./images/happiness_logo.png" alt="ハピネス">
-                </div>
-                <h3 class="service-title">老人ホーム紹介事業</h3>
-                <p class="service-subtitle">Happiness Senior Living</p>
-              </div>
-            </div>
-            <!-- バック面 -->
-            <div class="service-card-back">
-              <div class="service-card-back-bg">
-                <img src="./images/happiness_Back.png" alt="" loading="lazy">
-              </div>
-              <div class="service-card-back-overlay"></div>
-              <div class="service-back-content">
-                <h4 class="service-back-title">老人ホーム紹介事業</h4>
-                <p class="service-description">
-                  ハピネス老人ホーム紹介センター大阪として、ご利用者様のご要望や健康状態に合わせた最適な施設を無料でご紹介します。
-                </p>
-                <a href="./happiness.html" class="service-link">
-                  詳しく見る
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Service 2: デジケア -->
-        <article class="service-card service-marketing reveal">
-          <div class="service-card-inner">
-            <!-- フロント面 -->
-            <div class="service-card-front">
-              <div class="service-front-content">
-                <div class="service-icon">
-                  <img src="./images/DigiCare_logp.png" alt="デジケア" style="width: 140px; height: auto;">
-                </div>
-                <h3 class="service-title">WEB対策事業</h3>
-                <p class="service-subtitle">Digital Marketing</p>
-              </div>
-            </div>
-            <!-- バック面 -->
-            <div class="service-card-back">
-              <div class="service-card-back-bg">
-                <img src="./images/DegiCare_Back.png" alt="" loading="lazy">
-              </div>
-              <div class="service-card-back-overlay"></div>
-              <div class="service-back-content">
-                <h4 class="service-back-title">WEB対策事業</h4>
-                <p class="service-description">
-                  介護・福祉業界に特化したデジタル支援で、MEO対策・SNS運用・Web制作など集客・ブランディングをトータルサポートします。
-                </p>
-                <a href="./marketing.html" class="service-link">
-                  詳しく見る
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Service 3: 制作事業 -->
-        <article class="service-card service-crankup reveal">
-          <div class="service-card-inner">
-            <!-- フロント面 -->
-            <div class="service-card-front">
-              <div class="service-front-content">
-                <div class="service-icon">
-                  <img src="./images/crankup_logo.png" alt="CrankUP">
-                </div>
-                <h3 class="service-title">制作事業</h3>
-                <p class="service-subtitle">Creative Production</p>
-              </div>
-            </div>
-            <!-- バック面 -->
-            <div class="service-card-back">
-              <div class="service-card-back-bg">
-                <img src="./images/crankup_Back.png" alt="" loading="lazy">
-              </div>
-              <div class="service-card-back-overlay"></div>
-              <div class="service-back-content">
-                <h4 class="service-back-title">制作事業</h4>
-                <p class="service-description">
-                  動画制作・WEB制作・グラフィックデザインなど、ブランドの魅力を最大限に引き出すクリエイティブ制作を幅広く手がけます。
-                </p>
-                <a href="./crankup.html" class="service-link">
-                  詳しく見る
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================
-       Cases Section (制作事例)
-  ======================================== -->
-  <section class="cases section" id="cases" aria-labelledby="cases-title">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Cases</span>
-        <h2 class="section-title" id="cases-title">制作事例</h2>
-        <p class="section-desc">株式会社イデアが手がけた制作事例をご紹介します</p>
-      </div>
-
-      <div class="cases-grid">
-        <!-- Case 1: MV撮影 -->
-        <article class="case-card reveal">
-          <div class="case-card-image">
-            <img src="./images/Create/MV.png" alt="MV撮影" loading="lazy">
-            <span class="case-card-category">MV撮影</span>
-          </div>
-          <div class="case-card-content">
-            <h3 class="case-card-title">ミュージックビデオ撮影</h3>
-            <p class="case-card-client">バンド代表者様（京都府）</p>
-            <p class="case-card-excerpt">バンドの世界観を映像で表現したミュージックビデオの企画・撮影・編集を担当しました。</p>
-            <a href="./cases.html#case1" class="case-card-link">
-              詳しく見る
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Case 2: イベント制作 -->
-        <article class="case-card reveal">
-          <div class="case-card-image">
-            <img src="./images/Create/Event.png" alt="イベント制作" loading="lazy">
-            <span class="case-card-category">イベント制作</span>
-          </div>
-          <div class="case-card-content">
-            <h3 class="case-card-title">結婚式のイベント制作</h3>
-            <p class="case-card-client">個人ご依頼のご夫婦様（大阪府）</p>
-            <p class="case-card-excerpt">お二人の思い出を映像や演出で彩る、結婚式イベントの企画・制作を担当しました。</p>
-            <a href="./cases.html#case2" class="case-card-link">
-              詳しく見る
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Case 3: WEB制作 -->
-        <article class="case-card reveal">
-          <div class="case-card-image">
-            <img src="./images/Create/WEBSite.JPG" alt="WEB制作" loading="lazy">
-            <span class="case-card-category">WEB制作</span>
-          </div>
-          <div class="case-card-content">
-            <h3 class="case-card-title">専門学校のWEBコンテンツ制作</h3>
-            <p class="case-card-client">専門学校 学校長様（大阪府）</p>
-            <p class="case-card-excerpt">学校の魅力を伝えるWEBサイトのデザイン・コンテンツ制作を担当しました。</p>
-            <a href="./cases.html#case3" class="case-card-link">
-              詳しく見る
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <div class="cases-more reveal">
-        <a href="./cases.html" class="btn btn-outline-dark">
-          すべての事例を見る
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+      <!-- 事業1: 老人ホーム紹介事業 -->
+      <article class="business-item reveal">
+        <a href="./happiness.html" class="business-item-image" style="background-image: url('./images/happiness_Back.png');">
+          <img src="./images/happiness_logo.png" alt="ハピネス老人ホーム紹介センター大阪" loading="lazy">
         </a>
-      </div>
+        <div class="business-item-content" data-num="01">
+          <h3 class="business-item-title">老人ホーム紹介事業</h3>
+          <p class="business-item-subtitle">Happiness Senior Living</p>
+          <p class="business-item-desc">
+            「ハピネス老人ホーム紹介センター大阪」として、<br>
+            ご利用者様一人ひとりのご要望・健康状態・ご予算に合わせた<br>
+            最適な老人ホーム・介護施設を完全無料でご紹介しています。<br>
+            経験豊富な専門相談員が施設の選定から見学の同行、<br>
+            入居手続きまでご家族に寄り添いながらトータルサポートいたします。
+          </p>
+          <div class="business-item-action">
+            <a href="./happiness.html" class="business-item-link">
+              詳しく見る
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 事業2: WEB対策事業 -->
+      <article class="business-item reveal">
+        <a href="./marketing.html" class="business-item-image" style="background-image: url('./images/DegiCare_Back.png');">
+          <img src="./images/DigiCare_logp.png" alt="デジケア WEB対策事業" loading="lazy">
+        </a>
+        <div class="business-item-content" data-num="02">
+          <h3 class="business-item-title">WEB対策事業</h3>
+          <p class="business-item-subtitle">Digital Marketing</p>
+          <p class="business-item-desc">
+            介護・福祉業界に特化したデジタルマーケティング支援ブランド<br>
+            「デジケア」として、MEO対策・SNS運用・Web制作・広告運用など、<br>
+            集客からブランディングまでトータルにサポートします。<br>
+            データ分析に基づいた的確な戦略で施設の魅力を最大限に引き出し、<br>
+            入居希望者や求職者へ効果的に届けます。
+          </p>
+          <div class="business-item-action">
+            <a href="./marketing.html" class="business-item-link">
+              詳しく見る
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 事業3: 制作事業 -->
+      <article class="business-item reveal">
+        <a href="./crankup.html" class="business-item-image" style="background-image: url('./images/crankup_Back.png');">
+          <img src="./images/crankup_logo.png" alt="CrankUP 制作事業" loading="lazy">
+        </a>
+        <div class="business-item-content" data-num="03">
+          <h3 class="business-item-title">制作事業</h3>
+          <p class="business-item-subtitle">Creative Production</p>
+          <p class="business-item-desc">
+            動画制作・Webサイト制作・グラフィックデザインなど、<br>
+            ブランドの魅力を最大限に引き出すクリエイティブ制作を<br>
+            「CrankUP」として幅広く手がけています。<br>
+            企画・構成の段階から撮影・編集・デザイン・納品まで一貫して対応し、<br>
+            お客様のビジョンを形にするパートナーとしてお力添えいたします。
+          </p>
+          <div class="business-item-action">
+            <a href="./crankup.html" class="business-item-link">
+              詳しく見る
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -803,7 +704,7 @@
         <article class="column-card reveal">
           <a href="./column/011.html" class="column-card-link">
             <div class="column-card-image">
-              <img src="./images/Column/question.png" alt="介護職への転職ガイド" loading="lazy">
+              <img src="./images/Column/Column_happiness.png" alt="介護職への転職ガイド" loading="lazy">
               <span class="column-card-category">介護の求職</span>
             </div>
             <div class="column-card-content">
@@ -811,6 +712,7 @@
                 <time datetime="2026-01-25">2026.01.25</time>
               </div>
               <h3 class="column-card-title">介護職に転職したい人へ｜未経験から始めるための完全ガイド</h3>
+              <p class="column-card-desc">未経験から介護職への転職を考えている方に向けて、必要な資格・仕事内容・給与の実態・面接対策まで徹底解説。介護業界のリアルな情報をもとに、あなたの転職を完全サポートします。</p>
             </div>
           </a>
         </article>
@@ -819,7 +721,7 @@
         <article class="column-card reveal">
           <a href="./column/014.html" class="column-card-link">
             <div class="column-card-image">
-              <img src="./images/Column/WEB_info.png" alt="介護施設のInstagram運用" loading="lazy">
+              <img src="./images/Column/Column_Digicare.png" alt="介護施設のInstagram運用" loading="lazy">
               <span class="column-card-category">SNS活用</span>
             </div>
             <div class="column-card-content">
@@ -835,7 +737,7 @@
         <article class="column-card reveal">
           <a href="./column/017.html" class="column-card-link">
             <div class="column-card-image">
-              <img src="./images/Column/WEB_info.png" alt="介護事業所のホームページ" loading="lazy">
+              <img src="./images/Column/Column_Digicare.png" alt="介護事業所のホームページ" loading="lazy">
               <span class="column-card-category">WEB・SNSの認識</span>
             </div>
             <div class="column-card-content">
@@ -906,15 +808,6 @@
       </div>
     </div>
 
-    <!-- LINE Button -->
-    <div class="container text-center mt-2xl">
-      <a href="#" class="line-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-        </svg>
-        LINEで問い合わせ
-      </a>
-    </div>
   </section>
 
   <!-- ========================================
@@ -924,30 +817,25 @@
     <!-- ジェットスキー -->
     <img src="./images/jet.png" alt="" class="jet-ski">
     <div class="container">
-      <div class="contact-inner">
-        <div class="contact-left reveal">
+      <div class="contact-inner contact-inner--center">
+        <div class="contact-center reveal">
           <h2 class="contact-title">お問い合わせ</h2>
-          <a href="./contact.html" class="contact-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            問合せフォーム
-          </a>
-        </div>
-
-        <div class="contact-info reveal">
           <p class="contact-phone">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
             06-4963-2332
           </p>
-          <p class="contact-address">
-            〒542-0076<br>
-            大阪府大阪市中央区難波2-3-11
-          </p>
+          <div class="contact-buttons">
+            <a href="./contact.html" class="contact-cta-btn contact-cta-btn--form">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              問合せフォーム
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -965,7 +853,7 @@
           <img src="./images/idea_logo.png" alt="株式会社イデア" class="footer-logo-img">
           <p class="footer-address">
             〒542-0076<br>
-            大阪府大阪市中央区難波2-3-11
+            大阪府大阪市中央区難波2-3-11<br>ナンバ八千代ビル 6E
           </p>
         </div>
 
@@ -1011,6 +899,7 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+
 
   <!-- ========================================
        Scripts

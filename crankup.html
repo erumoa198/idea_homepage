@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <!-- TODO: G-XXXXXXXXXX を実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="クランクアップ - 動画制作・WEB制作・デザインなど、クリエイティブ制作を幅広く手がけます。">
@@ -1403,6 +1413,12 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .cu-portfolio-display {
+        overflow: hidden;
       }
 
       .cu-game-btn {
@@ -2769,7 +2785,7 @@
             <li><a href="./about.html">企業概要</a></li>
             <li><a href="./cases.html">制作事例</a></li>
             <li><a href="./column.html">コラム</a></li>
-            <li><a href="./recruit.html">採用情報</a></li>
+            <li><a href="./recruit-crankup.html">採用情報</a></li>
           </ul>
         </div>
         <div class="mega-menu-section">
@@ -2797,10 +2813,14 @@
       <a href="./about.html">企業概要</a>
       <a href="./cases.html">制作事例</a>
       <a href="./column.html">コラム</a>
-      <a href="./recruit.html">採用情報</a>
+      <a href="./recruit-crankup.html">採用情報</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
-      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+      <div class="mt-xl" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+        <a href="./happiness.html" style="display: inline-block;"><img src="./images/happiness_logo.png" alt="ハピネス" style="height: 36px; width: auto;"></a>
+        <a href="./marketing.html" style="display: inline-block;"><img src="./images/DigiCare_logp.png" alt="デジケア" style="height: 36px; width: auto;"></a>
+        <a href="./crankup.html" style="display: inline-block;"><img src="./images/crankup_logo.png" alt="クランクアップ" style="height: 36px; width: auto;"></a>
+      </div>
     </nav>
     <div class="nav-overlay"></div>
   </header>
@@ -4055,7 +4075,7 @@
           </div>
           <p class="cu-contact-label">LINEで相談</p>
           <p class="cu-contact-value">気軽に相談できます</p>
-          <a href="#" class="cu-btn-line">
+          <a href="https://lin.ee/L7QSQi2" target="_blank" rel="noopener noreferrer" class="cu-btn-line">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
             </svg>
@@ -4124,7 +4144,7 @@
               <li><a href="./about.html">企業概要</a></li>
               <li><a href="./cases.html">制作事例</a></li>
               <li><a href="./column.html">コラム</a></li>
-              <li><a href="./recruit.html">採用情報</a></li>
+              <li><a href="./recruit-crankup.html">採用情報</a></li>
             </ul>
           </div>
           <div>

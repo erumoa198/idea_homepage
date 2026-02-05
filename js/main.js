@@ -466,15 +466,19 @@
       const viewportWidth = window.innerWidth;
 
       if (viewportWidth <= 480) {
+        this.margin = 8;
         this.width = 240 + (this.margin * 2);
         this.height = 165;
       } else if (viewportWidth <= 768) {
+        this.margin = 10;
         this.width = 280 + (this.margin * 2);
         this.height = 190;
       } else if (viewportWidth <= 1024) {
+        this.margin = 12;
         this.width = 320 + (this.margin * 2);
         this.height = 220;
       } else {
+        this.margin = 15;
         this.width = 380 + (this.margin * 2);
         this.height = 260;
       }
@@ -517,7 +521,8 @@
       });
 
       // スライダー全体の位置を調整（中央に配置）
-      const offset = (index * -this.width) + (this.width / 2) + (window.innerWidth / 2);
+      const containerWidth = this.container.offsetWidth;
+      const offset = -((index - 1) * this.width) - (this.width / 2) + (containerWidth / 2);
       this.slider.style.transform = `translate3d(${offset}px, 0, 0)`;
 
       this.updateDots();
@@ -729,8 +734,6 @@
     }
 
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
       let isValid = true;
       const requiredFields = this.querySelectorAll('[required]');
 
@@ -740,25 +743,18 @@
         }
       });
 
-      if (isValid) {
-        const formData = new FormData(this);
-        // 送信成功時のフィードバック
-        const submitBtn = this.querySelector('[type="submit"]');
-        if (submitBtn) {
-          submitBtn.textContent = '送信中...';
-          submitBtn.disabled = true;
-        }
-
-        // 実際のフォーム送信処理（サーバー側の実装が必要）
-        setTimeout(() => {
-          alert('お問い合わせを送信しました。');
-          this.reset();
-          if (submitBtn) {
-            submitBtn.textContent = '送信する';
-            submitBtn.disabled = false;
-          }
-        }, 1000);
+      if (!isValid) {
+        e.preventDefault();
+        return;
       }
+
+      // バリデーション通過 → 送信ボタンを「送信中...」に変更し、フォームをそのまま送信
+      const submitBtn = this.querySelector('[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = '送信中...';
+        submitBtn.disabled = true;
+      }
+      // FormSubmit.coへPOST送信 → _next で thank-you.html にリダイレクト
     });
   }
 
@@ -832,6 +828,18 @@
   // ========================================
   // Parallax Effect (Micro)
   // ========================================
+  // ========================================
+  // Business: ボタンホバー時に全体反応
+  // ========================================
+  function initBusinessHover() {
+    document.querySelectorAll('.business-item-link').forEach(link => {
+      const item = link.closest('.business-item');
+      if (!item) return;
+      link.addEventListener('mouseenter', () => item.classList.add('link-hover'));
+      link.addEventListener('mouseleave', () => item.classList.remove('link-hover'));
+    });
+  }
+
   function initParallax() {
     // prefers-reduced-motion対応
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1037,6 +1045,8 @@
     initCounterAnimation();
     initFocusVisible();
     initJetSkiBoost();
+    initBusinessHover();
+    initRecruitPopup();
 
     // ページ読み込み完了
     document.body.classList.add('loaded');
@@ -1077,9 +1087,10 @@
   // ========================================
   // 採用ポップアップ（recruit.html以外で表示）
   // ========================================
-  (function initRecruitPopup() {
-    // recruit.html では表示しない
-    if (window.location.pathname.includes('recruit')) return;
+  function initRecruitPopup() {
+    // recruit.html / contact.html / thank-you.html では表示しない
+    const path = window.location.pathname;
+    if (path.includes('recruit') || path.includes('contact') || path.includes('thank-you')) return;
 
     // スタイルを追加
     const style = document.createElement('style');
@@ -1093,37 +1104,36 @@
         transition: opacity 0.5s ease;
       }
 
-      /* 動画再生中は透過 */
+      /* 動画再生中は透過（クリックは常に有効） */
       .recruit-popup.video-playing {
-        opacity: 0.15;
+        opacity: 0.35;
         animation: none;
-        pointer-events: none;
       }
 
       .recruit-popup.video-playing:hover {
-        opacity: 0.8;
-        pointer-events: auto;
+        opacity: 0.9;
       }
 
       .recruit-popup-link {
         display: flex;
         align-items: center;
-        gap: 8px;
-        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+        gap: 10px;
+        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
         color: #fff;
-        padding: 12px 20px;
+        padding: 18px 28px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 700;
-        font-size: 14px;
-        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
+        font-size: 17px;
+        box-shadow: 0 4px 20px rgba(21, 101, 192, 0.5);
         transition: all 0.3s ease;
         white-space: nowrap;
       }
 
       .recruit-popup-link:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 30px rgba(8, 145, 178, 0.5);
+        box-shadow: 0 6px 30px rgba(21, 101, 192, 0.6);
+        color: #fff;
       }
 
       .recruit-popup-icon {
@@ -1134,25 +1144,27 @@
 
       .recruit-popup-close {
         position: absolute;
-        top: -8px;
-        right: -8px;
-        width: 24px;
-        height: 24px;
+        top: -10px;
+        right: -10px;
+        width: 28px;
+        height: 28px;
         background: #333;
         color: #fff;
-        border: none;
+        border: 2px solid #fff;
         border-radius: 50%;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1;
-        transition: background 0.3s;
+        transition: background 0.3s, transform 0.3s;
+        z-index: 1;
       }
 
       .recruit-popup-close:hover {
-        background: #555;
+        background: #e53935;
+        transform: scale(1.1);
       }
 
       @keyframes recruitPopupBounce {
@@ -1168,23 +1180,32 @@
       @media (max-width: 768px) {
         .recruit-popup {
           top: auto;
-          bottom: 20px;
+          bottom: 90px;
           right: 20px;
         }
 
         .recruit-popup-link {
-          padding: 10px 16px;
-          font-size: 13px;
+          padding: 12px 18px;
+          font-size: 14px;
         }
       }
     `;
     document.head.appendChild(style);
 
+    // ページごとに採用リンク先を切り替え
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    let recruitLink = './recruit.html';
+    if (currentPage === 'happiness.html') {
+      recruitLink = './recruit-happiness.html';
+    } else if (currentPage === 'crankup.html' || currentPage === 'digicare.html' || currentPage === 'marketing.html') {
+      recruitLink = './recruit-crankup.html';
+    }
+
     // HTML要素を追加
     const popup = document.createElement('div');
     popup.className = 'recruit-popup';
     popup.innerHTML = `
-      <a href="./recruit.html" class="recruit-popup-link">
+      <a href="${recruitLink}" class="recruit-popup-link">
         <svg class="recruit-popup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
           <circle cx="9" cy="7" r="4"></circle>
@@ -1230,6 +1251,6 @@
         popup.classList.add('video-playing');
       }
     }
-  })();
+  }
 
 })();

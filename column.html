@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <!-- TODO: G-XXXXXXXXXX を実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -587,7 +597,11 @@
       <a href="./recruit.html">採用情報</a>
       <a href="./privacy.html">プライバシーポリシー</a>
       <a href="./contact.html">問い合わせ</a>
-      <a href="./happiness.html" class="btn btn-primary mt-xl">ハピネス公式ページ</a>
+      <div class="mt-xl" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+        <a href="./happiness.html" style="display: inline-block;"><img src="./images/happiness_logo.png" alt="ハピネス" style="height: 36px; width: auto;"></a>
+        <a href="./marketing.html" style="display: inline-block;"><img src="./images/DigiCare_logp.png" alt="デジケア" style="height: 36px; width: auto;"></a>
+        <a href="./crankup.html" style="display: inline-block;"><img src="./images/crankup_logo.png" alt="クランクアップ" style="height: 36px; width: auto;"></a>
+      </div>
     </nav>
     <div class="nav-overlay"></div>
   </header>
@@ -639,7 +653,7 @@
           <article class="column-item reveal" data-category="老人ホーム紹介">
             <a href="./column/001.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="老人ホームの選び方" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="老人ホームの選び方" loading="lazy">
                 <span class="column-item-category">老人ホーム紹介</span>
               </div>
               <div class="column-item-content">
@@ -660,7 +674,7 @@
           <article class="column-item reveal" data-category="老人ホーム紹介">
             <a href="./column/002.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="老人ホームの費用相場" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="老人ホームの費用相場" loading="lazy">
                 <span class="column-item-category">老人ホーム紹介</span>
               </div>
               <div class="column-item-content">
@@ -681,7 +695,7 @@
           <article class="column-item reveal" data-category="老人ホーム紹介">
             <a href="./column/003.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="要介護認定の基礎知識" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="要介護認定の基礎知識" loading="lazy">
                 <span class="column-item-category">老人ホーム紹介</span>
               </div>
               <div class="column-item-content">
@@ -702,7 +716,7 @@
           <article class="column-item reveal" data-category="老人ホーム紹介">
             <a href="./column/004.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="認知症の方の施設選び" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="認知症の方の施設選び" loading="lazy">
                 <span class="column-item-category">老人ホーム紹介</span>
               </div>
               <div class="column-item-content">
@@ -723,7 +737,7 @@
           <article class="column-item reveal" data-category="老人ホーム紹介">
             <a href="./column/005.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="老人ホーム見学ガイド" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="老人ホーム見学ガイド" loading="lazy">
                 <span class="column-item-category">老人ホーム紹介</span>
               </div>
               <div class="column-item-content">
@@ -744,7 +758,7 @@
           <article class="column-item reveal" data-category="WEB対策">
             <a href="./column/006.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="MEO対策・WEB集客" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="MEO対策・WEB集客" loading="lazy">
                 <span class="column-item-category">WEB対策</span>
               </div>
               <div class="column-item-content">
@@ -765,7 +779,7 @@
           <article class="column-item reveal" data-category="WEB対策">
             <a href="./column/007.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護施設のSNS活用" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護施設のSNS活用" loading="lazy">
                 <span class="column-item-category">WEB対策</span>
               </div>
               <div class="column-item-content">
@@ -786,7 +800,7 @@
           <article class="column-item reveal" data-category="WEB対策">
             <a href="./column/008.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="ホームページ集客の基本" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="ホームページ集客の基本" loading="lazy">
                 <span class="column-item-category">WEB対策</span>
               </div>
               <div class="column-item-content">
@@ -807,7 +821,7 @@
           <article class="column-item reveal" data-category="制作事業">
             <a href="./column/009.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/trivia.png" alt="動画制作・MV撮影" loading="lazy">
+                <img src="./images/Column/Column_Crankup.png" alt="動画制作・MV撮影" loading="lazy">
                 <span class="column-item-category">制作事業</span>
               </div>
               <div class="column-item-content">
@@ -828,7 +842,7 @@
           <article class="column-item reveal" data-category="制作事業">
             <a href="./column/010.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/trivia.png" alt="WEB制作の外注ガイド" loading="lazy">
+                <img src="./images/Column/Column_Crankup.png" alt="WEB制作の外注ガイド" loading="lazy">
                 <span class="column-item-category">制作事業</span>
               </div>
               <div class="column-item-content">
@@ -849,7 +863,7 @@
           <article class="column-item reveal" data-category="介護の求職">
             <a href="./column/011.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="介護職への転職ガイド" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="介護職への転職ガイド" loading="lazy">
                 <span class="column-item-category">介護の求職</span>
               </div>
               <div class="column-item-content">
@@ -870,7 +884,7 @@
           <article class="column-item reveal" data-category="介護の求職">
             <a href="./column/012.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="介護職の給料・年収" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="介護職の給料・年収" loading="lazy">
                 <span class="column-item-category">介護の求職</span>
               </div>
               <div class="column-item-content">
@@ -891,7 +905,7 @@
           <article class="column-item reveal" data-category="介護の求職">
             <a href="./column/013.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/question.png" alt="介護の資格一覧" loading="lazy">
+                <img src="./images/Column/Column_happiness.png" alt="介護の資格一覧" loading="lazy">
                 <span class="column-item-category">介護の求職</span>
               </div>
               <div class="column-item-content">
@@ -912,7 +926,7 @@
           <article class="column-item reveal" data-category="SNS活用">
             <a href="./column/014.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護施設のInstagram運用" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護施設のInstagram運用" loading="lazy">
                 <span class="column-item-category">SNS活用</span>
               </div>
               <div class="column-item-content">
@@ -933,7 +947,7 @@
           <article class="column-item reveal" data-category="SNS活用">
             <a href="./column/015.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護業界のTikTok活用" loading="lazy">
+                <img src="./images/Column/Column_Crankup.png" alt="介護業界のTikTok活用" loading="lazy">
                 <span class="column-item-category">SNS活用</span>
               </div>
               <div class="column-item-content">
@@ -954,7 +968,7 @@
           <article class="column-item reveal" data-category="SNS活用">
             <a href="./column/016.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護施設のLINE活用" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護施設のLINE活用" loading="lazy">
                 <span class="column-item-category">SNS活用</span>
               </div>
               <div class="column-item-content">
@@ -975,7 +989,7 @@
           <article class="column-item reveal" data-category="WEB・SNSの認識">
             <a href="./column/017.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護事業所のホームページ" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護事業所のホームページ" loading="lazy">
                 <span class="column-item-category">WEB・SNSの認識</span>
               </div>
               <div class="column-item-content">
@@ -996,7 +1010,7 @@
           <article class="column-item reveal" data-category="WEB・SNSの認識">
             <a href="./column/018.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護業界のDX・ICT" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護業界のDX・ICT" loading="lazy">
                 <span class="column-item-category">WEB・SNSの認識</span>
               </div>
               <div class="column-item-content">
@@ -1017,7 +1031,7 @@
           <article class="column-item reveal" data-category="WEB・SNSの認識">
             <a href="./column/019.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護施設の口コミ対策" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護施設の口コミ対策" loading="lazy">
                 <span class="column-item-category">WEB・SNSの認識</span>
               </div>
               <div class="column-item-content">
@@ -1038,7 +1052,7 @@
           <article class="column-item reveal" data-category="WEB・SNSの認識">
             <a href="./column/020.html" class="column-item-link">
               <div class="column-item-image">
-                <img src="./images/Column/WEB_info.png" alt="介護施設のSNS炎上対策" loading="lazy">
+                <img src="./images/Column/Column_Digicare.png" alt="介護施設のSNS炎上対策" loading="lazy">
                 <span class="column-item-category">WEB・SNSの認識</span>
               </div>
               <div class="column-item-content">
